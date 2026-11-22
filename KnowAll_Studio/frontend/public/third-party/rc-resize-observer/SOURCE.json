@@ -1,0 +1,33 @@
+{
+  "name": "rc-resize-observer",
+  "version": "1.4.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/resize-observer.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-resize-observer/-/rc-resize-observer-1.4.3.tgz",
+  "integrity": "sha512-YZLjUbyIWox8E9i9C3Tm7ia+W7euPItNWSPX5sCcQTYbnwDb5uNpnLHQCG1f22oZWUhLw4Mv2tFmeWe68CDQRQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "2481b61123d4f8be84e11847d4bc9684f2aa073d1d2a3275e36fdb7f1cff019a",
+      "source": "frontend/node_modules/rc-resize-observer/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "a101b765716d0d052f0d7b7bab9d7c7ed9dafc2f2e6542ace6767bf6509c29ab",
+    "es/Collection.js": "f115144f2efee84c0b60c97c3bde02d787b5c2deb011732a368af98b7e344124",
+    "es/index.js": "ae6b1cb03a2f392749f63df0c03ba9f5bfd196f5e534fa8c5a9459aef703f9b3",
+    "lib/Collection.js": "28ca591a5ff72abc401d68f7c383f51c79361aa72b5343d6618283dac4eaefde",
+    "lib/index.js": "c7d87a7222dff35243a73bdeff15f031fdb14fb34d6a2639125dbcb8ca60261a",
+    "lib/SingleObserver/DomWrapper.js": "d76f46d072f0dd85344428e44bf5b04ebab0bdada32f8a9ceba598b9cc843f62",
+    "lib/SingleObserver/index.js": "2e72eff2d2126b7caaf4317fb0832b26384872b763231a59461936232b312f83",
+    "lib/utils/observerUtil.js": "1e41d998547283b37c645c19d8db4e7b67c7e8414129d2730083776deb77dda5",
+    "es/SingleObserver/DomWrapper.js": "7f1d20e91b26e5e1a34c5e976a9c3b926ed2f2529dfdae928605432ef126ec70",
+    "es/SingleObserver/index.js": "61032b6f9a8ce20d4c4ed339b4d5b7940e98a8fcb4d36b482d53cd2b739a8dd8",
+    "es/utils/observerUtil.js": "b4a01985a0f340a4eedd219dbc652e4badb040ac68d3113873a67486e57566a8"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

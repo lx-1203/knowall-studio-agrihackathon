@@ -1,0 +1,50 @@
+{
+  "original_package": {
+    "name": "use-sync-external-store",
+    "version": "1.6.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/facebook/react.git",
+      "directory": "packages/use-sync-external-store"
+    },
+    "license": "MIT",
+    "integrity": "sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==",
+    "original_notices": [
+      {
+        "file": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+        "source": "node_modules/use-sync-external-store/LICENSE"
+      }
+    ]
+  },
+  "usage": "Existing Zustand4 React subscription uses native use-sync-external-store shim;retain its installed original MIT declaration;no module/version/source change",
+  "fixed_official_distribution": {
+    "name": "use-sync-external-store",
+    "version": "1.6.0",
+    "repository": "https://github.com/facebook/react",
+    "license": "MIT",
+    "registry_version_url": "https://registry.npmjs.org/use-sync-external-store/1.6.0",
+    "tarball": "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz",
+    "integrity": "sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==",
+    "tarball_sha256": "4f003b4c39114ca6a6989033ae2013a583fbd4073ee40badb7dd9cbacc1af3ae",
+    "originals": [
+      {
+        "file": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+        "source": "official versioned npm tarball:https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz"
+      },
+      {
+        "file": "shim/with-selector.js",
+        "sha256": "08f4e878658941dd77b3d9032d2f0818649dd0a093288e768526090e9f00556f",
+        "source": "official versioned npm tarball:https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz"
+      },
+      {
+        "file": "cjs/use-sync-external-store-shim/with-selector.production.js",
+        "sha256": "fc76f309604db72c728d7c46cc593c6bba65e3f3d00dd38a1c32032927bb94d8",
+        "source": "official versioned npm tarball:https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz"
+      }
+    ],
+    "gitHead": "861811347b8fa936b4a114fc022db9b8253b3d86",
+    "upstream_modifications": false
+  }
+}

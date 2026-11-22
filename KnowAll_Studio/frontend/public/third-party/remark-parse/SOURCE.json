@@ -1,0 +1,48 @@
+{
+  "name": "remark-parse",
+  "version": "11.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-parse",
+  "resolved": "https://registry.npmmirror.com/remark-parse/-/remark-parse-11.0.0.tgz",
+  "integrity": "sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "413654b0a78b98661dce96d2aff2e4d075603d220b8483e28b1aa010ccc138b4",
+      "source": "frontend\\node_modules\\remark-parse\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0cf2ebbaae90578f4a838505ebc3d7fd1d8339484c7f13be1a3d4d09427c2dc9",
+    "lib/index.js": "9d5a9a197d1d91a1abbf47b8cf67e1ee0decbfc9471d94c4a2ee712ff73b90c8"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "summary_navigation_integration": {
+    "fixed_version": "11.0.0",
+    "fixed_commit": "de740c7d52c0278bbc36d8eac218ab74995c6420",
+    "repository": "https://github.com/remarkjs/remark",
+    "upstream_modifications": [],
+    "usage": "Native Markdown AST headings, plain labels and scoped source-offset anchors; existing transitive package declared directly, no version or source change",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark/de740c7d52c0278bbc36d8eac218ab74995c6420/license",
+        "sha256": "413654b0a78b98661dce96d2aff2e4d075603d220b8483e28b1aa010ccc138b4",
+        "installed_exact": true
+      },
+      {
+        "file": "packages/remark-parse/readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark/de740c7d52c0278bbc36d8eac218ab74995c6420/packages/remark-parse/readme.md",
+        "sha256": "39cd1e8aa96272da72fa92811ec9774e3f014185ca3c2391f70f3e1a7760dc64",
+        "installed_exact": true
+      },
+      {
+        "file": "packages/remark-parse/lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark/de740c7d52c0278bbc36d8eac218ab74995c6420/packages/remark-parse/lib/index.js",
+        "sha256": "9d5a9a197d1d91a1abbf47b8cf67e1ee0decbfc9471d94c4a2ee712ff73b90c8",
+        "installed_exact": true
+      }
+    ]
+  }
+}

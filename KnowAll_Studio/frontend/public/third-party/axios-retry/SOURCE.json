@@ -1,0 +1,47 @@
+{
+  "name": "axios-retry",
+  "repository": "https://github.com/softonic/axios-retry",
+  "tag": "v4.5.0",
+  "tag_object": "17dcda7613570a1cd9142aa9d52817c42d6701df",
+  "commit": "4c38b77bce745f6d077a55c5ac02aafe9be72dc1",
+  "source_files": [
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/softonic/axios-retry/4c38b77bce745f6d077a55c5ac02aafe9be72dc1/LICENSE",
+      "sha256": "b154cf0653d7aa3c2ecc68448383ae0ace8a3ce695b7aa50739d390998dc1d38",
+      "evidence": "round-12-upstream-axios-retry-LICENSE.txt"
+    },
+    {
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/softonic/axios-retry/4c38b77bce745f6d077a55c5ac02aafe9be72dc1/README.md",
+      "sha256": "0bb9ee453a32df7a61716364a05f5addf67af88dfa64e6daecbfac98b6c97e71",
+      "evidence": "round-12-upstream-axios-retry-README.md.txt"
+    },
+    {
+      "file": "package.json",
+      "url": "https://raw.githubusercontent.com/softonic/axios-retry/4c38b77bce745f6d077a55c5ac02aafe9be72dc1/package.json",
+      "sha256": "ce8ec1b52adf023a55fbb231a63b05adfccb58ed6e16ee8a3799dcd6f568a2df",
+      "evidence": "round-12-upstream-axios-retry-package.json.txt"
+    },
+    {
+      "file": "src/index.ts",
+      "url": "https://raw.githubusercontent.com/softonic/axios-retry/4c38b77bce745f6d077a55c5ac02aafe9be72dc1/src/index.ts",
+      "sha256": "d1063580338ea2a9a7c9f1dda6a6807bc8fcfd32ebab88241520a623007b2f8c",
+      "evidence": "round-12-upstream-axios-retry-src--index.ts.txt"
+    }
+  ],
+  "modifications": "none; dependency configuration and application call sites only",
+  "version": "4.5.0",
+  "license": "Apache-2.0",
+  "integrity": "sha512-aR99oXhpEDGo0UuAlYcn2iGRds30k366Zfa05XWScR9QaQD4JYiP3/1Qt1u7YlefUOK+cn0CcwoL1oefavQUlQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "b154cf0653d7aa3c2ecc68448383ae0ace8a3ce695b7aa50739d390998dc1d38"
+    },
+    {
+      "file": "LICENSE-Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    }
+  ]
+}

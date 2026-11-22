@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/rexxars/eventsource-parser",
+  "version": "4.1.1",
+  "tag": "v4.1.1",
+  "commit": "a7885df23221b3d3ce814e18948d37e54a90101c",
+  "license": "MIT",
+  "source_files": ["src/parse.ts", "src/types.ts", "src/errors.ts", "LICENSE"],
+  "distribution": "https://registry.npmjs.org/eventsource-parser/-/eventsource-parser-4.1.1.tgz",
+  "integrity": "sha512-zaWNqeSLeyzEAAt2Q6aDBRDRk/VnPmsKqvToyGvv6aahvLv71A4Jw7jG93Hckf11zXurbqgsffvpSgKPoeU1Qw==",
+  "usage": "Installed unmodified via pinned npm dependency; createParser handles SSE protocol in ChatPage and ReadingPage through services/jsonEventStream.ts.",
+  "modifications": "No upstream source modifications. Application adapter owns HTTP status, JSON, TextDecoder and reader cancellation."
+}

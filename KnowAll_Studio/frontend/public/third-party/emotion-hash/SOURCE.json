@@ -1,0 +1,26 @@
+{
+  "name": "@emotion/hash",
+  "version": "0.8.0",
+  "license": "MIT",
+  "repository": "https://github.com/emotion-js/emotion/tree/master/packages/hash",
+  "resolved": "https://registry.npmmirror.com/@emotion/hash/-/hash-0.8.0.tgz",
+  "integrity": "sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "6e8d23763cf7cb707ad8f6677aa502ebeca1dda447e6d6e57f6549c1625b9c4a",
+      "source": "frontend/node_modules/@emotion/hash/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/hash.browser.cjs.js": "e95adba57617dfaf8e5073b81f8447da3c80e4f6a1aa125bb31d250036593a78",
+    "dist/hash.browser.esm.js": "3f6d63bdf3241054ccac29fa5bad7ca228bb889a51214e22224a8fe8c6d3573d",
+    "dist/hash.cjs.dev.js": "e95adba57617dfaf8e5073b81f8447da3c80e4f6a1aa125bb31d250036593a78",
+    "dist/hash.cjs.js": "6aa4779ab4178da14da178b55f561da559115336311811bb524efb6c802f824c",
+    "dist/hash.cjs.prod.js": "871709c417b6653ade684a23ffe97cba00d2f52d6eec691228fb80383dadfd97",
+    "dist/hash.esm.js": "3f6d63bdf3241054ccac29fa5bad7ca228bb889a51214e22224a8fe8c6d3573d",
+    "src/index.js": "7ccd2289e8d24d5a69a4cf65ef34a541b31d02737a288af0c03211ada718f9dd"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

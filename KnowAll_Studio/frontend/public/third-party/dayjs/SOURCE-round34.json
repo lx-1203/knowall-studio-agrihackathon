@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/iamkun/dayjs",
+  "version": "1.11.21",
+  "commit": "a25f01e8154290b203ab480ffeedc60c80bd0710",
+  "upstream_files": [
+    "src/plugin/utc/index.js",
+    "src/index.js",
+    "LICENSE"
+  ],
+  "adopted": "Installed native dayjs/plugin/utc; no upstream modification or copied algorithm",
+  "license": "MIT",
+  "license_sha256": "5faab7526d055651be3aab769d58897be6bd91f3d39d137f25f12dba1b31d5dc"
+}

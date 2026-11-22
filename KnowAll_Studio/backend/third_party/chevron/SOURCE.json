@@ -1,0 +1,19 @@
+{
+  "package": "chevron",
+  "version": "0.14.0",
+  "repository": {
+    "Homepage": "https://github.com/noahmorrison/chevron"
+  },
+  "license": "MIT",
+  "wheel_url": "https://files.pythonhosted.org/packages/52/93/342cc62a70ab727e093ed98e02a725d85b746345f05d2b5e5034649f4ec8/chevron-0.14.0-py3-none-any.whl",
+  "wheel_sha256": "fbf996a709f8da2e745ef763f482ce2d311aa817d287593a5b990d6d6e4f0443",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "wheel_path": "chevron-0.14.0.dist-info/LICENSE",
+      "sha256": "0f176677152475ebab7a0feaacc7536b649bb6d2c8a9bf91a953d3d93a10172b"
+    }
+  ],
+  "library_modifications": null,
+  "distributed_form": "Source deployment requirements and original notices; no vendored executable library"
+}

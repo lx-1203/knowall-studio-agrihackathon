@@ -1,0 +1,37 @@
+{
+  "name": "rc-input",
+  "version": "1.8.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/input.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-input/-/rc-input-1.8.0.tgz",
+  "integrity": "sha512-KXvaTbX+7ha8a/k+eg6SYRVERK0NddX8QX7a7AnRvUa/rEH0CNMlpcBzBkhI0wp2C8C4HlMoYl8TImSN+fuHKA==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "2481b61123d4f8be84e11847d4bc9684f2aa073d1d2a3275e36fdb7f1cff019a",
+      "source": "frontend/node_modules/rc-input/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "f4967452317f14b1bc4c1fc85fc866091e40db6b6fe2e0d532b8ec52ee1516af",
+    "es/BaseInput.js": "5ccc2e17e343956399d4a1a5da304222de9238e88d7665b3e4041e928f6e4da2",
+    "es/index.js": "3a54005489eac8fea851654833361c2077b35dc3d53bc56e0b84e0395f185e5f",
+    "es/Input.js": "d6d57d4f7cba6ef6458851d7595cad083e61bd8882e7d7427aebc29bc17756e0",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "lib/BaseInput.js": "022ba3cb8d73024b756ddcc3fde71a96fb7a25a7ee36181e8f0cbb9b40f2fcec",
+    "lib/index.js": "d36afd6d10a4cb1faba28333edfc98dc60d531a6bed6f6ced0bddd3f75d04464",
+    "lib/Input.js": "3d65f99f77b88862c44060fa9548d47213e4596e000206f8db7dacb72926f281",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/hooks/useCount.js": "31383fab323b5147f6915900ebbc1d3a8220ff9ca719ec8a22472ce1d31459e2",
+    "lib/utils/commonUtils.js": "7fd8900ef0cbe4d62dc6e388c9a4b2d7d408dc85935b0366bba6ba7c9bb710c5",
+    "lib/utils/types.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "es/hooks/useCount.js": "9274d4ea17e8c0327974e53704ba0c8b2ba6d78955559749e7f1547aa07e1af9",
+    "es/utils/commonUtils.js": "eb076dab46be5aaa4e17ebacf4e77945eeaaf9c51ee03d7b791bff8d82255475",
+    "es/utils/types.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

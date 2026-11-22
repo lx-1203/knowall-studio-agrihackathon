@@ -1,0 +1,19 @@
+{
+  "name": "react-markdown",
+  "version": "10.1.0",
+  "license": "MIT",
+  "repository": "remarkjs/react-markdown",
+  "commit": "44d2e4a44b37461ab7778d6870c1a9eb36393ad2",
+  "npm_url": "https://registry.npmjs.org/react-markdown/-/react-markdown-10.1.0.tgz",
+  "npm_integrity": "sha512-qKxVopLT/TyA6BX3Ue5NwabOsAzm0Q7kAPwq6L+wWDwisYs7R8vZ0nRXqq6rkueboxpkjvLGU9fWifiX/ZZFxQ==",
+  "source_url": "https://codeload.github.com/remarkjs/react-markdown/zip/44d2e4a44b37461ab7778d6870c1a9eb36393ad2",
+  "source_archive_sha256": "3a1221e068049a446286bfd19a203ca8983841a9683b8ce0c41a2c6d4fde36db",
+  "runtime_js_files": {
+    "index.js": "1420b7245c57274cbaa448e57282bba0f9a60a93ba43bdfe30ac83deba53c1e2",
+    "lib/index.js": "1c8d95723a74051c354dd4470fb669ae5269baf0ac62aa9b52c4516960ace5ee"
+  },
+  "notice_file": "license",
+  "notice_sha256": "f6196c64e144f9a6fa9154c3a80bc8b89615a9567934b83a8951879f06ba2aef",
+  "modifications": "No upstream code copied or changed; existing LearningContent/MarkdownContent used by FlashcardPage, thin CompareTable and revealed ClozeRenderer answer. Existing lock/dependencies retained.",
+  "distribution": "Original MIT notice already in frontend/public/third-party and dist/Windows/cloud; SOURCE-ROUND21.json records fixed re-use."
+}

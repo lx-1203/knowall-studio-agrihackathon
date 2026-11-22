@@ -1,0 +1,23 @@
+{
+  "name": "alembic",
+  "repository": "sqlalchemy/alembic",
+  "commit": "766b5ee98e0aeea85a18f272a1ac813712ee0697",
+  "archive_sha256": "47cad7582675a01045e4de5044373a87b73ee15a4bbabbbc6f2661183ce2c9f8",
+  "license": "MIT",
+  "source_files": {
+    "alembic/operations/ops.py": {
+      "upstream_sha256": "a1f6c79117999195f69fd9570da20f96b29ed94d66c2042964d8446ee0b842b3",
+      "installed_sha256": "a1f6c79117999195f69fd9570da20f96b29ed94d66c2042964d8446ee0b842b3",
+      "normalized_newlines_equal": true
+    },
+    "alembic/operations/base.py": {
+      "upstream_sha256": "b9ba6fd470e89748349ee2e2d1bf3eb8defe1c455167a9aaf1aaef2bd106a348",
+      "installed_sha256": "b9ba6fd470e89748349ee2e2d1bf3eb8defe1c455167a9aaf1aaef2bd106a348",
+      "normalized_newlines_equal": true
+    }
+  },
+  "license_sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc",
+  "upstream_license_sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc",
+  "original_statements_preserved": true,
+  "integration": "Native public Note.write_to_db timestamp via minimal subclass; SQL conditions/rowcount/transactions; Alembic add_column/inspector/batch. No copied/modified upstream algorithm; no dependency change."
+}

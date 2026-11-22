@@ -1,0 +1,48 @@
+{
+  "name": "unist-util-visit",
+  "version": "5.1.0",
+  "license": "MIT",
+  "repository": "syntax-tree/unist-util-visit",
+  "resolved": "https://registry.npmmirror.com/unist-util-visit/-/unist-util-visit-5.1.0.tgz",
+  "integrity": "sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+      "source": "frontend\\node_modules\\unist-util-visit\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0bd7a392932d4578d13e0ab49705ba1488ecaad56fa4cf865f85dac64d34de91",
+    "lib/index.js": "83779ce32216704c4a7593fd350c48a6570f445b1bb583cbe6d1da12d86cc4bd"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "summary_navigation_integration": {
+    "fixed_version": "5.1.0",
+    "fixed_commit": "5d601df684ca7341646d6b57eb0f20fdfe277bc2",
+    "repository": "https://github.com/syntax-tree/unist-util-visit",
+    "upstream_modifications": [],
+    "usage": "Native Markdown AST headings, plain labels and scoped source-offset anchors; existing transitive package declared directly, no version or source change",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/syntax-tree/unist-util-visit/5d601df684ca7341646d6b57eb0f20fdfe277bc2/license",
+        "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+        "installed_exact": true
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/syntax-tree/unist-util-visit/5d601df684ca7341646d6b57eb0f20fdfe277bc2/readme.md",
+        "sha256": "84a7d82383b6420ad932991398278a498c60a431e49106fb4a60408ee30e94ac",
+        "installed_exact": true
+      },
+      {
+        "file": "lib/index.js",
+        "url": "https://raw.githubusercontent.com/syntax-tree/unist-util-visit/5d601df684ca7341646d6b57eb0f20fdfe277bc2/lib/index.js",
+        "sha256": "83779ce32216704c4a7593fd350c48a6570f445b1bb583cbe6d1da12d86cc4bd",
+        "installed_exact": true
+      }
+    ]
+  }
+}

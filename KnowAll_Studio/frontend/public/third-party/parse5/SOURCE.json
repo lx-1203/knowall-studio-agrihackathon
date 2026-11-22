@@ -1,0 +1,52 @@
+{
+  "name": "parse5",
+  "version": "7.3.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/inikulin/parse5.git"
+  },
+  "resolved": "https://registry.npmmirror.com/parse5/-/parse5-7.3.0.tgz",
+  "integrity": "sha512-IInvU7fabl34qmi9gY8XOVxhYyMyuH2xUNpb2q8/Y+7552KlejkRvqvD19nMoUW/uQGGbqNpA6Tufu5FL5BZgw==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "8c535800331e1e4439835555b3f9edc7fe9dee2fab0d8bbbd5a982e8b8343d4d",
+      "source": "frontend\\node_modules\\parse5\\LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/index.js": "b825162aced2e79be8d68d45efb1f89ec34ed4189467195a071a0d7b694a19d4",
+    "dist/cjs/index.js": "78db255973138b7c9293ace340b700a9a557e0ada14b5eda7cde56017bf78480",
+    "dist/common/doctype.js": "855d8cd764782cdc73003a9847d03ed261c5158f6a6901e563ccd4d3b92c8b16",
+    "dist/common/error-codes.js": "b38ae5ac4f2a31ce2e1cfeca35cf7b89cc66736cd5be068cc433a3ccaca78be2",
+    "dist/common/foreign-content.js": "129a84a9d04b6050b6896de45a70e1ee468434e19bdd6486e3aef3405d137cac",
+    "dist/common/html.js": "e6cf93f387be70ddcd4f2bec67fbeb53161094f6306d834de461ec888a9dab76",
+    "dist/common/token.js": "52dac9efba3a637771818d633a5cf1df30c7913d05ff23235150c88319ea035a",
+    "dist/common/unicode.js": "69a0a52be895d2bcf88850beead4a098c5305c0b5669d1e8a0fe26f621ea25c6",
+    "dist/parser/formatting-element-list.js": "a6e04b000b228a0bf7eba4e5462b343ec1e13dbfbe40bce913ade646bbde4461",
+    "dist/parser/index.js": "23eb8e0f6b45abc36132c08f067899e0e615acbe9069762ba7780a66db78e65d",
+    "dist/parser/open-element-stack.js": "fe4b609a572c9aa06fbd45ac53632b3ad565168903f4126a6f98d5a9d1f42999",
+    "dist/serializer/index.js": "bb11a62d05d463bf756814d89227ea889733d3808fe7ebe27cb4f607ed85a4c7",
+    "dist/tokenizer/index.js": "738969a05c4e7d3c0ce566225e742d730d248db82972a84e517828cd97bc3bb4",
+    "dist/tokenizer/preprocessor.js": "12199175a31eb461dcecefa10ce2536c69ab92cdd2a1f67da3ea20b214599ac1",
+    "dist/tree-adapters/default.js": "14b6408b0abb1c041e645644f977db34da280239be8a59a2eb3c9e282e89b7c4",
+    "dist/tree-adapters/interface.js": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+    "dist/cjs/common/doctype.js": "dec89870f895809fe6218dbbf8ad9cff37022f08c1a5ea6f6d871dc650e0a52b",
+    "dist/cjs/common/error-codes.js": "e7d80ffd892f6862ab5810ac745b85bf95addfd7ef31279d3f9be5677929f1b1",
+    "dist/cjs/common/foreign-content.js": "d602e9fa1a43cd6e671ef0d14f1ac50d617a882ac134cf18b07c07cd97847321",
+    "dist/cjs/common/html.js": "5fde09fb7c94e30a013f99386954b724105b33504e3f505ffc370f7c21074d1e",
+    "dist/cjs/common/token.js": "294877dbb8f11cfd790b93488dc3baa8be5f5390204e471cb5d486f984981fbb",
+    "dist/cjs/common/unicode.js": "0f4ca9d0f95735a952dbd0eee5741f6a09194724d5df3ab1e31a6fcc80aa0ea8",
+    "dist/cjs/parser/formatting-element-list.js": "ba8b4f9634694b26e20ca9deb2b4d07ba9086915ea3063bc4cb612698ea3b290",
+    "dist/cjs/parser/index.js": "4b9db3083a0173743fa0334444accdc4f1e6ad8f6988c2efa1abdcb908b7ef94",
+    "dist/cjs/parser/open-element-stack.js": "30a2ba83eb1fb68e23c9db5b6adb0827834558483d60a7b3a2c1bc5a9a60c56d",
+    "dist/cjs/serializer/index.js": "f06518c16058cec5413e495ea69f6921a03c9d60fd0c367dd0ca8b942a6341f0",
+    "dist/cjs/tokenizer/index.js": "9163923509c176a98804f2ed56592b7741dcc77e7d117f833aa7c878128cbd6a",
+    "dist/cjs/tokenizer/preprocessor.js": "4fd0f415ea391eabd05acd7069ebe8c61b11e8e9c3d141cc1aafe25c67af4496",
+    "dist/cjs/tree-adapters/default.js": "b2ac880ea08ee723a47e1bd00e0a144e4ecb185405709327d60abe46558020f6",
+    "dist/cjs/tree-adapters/interface.js": "d43aa81f5bc89faa359e0f97c814ba25155591ff078fbb9bfd40f8c7c9683230"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

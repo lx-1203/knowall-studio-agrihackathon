@@ -1,0 +1,30 @@
+{
+  "name": "react-syntax-highlighter",
+  "version": "16.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-syntax-highlighter/react-syntax-highlighter.git"
+  },
+  "license": "MIT",
+  "integrity": "sha512-PjVawBGy80C6YbC5DDZJeUjBmC7skaoEUdvfFQediQHgCL7aKyVHe57SaJGfQsloGDac+gCpTfRdtxzWWKmCXA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "a74e9029bdf2e92141bc711a6b17fa77b90c10eeec51193c83279cc69848f5bf"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "tag": "v16.1.1",
+  "commit": "ecac533ba1fce8cf4f98a79c5c913f1a7ffab34c",
+  "source_files": [
+    "dist/esm/prism-async-light.js",
+    "dist/esm/async-syntax-highlighter.js",
+    "dist/esm/async-languages/prism.js",
+    "dist/esm/async-languages/create-language-async-loader.js",
+    "dist/esm/highlight.js",
+    "dist/esm/create-element.js",
+    "dist/esm/styles/prism/vsc-dark-plus.js"
+  ],
+  "modifications": "No upstream modifications; application CodePreview chooses native async loader, language aliases, theme and request cleanup."
+}

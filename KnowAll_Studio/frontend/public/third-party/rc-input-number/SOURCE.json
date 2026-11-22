@@ -1,0 +1,35 @@
+{
+  "name": "rc-input-number",
+  "version": "9.5.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/input-number.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-input-number/-/rc-input-number-9.5.0.tgz",
+  "integrity": "sha512-bKaEvB5tHebUURAEXw35LDcnRZLq3x1k7GxfAqBMzmpHkDGzjAtnUL8y4y5N15rIFIg5IJgwr211jInl3cipag==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-input-number/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "4e588d19bc599352d14e95e6702df75d3ecfaeed096514377ff202664bc84bca",
+    "es/index.js": "65bd92d59e413dbd50aadfddb9889a2ee7f52e54b2f2ba5e7b15d50a8da4349c",
+    "es/InputNumber.js": "5e89195abd235a324a12ef06591f0e6d778440a8901c1e258fb447261e266b44",
+    "es/StepHandler.js": "259ab7bbf97c2f2ab9e899dc198e646d5bfa618581b5ed6a50563b3945330021",
+    "lib/index.js": "46cb080684adb5bc0aa602bbde2741e385c0f73c9f01cfc11d9e15ee15c54d1f",
+    "lib/InputNumber.js": "3283fb51af3e0f65b7b9734ec8f5ed8013466a57a363514b691702c15acff02b",
+    "lib/StepHandler.js": "715bd0b09da5a38e40115c14ba989bb5526922963a4585b631ba814975078687",
+    "lib/hooks/useCursor.js": "a474cc6f42aac065ad789be9e332c02edc39a05e22f9c2b1b25fbffb6fedc00a",
+    "lib/hooks/useFrame.js": "e222a0cd4752a13b8867f5ec0e51d6c19775b1bd57f9901fcf0174e2aa1c0fe7",
+    "lib/utils/numberUtil.js": "ace55ba4c13db464280c99a7fe16608124e60a5151f9f25eb41b184b151c5992",
+    "es/hooks/useCursor.js": "68bb288a417a9d7540ada9b4fa9c08b56047c4b6ee561cd69ca25f28c37a8e40",
+    "es/hooks/useFrame.js": "a7cda49c47888303c27ad6e09f44ebde40900a88a00aeeaf2c7c7a888a943a83",
+    "es/utils/numberUtil.js": "dccd53f721dca3c100ef7d5800f734b49b995ed2144356341bd7bb5ae4af87d2"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

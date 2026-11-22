@@ -1,0 +1,21 @@
+{
+  "name": "mdast-util-gfm-autolink-literal",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-gfm-autolink-literal",
+  "resolved": "https://registry.npmmirror.com/mdast-util-gfm-autolink-literal/-/mdast-util-gfm-autolink-literal-2.0.1.tgz",
+  "integrity": "sha512-5HVP2MKaP6L+G6YaxPNjuL0BPrq9orG3TsrZ9YXbA3vDw/ACI4MEsnoDpn6ZNm7GnZgtAcONJyPhOP8tNJQavQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\mdast-util-gfm-autolink-literal\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "c3c1073e83ac96d470b41a7ace9636321578659a83e1d14d4c8ac7f7f85db8a8",
+    "lib/index.js": "4965bd92f22009a0fd0fa4f7af73903e4d793165634c26ab5827fe5386fbcff2"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

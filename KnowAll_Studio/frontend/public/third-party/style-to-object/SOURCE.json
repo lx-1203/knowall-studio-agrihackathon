@@ -1,0 +1,27 @@
+{
+  "name": "style-to-object",
+  "version": "1.0.14",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remarkablemark/style-to-object.git"
+  },
+  "resolved": "https://registry.npmmirror.com/style-to-object/-/style-to-object-1.0.14.tgz",
+  "integrity": "sha512-LIN7rULI0jBscWQYaSswptyderlarFkjQ+t79nzty8tcIAceVomEVlLzH5VP4Cmsv6MtKhs7qaAiwlcp+Mgaxw==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "896c9fd6b5fc48ac31800b9d29a6e3ffcb0c2d534ed077ebfa5c2fa388cc38b7",
+      "source": "frontend\\node_modules\\style-to-object\\LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "cjs/index.js": "210c4e97e6134e0617412ce7ee84e7a0a8923a1fd4d8adbc58206d766eed55fc",
+    "dist/style-to-object.js": "e32dbb7fa295211dfbc9c3bb7452fb8e7a5d72b5aecc460fe441f71ce46fdede",
+    "dist/style-to-object.min.js": "d175513e63ebb73ea0ff9907c4819cd57450d1e78490e375d80b978d6f82170b",
+    "esm/index.js": "3cd31a713907465b9ca334ac2c2751ef765ac51dd47caa4617366098fc4e7588",
+    "esm/index.mjs": "daddfb313e38a14b2fbf44a54f86e34a3364db16f8d2b70da3d2baac53e2259d"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

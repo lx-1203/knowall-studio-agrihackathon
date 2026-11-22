@@ -1,0 +1,64 @@
+{
+  "original_package": {
+    "name": "zustand",
+    "version": "4.5.7",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/pmndrs/zustand.git"
+    },
+    "license": "MIT",
+    "integrity": "sha512-CHOUy7mu3lbD6o6LJLfllpjkzhHXSBlX8B9+qPddUsIfeF5S/UZ5q0kmCsnRqT1UHFQZchNFDDzMbQsuesHWlw==",
+    "original_notices": [
+      {
+        "file": "LICENSE",
+        "sha256": "c1e6e266563517467b1bf874817d23e426f3149252bd7d42758cd697514b8417",
+        "source": "node_modules/zustand/LICENSE"
+      }
+    ]
+  },
+  "account_catalog_integration": {
+    "name": "zustand",
+    "repository": "https://github.com/pmndrs/zustand",
+    "tag": "4.5.7",
+    "commit": "869cd7aeb6ab7b0b7f019410b94a873be9bc8501",
+    "version": "4.5.7",
+    "license": "MIT",
+    "integrity": "sha512-CHOUy7mu3lbD6o6LJLfllpjkzhHXSBlX8B9+qPddUsIfeF5S/UZ5q0kmCsnRqT1UHFQZchNFDDzMbQsuesHWlw==",
+    "originals": [
+      {
+        "file": "LICENSE",
+        "url": "https://raw.githubusercontent.com/pmndrs/zustand/869cd7aeb6ab7b0b7f019410b94a873be9bc8501/LICENSE",
+        "sha256": "c1e6e266563517467b1bf874817d23e426f3149252bd7d42758cd697514b8417"
+      },
+      {
+        "file": "src/vanilla.ts",
+        "url": "https://raw.githubusercontent.com/pmndrs/zustand/869cd7aeb6ab7b0b7f019410b94a873be9bc8501/src/vanilla.ts",
+        "sha256": "057908e9e8ebdd579976a56e9ba7d2d2ef8d9aae0f58b0cbf16b3bccc2bc4b93"
+      },
+      {
+        "file": "src/react.ts",
+        "url": "https://raw.githubusercontent.com/pmndrs/zustand/869cd7aeb6ab7b0b7f019410b94a873be9bc8501/src/react.ts",
+        "sha256": "2b64cc2fb5cc8327f9e7638e53c718f343252eeecfc43d4465e5cc8dd6733d57"
+      },
+      {
+        "file": "docs/guides/how-to-reset-state.md",
+        "url": "https://raw.githubusercontent.com/pmndrs/zustand/869cd7aeb6ab7b0b7f019410b94a873be9bc8501/docs/guides/how-to-reset-state.md",
+        "sha256": "aab3577ef3a04072f9269bff5fc8fbd1da60ca65d0e2b843109dda6ccb3db178"
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/pmndrs/zustand/869cd7aeb6ab7b0b7f019410b94a873be9bc8501/readme.md",
+        "sha256": "06fae485b5d102e47c626137c1e840eab5c8bb14c77d0afcf0183e3cd4da6a1f"
+      }
+    ],
+    "upstream_modifications": false
+  },
+  "usage": "Existing native Zustand subscribe/setState/getInitialState resets app/quiz/flashcard/recitation transient stores on actual auth identity/session boundary;review limit and recitation mode/hide level are preserved;same-account profile/token refresh keeps data;no upstream changes/new module",
+  "learning_account_integration": {
+    "round": 17,
+    "scope": "existing three learning stores/native account reset;three actual pages native Axios signal/effect cleanup/current-account await guards and old multi-POST chain cutoff",
+    "upstream_modified": false,
+    "runtime_modules_added": 0,
+    "license_record": "docs/open-source-integration/round-17-fixed-upstream-audit.json"
+  }
+}

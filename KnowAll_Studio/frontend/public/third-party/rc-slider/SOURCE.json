@@ -1,0 +1,55 @@
+{
+  "name": "rc-slider",
+  "version": "11.1.9",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/slider.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-slider/-/rc-slider-11.1.9.tgz",
+  "integrity": "sha512-h8IknhzSh3FEM9u8ivkskh+Ef4Yo4JRIY2nj7MrH6GQmrwV6mcpJf5/4KgH5JaVI1H3E52yCdpOlVyGZIeph5A==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "4973f756e858531bdae451f98054278dabd2ef50fc4d3dbccc084ee35964ad3d",
+      "source": "frontend/node_modules/rc-slider/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "4ba4d0fcce12fefd1d408f18340cbbfa76c6f8c1b36f9f7e1b94d36539e17a4a",
+    "es/context.js": "ded536e5507b5a75a4b239beaf0c3d0b9cb83a8d4fd562bbcd70c3a868d28c45",
+    "es/index.js": "9d3abccdcea73007bf4d1bbb33943acb1194063e9f7d83ef840254e4fb4b5f37",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/Slider.js": "a4ab1368291d43010cda43cdb6322b912bb2096129de61d660315d4eac3e1a20",
+    "es/util.js": "fb488440be2a143afb61675be21d72393f290d30bd6b5a6ef13184a64736d291",
+    "lib/context.js": "abc4bf5c9542e6a5255f276f4e5a0834f188f593068e72d500e41bc311ca3349",
+    "lib/index.js": "f2239cb9273e250f2e2ddc9ee1175cd63058c3119a502e88457393861b1247f4",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/Slider.js": "24dcf13753bd4368fd5d89713a5ec7e2676500fa46f05b67cd1c1bb0adb91ece",
+    "lib/util.js": "246ad0b80f773f29a6efa1aa38b15653f7461d1d0abd9a90205ac64ad28a95eb",
+    "lib/Handles/Handle.js": "c0ea30d89f716536f67200ff00df4db202f5297d60fbbea0245b6d7adddcb128",
+    "lib/Handles/index.js": "d6602cf18bb118fbb7954ea26d889dbe58c11b94bdb431983db3172badc6e8dd",
+    "lib/hooks/useDrag.js": "b7b0018ed0d91b6bbe5251401ff533e2e86130452fd6a5e66a2ec87bb7849246",
+    "lib/hooks/useOffset.js": "7d6033a219d58f901ca3257f280ae354c321edd3117d665756b03c2b37de21e9",
+    "lib/hooks/useRange.js": "e6b497f7d93fe313d3dccf3361d7f9a544559aeef3e7de9467d9bfcef643bf8c",
+    "lib/Marks/index.js": "f17994afbf7e33ee9921109428a540b5b68fc866ce962418889b416c221051ad",
+    "lib/Marks/Mark.js": "c35050cb7b5eac5150ae2b371e669d2f1ff3e06ec1944bf98d508e4e797acda0",
+    "lib/Steps/Dot.js": "a782fc89849ceba1fcdb3e16477b2605fa54e4880f6dfba76ebaebe8a060b1c5",
+    "lib/Steps/index.js": "3987b287fbcdea5f01f2156f4b089c591d300f925e46bfc0590df135c302ffa6",
+    "lib/Tracks/index.js": "dcf8dc9e2539e6b60251d4f7be9840605b38ede11fada90eb1cd9384886b0cb4",
+    "lib/Tracks/Track.js": "d472cdd3b02b07266138936ce879e04e6da488b88767d9d3ec092fb71b900793",
+    "es/Handles/Handle.js": "bfa7212eca92b2367ee4007b63e507d750f65ff02b2788bee6b38bc282462e1d",
+    "es/Handles/index.js": "1791fc5427707c052d4fab2bcaacfd49a291e0d01d2f82c4d47643deb0a398a0",
+    "es/hooks/useDrag.js": "d7bdef2a5c3ce337d0d1be212dfd5040750a739925eee12b15f11ac7c078ea56",
+    "es/hooks/useOffset.js": "ae7bf7966c591a6713d4a032a1464ad5169b5dbd2e0afd46b300449f1caf9c3b",
+    "es/hooks/useRange.js": "765c57c8f8ef671bdff5f9d3dcbf85d154b7856a72e262653410dce63aa140d7",
+    "es/Marks/index.js": "18de82ea977185a36f15bd2b404bca188d737b2f489e9a585cb97d8e7a0fa132",
+    "es/Marks/Mark.js": "228340c9365b3075b88ebda4fe336de8fbd3706bc658dcb1375afab99420b0c1",
+    "es/Steps/Dot.js": "5327bc5cf8a855a9f08082a0a844b8b29f71f2b28b0df9091e92d3d0092d7552",
+    "es/Steps/index.js": "698ba38e4ef247cf87d3b3e329c64545f581bd82a0e7c85267d3ff2aeae75846",
+    "es/Tracks/index.js": "7edd39d704d96c3a0eb51806f0e62b59c6f5cb1ba6622f3aeaeee62f1d21e3d7",
+    "es/Tracks/Track.js": "ed247ee8957d0a8083213799eaa7e1c60401841224c08f5a850bdbca608fe00f"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

@@ -1,0 +1,21 @@
+{
+  "name": "micromark-factory-destination",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-destination",
+  "resolved": "https://registry.npmmirror.com/micromark-factory-destination/-/micromark-factory-destination-2.0.1.tgz",
+  "integrity": "sha512-Xe6rDdJlkmbFRExpTOmRj9N3MaWmbAgdpSrBQvCFqhezUn4AHqJHbaEnfbVYYiexVSs//tqOdY/DxhjdCiJnIA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-factory-destination\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "8ef4475091af9f26c98ef6ee0fcccc8964fcbf60c7654b9f3d4af34da2adaa4b",
+    "dev/index.js": "57fa93a222d9bbffc405b69924e6a063978f55346deec75f048a5c106a7b25cd"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

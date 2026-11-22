@@ -1,0 +1,22 @@
+{
+  "name": "mdast-util-math",
+  "version": "3.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-math",
+  "resolved": "https://registry.npmmirror.com/mdast-util-math/-/mdast-util-math-3.0.0.tgz",
+  "integrity": "sha512-Tl9GBNeG/AhJnQM221bJR2HPvLOSnLE/T9cJI9tlc6zwQk2nPk/4f0cHkOdEixQPC/j8UtKDdITswvLAy1OZ1w==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\mdast-util-math\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "266fcd72f8606ae61640f98ea2aa660562c08d3e5cc14956d09051813aab47c0",
+    "lib/index.js": "fabe05044becc9ae3ff1320f4c2ed30d8aa8859b4944e126cac22a570bae9574"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "npm_gitHead": "23647664692ae59be25896d0099ba3f7157d6a76"
+}

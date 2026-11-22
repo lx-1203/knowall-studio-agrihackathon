@@ -1,0 +1,28 @@
+{
+  "name": "@ant-design/fast-color",
+  "version": "2.0.6",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ant-design/fast-color.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@ant-design/fast-color/-/fast-color-2.0.6.tgz",
+  "integrity": "sha512-y2217gk4NqL35giHl72o6Zzqji9O7vHh9YmhUVkPtAOpoTCH4uWxo/pr4VE8t0+ChEPs0qo4eJRC5Q1eXWo3vA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "4973f756e858531bdae451f98054278dabd2ef50fc4d3dbccc084ee35964ad3d",
+      "source": "frontend/node_modules/@ant-design/fast-color/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "es/FastColor.js": "f8df58f890cf526764e177a3673b9bd8b6585111446a6478bed57a70c86387d3",
+    "es/index.js": "bef4539511136636864e52b478f422f41deba9f524fc205d14f248fd03b83ad0",
+    "es/types.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "lib/FastColor.js": "508adda4933e857f6ef1dca60fd7e2b4d1ee80c4e3b7f040f2a9d706adf61a22",
+    "lib/index.js": "8e2c08d10ad89415c35099a51cdf7d28f0169e6ba9c6fa7063454a538e170bf0",
+    "lib/types.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

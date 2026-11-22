@@ -1,0 +1,23 @@
+{
+  "name": "micromark-util-subtokenize",
+  "version": "2.1.0",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-subtokenize",
+  "resolved": "https://registry.npmmirror.com/micromark-util-subtokenize/-/micromark-util-subtokenize-2.1.0.tgz",
+  "integrity": "sha512-XQLu552iSctvnEcgXw6+Sx75GflAPNED1qx7eBJ+wydBb2KCbRZe+NwvIEEMM83uml1+2WSXpBAcp9IUCgCYWA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-util-subtokenize\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "a70e48d4652be4f956606dcda3e4c13707952dc74b86f6f71990eba88d4a1e79",
+    "dev/index.js": "a63cb1552428d205157690b7c052b9a8bd011f94a7420e5b2c8f4765d5d67603",
+    "lib/splice-buffer.js": "addce56cc7eccc0cb0ba10f7f8eab4c902f5ddf55ff43e0fb2907815ea63440e",
+    "dev/lib/splice-buffer.js": "a544e39f46dad3119e8c8b83bdcd50a42c9b21c518314f67b4d1bb2fcfd620e4"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

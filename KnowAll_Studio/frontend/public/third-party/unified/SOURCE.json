@@ -1,0 +1,49 @@
+{
+  "name": "unified",
+  "version": "11.0.5",
+  "license": "MIT",
+  "repository": "unifiedjs/unified",
+  "resolved": "https://registry.npmmirror.com/unified/-/unified-11.0.5.tgz",
+  "integrity": "sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "05811400116ed61f1a7693b78fe8ca6598c155a12f3978e609db4df648a4cb3d",
+      "source": "frontend\\node_modules\\unified\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "12a98242be891512cbdec8bce2ec1a9147d9d89b2802165560411c5fe5037508",
+    "lib/callable-instance.js": "28c9baa7aea87597c4eca19a2e2b3342d3017347fabf7d513278787b5a950c58",
+    "lib/index.js": "4a2e5111187985134153358e282f2613d3e862ee9da6336bfb95ed1850f3914d"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "summary_navigation_integration": {
+    "fixed_version": "11.0.5",
+    "fixed_commit": "242105bd6e18c61ca10f37d99529b89f1be37518",
+    "repository": "https://github.com/unifiedjs/unified",
+    "upstream_modifications": [],
+    "usage": "Native Markdown AST headings, plain labels and scoped source-offset anchors; existing transitive package declared directly, no version or source change",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/unifiedjs/unified/242105bd6e18c61ca10f37d99529b89f1be37518/license",
+        "sha256": "05811400116ed61f1a7693b78fe8ca6598c155a12f3978e609db4df648a4cb3d",
+        "installed_exact": true
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/unifiedjs/unified/242105bd6e18c61ca10f37d99529b89f1be37518/readme.md",
+        "sha256": "b3593109fd9d60d79ba63a463b92fd33c629bf30f2b2ecbc0bf4cda8bb4f53f9",
+        "installed_exact": true
+      },
+      {
+        "file": "lib/index.js",
+        "url": "https://raw.githubusercontent.com/unifiedjs/unified/242105bd6e18c61ca10f37d99529b89f1be37518/lib/index.js",
+        "sha256": "4a2e5111187985134153358e282f2613d3e862ee9da6336bfb95ed1850f3914d",
+        "installed_exact": true
+      }
+    ]
+  }
+}

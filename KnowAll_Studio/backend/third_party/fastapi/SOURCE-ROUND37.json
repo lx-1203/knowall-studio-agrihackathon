@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/fastapi/fastapi",
+  "version": "0.136.3",
+  "commit": "82064857539e6286522c347b4b11331b48dd2378",
+  "license": "MIT",
+  "license_matches_shipped": true,
+  "modifications": "No upstream modification/copied source; reuse native include_router prefix twice for canonical /api/v1 and legacy /mcp",
+  "files": [
+    {
+      "source": "https://raw.githubusercontent.com/fastapi/fastapi/82064857539e6286522c347b4b11331b48dd2378/LICENSE",
+      "file": "docs\\open-source-integration\\round-37-fastapi-LICENSE",
+      "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e",
+      "bytes": 1086
+    },
+    {
+      "source": "https://raw.githubusercontent.com/fastapi/fastapi/82064857539e6286522c347b4b11331b48dd2378/fastapi/routing.py",
+      "file": "docs\\open-source-integration\\round-37-fastapi-fastapi-routing.py",
+      "sha256": "76985f8c425116068eb1d255ef8bcfabb6cff8268cd364fa2c75196cfbfad6a1",
+      "bytes": 197568
+    }
+  ],
+  "documentation": "https://fastapi.tiangolo.com/tutorial/bigger-applications/"
+}

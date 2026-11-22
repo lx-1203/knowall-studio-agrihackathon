@@ -1,0 +1,30 @@
+{
+  "name": "micromark-extension-math",
+  "version": "3.1.0",
+  "license": "MIT",
+  "repository": "micromark/micromark-extension-math",
+  "resolved": "https://registry.npmmirror.com/micromark-extension-math/-/micromark-extension-math-3.1.0.tgz",
+  "integrity": "sha512-lvEqd+fHjATVs+2v/8kg9i5Q0AP2k85H0WUOwpIVvUML8BapsMvh1XAogmQjOCsLpoKRCVQqEkQBB3NhVBcsOg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\micromark-extension-math\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "d2651b530ac7e16dac559f6230bae438846f693dbc7b8e39b2b3001bf8455208",
+    "dev/index.js": "060a8c6966e4e7330c69af655b5ce8942da37a84fc210a3b1b0093998c83dae8",
+    "lib/html.js": "556cea30c8cbfb9f4482de842d504bf714c15c1634416b2f3d654d8f25eb3396",
+    "lib/math-flow.js": "5399d010e7dee830eb033b56bc3162c6ec0be64cc4da82d808533bd9aa918248",
+    "lib/math-text.js": "228234cea5f5ee00ebe3e1c2e5e0362efbbdc7f296d77f0ead3ee0b9fdb8ef78",
+    "lib/syntax.js": "abe6c2f50bdd1899290310c20d77ca6db1f17c5542eea85141e83460a4b02810",
+    "dev/lib/html.js": "9d490410de5502849d0cdb3552bfca52c8a377be06d4ebd2f3aa276ca2725f6f",
+    "dev/lib/math-flow.js": "3db6ca33b5b1dd540542a3bbcf34a4d5447e271362e4f004cb3ffd7080afefb9",
+    "dev/lib/math-text.js": "7bbd970785ab9e6a1e19bfc26f3912d618fa266c19b759d846c407e7fcbb636a",
+    "dev/lib/syntax.js": "54832225d643fa36d7dbbe4c01e72a33cebba0da23479f4ecf757652f290b87f"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "npm_gitHead": "e2afefe07f3bdbc8d7188e009aff71566a2ab6f0"
+}

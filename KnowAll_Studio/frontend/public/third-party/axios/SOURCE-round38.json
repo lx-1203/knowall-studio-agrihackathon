@@ -1,0 +1,41 @@
+{
+  "repository": "https://github.com/axios/axios",
+  "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+  "version": "1.18.0",
+  "license": "MIT",
+  "adoption": "Chat three reads native signal + existing LoadFailure and AntD Skeleton; no copied upstream code or new dependency",
+  "originals": [
+    {
+      "name": "axios",
+      "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+      "repository": "https://github.com/axios/axios",
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/LICENSE",
+      "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c",
+      "bytes": 1084,
+      "upstream_modification": false,
+      "installed_match": true,
+      "shipped_match": true
+    },
+    {
+      "name": "axios",
+      "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+      "repository": "https://github.com/axios/axios",
+      "file": "lib/adapters/xhr.js",
+      "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/lib/adapters/xhr.js",
+      "sha256": "6105e573cf707532ec8c7ec73b1e7450d89a0f75ad1528756b8efa38c34c59ad",
+      "bytes": 7601,
+      "upstream_modification": false
+    },
+    {
+      "name": "axios",
+      "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+      "repository": "https://github.com/axios/axios",
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/README.md",
+      "sha256": "ce5788019d7d89c6905fd1b72eeeac21bbd6e278a23f0e5b4a3682494b631891",
+      "bytes": 91489,
+      "upstream_modification": false
+    }
+  ]
+}

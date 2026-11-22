@@ -1,0 +1,37 @@
+{
+  "name": "rc-drawer",
+  "version": "7.3.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/drawer.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-drawer/-/rc-drawer-7.3.0.tgz",
+  "integrity": "sha512-DX6CIgiBWNpJIMGFO8BAISFkxiuKitoizooj4BDyee8/SnBn0zwO2FHrNDpqqepj0E/TFTDpmEBCyFuTgC7MOg==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "6db0a962e5898831124a7e7465d4cf3ad849d121f97a618046b7a7f41fd2b031",
+      "source": "frontend/node_modules/rc-drawer/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "557972ffd982c8970f7f696ef71c3dca5ab6181bc098ddecf78ea451e8152e03",
+    "es/context.js": "46219554a3b2aa1bbec2646a2784faefe576023dab9889b4fa1ec576ac4c16ad",
+    "es/Drawer.js": "b42e5bcbd8c2b1291d12ad26f8dec3fadf0bb7b22bb88918b1eaec7e0154753d",
+    "es/DrawerPanel.js": "4ff1d3c4617c76d58cb7970d93edf467d015776b24c8484d694ecb12ca088a0f",
+    "es/DrawerPopup.js": "7942253d83ae6a70bb20f24c3c242a672b8e7f56b2f4dabd134f7762cf662cdf",
+    "es/index.js": "29c4253eae09899fd67206ca217da3c3f54039e1949c2baa2c71b7e0d342c607",
+    "es/inter.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/util.js": "bff9837788a9149f4a4f0566696fb8e28d5fb9cd325bc23fa8d1d00b71611f15",
+    "lib/context.js": "5f777e22d13c8d718fcf35011bb16c89314f3c9eb569940ccfcb23f72e1ef12e",
+    "lib/Drawer.js": "d7901561d7d1a7bedd5dc69872667bf95d13b7d9ffde194b58236600a59eb750",
+    "lib/DrawerPanel.js": "c9fca1003e1dc365c3cc7f9a5032ca264778365e11c6237555bdf2dac8f54b30",
+    "lib/DrawerPopup.js": "86710a554f274351890ca9179b0f5c904d8ae4c51e14e8fcc02f23cabee2d5f7",
+    "lib/index.js": "21fe1570d591398e2b6d0fce58f1a786eccfe9f3c05a8cde01241266143dabcb",
+    "lib/inter.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/util.js": "5cb4e45a0202b8317a41deb126dfc19206ab47ba4b933eed812a848b97ad6143"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

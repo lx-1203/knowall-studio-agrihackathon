@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/sqlalchemy/sqlalchemy",
+  "tag": "rel_2_0_51",
+  "runtime": "2.0.51",
+  "license": "MIT",
+  "sources": {
+    "LICENSE-ROUND50": {
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/LICENSE",
+      "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9"
+    },
+    "ROUND50-async-session.py.txt": {
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/ext/asyncio/session.py",
+      "sha256": "875e89b14110e7b9bd435c86bf26716a1e38031638e80179bc044f1292c43e7e"
+    }
+  },
+  "adaptation": "native in_transaction/is_active, independent AsyncSession query and refresh; no upstream code modification/copy into executable product",
+  "obligation": "retain full original copyright and MIT permission/disclaimer in distribution",
+  "docs": "https://docs.sqlalchemy.org/en/20/orm/session_basics.html",
+  "runtime_fixed_source_equal": true
+}

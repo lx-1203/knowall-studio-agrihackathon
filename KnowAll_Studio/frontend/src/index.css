@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+#root { min-height: 100vh; }
+
+/* ========== Theme-aware content background ========== */
+.ant-layout-content { background: #f5f5f5; transition: background 0.3s ease; }
+[data-theme="dark"] .ant-layout-content { background: #1a1a1a; }
+[data-theme="dark"] .ant-layout-sider { background: #141414; }
+
+/* ========== Page transition ========== */
+.page-fade {
+  animation: pageFade 0.28s ease;
+}
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-fade { animation: none; }
+}
+
+.react-flow__node { font-size: 14px; }
+
+.flashcard-flip {
+  perspective: 1000px;
+}
+.flashcard-inner {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+.flashcard-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* ========== Card hover polish ========== */
+.ant-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.ant-card-hoverable:hover {
+  transform: translateY(-2px);
+}
+
+/* ========== Mobile Responsive ========== */
+@media (max-width: 768px) {
+  .ant-layout-content {
+    padding: 12px !important;
+  }
+  .ant-card {
+    border-radius: 8px;
+  }
+  .ant-statistic-content {
+    font-size: 20px !important;
+  }
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ant-card-extra {
+    display: none;
+  }
+  .ant-space {
+    flex-wrap: wrap;
+    gap: 4px !important;
+  }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  .ant-layout-sider, .ant-layout-header { display: none !important; }
+  .ant-layout-content { margin: 0 !important; padding: 0 !important; }
+  .no-print { display: none !important; }
+}
+
+/* ========== Glossary 术语高亮 ========== */
+.glossary-term{border-bottom:1px dotted #5b5bd6;cursor:pointer;color:#5b5bd6;transition:background .15s}
+.glossary-term:hover{background:#eef0ff;border-radius:3px}

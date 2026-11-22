@@ -1,0 +1,37 @@
+{
+  "name": "alembic",
+  "version": "1.18.4",
+  "repository": "sqlalchemy/alembic",
+  "tag": "rel_1_18_4",
+  "commit": "766b5ee98e0aeea85a18f272a1ac813712ee0697",
+  "license": "MIT",
+  "notice_file": "LICENSE",
+  "notice_sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc",
+  "upstream_notice_file": "LICENSE-upstream",
+  "upstream_notice_sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc",
+  "notice_byte_identical": true,
+  "notice_newline_only_equal": true,
+  "source_url": "https://codeload.github.com/sqlalchemy/alembic/zip/766b5ee98e0aeea85a18f272a1ac813712ee0697",
+  "archive_sha256": "47cad7582675a01045e4de5044373a87b73ee15a4bbabbbc6f2661183ce2c9f8",
+  "installed_original_source_matches": {
+    "alembic/operations/ops.py": {
+      "upstream_sha256": "a1f6c79117999195f69fd9570da20f96b29ed94d66c2042964d8446ee0b842b3",
+      "installed_sha256": "a1f6c79117999195f69fd9570da20f96b29ed94d66c2042964d8446ee0b842b3",
+      "byte_identical": true,
+      "newline_only_equal": true
+    },
+    "alembic/operations/base.py": {
+      "upstream_sha256": "b9ba6fd470e89748349ee2e2d1bf3eb8defe1c455167a9aaf1aaef2bd106a348",
+      "installed_sha256": "b9ba6fd470e89748349ee2e2d1bf3eb8defe1c455167a9aaf1aaef2bd106a348",
+      "byte_identical": true,
+      "newline_only_equal": true
+    },
+    "alembic/ddl/impl.py": {
+      "upstream_sha256": "214df21c5548defd101c4c0d2ff2d23753d1a4f1749f4f4d145a916645bceb01",
+      "installed_sha256": "214df21c5548defd101c4c0d2ff2d23753d1a4f1749f4f4d145a916645bceb01",
+      "byte_identical": true,
+      "newline_only_equal": true
+    }
+  },
+  "modifications": "No upstream source copied or modified. Existing aliased/exists/update/transactions/inspector and Alembic add_column/create_index/batch operations used; nullable deck owner and native Form creation integrated. No added dependency or version change. Windows installed CRLF originals and fixed GitHub LF originals both preserved; newline-normalized comparison is not byte-identical claim."
+}

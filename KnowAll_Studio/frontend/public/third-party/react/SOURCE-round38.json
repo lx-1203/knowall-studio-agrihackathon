@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/facebook/react",
+  "commit": "f1338f8080abd1386454a10bbf93d67bfe37ce85",
+  "adoption": "Native useRef/useEffect mounted guard prevents late mutation starting reads after unmount. No copied code/upstream modifications",
+  "originals": [
+    {
+      "file": "LICENSE",
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "file": "packages/react/src/ReactHooks.js",
+      "sha256": "55d39161ba7caad85558f9dfec5d3ae6d7e409b9fbae6164fc26229b7fbacde1"
+    }
+  ],
+  "license": "MIT",
+  "version": "18.3.1"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "dequal",
+  "version": "2.0.3",
+  "license": "MIT",
+  "repository": "lukeed/dequal",
+  "resolved": "https://registry.npmmirror.com/dequal/-/dequal-2.0.3.tgz",
+  "integrity": "sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "306fa513e39b23a6e8747520de761809d206b99800ef41907b530226574c59ae",
+      "source": "frontend/node_modules/dequal/license"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/index.js": "3275d8ab222476b133728732ab891a246b2ca032827593139a2c5ea032ac32f1",
+    "dist/index.min.js": "1d9cb564dfac1a340257451e84178ff0c4193a50c800443a8f37c44ca623be51",
+    "dist/index.mjs": "55841ec4ce25d76ccb43d18bfe3056f2ba0ce49afc58e3446055b1bd2c7376af",
+    "lite/index.js": "8c9976b5b9fa179d8e6dd11f213d63f2295d8990b0b99a49b3c363d2130f7671",
+    "lite/index.min.js": "137be7971993e7c62805efdd8a3f6c811830115df2c8c9bf3ef0f569f53b9073",
+    "lite/index.mjs": "49ff561397669f6e0707d9eb8542a6fedad14e7930cad610538e596129dd41fe"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "pdf_integration": {
+    "source_files_sha256": {
+      "dist/index.js": "3275d8ab222476b133728732ab891a246b2ca032827593139a2c5ea032ac32f1",
+      "dist/index.min.js": "1d9cb564dfac1a340257451e84178ff0c4193a50c800443a8f37c44ca623be51",
+      "dist/index.mjs": "55841ec4ce25d76ccb43d18bfe3056f2ba0ce49afc58e3446055b1bd2c7376af",
+      "lite/index.js": "8c9976b5b9fa179d8e6dd11f213d63f2295d8990b0b99a49b3c363d2130f7671",
+      "lite/index.min.js": "137be7971993e7c62805efdd8a3f6c811830115df2c8c9bf3ef0f569f53b9073",
+      "lite/index.mjs": "49ff561397669f6e0707d9eb8542a6fedad14e7930cad610538e596129dd41fe"
+    },
+    "upstream_modifications": []
+  }
+}

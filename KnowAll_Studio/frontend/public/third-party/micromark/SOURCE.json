@@ -1,0 +1,43 @@
+{
+  "name": "micromark",
+  "version": "4.0.2",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark",
+  "resolved": "https://registry.npmmirror.com/micromark/-/micromark-4.0.2.tgz",
+  "integrity": "sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0abeeca43ffae89b3d911da05de284f4ea6b80bde67ee8f30d7bc9655f4dad97",
+    "stream.js": "040c727c5b7bbd3ed640ea8f3e978b5bfee30df89f55246ad27fd82e4094e0a1",
+    "dev/index.js": "c7863864ee2ff0c143e74a0375f99658d9ea6d777ee08b8153d9c09d57e594dd",
+    "dev/stream.js": "bfb9f473d4d5aa3a9548480732740063c3c8fc99a746129596aaac27c5d6c384",
+    "lib/compile.js": "8bf26920007f3a8886c120cd863872d1372d30ccee99bfb549a15135a698e471",
+    "lib/constructs.js": "afecd299e4b5e7edb3ecba007000c311ed2b7c86e4e28729f9783da9021da2cf",
+    "lib/create-tokenizer.js": "fb3354e4cf38590a70e83f8556e96d717800b4f20e4e30949ae50d8c36ed09d1",
+    "lib/parse.js": "a8e110b17213a26a212332b2c8c39d31c302735c810bb0078e00b752f00552d9",
+    "lib/postprocess.js": "0faf397c79cefaa71f92b00aa11c5b2e954aa7560ceb1c93d85d21853136b5d6",
+    "lib/preprocess.js": "b582f16d9bc04d93d388004544be9c5293fda614eb86f8d02b97c3e57b9409e1",
+    "lib/initialize/content.js": "a1e1ad9cb372cc3ad2caa172de2f0658a9d38cde01a3f1109041a8b1ea83345e",
+    "lib/initialize/document.js": "a27b0a34fe26d7000ed4e5dfbde302a3dd01eb01d20aaa74c2033694b7b9cac8",
+    "lib/initialize/flow.js": "36a507211b00526d6ec1e9d9cca7547d26a5b01db61bb6d0d94d625d2babe66f",
+    "lib/initialize/text.js": "c0e5b3edbad427ce44aac1b33ed78361c85fc521e52e534cdd43873a0d8e7982",
+    "dev/lib/compile.js": "b833accfe97929ec3448503cf1f086b923d48e6303b51d7dbdd86c03f8fbb76d",
+    "dev/lib/constructs.js": "4ea13a4a84bb7ef17d38121ffd79263829222370aa2bc1eaf99db016ac9ca5d4",
+    "dev/lib/create-tokenizer.js": "3db90e9fc5908dd92648b631dbd689a268d955f03b43c39db3542fa2d7e5280b",
+    "dev/lib/parse.js": "ae9cf9fc82bcf90bec3b26e35b82aae65a2f532e11b0a2432ff0d905d1b7904b",
+    "dev/lib/postprocess.js": "19235517bce642e601323905abee5412cb3f5c8a5e997084a23f30ac7b4da665",
+    "dev/lib/preprocess.js": "e8d45ad4b25f9a2700fe5ebaac62b053282c8ef06b6c332ee0a8c536b35036c0",
+    "dev/lib/initialize/content.js": "31089bf9723fc4cda1d965c8d59b0440c34e657553cc7a25ca1fcca68a724e0e",
+    "dev/lib/initialize/document.js": "a21a34ddda07cd33f5c0333fadfca0b5da8b41e07e07d208a21fa37b6e337718",
+    "dev/lib/initialize/flow.js": "7b94046af28ffb28bfd60e70eb183066663cd3875e03393a7acaa92dba9af1e9",
+    "dev/lib/initialize/text.js": "5b13ee844b759a68e6c559eaf9248da10e6c25002e3a0ff37d5bd1834eec8714"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

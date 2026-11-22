@@ -1,0 +1,76 @@
+{
+  "name": "rehype-katex",
+  "version": "7.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex",
+  "resolved": "https://registry.npmmirror.com/rehype-katex/-/rehype-katex-7.0.1.tgz",
+  "integrity": "sha512-OiM2wrZ/wuhKkigASodFoo8wimG3H12LWQaH8qSPVJn9apWKFSH3YOCtbKpBorTVw/eI7cuT21XBbvwEswbIOA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "cb992262f361a5359e6771c28740d33c7041e15332ae8537fae40538992591a9",
+      "source": "docs\\open-source-integration\\round-06-upstream-rehype-katex-license.txt"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "ff503a9bd25827d5d77b2bc2ef6a5cfc830c24b217ebcc0613484fe513001de7",
+    "lib/index.js": "54d3d2c7df56a9e35a53a437a11bc92e70d7c7a4e7ee29ef2cf30852555f6f5c"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "npm_gitHead": "88a9497e1ede93b958237c85edbf5651faeca7af",
+  "learning_content_integration": {
+    "fixed_version": "7.0.1",
+    "fixed_commit": "88a9497e1ede93b958237c85edbf5651faeca7af",
+    "repository": "https://github.com/remarkjs/remark-math",
+    "upstream_modifications": [],
+    "usage": "Native existing parser/plugin, shared component plus lazy React wrapper; no upstream algorithm copied or new dependency",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/88a9497e1ede93b958237c85edbf5651faeca7af/license",
+        "sha256": "cb992262f361a5359e6771c28740d33c7041e15332ae8537fae40538992591a9",
+        "installed_exact": false
+      },
+      {
+        "file": "packages/rehype-katex/readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/88a9497e1ede93b958237c85edbf5651faeca7af/packages/rehype-katex/readme.md",
+        "sha256": "ffedc6b05d96c8ed9ab260f149c4a81a7e4fa5ddf2a4fc8cc894b53f280f0d90",
+        "installed_exact": true
+      },
+      {
+        "file": "packages/rehype-katex/lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/88a9497e1ede93b958237c85edbf5651faeca7af/packages/rehype-katex/lib/index.js",
+        "sha256": "54d3d2c7df56a9e35a53a437a11bc92e70d7c7a4e7ee29ef2cf30852555f6f5c",
+        "installed_exact": true
+      }
+    ]
+  },
+  "material_content_integration": {
+    "fixed_version": "7.0.1",
+    "fixed_commit": "88a9497e1ede93b958237c85edbf5651faeca7af",
+    "repository": "https://github.com/remarkjs/remark-math",
+    "upstream_modifications": [],
+    "usage": "Existing native module reused for material text, REST reply, chapter question/feedback/notes/cards and material knowledge; original payloads untouched",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/88a9497e1ede93b958237c85edbf5651faeca7af/license",
+        "sha256": "cb992262f361a5359e6771c28740d33c7041e15332ae8537fae40538992591a9",
+        "installed_exact": false
+      },
+      {
+        "file": "packages/rehype-katex/readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/88a9497e1ede93b958237c85edbf5651faeca7af/packages/rehype-katex/readme.md",
+        "sha256": "ffedc6b05d96c8ed9ab260f149c4a81a7e4fa5ddf2a4fc8cc894b53f280f0d90",
+        "installed_exact": true
+      },
+      {
+        "file": "packages/rehype-katex/lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/88a9497e1ede93b958237c85edbf5651faeca7af/packages/rehype-katex/lib/index.js",
+        "sha256": "54d3d2c7df56a9e35a53a437a11bc92e70d7c7a4e7ee29ef2cf30852555f6f5c",
+        "installed_exact": true
+      }
+    ]
+  }
+}

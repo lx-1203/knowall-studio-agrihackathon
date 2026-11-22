@@ -1,0 +1,21 @@
+{
+  "name": "hast-util-is-element",
+  "version": "3.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/hast-util-is-element",
+  "resolved": "https://registry.npmmirror.com/hast-util-is-element/-/hast-util-is-element-3.0.0.tgz",
+  "integrity": "sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\hast-util-is-element\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "492b2e817d4dfed895a0c21d1796c5b8ad7bba77d34db4eac5f887a3e6b15e2c",
+    "lib/index.js": "b0d0daa95c5f4b870c2cdae20576277784bbfbf1a22520757cd6e0ba22c91428"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

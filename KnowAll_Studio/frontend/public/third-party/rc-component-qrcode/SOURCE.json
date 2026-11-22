@@ -1,0 +1,37 @@
+{
+  "name": "@rc-component/qrcode",
+  "version": "1.1.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/qrcode.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@rc-component/qrcode/-/qrcode-1.1.3.tgz",
+  "integrity": "sha512-aGv6alnn4HbDEsURzKP+jv13rbi1VxmAYfBNZr5GKF1iohMNWy5tAVoJ1E3cOvzMB1kbUPvCXchM6zSFlRGPhA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "4973f756e858531bdae451f98054278dabd2ef50fc4d3dbccc084ee35964ad3d",
+      "source": "frontend/node_modules/@rc-component/qrcode/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "a32bb8b30ec107df323f6c585b0a8b1fd84454c661ce697131bd620e848af922",
+    "es/index.js": "7950cfd76c6de80ae795fdc245b6f8378ec48836d82fdb7a24b0b29a4744b5ed",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/QRCodeCanvas.js": "201ee6970240c0cb9fb7a84435962d48aeb622c9512928bb93ebb36fc9aedaf5",
+    "es/QRCodeSVG.js": "5025cbdbaa5927d6e0296ab2a8e1533c90185bd3d1c2f48b5aad77f897772feb",
+    "es/utils.js": "d230c4d55fe1b6ddc46a549f619cd42c0de500ae9af2486bd72434b5e30d1167",
+    "lib/index.js": "93847edf2d07595c55d76f3d7bfffe3c8a509655d4fcb5c9b5e75a3acac69f0c",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/QRCodeCanvas.js": "ae7a9cbd6c854b4f4050343b7b5c8aa331a5f6dc2099c3294ac49ff9f702006a",
+    "lib/QRCodeSVG.js": "b642ae382673dd2e3c6dcc7c458c89890ae630dde6660b6a7275afe30be7e246",
+    "lib/utils.js": "16b44116f71a12b4d4917ad3dfe5f61f074f09c4a4498e9751e5a6c7db8b0ef4",
+    "lib/hooks/useQRCode.js": "88870eb9b88792d7c53ca00a2d051ecf7030772829c9fcbcc02bb5726b70902c",
+    "lib/libs/qrcodegen.js": "b898c10531fa9d912dfa327924c10b18c8e081b8001a82a4576d4fe2f6e0ef41",
+    "es/hooks/useQRCode.js": "fd9e7cdf0227a8dcf1127fb5eafaaf1edb165b3ca179fcfffc840824ea57b648",
+    "es/libs/qrcodegen.js": "72f1ce54fa6b946d488acbc8f55305b19d6cd183425c02eab0f3bacb0ea0a375"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

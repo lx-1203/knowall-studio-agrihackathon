@@ -1,0 +1,20 @@
+{
+  "name": "micromark-util-combine-extensions",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-combine-extensions",
+  "resolved": "https://registry.npmmirror.com/micromark-util-combine-extensions/-/micromark-util-combine-extensions-2.0.1.tgz",
+  "integrity": "sha512-OnAnH8Ujmy59JcyZw8JSbK9cGpdVY44NKgSM7E9Eh7DiLS2E9RNQf0dONaGDzEG9yjEl5hcqeIsj4hfRkLH/Bg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-util-combine-extensions\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "b2aaec9f3549d92afb610d41b4f5ab73293fbeab0d2b6080ad7a8bd3518e46e1"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

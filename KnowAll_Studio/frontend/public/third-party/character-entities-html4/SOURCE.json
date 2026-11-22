@@ -1,0 +1,20 @@
+{
+  "name": "character-entities-html4",
+  "version": "2.1.0",
+  "license": "MIT",
+  "repository": "wooorm/character-entities-html4",
+  "resolved": "https://registry.npmmirror.com/character-entities-html4/-/character-entities-html4-2.1.0.tgz",
+  "integrity": "sha512-1v7fgQRj6hnSwFpq1Eu0ynr/CDEw0rXo2B61qXrLNdHZmPKgb7fqS1a2JwF0rISo9q77jDI8VMEHoApn8qDoZA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+      "source": "frontend\\node_modules\\character-entities-html4\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "e577a2808b49682ec5815136707399e2f822b122efa3b6e7c856a12a73413ffd"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

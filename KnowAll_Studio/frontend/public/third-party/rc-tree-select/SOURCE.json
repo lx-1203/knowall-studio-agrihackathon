@@ -1,0 +1,56 @@
+{
+  "name": "rc-tree-select",
+  "version": "5.27.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/tree-select.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-tree-select/-/rc-tree-select-5.27.0.tgz",
+  "integrity": "sha512-2qTBTzwIT7LRI1o7zLyrCzmo5tQanmyGbSaGTIf7sYimCklAToVVfpMC6OAldSKolcnjorBYPNSKQqJmN3TCww==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "6db0a962e5898831124a7e7465d4cf3ad849d121f97a618046b7a7f41fd2b031",
+      "source": "frontend/node_modules/rc-tree-select/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "es/index.js": "ed1cbe46c77c4e06d79a1350ccdc84011e2c4c833cb7fddecf60ba08148772ba",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/LegacyContext.js": "1cbf72ec06171cf23abf1aca786c2be83e1bbeea54d1ef0b931705eaad805c54",
+    "es/OptionList.js": "8bb432954a119cb366b3f7d0a2ca8e1b1f304042789a0fdd0e9edbeb4f2338dd",
+    "es/TreeNode.js": "b2a3faedde43e82cb26c230ce5d82ceb36e807be91901dc2bd60ffe64cf74818",
+    "es/TreeSelect.js": "bb8d6e6192b96fe275aca673128fc759586863debf508013cdae69e81622ebef",
+    "es/TreeSelectContext.js": "527f46615d4cddef7d20e5b6fbc58dd203b9fd701b9e5b0022948472dd9429fe",
+    "lib/index.js": "025810979324a029df18c309c31a6a981dac0c9bfa544fd19095f0164c416afe",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/LegacyContext.js": "1606220a253af320d8ef9d343c63fc72e04c094c95a1989ba87c1a8609947130",
+    "lib/OptionList.js": "8c43e76ae259738f85653fe02658166586b44fca997c916899207132b93d416f",
+    "lib/TreeNode.js": "ddd51c859241b0bed15b367ec18f9736465be247040885d835602b1cc95edc4b",
+    "lib/TreeSelect.js": "a5cdb61b2b284249353b8d9da4a5a8cee5d99cfc81a1ca2d3afd604bfae3a811",
+    "lib/TreeSelectContext.js": "25e290b643cb8098ec1d48c34f34346886409e8de696cc8c9679b820563d4257",
+    "lib/hooks/useCache.js": "40a078dc66e6c95a835f378c328478d3d81fed2804c92a65f3e0228bd5f35261",
+    "lib/hooks/useCheckedKeys.js": "5e6901dcdf5e9a54ce6f19fac68117045f2c67de32d09f47e1df89e7b93da1a0",
+    "lib/hooks/useDataEntities.js": "11a8ced1933948350f6dc8912aa3429d166da714aa9b50455529904b537377d7",
+    "lib/hooks/useFilterTreeData.js": "0d2c5a3a49757c55a0e97f6443efd56cb54b9e0b72e37db494f0433dcb0aa19a",
+    "lib/hooks/useRefFunc.js": "8b405977072872228b3447bc574fc404e62ebcbc3bd1746a59397536abfe5dc9",
+    "lib/hooks/useTreeData.js": "6fe7d7ded3b1a505a35001f6201f6e084bf1ab86a454efeda0c0504ce0375ff0",
+    "lib/utils/legacyUtil.js": "99ccc932f50e912a8e4022fdce09a0c56d0bc6d36e6a86918604a98c7e83b0e5",
+    "lib/utils/strategyUtil.js": "a6d6b38bff214a9699a1f3856bce0ee67731b9da4297357f222feecc78ab97bf",
+    "lib/utils/valueUtil.js": "2a8c855984d26190fba5a4e41378fe4ab140deeb7da389aac81fa28201ce0bd0",
+    "lib/utils/warningPropsUtil.js": "452fef13782e6243bfd903b7feaa63b03ab2c2f85842192fcdafb2511bf5eac1",
+    "es/hooks/useCache.js": "2a69c73d0a03a91249a6161963e23189151ea7150325c4ee721ba46f1e3e491c",
+    "es/hooks/useCheckedKeys.js": "3e8eff70e0526f77ddacc530944136435060c006a7b71766a748513b6f7925d8",
+    "es/hooks/useDataEntities.js": "e8d3c6a4f5c375b431632229dd5a34bce9bffba86c4cd211025f4de08abcb59b",
+    "es/hooks/useFilterTreeData.js": "96b29647bfcae9dcad5caeaa93cdd52648639c14534bd0c38a597097194b0194",
+    "es/hooks/useRefFunc.js": "42ff8b612d64db78660c03cd30906f957f944cd0e00637d90656919a4ed3dc7e",
+    "es/hooks/useTreeData.js": "59a8af7268fd20869a0d7f562c2379d0896b5a8c779498d6be201ea70cad8de7",
+    "es/utils/legacyUtil.js": "d82b83663934586e07fce9da0dbed371759dd57452225e2641fee3a053f4e990",
+    "es/utils/strategyUtil.js": "7f14a878dcfb89878dd493f77389b009b4604968cffdd9dff9c4661e3b80e133",
+    "es/utils/valueUtil.js": "38788cee442351186b0f3fb432bba68520b2c24101f8df7b3cc1bf64945fc3d8",
+    "es/utils/warningPropsUtil.js": "1fc90f83f5b64353cf1623568fc52871dcc9b43b8c25869147a448dcbeddbb9c"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

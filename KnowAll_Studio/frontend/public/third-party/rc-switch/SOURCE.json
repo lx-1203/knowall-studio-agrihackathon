@@ -1,0 +1,25 @@
+{
+  "name": "rc-switch",
+  "version": "4.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/switch.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-switch/-/rc-switch-4.1.0.tgz",
+  "integrity": "sha512-TI8ufP2Az9oEbvyCeVE4+90PDSljGyuwix3fV58p7HV2o4wBnVToEyomJRVyTaZeqNPAp+vqeo4Wnj5u0ZZQBg==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-switch/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "d6ce71c25e15aa84136c62f7c813ad167024665a173d95eba5854ffe90a27da7",
+    "es/index.js": "a69b8af0cc189608824ef1fc8cc979517526f29e8a1fdf1fb025c88ea8551084",
+    "lib/index.js": "c4984a965f1b91ca7ed97ac596391095b652e5adad7f9260474bb5a3ef968ed0"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

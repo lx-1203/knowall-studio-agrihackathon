@@ -1,0 +1,51 @@
+{
+  "repository": "https://github.com/ant-design/ant-design",
+  "commit": "14f397749dca177e5495dc9d1c2f7debfb639545",
+  "version": "5.29.3",
+  "license": "MIT",
+  "adoption": "Existing native AbortController GET config and LoadFailure/Alert/Button/Skeleton; minimal Settings adapter; no copied upstream code/new dependency",
+  "originals": [
+    {
+      "name": "antd",
+      "commit": "14f397749dca177e5495dc9d1c2f7debfb639545",
+      "repository": "https://github.com/ant-design/ant-design",
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ant-design/ant-design/14f397749dca177e5495dc9d1c2f7debfb639545/LICENSE",
+      "sha256": "3c82654bb472ebbcacc4c1ff00f94aa8c60c4b7ee011b16bafcbacecc3703458",
+      "bytes": 1099,
+      "upstream_modification": false,
+      "installed_match": true,
+      "shipped_match": true
+    },
+    {
+      "name": "antd",
+      "commit": "14f397749dca177e5495dc9d1c2f7debfb639545",
+      "repository": "https://github.com/ant-design/ant-design",
+      "file": "components/alert/index.tsx",
+      "url": "https://raw.githubusercontent.com/ant-design/ant-design/14f397749dca177e5495dc9d1c2f7debfb639545/components/alert/index.tsx",
+      "sha256": "bf533233805813dc68224abb19b145004f9cbfbb4c7c006cacc7e2f1b1a03ff4",
+      "bytes": 335,
+      "upstream_modification": false
+    },
+    {
+      "name": "antd",
+      "commit": "14f397749dca177e5495dc9d1c2f7debfb639545",
+      "repository": "https://github.com/ant-design/ant-design",
+      "file": "components/button/button.tsx",
+      "url": "https://raw.githubusercontent.com/ant-design/ant-design/14f397749dca177e5495dc9d1c2f7debfb639545/components/button/button.tsx",
+      "sha256": "38718bff8b19a0209fe865abc36021ad1a9e152c85c8eef079aa2aab8a2fbdb5",
+      "bytes": 12945,
+      "upstream_modification": false
+    },
+    {
+      "name": "antd",
+      "commit": "14f397749dca177e5495dc9d1c2f7debfb639545",
+      "repository": "https://github.com/ant-design/ant-design",
+      "file": "components/skeleton/index.tsx",
+      "url": "https://raw.githubusercontent.com/ant-design/ant-design/14f397749dca177e5495dc9d1c2f7debfb639545/components/skeleton/index.tsx",
+      "sha256": "1d33a6dc71e657f74187a1c33d3d56e5a9dd60d01f6bc8e8054e51171e9116f7",
+      "bytes": 111,
+      "upstream_modification": false
+    }
+  ]
+}

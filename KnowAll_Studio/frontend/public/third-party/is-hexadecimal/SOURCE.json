@@ -1,0 +1,22 @@
+{
+  "name": "is-hexadecimal",
+  "version": "2.0.1",
+  "repository": "wooorm/is-hexadecimal",
+  "license": "MIT",
+  "integrity": "sha512-DgZQp241c8oO6cA1SbTEWiXeoxV42vlcJxgH+B3hi1AiqqKruZR3ZGF8In3fj4+/y/7rHvlOZLZtgJ/4ttYGZg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\is-hexadecimal\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "3e64e64d7287bd31e59069ce91c397be4901ffcf3949785c3db9e30ba7918439"
+    },
+    "upstream_modifications": []
+  }
+}

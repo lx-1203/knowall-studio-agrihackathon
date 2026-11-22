@@ -1,0 +1,4 @@
+Adapted portions of the document parsing and text chunking modules derive from Tencent WeKnora.
+Upstream: https://github.com/Tencent/WeKnora
+Local reference checkout: bccb4b151bae403508da77fbb174efc79dc47c1a
+The accompanying upstream license and its third-party notices apply to their respective components.

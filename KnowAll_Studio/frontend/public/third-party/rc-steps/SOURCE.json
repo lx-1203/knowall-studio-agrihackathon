@@ -1,0 +1,31 @@
+{
+  "name": "rc-steps",
+  "version": "6.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": " git+ssh://git@github.com/react-component/steps.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-steps/-/rc-steps-6.0.1.tgz",
+  "integrity": "sha512-lKHL+Sny0SeHkQKKDJlAjV5oZ8DwCdS2hFhAkIjuQt1/pB81M0cA0ErVFdHq9+jmPmFw1vJB2F5NBzFXLJxV+g==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-steps/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "c8dcdf0ba8892eb9401aa31e1ca708ff56996f2c8793c8c414729f6cf530f66d",
+    "es/index.js": "367481a069140aee9abfcc16e63a98b74fedabc21ea22fbdd12b05b0180864af",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/Step.js": "b8e31681f5290e7e64e5f235c9286608e54af7b92e3da1f1ab43b5ef4d690e0b",
+    "es/Steps.js": "43101e3ae82a6a49ccc73fb3fe4186b0b489ff7c0694816f0ab2bf9400a7d93a",
+    "lib/index.js": "6b5c09e5d2616bf01eefc4eca0cfb0f083ab27a7566606829caef8b037f3faa4",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/Step.js": "3bb5823636c9644c4d9d550f6d12e0e5a6e91a6fb53a55bd9dcf11b07c15c277",
+    "lib/Steps.js": "e9cc87e50bff77cba20aa6de7a7da0508c58c539c6907ce0de96ef1098486f4f"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

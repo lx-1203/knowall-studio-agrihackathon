@@ -1,0 +1,24 @@
+{
+  "name": "make-event-props",
+  "version": "2.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojtekmaj/make-event-props.git"
+  },
+  "resolved": "https://registry.npmmirror.com/make-event-props/-/make-event-props-2.0.0.tgz",
+  "integrity": "sha512-G/hncXrl4Qt7mauJEXSg3AcdYzmpkIITTNl5I+rH9sog5Yw0kK6vseJjCaPfOXqOqQuPUP89Rkhfz5kPS8ijtw==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "8f57f140e524175547525b0992d69124c966260d7183c15155d3b66585b34405",
+      "source": "frontend/node_modules/make-event-props/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/index.js": "40a11997933543b9e0865a34c8df987811b05f6a5d51f526c7f26b636813dd8c",
+    "dist/index.spec.js": "2fe3129186cbe9df22b1e4e2907e83f8ae2bc19caae24124970379e2ae3034f3"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only."
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "repo": "https://github.com/sqlalchemy/sqlalchemy",
+    "tag": "rel_2_0_51",
+    "version": "2.0.51",
+    "source": "LICENSE",
+    "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/LICENSE",
+    "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9",
+    "target": "KnowAll_Studio/backend/third_party/sqlalchemy-round53/LICENSE",
+    "license": "MIT",
+    "modifications": "none; reference only, use installed native API"
+  },
+  {
+    "repo": "https://github.com/sqlalchemy/sqlalchemy",
+    "tag": "rel_2_0_51",
+    "version": "2.0.51",
+    "source": "lib/sqlalchemy/sql/selectable.py",
+    "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/sql/selectable.py",
+    "sha256": "93891d6d91c86304813c331ef17bef7291f392d709500bfa9989ba083b9ee515",
+    "target": "KnowAll_Studio/backend/third_party/sqlalchemy-round53/UPSTREAM-REFERENCE.txt",
+    "license": "MIT",
+    "modifications": "none; reference only, use installed native API"
+  }
+]

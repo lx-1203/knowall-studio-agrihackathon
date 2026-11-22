@@ -1,0 +1,33 @@
+{
+  "name": "rc-textarea",
+  "version": "1.10.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/textarea.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-textarea/-/rc-textarea-1.10.2.tgz",
+  "integrity": "sha512-HfaeXiaSlpiSp0I/pvWpecFEHpVysZ9tpDLNkxQbMvMz6gsr7aVZ7FpWP9kt4t7DB+jJXesYS0us1uPZnlRnwQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "2481b61123d4f8be84e11847d4bc9684f2aa073d1d2a3275e36fdb7f1cff019a",
+      "source": "frontend/node_modules/rc-textarea/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "2cb5b82299eafa060d1aaf82f676d30d4385caa27c51172c7b028c2dc050634c",
+    "es/calculateNodeHeight.js": "4e3f5fc4778f4d017062b465d0abd6f76baaea5f93fbeebd00bcb33e27318215",
+    "es/index.js": "13f3ad8c7619a0a774fb30a6557bbaf6cf87bc4db510cccab6b05affdb112bac",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/ResizableTextArea.js": "2c576729452681ac97b90fc31e8296c6e6e9940dbc4a7ed939c5da3ebd1c14d1",
+    "es/TextArea.js": "842d9cc6e5708f6d438b87c8d232b3a2492c99c8ce0553002dff3b893b829555",
+    "lib/calculateNodeHeight.js": "cd76fce33d251f55455255c8b745e653fff7f161afc0a905de9fad09e2f44390",
+    "lib/index.js": "822a0d5654a2986ca8d507eaaa360464633774f13e179eb8c3cc28bdab2e37d9",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/ResizableTextArea.js": "fb8c6f8d6431949e3fdf95f0959c25214b973d8ed2ad760c15804cb4503cc79c",
+    "lib/TextArea.js": "8a561f09dd0f98a71ec93c2d51532b34525e8b96312a8ee52c77a796466868dc"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

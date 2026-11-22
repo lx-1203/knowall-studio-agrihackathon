@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/agronholm/anyio/4.13.0/LICENSE",
+    "version": "4.13.0",
+    "source": "LICENSE",
+    "local": "KnowAll_Studio/backend/third_party/anyio/ROUND51-LICENSE",
+    "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0",
+    "modifications": "None; provenance only. Runtime native APIs, no copied algorithm."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/agronholm/anyio/4.13.0/src/anyio/_core/_tasks.py",
+    "version": "4.13.0",
+    "source": "src/anyio/_core/_tasks.py",
+    "local": "KnowAll_Studio/backend/third_party/anyio/ROUND51-src_anyio__core__tasks.py",
+    "sha256": "a5507b2ba000ba5cd433c6205c07aa3591b8e274b26756d82631fc1b39c2d342",
+    "modifications": "None; provenance only. Runtime native APIs, no copied algorithm."
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "name": "hastscript",
+  "version": "9.0.1",
+  "repository": "syntax-tree/hastscript",
+  "license": "MIT",
+  "integrity": "sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\hastscript\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "c4fbf2ca6ae755dd3821e5f1ebe3fdbcd5df7aae6ec2bd50447d96ffe36614f5",
+      "lib/automatic-runtime-html.js": "052f84a7191a317b418961d667e2289f140ae76c5e6700466d33628e100752af",
+      "lib/automatic-runtime-svg.js": "6161914d5353e3d084442cad8ae3a1858e44f1c93d2650c8ce5ed40b4b90634b",
+      "lib/create-automatic-runtime.js": "34e68b4ee837919ebb369e927090609bd68cef749e8505786fc26ac02da9e980",
+      "lib/create-h.js": "6496dd7cca2c50351ccdc474cb2c8d788ee89325dc8cde54de81e0df4a45267a",
+      "lib/index.js": "54e6abdaf206033fcff422b71e7c8087e27bd09f29f72bdd4ceabeb84e4ea647",
+      "lib/jsx-automatic.js": "40309c8178adf802e338426cdcda5bbe9acecc3846821c00a073d1b8bfe8f65a",
+      "lib/jsx-classic.js": "40309c8178adf802e338426cdcda5bbe9acecc3846821c00a073d1b8bfe8f65a",
+      "lib/svg-case-sensitive-tag-names.js": "32f46483617509daf5cd801d1ceb732338d0fe2f418d3bb7ad05987fbbbb4c92"
+    },
+    "upstream_modifications": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "rc-motion",
+  "version": "2.9.5",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/motion.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-motion/-/rc-motion-2.9.5.tgz",
+  "integrity": "sha512-w+XTUrfh7ArbYEd2582uDrEhmBHwK1ZENJiSJVb7uRxdE7qJSYjbO2eksRXmndqyKqKoYPc9ClpPh5242mV1vA==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "2481b61123d4f8be84e11847d4bc9684f2aa073d1d2a3275e36fdb7f1cff019a",
+      "source": "frontend/node_modules/rc-motion/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "es/context.js": "f3eae649b844f602f4a824ed7803e266c0ef147de41d2ff80be59517f2a75bee",
+    "es/CSSMotion.js": "06a1e64b3864603cee02fca6f2a83249fae992dbc990a640e365f23f9d10e43f",
+    "es/CSSMotionList.js": "6480255b94d4682bbed03f8e0c96a5179d8f553ecf0e2f7dd06ca0d4c5ea8af2",
+    "es/DomWrapper.js": "b749674d214d1022c314cac7f6de17aa187ca108575ec5e1bb814e3ee21a78a4",
+    "es/index.js": "d0956919f69d9c0d6d3b2e7b7f3debe08197786d0d517838ed783e6a48b3bbea",
+    "es/interface.js": "42fd15c96269be898efa056ef634a5e84c80b90acfec5394b9b0b76a40dee598",
+    "lib/context.js": "4e4dba27336873da1790dee8c2c12bfd96697b6d83294a336f84cd9a7bde84d4",
+    "lib/CSSMotion.js": "21f89792dc918e52ed4cd667ca45fca2354d7bcbf6770ac418df1813abe1f726",
+    "lib/CSSMotionList.js": "5f425271d6c98efe0516a214f618ec36175bd4119e75301a81afd1488cfb9ce4",
+    "lib/DomWrapper.js": "bdd1572b2f54b1779f8c1c4efd9262d52ae06898ef862cae7c2fda7921997206",
+    "lib/index.js": "6d87027e14a8678fbdbac8e771b8280e1f148340ad748c5ff5103482242a041d",
+    "lib/interface.js": "cce0ccc9f8caf56314a8143dde86252e88e9c0f73a8c1ffc7c3e5542de1cd129",
+    "lib/hooks/useDomMotionEvents.js": "315d01e90083fd3f14d29b21a89d2295d0c85a86c49d06cf45b6121e663ab6d5",
+    "lib/hooks/useIsomorphicLayoutEffect.js": "3398ac50c62074417868560da17dc4073a7d592ec5b0599b11f70fa3a36633da",
+    "lib/hooks/useNextFrame.js": "8188ec6ebef628bc64ec79c87f101ae6fb05ce270a42b321d9f35348ca5623df",
+    "lib/hooks/useStatus.js": "1ee84c1721f537f135e11580e370c2c753338be321a9372042c13d7bd6a05476",
+    "lib/hooks/useStepQueue.js": "72fe605b6e5c7d6c0341dc839237f1ff654f57241f2bc8df2b12183548a29695",
+    "lib/util/diff.js": "29cbf6ccd541027c3334dc0a00cf8f243b6bbcf1c5e0c5e946b43b42595fd195",
+    "lib/util/motion.js": "47e4fce93592558985dd3ad2271bc2ea02fbaf893591e2fa6fc2ae3f67e90242",
+    "es/hooks/useDomMotionEvents.js": "4b2e4d84ef4d3c309dc26fa45a0d6d768ab27427f13e79d6eb9f6a2e870a8a46",
+    "es/hooks/useIsomorphicLayoutEffect.js": "1c1c96b7316d4c2e2586c4b7087701356da9b5820d62510d768f6c31892d3a50",
+    "es/hooks/useNextFrame.js": "8fc038b84bb6556a23a1087eba1de75994489f3ad15733a08bb30300f66de4c7",
+    "es/hooks/useStatus.js": "91f455e6f07fd810dbdc72e481a5137a90f0c0a6412d3f55cb53e086e0f37925",
+    "es/hooks/useStepQueue.js": "78eee5cf17858955df2214dd8ea9fb4489c5713ab9f031e279a261867c121089",
+    "es/util/diff.js": "cf2b1c7d8a0be29fd824edd3d51a6e47c4257c9ca14212f0e932ba23d7a3f09b",
+    "es/util/motion.js": "815f9fe3d622859150573ff1d3af114c4d4e92a305859177b4e3a371c352a6c5"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

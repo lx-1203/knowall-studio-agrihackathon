@@ -1,0 +1,23 @@
+{
+  "name": "warning",
+  "version": "4.0.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BerkeleyTrue/warning.git"
+  },
+  "resolved": "https://registry.npmmirror.com/warning/-/warning-4.0.3.tgz",
+  "integrity": "sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "f657f99d3fb9647db92628e96007aabb46e5f04f33e49999075aab8e250ca7ce",
+      "source": "frontend/node_modules/warning/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "warning.js": "aa81a2a69f2e3a55f61b6207c9f04be140eee83ff064e4256932aee22402ad87"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only."
+}

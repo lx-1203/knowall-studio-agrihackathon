@@ -1,0 +1,36 @@
+{
+  "name": "rc-overflow",
+  "version": "1.5.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/overflow.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-overflow/-/rc-overflow-1.5.0.tgz",
+  "integrity": "sha512-Lm/v9h0LymeUYJf0x39OveU52InkdRXqnn2aYXfWmo8WdOonIKB2kfau+GF0fWq6jPgtdO9yMqveGcK6aIhJmg==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "2481b61123d4f8be84e11847d4bc9684f2aa073d1d2a3275e36fdb7f1cff019a",
+      "source": "frontend/node_modules/rc-overflow/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "es/context.js": "2f856a9980670fab90c008f9432eb3a43c8e915729570a4c84bcf3f966634847",
+    "es/index.js": "81a82d0ebbd6a256795fb2ec9faf65e3e348435600bf088edf076c481f850135",
+    "es/Item.js": "7e753239063b1748f8b22c063258f9024f7dadfdb38f934d68d4ab78932e7e59",
+    "es/Overflow.js": "ed75624f96655dfc1910552badaef22ae6a427bcaabcbaf7678f5ac6ee6fbb88",
+    "es/RawItem.js": "cd27a8940ec90e3bb9f1548f8a408e767025558090901de97bf02636e477da98",
+    "lib/context.js": "5e84809e8143d708d3903eab7456f8c3f4517acb1632bc22a0dd0746329af457",
+    "lib/index.js": "421aa66b14174fae3baea6ac7803fcdc07710dc388d20cba61f10dbd0bf1e3e3",
+    "lib/Item.js": "c597ba80fb249827e412faa86fb0382efd60ff1a346b282c1d1ec0eae1bfd48f",
+    "lib/Overflow.js": "e0ad05feeaa8a0977460ca45d8a1c921264dea15c56dd58edb5ff82bbd5b093d",
+    "lib/RawItem.js": "e4b03b6b2b725399a9edb22de6738ab16dd4fb97122e975b84018da77c629e0e",
+    "lib/hooks/channelUpdate.js": "f2c2f1fd9ce01394265c1d801b733a0ba581c26b7d5fbf9092860a137be1e17f",
+    "lib/hooks/useEffectState.js": "c8ca97eadbaa55b7e61c10b1971f0de93ff222ea2231bd86f704316ae32e3995",
+    "es/hooks/channelUpdate.js": "cd025930621971cbb3d74a6a99fdb7e7e276ad2d0eeeb606e25a07dab80dc033",
+    "es/hooks/useEffectState.js": "d2c2e403dfd94b35f8c2786d406d0f7468b6ae3afb9b4e152cf98cf09f0e0394"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

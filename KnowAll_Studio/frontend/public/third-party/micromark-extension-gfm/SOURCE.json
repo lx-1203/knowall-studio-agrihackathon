@@ -1,0 +1,20 @@
+{
+  "name": "micromark-extension-gfm",
+  "version": "3.0.0",
+  "license": "MIT",
+  "repository": "micromark/micromark-extension-gfm",
+  "resolved": "https://registry.npmmirror.com/micromark-extension-gfm/-/micromark-extension-gfm-3.0.0.tgz",
+  "integrity": "sha512-vsKArQsicm7t0z2GugkCKtZehqUm31oeGBV/KVSorWSy8ZlNAv7ytjFhvaryUiCUJYqs+NoE6AFhpQvBTM6Q4w==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\micromark-extension-gfm\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "66b05551c6efe3d6a1c75bca914c192139bc3c998fdb2b0d0784ab6685934bbc"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

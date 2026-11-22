@@ -1,0 +1,21 @@
+{
+  "name": "remark-rehype",
+  "version": "11.1.2",
+  "license": "MIT",
+  "repository": "remarkjs/remark-rehype",
+  "resolved": "https://registry.npmmirror.com/remark-rehype/-/remark-rehype-11.1.2.tgz",
+  "integrity": "sha512-Dh7l57ianaEoIpzbp0PC9UKAdCSVklD8E5Rpw7ETfbTl3FqcOOgq5q2LVDhgGCkaBv7p24JXikPdvhhmHvKMsw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\remark-rehype\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "995628e8b0f98e9f185dfec8570bed3d8c72a291eaf8d28c7b63495f29a85ed5",
+    "lib/index.js": "85f8d8985414613d2a64c4b6927e10ebd1edefe87a956190a1343dd833f689ef"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

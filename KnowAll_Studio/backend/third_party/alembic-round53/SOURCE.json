@@ -1,0 +1,24 @@
+[
+  {
+    "repo": "https://github.com/sqlalchemy/alembic",
+    "tag": "rel_1_18_4",
+    "version": "1.18.4",
+    "source": "LICENSE",
+    "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/LICENSE",
+    "sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc",
+    "target": "KnowAll_Studio/backend/third_party/alembic-round53/LICENSE",
+    "license": "MIT",
+    "modifications": "none; reference only, use installed native API"
+  },
+  {
+    "repo": "https://github.com/sqlalchemy/alembic",
+    "tag": "rel_1_18_4",
+    "version": "1.18.4",
+    "source": "alembic/operations/ops.py",
+    "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/alembic/operations/ops.py",
+    "sha256": "a1f6c79117999195f69fd9570da20f96b29ed94d66c2042964d8446ee0b842b3",
+    "target": "KnowAll_Studio/backend/third_party/alembic-round53/UPSTREAM-REFERENCE.txt",
+    "license": "MIT",
+    "modifications": "none; reference only, use installed native API"
+  }
+]

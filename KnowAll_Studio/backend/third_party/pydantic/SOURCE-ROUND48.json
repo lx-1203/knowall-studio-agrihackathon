@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/pydantic/pydantic",
+  "ref": "v2.13.4",
+  "version": "2.13.4",
+  "license": "MIT",
+  "obligation": "Ship complete original copyright and permission notice; original upstream modules unmodified, only project adapters use native APIs.",
+  "files": [
+    {
+      "source_file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/pydantic/pydantic/v2.13.4/LICENSE",
+      "saved": "KnowAll_Studio/backend/third_party/pydantic/LICENSE-ROUND48",
+      "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+    },
+    {
+      "source_file": "pydantic/main.py",
+      "url": "https://raw.githubusercontent.com/pydantic/pydantic/v2.13.4/pydantic/main.py",
+      "saved": "KnowAll_Studio/backend/third_party/pydantic/ROUND48-pydantic-main.py.txt",
+      "sha256": "35b842cfe92ef300e060b40c062ef93afee1cb075cf0b7b0037a1434867c2554"
+    },
+    {
+      "source_file": "pydantic/fields.py",
+      "url": "https://raw.githubusercontent.com/pydantic/pydantic/v2.13.4/pydantic/fields.py",
+      "saved": "KnowAll_Studio/backend/third_party/pydantic/ROUND48-pydantic-fields.py.txt",
+      "sha256": "6bc66125f23c143e934030fbf9c58c9b5657950bdad3031d4f6132e55bd57be3"
+    }
+  ]
+}

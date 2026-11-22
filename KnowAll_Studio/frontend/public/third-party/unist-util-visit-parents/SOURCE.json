@@ -1,0 +1,23 @@
+{
+  "name": "unist-util-visit-parents",
+  "version": "6.0.2",
+  "license": "MIT",
+  "repository": "syntax-tree/unist-util-visit-parents",
+  "resolved": "https://registry.npmmirror.com/unist-util-visit-parents/-/unist-util-visit-parents-6.0.2.tgz",
+  "integrity": "sha512-goh1s1TBrqSqukSc8wrjwWhL0hiJxgA8m4kFxGlQ+8FYQ3C/m11FcTs4YYem7V664AhHVvgoQLk890Ssdsr2IQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\unist-util-visit-parents\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "6e3e10026230a33197e56422a2d95fc1815528c0bde7c1c790fd1a733b04bd39",
+    "lib/color.js": "84d02ef62d60a8e4fc8529fa6725abb85729274a873afbb8d4d9fb317ae01135",
+    "lib/color.node.js": "34b9001e424a12a5a436293affcd0cf92533e120b77144c2b1f1ea39fb8d6d3a",
+    "lib/index.js": "8789a4f20d3e3c82bcaeec9628697752d662461bf6237ecfba61cfcc00f30bf7"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

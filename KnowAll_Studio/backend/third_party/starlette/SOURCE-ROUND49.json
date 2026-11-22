@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/Kludex/starlette",
+  "version": "1.2.0",
+  "license": "BSD-3-Clause",
+  "original_files": {
+    "LICENSE.md": {
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/LICENSE.md",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+      "saved": "LICENSE-ROUND49"
+    },
+    "starlette/responses.py": {
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/starlette/responses.py",
+      "sha256": "8e95e773bdb3718b3dffc789dd258e53a46b9a8781c98e98cfb3c36e69fea897",
+      "saved": "ROUND49-responses.py.txt"
+    }
+  },
+  "modifications": "None; native FileResponse reused via project adapter.",
+  "obligations": "Retain copyright/conditions/disclaimer in source and binary distributions; no endorsement.",
+  "runtime_file": "site-packages/starlette/responses.py",
+  "runtime_matches_fixed_source": true,
+  "pathlib_docs": "https://docs.python.org/3.13/library/pathlib.html",
+  "python": "3.13.13",
+  "sdk": "Existing project kaf.format.inspect_kaf reused; no parser or cryptography code copied."
+}

@@ -1,0 +1,21 @@
+{
+  "name": "mdast-util-gfm-task-list-item",
+  "version": "2.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-gfm-task-list-item",
+  "resolved": "https://registry.npmmirror.com/mdast-util-gfm-task-list-item/-/mdast-util-gfm-task-list-item-2.0.0.tgz",
+  "integrity": "sha512-IrtvNvjxC1o06taBAVJznEnkiHxLFTzgonUdy8hzFVeDun0uTjxxrRGVaNFqkU1wJR3RBPEfsxmU6jDWPofrTQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\mdast-util-gfm-task-list-item\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "38e8209a8b251e633588fd16ad1152c33daced7ff21be821827c29be7bf37d3f",
+    "lib/index.js": "1986b0f334e23659909982bc930ebc11784212d9331ef97efa14f268af01d852"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

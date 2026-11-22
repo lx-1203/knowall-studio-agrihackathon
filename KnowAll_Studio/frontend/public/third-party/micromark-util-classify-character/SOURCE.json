@@ -1,0 +1,21 @@
+{
+  "name": "micromark-util-classify-character",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-classify-character",
+  "resolved": "https://registry.npmmirror.com/micromark-util-classify-character/-/micromark-util-classify-character-2.0.1.tgz",
+  "integrity": "sha512-K0kHzM6afW/MbeWYWLjoHQv1sgg2Q9EccHEDzSkxiP/EaagNzCm7T/WMKZ3rjMbvIpvBiZgwR3dKMygtA4mG1Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-util-classify-character\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "fa7b4a93bc117a88844216e2bb8fef3483825bac1d9186126048ca42f1ed3e57",
+    "dev/index.js": "bc1f50d89fe5c63b9d533066cc33cc4ab8429da7f455efd4bdec4e1adbce2a26"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

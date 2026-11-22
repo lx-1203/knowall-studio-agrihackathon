@@ -1,0 +1,25 @@
+{
+  "name": "rc-checkbox",
+  "version": "3.5.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/checkbox.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-checkbox/-/rc-checkbox-3.5.0.tgz",
+  "integrity": "sha512-aOAQc3E98HteIIsSqm6Xk2FPKIER6+5vyEFMZfo73TqM+VVAIqOkHoPjgKLqSNtVLWScoaM7vY2ZrGEheI79yg==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "212a6f81849cae76de28ce0c35286ae750488cdc2ed25b19d4f144da21125521",
+      "source": "frontend/node_modules/rc-checkbox/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "3d67e012f8e4bc34f7922d445e64fe680391b6dd545e1fb57207678515fcf3eb",
+    "es/index.js": "80cca78b71865c7d53def412946d055197e3b2f1ee1f8f11f9d1060b243c67c5",
+    "lib/index.js": "c759e535597f28f69cadfcb5c3e3ada640371684fe5e4c7fc00a2289e75583ec"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

@@ -1,0 +1,48 @@
+{
+  "name": "mdast-util-to-string",
+  "version": "4.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-to-string",
+  "resolved": "https://registry.npmmirror.com/mdast-util-to-string/-/mdast-util-to-string-4.0.0.tgz",
+  "integrity": "sha512-0H44vDimn51F0YwvxSJSm0eCDOJTRlmN0R1yBh4HLj9wiV1Dn0QoXGbvFAWj2hSItVTlCmBF1hqKlIyUBVFLPg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+      "source": "frontend\\node_modules\\mdast-util-to-string\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "46fb60d03aacb0a3f66c7be7f7c93e85013076f59d595c7220554b05027d8ada",
+    "lib/index.js": "53015b2b0b7a72aed1c2d880d3c2aaed73972241f968d4a206a18d92fbe57b21"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "summary_navigation_integration": {
+    "fixed_version": "4.0.0",
+    "fixed_commit": "ac06283ba35bb8b6a0065343a4038e5fe91e3c87",
+    "repository": "https://github.com/syntax-tree/mdast-util-to-string",
+    "upstream_modifications": [],
+    "usage": "Native Markdown AST headings, plain labels and scoped source-offset anchors; existing transitive package declared directly, no version or source change",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/syntax-tree/mdast-util-to-string/ac06283ba35bb8b6a0065343a4038e5fe91e3c87/license",
+        "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+        "installed_exact": true
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/syntax-tree/mdast-util-to-string/ac06283ba35bb8b6a0065343a4038e5fe91e3c87/readme.md",
+        "sha256": "c06c4f7690947bb027204050c31e380e8cb84fe4e50dc2c4b7e9d94181d7f595",
+        "installed_exact": true
+      },
+      {
+        "file": "lib/index.js",
+        "url": "https://raw.githubusercontent.com/syntax-tree/mdast-util-to-string/ac06283ba35bb8b6a0065343a4038e5fe91e3c87/lib/index.js",
+        "sha256": "53015b2b0b7a72aed1c2d880d3c2aaed73972241f968d4a206a18d92fbe57b21",
+        "installed_exact": true
+      }
+    ]
+  }
+}

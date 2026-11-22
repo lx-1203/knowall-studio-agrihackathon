@@ -1,0 +1,25 @@
+{
+  "name": "prismjs",
+  "version": "1.30.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrismJS/prism.git"
+  },
+  "license": "MIT",
+  "integrity": "sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "2b947f0901a7ffcf08a89957da9783c0e9c6e72cb6ce8e959f501ab5409e4d2b"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "tag": "v1.30.0",
+  "commit": "93cca40b364215210f23a9e35f085a682a2b8175",
+  "source_files": [
+    "components/prism-core.js",
+    "components/prism-*.js (wrapped upstream sources inside Refractor)"
+  ],
+  "modifications": "No upstream modifications; application CodePreview chooses native async loader, language aliases, theme and request cleanup."
+}

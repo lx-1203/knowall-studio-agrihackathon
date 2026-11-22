@@ -1,0 +1,21 @@
+{
+  "name": "unist-util-is",
+  "version": "6.0.1",
+  "license": "MIT",
+  "repository": "syntax-tree/unist-util-is",
+  "resolved": "https://registry.npmmirror.com/unist-util-is/-/unist-util-is-6.0.1.tgz",
+  "integrity": "sha512-LsiILbtBETkDz8I9p1dQ0uyRUWuaQzd/cuEeS1hoRSyW5E5XGmTzlwY1OrNzzakGowI9Dr/I8HVaw4hTtnxy8g==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "82974dbf2639d13edab95c32ed9cb6c0867ede272cd2e07ce47ce8548fe55c05",
+      "source": "frontend\\node_modules\\unist-util-is\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "037c062d404356c6bbb8dad28d39445165d23e84ac35a63496a98d40aaa8d645",
+    "lib/index.js": "ce90bad6b772a7e1115d76e4cc53bfade1ee1fe8ac1b8880f48b0e1512ffba44"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

@@ -1,0 +1,76 @@
+{
+  "name": "remark-math",
+  "version": "6.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/remarkjs/remark-math/tree/main/packages/remark-math",
+  "resolved": "https://registry.npmmirror.com/remark-math/-/remark-math-6.0.0.tgz",
+  "integrity": "sha512-MMqgnP74Igy+S3WwnhQ7kqGlEerTETXMvJhrUzDikVZ2/uogJCb+WHUg97hK9/jcfc0dkD73s3LN8zU49cTEtA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "cb992262f361a5359e6771c28740d33c7041e15332ae8537fae40538992591a9",
+      "source": "docs\\open-source-integration\\round-06-upstream-math-license.txt"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "ff503a9bd25827d5d77b2bc2ef6a5cfc830c24b217ebcc0613484fe513001de7",
+    "lib/index.js": "d89e4f61bb3e92fd317064a2419edc99e863b1a63783fcddeb428c7eccb03de9"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "npm_gitHead": "d5d0660b150810a535bbb07eac6cc96a4510aa24",
+  "learning_content_integration": {
+    "fixed_version": "6.0.0",
+    "fixed_commit": "d5d0660b150810a535bbb07eac6cc96a4510aa24",
+    "repository": "https://github.com/remarkjs/remark-math",
+    "upstream_modifications": [],
+    "usage": "Native existing parser/plugin, shared component plus lazy React wrapper; no upstream algorithm copied or new dependency",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/d5d0660b150810a535bbb07eac6cc96a4510aa24/license",
+        "sha256": "cb992262f361a5359e6771c28740d33c7041e15332ae8537fae40538992591a9",
+        "installed_exact": false
+      },
+      {
+        "file": "packages/remark-math/readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/d5d0660b150810a535bbb07eac6cc96a4510aa24/packages/remark-math/readme.md",
+        "sha256": "8c2f2da789935ff56a31ddc6073fe005e5c07afbdbd835984144938aca93e068",
+        "installed_exact": true
+      },
+      {
+        "file": "packages/remark-math/lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/d5d0660b150810a535bbb07eac6cc96a4510aa24/packages/remark-math/lib/index.js",
+        "sha256": "d89e4f61bb3e92fd317064a2419edc99e863b1a63783fcddeb428c7eccb03de9",
+        "installed_exact": true
+      }
+    ]
+  },
+  "material_content_integration": {
+    "fixed_version": "6.0.0",
+    "fixed_commit": "d5d0660b150810a535bbb07eac6cc96a4510aa24",
+    "repository": "https://github.com/remarkjs/remark-math",
+    "upstream_modifications": [],
+    "usage": "Existing native module reused for material text, REST reply, chapter question/feedback/notes/cards and material knowledge; original payloads untouched",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/d5d0660b150810a535bbb07eac6cc96a4510aa24/license",
+        "sha256": "cb992262f361a5359e6771c28740d33c7041e15332ae8537fae40538992591a9",
+        "installed_exact": false
+      },
+      {
+        "file": "packages/remark-math/readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/d5d0660b150810a535bbb07eac6cc96a4510aa24/packages/remark-math/readme.md",
+        "sha256": "8c2f2da789935ff56a31ddc6073fe005e5c07afbdbd835984144938aca93e068",
+        "installed_exact": true
+      },
+      {
+        "file": "packages/remark-math/lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-math/d5d0660b150810a535bbb07eac6cc96a4510aa24/packages/remark-math/lib/index.js",
+        "sha256": "d89e4f61bb3e92fd317064a2419edc99e863b1a63783fcddeb428c7eccb03de9",
+        "installed_exact": true
+      }
+    ]
+  }
+}

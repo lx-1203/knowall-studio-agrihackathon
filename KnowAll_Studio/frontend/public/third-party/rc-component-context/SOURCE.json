@@ -1,0 +1,28 @@
+{
+  "name": "@rc-component/context",
+  "version": "1.4.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/context.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@rc-component/context/-/context-1.4.0.tgz",
+  "integrity": "sha512-kFcNxg9oLRMoL3qki0OMxK+7g5mypjgaaJp/pkOis/6rVxma9nJBF/8kCIuTYHUQNr0ii7MxqE33wirPZLJQ2w==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/@rc-component/context/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "es/context.js": "32bc86110e23b0222a53414bef9fce8e24062411276ea6eec22b10e28a6df587",
+    "es/Immutable.js": "89a810c391ed0e8ff5c59ae9533ace9b8a64857b5210405998308dad63695457",
+    "es/index.js": "089073627d5ddade74c12140dc14227a997a43f29a1f1016fb00766c267ecb96",
+    "lib/context.js": "f4e50ac22f24a80d82c67595980273703d20ce088f079f47256e0220d4c367e1",
+    "lib/Immutable.js": "7e49a1f2f551f353d927a3da93c8945256d3349c67a52933282ea3d9147b1618",
+    "lib/index.js": "5c9f2242311a8a66a01e06aa4afab7c8ca18442f69fa494e92ea8ff75b7264d5"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

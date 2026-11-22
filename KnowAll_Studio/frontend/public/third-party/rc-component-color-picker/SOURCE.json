@@ -1,0 +1,53 @@
+{
+  "name": "@rc-component/color-picker",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/color-picker.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@rc-component/color-picker/-/color-picker-2.0.1.tgz",
+  "integrity": "sha512-WcZYwAThV/b2GISQ8F+7650r5ZZJ043E57aVBFkQ+kSY4C6wdofXgB0hBx+GPGpIU0Z81eETNoDUJMr7oy/P8Q==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "8a894af015d320e0d534a14d6ae1895e07cb072678050d34b66be7e579c36a67",
+      "source": "frontend/node_modules/@rc-component/color-picker/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "a72db31c0aab89a24601e0d50e9e179e1dc31eadc680f2120d56649bcf0301a9",
+    "es/color.js": "d668fbe0c0755a9be62ca3d84e18bf303ddf8490502a7f2666b0d8d018817efc",
+    "es/ColorPicker.js": "4f20a97f9f5fe305ddce396bc932360d265e51c6a7777696cb13f909b1598332",
+    "es/index.js": "99d702dc30aca950452fd379695130eac8a265ae3b5a99c2fe682db4a30c1664",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/util.js": "8fd4960d58d91f903b9e406dbc065044cd6ca9cf64442afdf0be880d7ae44dea",
+    "lib/color.js": "6d437823ea7ebdda7fcdd8b8c44a6bb0ca6f29aa553be28418d15e8f6bb087ee",
+    "lib/ColorPicker.js": "47a7f65a9dea31cd7129f068b7f61799c03f4d4f7fe7bc659d3baa00b8ed2fb4",
+    "lib/index.js": "de3f099c4a20c7cf5fa389aec1c2f810fe50b0a4c0bab536fde468ba7f25a860",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/util.js": "68852ad82489a1222ec2a5fbfd2f7611c0342d48f20175aeafb1febd767155f5",
+    "lib/components/ColorBlock.js": "bd297fd7a7eda3fb60d8d500c5e187e33edc51291d994ee7c6999ff032fafae2",
+    "lib/components/Gradient.js": "bd22ba44043d30916b53ed8ea28732c6e2e59b2636813ff2c7118ed21be23cfe",
+    "lib/components/Handler.js": "d5377b0843d84a6671775c6379b85c619f6da60d993f4640d680f28088149488",
+    "lib/components/Palette.js": "cb1f49a026e0ca77a0389bbc59dc7603bd05e97993f0c88c0824705afb23932b",
+    "lib/components/Picker.js": "aaca363da710f612baa655ae523fdd3c9929cfc68f85c2e3be1837d4fb9122a9",
+    "lib/components/Slider.js": "710e648a5b3e15ad3468c92cda62de737bdb00c2431982b8a122931223040352",
+    "lib/components/Transform.js": "01a865b0253998ecd692866b4cf4c0c5d42641b66a9139d5ffe88be37b081284",
+    "lib/hooks/useColorDrag.js": "691f97af5ac1929100ea211db58557c1131896b15244b8e34a64d5459efb0d7b",
+    "lib/hooks/useColorState.js": "6765950a03b340bc791e92648d6a6e55817a70473a6a9e500c6611cba1f26b12",
+    "lib/hooks/useComponent.js": "7af869ebb80cd29121c7e6d0c4e704442e84fda0bb5777f35a3990ea4d39b19a",
+    "es/components/ColorBlock.js": "ffa8c125a92530aff13dc40c5fefdffd8e120a680c8561ff6f2271dfdf551edc",
+    "es/components/Gradient.js": "1f91e3209bdf245fb19abf9bd7561fdfbfe9e5ac13a1dc50b507959a21d134a4",
+    "es/components/Handler.js": "4812affa79ab82fa0797261e673f056c21688f7e20d3bbd8a9ef8eaa1f3d2431",
+    "es/components/Palette.js": "d6078dae4a1fd1462774f9d5e16ffd0e2e5412143e9841e69ceb30bcfd48f5ca",
+    "es/components/Picker.js": "7279b1d808ed586cd221b9508d355544282e194ac0ac056ff21087bab2998365",
+    "es/components/Slider.js": "4773e217a00b6f9995fb624024003dfffb6186ae2d42d8ad848e1bbe201c7691",
+    "es/components/Transform.js": "8aaee683f2fdf96c0a425ddac550d804c55ed7c59365d6b41c0df350361cf72a",
+    "es/hooks/useColorDrag.js": "59d59d27cddd2ee15cddede9c52aecf2d823e78a1c810b8a2d9fed6bb555ec81",
+    "es/hooks/useColorState.js": "d60e1c160aca18e7b91d7376318e3ab6ef596e9baaa18587c1718d22741fd601",
+    "es/hooks/useComponent.js": "e6302bf8a24ae8fc7d875d0db1dfbd2d81b397bf749ea32d2c03a6bb66281528"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

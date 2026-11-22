@@ -1,0 +1,59 @@
+{
+  "name": "rc-image",
+  "version": "7.12.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/image.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-image/-/rc-image-7.12.0.tgz",
+  "integrity": "sha512-cZ3HTyyckPnNnUb9/DRqduqzLfrQRyi+CdHjdqgsyDpI3Ln5UX1kXnAhPBSJj9pVRzwRFgqkN7p9b6HBDjmu/Q==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "416bff691c8396d61bc16127f6271f133ca9094a34f7c3d5496ff1a3abc45766",
+      "source": "frontend/node_modules/rc-image/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "988f822ef50f31def925bcf581b2fa3db964b6cb3b089fa9d0d6d94a8b866476",
+    "es/common.js": "ac8b06832a50ba54db3726bd2ad9f5c6f9a4e50c688ffb3876d7bd2cdbf4c88c",
+    "es/context.js": "0296880c3e7bf87ab7456132aa605451e4d9149daa1f2d00ac584ac6444b3242",
+    "es/getFixScaleEleTransPosition.js": "993fddf638fc5762a04685a9a006950583c43fdd1883a00a028f4af220732cbf",
+    "es/Image.js": "cd03653c6744e2b4a7974825b537d00a41fdba4d709543919376e347a6cd4cdd",
+    "es/index.js": "dd96bc3c0884d29d14945ad6c7fe0245de664ee5f3156b77006edadcc6f43938",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/Operations.js": "e10d56da25c25cb11c7ba815a142abdf6c03029b5c5e52bf8090498ca1473601",
+    "es/Preview.js": "8d1b7e7d45cd283c09e2d3334bf9cdc4914c00c2b60956049e27119b8da269d9",
+    "es/previewConfig.js": "5ed23f0623a839c3f909d8b1d8a785581764493fa6faffe9ee586f592a348910",
+    "es/PreviewGroup.js": "9c0216b9d3e01766faef1760c0ac63ca4e64bcd496ae755f0f970db994035c40",
+    "es/util.js": "46ab96d9eacce234eef0cdbfbce87a3931c9e398aa622704ad2c3ffcc9bed4ae",
+    "lib/common.js": "bb30cbdeac36d78247c39a777706c27fa9e89a906a2e88fba1fce9d0fefb3ac0",
+    "lib/context.js": "6d83bf959051ee2a1e7cb707812c29564ed8b9862ab10da2cfa20776a316d2bc",
+    "lib/getFixScaleEleTransPosition.js": "7ae496bae530d33b1fbc3356a065ad2b7cf9d87434772f6a3650beb0e31d0f73",
+    "lib/Image.js": "2e245830347597418929c3d41e83526af740896944a7185eac2b1d37ea351ce8",
+    "lib/index.js": "c64a176ce9108901186abd9423677977f7bdcb41400fc13891df978b2ca46831",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/Operations.js": "fb1b6e569a507ad4b34e7b69d0d7929be5b17bd578a29abfadef443f4139251b",
+    "lib/Preview.js": "08b1e0d8f84d2cd454698abdc6bbda54158fe8a5e04c44a48a938a1e41443ae3",
+    "lib/previewConfig.js": "a3e55e87bf72a8e46d564b53cb0d08d083785f052998a37749961f7899937057",
+    "lib/PreviewGroup.js": "375e9edaf28eb338ac91400669a4ed1b790b548a239044d0be97f53b5308ce20",
+    "lib/util.js": "300d58c208180df799c4adb7894bbc9c22de29d8238e2fe1f83548a9cfed9b81",
+    "lib/hooks/useImageTransform.js": "803ba8aedaf86e3cecacc9157f5ffe8b0055fe021ac40b58294adf5597747bf2",
+    "lib/hooks/useMouseEvent.js": "2b80a99bc06f15a9dbed991510ebc1f351c4ae99bacfec5f990c1475047f7809",
+    "lib/hooks/usePreviewItems.js": "af9c4c9fc38a6abfe31cb3d8e7b6ca8ebf6f6e1a042ecb8c1b01f758f73e1a3c",
+    "lib/hooks/useRegisterImage.js": "3b3e22ce40cbe14aecdb17e9a6e8d09077056a7ba247435401eefdcf092172a2",
+    "lib/hooks/useStatus.js": "1698ebdc74357e7e51c082c39f02ba27efa88e1c90f1729612c9cd19000e8c66",
+    "lib/hooks/useTouchEvent.js": "e218a25a5eac400f2c86b47983e22524228be64dc64b11d1773b40b372e37b2b",
+    "es/hooks/useImageTransform.js": "4bdc2ac5cfa1847fcb57520a118de2a4d9f8a4a72bba2fe46d840b749055c6cb",
+    "es/hooks/useMouseEvent.js": "dac8942f0daeb337a84dd7ad3428978ae5cb6d92c86b0783910bd256fa918656",
+    "es/hooks/usePreviewItems.js": "56b68718cccdba9e7c12a8537a8257763df34270e77de0c365772a1a61012906",
+    "es/hooks/useRegisterImage.js": "6a613dc739808b7397e8fdc314404651577e4432088818eb3189003a3f6e8ded",
+    "es/hooks/useStatus.js": "cabf634ebb06376caadd2886ec9ca48e986eaf6464801265c62be9433171a58a",
+    "es/hooks/useTouchEvent.js": "e2f0280f46713ffbd7e5783c2410228f1d206d7ef64cb7c9f9a646f16bcde821"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer.",
+  "fixed_upstream_commit": "785b84fa1ad21b7869269b9a026e0dac7651bde1",
+  "original_license_fixed_github_verified": true
+}

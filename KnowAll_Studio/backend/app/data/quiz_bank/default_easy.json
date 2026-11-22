@@ -1,0 +1,54 @@
+[
+  {
+    "id": "e001",
+    "question_type": "single_choice",
+    "difficulty": "easy",
+    "question_text": "学生记录了两次小区甲的植株高度，分别为 12 cm 和 16 cm。两次测量的算术平均值是多少？",
+    "options": [
+      {
+        "label": "A",
+        "text": "12 cm"
+      },
+      {
+        "label": "B",
+        "text": "14 cm"
+      },
+      {
+        "label": "C",
+        "text": "16 cm"
+      },
+      {
+        "label": "D",
+        "text": "28 cm"
+      }
+    ],
+    "answer": "B",
+    "analysis": "将两次读数相加后除以 2，结果为 14 cm。"
+  },
+  {
+    "id": "e002",
+    "question_type": "single_choice",
+    "difficulty": "easy",
+    "question_text": "温度计读数写为 25，原始记录中还应补充哪一项？",
+    "options": [
+      {
+        "label": "A",
+        "text": "测量单位"
+      },
+      {
+        "label": "B",
+        "text": "班级人数"
+      },
+      {
+        "label": "C",
+        "text": "记录表颜色"
+      },
+      {
+        "label": "D",
+        "text": "键盘型号"
+      }
+    ],
+    "answer": "A",
+    "analysis": "同一数值可以用不同温标表示，测量单位必须记录。"
+  }
+]

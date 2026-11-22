@@ -1,0 +1,28 @@
+{
+  "name": "react-is",
+  "version": "18.3.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react.git",
+    "directory": "packages/react-is"
+  },
+  "resolved": "https://registry.npmmirror.com/react-is/-/react-is-18.3.1.tgz",
+  "integrity": "sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "source": "frontend/node_modules/react-is/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "d34fce01b963097a8d649b95e20aa17a63e4105b54adcce7d7daf1c8524b434e",
+    "cjs/react-is.development.js": "f9740ad16de473fec0eef0532319f907a68d19531669e4be72fd64d551fef59b",
+    "cjs/react-is.production.min.js": "2140814ad6a8bb0f3200085067aece328b539f7852a6cb76018b617c3efddb3b",
+    "umd/react-is.development.js": "03edba20808e84cd6d15edc352656a98f48e429cfe1b0a85dd47e8bfe38d1cc4",
+    "umd/react-is.production.min.js": "750a6877c8377a677d676448e67ab7e331a7c0844fa579286f7def02f8e2dab6"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

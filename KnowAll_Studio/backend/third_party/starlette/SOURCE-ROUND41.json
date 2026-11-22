@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/Kludex/starlette",
+  "fixed_version": "1.2.0",
+  "license": "BSD-3-Clause",
+  "runtime_modified": false,
+  "existing_fastapi_dependency": true,
+  "obligations": "Retain original copyright, conditions, disclaimer; no endorsement using contributor names",
+  "docs": "https://www.starlette.io/threadpool/",
+  "files": [
+    {
+      "file": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/LICENSE.md",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+      "installed_exact": true
+    },
+    {
+      "file": "starlette/concurrency.py",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/starlette/concurrency.py",
+      "sha256": "0fda37f055ea66daadf67588cdeb473cea56f78aeea8b4bc84db6710811f1efd",
+      "installed_exact": true
+    }
+  ]
+}

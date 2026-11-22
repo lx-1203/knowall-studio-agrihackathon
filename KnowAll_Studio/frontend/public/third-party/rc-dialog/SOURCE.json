@@ -1,0 +1,44 @@
+{
+  "name": "rc-dialog",
+  "version": "9.6.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/dialog.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-dialog/-/rc-dialog-9.6.0.tgz",
+  "integrity": "sha512-ApoVi9Z8PaCQg6FsUzS8yvBEQy0ZL2PkuvAgrmohPkN3okps5WZ5WQWPc1RNuiOKaAYv8B97ACdsFU5LizzCqg==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-dialog/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/bootstrap.css": "5671d15234dbac07c4583f487d36a6de2ca5a2de80b1ce5223e037e17e51490b",
+    "assets/index.css": "f33992e4e0ae28c84c586229a56baaabf8495a84e923b5243f1818f45fb17f5a",
+    "es/context.js": "3cd4b4a8519417fa367138cb341f2925688a288df255861c46e553e403e6667b",
+    "es/DialogWrap.js": "661fa90b648ee47e472769b674e0c224489de54717c2e5af0afdb430b4c10d52",
+    "es/IDialogPropTypes.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/index.js": "1fb6b3c9b8246ec997532e23b0ca680778c6f11747b3303270bc77ea4f396f41",
+    "es/util.js": "b53d6dfa55205645f7de1925892e7e789273c94ecf4277f17ab191b97a8a7dad",
+    "lib/context.js": "bf793f22eb3653522a95c148f0a89b5147c536c72b7ff64d568411fa19d17043",
+    "lib/DialogWrap.js": "f11cd9595795b27618e78d6446900535e5a49394b40f25724994bf4d5761e56c",
+    "lib/IDialogPropTypes.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/index.js": "d3fe4a1b45dd2bf1eca793470579c698997959e3e6f3b7522dfbfe8bfb6e286e",
+    "lib/util.js": "b8aee74e6c27c33e64f2737a36c735e829f6a854527f57c5b3539c541d523d3d",
+    "lib/Dialog/index.js": "07fe0662eab04f71bb0e06f84554fe5ceac8f17eae21a90e81898efa33b41332",
+    "lib/Dialog/Mask.js": "3012d6b943f06b3f5fbc09a2c34f2e705ab2363175ae86fb6bd8b72f2b0a8c14",
+    "lib/Dialog/Content/index.js": "d75994a25c42aec0ec0d2cb2de50e7b69d9dbedcf08cf49956c8ecd89f543d50",
+    "lib/Dialog/Content/MemoChildren.js": "67fd25fad5c4eb4b1ab94238ad140dcbaaeefc22d22eeab4e053075558f0ea0d",
+    "lib/Dialog/Content/Panel.js": "41cecd2db2dffbb1a54483ce436bc46469bbcd1fdbae19fec5807fe5dc542196",
+    "es/Dialog/index.js": "8c4b83ca1e0696936b76af6af9312eb063e90f4a414e9cdb471cc46a4da2fd3c",
+    "es/Dialog/Mask.js": "0ed1af66d3095ed72587739251b807601c5cad7070376b38fe2290a4f6cc8c70",
+    "es/Dialog/Content/index.js": "0cc2ff9a1960f0c0866c186a907e04a8dc45bbc0a283f6a1f8af6ac4050dc415",
+    "es/Dialog/Content/MemoChildren.js": "fa9cbf639b36f6bf85f3d404c4ec0133af89c49c014b7f7e7bf0893dd290f213",
+    "es/Dialog/Content/Panel.js": "d39f53aef17d2961160b9dc3afae95a21a11aa6ed54d1a8e8e0eb387d2f2d445"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

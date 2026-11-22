@@ -1,0 +1,26 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/LICENSE",
+    "local": "LICENSE",
+    "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9",
+    "license": "MIT",
+    "version": "2.0.51",
+    "modifications": "none; native session transaction boundaries reused, reference source only"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/orm/session.py",
+    "local": "UPSTREAM-SESSION.txt",
+    "sha256": "b75a4e427f453c2eaf19f04d87f66c2da644698a14f3b11880f56a73e2a0760d",
+    "license": "MIT",
+    "version": "2.0.51",
+    "modifications": "none; native session transaction boundaries reused, reference source only"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/dialects/sqlite/base.py",
+    "local": "UPSTREAM-SQLITE.txt",
+    "sha256": "58bc07f4e16b4367f9c9279837a7be4bc0c639aafd08e48654f267dd800b7052",
+    "license": "MIT",
+    "version": "2.0.51",
+    "modifications": "none; native session transaction boundaries reused, reference source only"
+  }
+]

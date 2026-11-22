@@ -1,0 +1,21 @@
+{
+  "name": "trough",
+  "version": "2.2.0",
+  "license": "MIT",
+  "repository": "wooorm/trough",
+  "resolved": "https://registry.npmmirror.com/trough/-/trough-2.2.0.tgz",
+  "integrity": "sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "6c03fd41cfd7c92d8aa8a2fa521b94b2683f059123281dcf921ddea9216b6254",
+      "source": "frontend\\node_modules\\trough\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "cd3300bc71f3f23850f8b583abb140c98c63072011482a270aab544085e41e00",
+    "lib/index.js": "a5a84b499ac99ebc3435fe0027de0b836cdbcb5c7413e525fd8e13f2aec5b1c2"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

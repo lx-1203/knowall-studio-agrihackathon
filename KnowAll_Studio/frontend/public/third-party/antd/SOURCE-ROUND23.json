@@ -1,0 +1,32 @@
+{
+  "name": "antd",
+  "version": "5.29.3",
+  "repository": "ant-design/ant-design",
+  "commit": "14f397749dca177e5495dc9d1c2f7debfb639545",
+  "license": "MIT",
+  "npm_url": "https://registry.npmmirror.com/antd/-/antd-5.29.3.tgz",
+  "metadata_url": "https://registry.npmmirror.com/antd/5.29.3",
+  "npm_integrity": "sha512-3DdbGCa9tWAJGcCJ6rzR8EJFsv2CtyEbkVabZE14pfgUHfCicWCj0/QzQVLDYg8CPfQk9BH7fHCoTXHTy7MP/A==",
+  "npm_sha256": "693013ebcdd806643d94810663b61ecade84228c6245927097896414a899cf46",
+  "source_url": "https://codeload.github.com/ant-design/ant-design/zip/14f397749dca177e5495dc9d1c2f7debfb639545",
+  "source_archive_sha256": "a3c2cfe4e86496a855e9319b5a3a8776dd997e3b6478e97f038dec8bcf40763a",
+  "runtime_js_files": {
+    "es/form/Form.js": "7118d2c5af33c9d3ec043522f3d56f32bf2b2394b5e66c2097db665ff6087ac3",
+    "es/form/FormItem/index.js": "bda7953ca1b540ae9be610dd3a616525571f24b7c8044f59ac74b0302929b623",
+    "es/modal/Modal.js": "529729dd193ebf2d0c1cdf18281777663488b487015657e9575928340b980171",
+    "lib/form/Form.js": "1b6e3834df5035221258c0db15b683a1f84ea10d943c76ea31fffb36ad5f4727",
+    "lib/form/FormItem/index.js": "96d32fd0f55f7b4ecb00301f8a2792f50db1607d67b06e8b43f4cf9eead7392f",
+    "lib/modal/Modal.js": "5933ac2285248398ab0f01d68aa7039575cb9d75c66f856c033edc0d12dd82eb"
+  },
+  "source_files": {
+    "components/form/Form.tsx": "e730e5d7c38ce34fa7b14bb83629040b0a171976ced724e93ac6b3e477bc2549",
+    "components/form/index.en-US.md": "920ee8aca78f9e09321c1cc12cc1b1bd7b4df41fed4c4e3321fd5572625c41c1",
+    "components/modal/Modal.tsx": "3899ea9d46f9367cf692af41a03d82d5feac10dc71ae1d572ad9184329a2e94f",
+    "components/modal/index.en-US.md": "97f4fb2905dd796e39592a2d2c5c34e42b6a262fdc2f1a8b576e278b42bb7859",
+    "components/form/demo/form-in-modal.tsx": "42d90574d4bff49b856bb40c9bbd7283f8e96223209de673348db3dbb14ce923"
+  },
+  "notice_file": "LICENSE",
+  "notice_sha256": "3c82654bb472ebbcacc4c1ff00f94aa8c60c4b7ee011b16bafcbacecc3703458",
+  "verification": "Official npm direct TLS failed; existing lock registry mirror artifact SHA512 verified.6 installed compiled files equal verified tarball; original fixed GitHub TS/docs/license inspected. No compiledJS==TS claim.",
+  "modifications": "No upstream source copied/modified. Existing Form useForm/validation/onFinish and Modal used in manual flashcard modal; existing server validation/FSRS and transaction retained. No added dependency/lock/version change."
+}

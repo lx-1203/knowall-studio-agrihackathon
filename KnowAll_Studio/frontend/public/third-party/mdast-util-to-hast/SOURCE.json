@@ -1,0 +1,48 @@
+{
+  "name": "mdast-util-to-hast",
+  "version": "13.2.1",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-to-hast",
+  "resolved": "https://registry.npmmirror.com/mdast-util-to-hast/-/mdast-util-to-hast-13.2.1.tgz",
+  "integrity": "sha512-cctsq2wp5vTsLIcaymblUriiTcZd0CwWtCbLvrOzYCDZoWyMNV8sZ7krj09FSnsiJi3WVsHLM4k6Dq/yaPyCXA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\mdast-util-to-hast\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "681480f0d8fcae35643e8bbcc81085827be1a663106453d9549232d9b6a27721",
+    "lib/footer.js": "40a9dbaa5cf1e3f3ff993bbdd7e9d8666cb620b3dabd4276af5212d1f95fe7d7",
+    "lib/index.js": "f6e0be6ee208cd0d0d6ee5a532cc61d9a6a88b87de60d2453a241f3e5a113413",
+    "lib/revert.js": "09ec851551e7d2076f9a542975f480e046efd0b66db755903fb7a8855e23acff",
+    "lib/state.js": "3efa2af554f55b9d6b9fde660f40886669976e73bdea09c4884fabf6a65e2803",
+    "lib/handlers/blockquote.js": "9744b0434bd3f70716b1208a8e580ce01cdc3b99736ddac44aafe32503a05b60",
+    "lib/handlers/break.js": "bbd9617fec60951f0a0d46477cfa1a3355375f6a655adb13f11a6fd9d8aee47d",
+    "lib/handlers/code.js": "60d18f00c0f40917ad26a2e112f5dd0be66e7ab1088832932ec14aa69df8eb29",
+    "lib/handlers/delete.js": "20a3aa0fca3e1cb6c80e4103392168c945c97477573d13bd123f92cfea071672",
+    "lib/handlers/emphasis.js": "d40b9afbcd5a1ab9f598d5ff439e73cbfa8f1cc9708115e439c030ffc5bf1edf",
+    "lib/handlers/footnote-reference.js": "f5c49df607b90b1a1e89b754cfdd3290f49e5ca42b5af9ea9a01f1af1ccacae8",
+    "lib/handlers/heading.js": "c54a67319a4ac1d9d25eb8a8fb73f094b2ffac385d11f64ef748d8e0a0c0aec3",
+    "lib/handlers/html.js": "18af5a6b0d9eebad977bb78e60b247d4cde445bb1cc5c275f1bea61e1151b14a",
+    "lib/handlers/image-reference.js": "79c616d913f42ecb997b008a3147a3a208c08c18dfd01c573976656f370b425c",
+    "lib/handlers/image.js": "06c2c63d11c4ef7b0fe8f082ec2fe47ffd5bf00e7a2a2d4756515951dccad50e",
+    "lib/handlers/index.js": "4de11cfac2c9486f6633a60f180e7fb772d48d005a6168b50d41c7de062098aa",
+    "lib/handlers/inline-code.js": "99e74e1891add9c61f640f859308e3f907c90eb4e92c381b1f29fab2e16c19a1",
+    "lib/handlers/link-reference.js": "c1dcf7f39f12ab58603197504f6707372bf936fc113aaa7625910faff37063b5",
+    "lib/handlers/link.js": "ac8d90073fee56d692f964775332dce0ffda38b07f86f1b412212f21f1d19d1e",
+    "lib/handlers/list-item.js": "0da607553981392d7ce7c1bc49f74bb4eb643ee517e959fac6dbd276d7b80488",
+    "lib/handlers/list.js": "f6b70088d06ca8c101c07c6dff2363c7962a5aeecd7a2b26005848b2e14100d8",
+    "lib/handlers/paragraph.js": "a77301efe0f60029bd39935a64c456556f945f22c780e2c93f610a4711ab68d7",
+    "lib/handlers/root.js": "aeba8659e5c4dca7c269f4ded5c39688876f3f76057b5f2459eadd956bf44a86",
+    "lib/handlers/strong.js": "3dba3cfd6954bc3c52653ba74c50771e3b776b561c901f542f28e07eb6591191",
+    "lib/handlers/table-cell.js": "6faa2956741b11b277e7d2189f5bb97786a13462e39e412aeaefa65325588f8f",
+    "lib/handlers/table-row.js": "bec1dca051d327477166c745be7d7a51fe97ef182b57e889f17e7b57bd7ecee3",
+    "lib/handlers/table.js": "f12e3d16638a2159b08e6f0cb816c34d3c2ede3ab592235621bb60cda3d0d128",
+    "lib/handlers/text.js": "66aa96a1369887fe40759b200f80b609316e8cc66da424e2832400aad41eebeb",
+    "lib/handlers/thematic-break.js": "bf3cfab49b184da92b8e53ddf86e13625da8d5055db3a9abc904daff1312aa56"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

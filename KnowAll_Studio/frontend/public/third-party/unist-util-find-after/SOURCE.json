@@ -1,0 +1,21 @@
+{
+  "name": "unist-util-find-after",
+  "version": "5.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/unist-util-find-after",
+  "resolved": "https://registry.npmmirror.com/unist-util-find-after/-/unist-util-find-after-5.0.0.tgz",
+  "integrity": "sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+      "source": "frontend\\node_modules\\unist-util-find-after\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "bbafaa21ffc055de8a9abf57f609929e5fa5f274f99b6264b1bba5725587cec1",
+    "lib/index.js": "dce4a988b2957a9f51a7b27b56289cd0fa7dc1f138ec76c4140560d2300b183a"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

@@ -1,0 +1,18 @@
+.api-configuration { margin-bottom: 16px; }
+.api-configuration .ant-card-head-title { white-space: normal; }
+.api-config-default { display: flex; gap: 12px; flex-wrap: wrap; padding: 14px; background: rgba(40,125,120,.06); border-radius: 8px; margin-bottom: 8px; overflow-wrap: anywhere; }
+.api-config-row article { width: 100%; min-width: 0; }
+.api-config-row-title { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.api-config-row dl { margin: 12px 0; }
+.api-config-row dl > div { display: flex; gap: 12px; margin: 5px 0; }
+.api-config-row dt { width: 72px; flex-shrink: 0; opacity: .7; }
+.api-config-row dd { margin: 0; overflow-wrap: anywhere; }
+.api-config-row .ant-alert { margin: 10px 0; }
+.api-config-legacy { display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(128,128,128,.15); overflow-wrap: anywhere; }
+.api-config-legacy p { margin: 5px 0; }
+@media (max-width:480px) { .api-configuration .ant-card-head, .api-configuration .ant-card-body { padding: 12px; } .api-config-row dl > div { display: block; } }
+
+.api-configuration .ant-card-extra { display: block; margin-inline-start: 12px; }
+.api-config-row-title > .ant-space { min-width: 0; }
+.api-config-row-title > .ant-switch { flex-shrink: 0; }
+.api-config-row .ant-alert-content { min-width: 0; overflow-wrap: anywhere; }

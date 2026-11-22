@@ -1,0 +1,4 @@
+.settings-metrics .ant-statistic-content { overflow-wrap: anywhere; }
+.settings-metrics .ant-statistic-content-value { max-width: 100%; }
+.settings-metric-note { margin: 8px 0 0; color: var(--text-secondary, #657585); line-height: 1.6; font-size: 12px; overflow-wrap: anywhere; }
+.settings-metric-time { display: block; margin-top: 4px; font-size: 12px; opacity: .75; }

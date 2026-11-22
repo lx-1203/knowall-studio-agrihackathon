@@ -1,0 +1,25 @@
+{
+  "name": "micromark-extension-gfm-strikethrough",
+  "version": "2.1.0",
+  "license": "MIT",
+  "repository": "micromark/micromark-extension-gfm-strikethrough",
+  "resolved": "https://registry.npmmirror.com/micromark-extension-gfm-strikethrough/-/micromark-extension-gfm-strikethrough-2.1.0.tgz",
+  "integrity": "sha512-ADVjpOOkjz1hhkZLlBiYA9cR2Anf8F4HqZUO6e5eDcPQd0Txw5fxLzzxnEkSkfnD0wziSGiv7sYhk/ktvbf1uw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\micromark-extension-gfm-strikethrough\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0ee76753d9416266808227424eac60626edd98daeb27b74df4da71d2444c147c",
+    "dev/index.js": "b9915b92e859d09e8209f8a543acb67c1bff86be66e510d2e014f4365be4ac4f",
+    "lib/html.js": "6230e158b586049d3ba5612c7a2cd781bb48af69e5f3985339519d0720a7eeea",
+    "lib/syntax.js": "293e9b13a554fe569efd096cd7f1c3f4d6da861f30bba701e8b923f621181250",
+    "dev/lib/html.js": "daa4b3d17720bc5c5c826f54686d6444c6507932d39523230cda51e1f60a333b",
+    "dev/lib/syntax.js": "913b1c9346b06ab0e5825f9b2d2f85a3d0505bf9a557f488cdf07020d494d791"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

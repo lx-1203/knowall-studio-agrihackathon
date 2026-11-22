@@ -1,0 +1,21 @@
+{
+  "name": "vfile-message",
+  "version": "4.0.3",
+  "license": "MIT",
+  "repository": "vfile/vfile-message",
+  "resolved": "https://registry.npmmirror.com/vfile-message/-/vfile-message-4.0.3.tgz",
+  "integrity": "sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\vfile-message\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "b5a79b593628629d6e3e10dd9ea2637418b5b2822914621daf3d954396de9791",
+    "lib/index.js": "2aa3a64765f6708ef3a65a2a6637a4b9647d4a14ca934b157f51e1e3330cd9b8"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

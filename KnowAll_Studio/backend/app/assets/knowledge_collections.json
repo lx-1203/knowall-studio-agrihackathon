@@ -1,0 +1,82 @@
+[
+  {
+    "title": "田间观测数据示例",
+    "subject": "农业数据分析",
+    "points": [
+      {
+        "name": "单位核对",
+        "topic": "观测记录",
+        "definition": "核对同一列数值是否使用一致的单位。",
+        "conditions": [
+          "记录中应保留原始单位。"
+        ],
+        "key_points": [
+          "换算时同时保存原始读数与换算依据。"
+        ],
+        "pitfalls": [
+          "缺失单位不能默认为零。"
+        ],
+        "related": [
+          "组均值"
+        ]
+      },
+      {
+        "name": "组均值",
+        "topic": "观测记录",
+        "definition": "把组内所有有效读数的和除以有效观测次数。",
+        "conditions": [
+          "用于平均的读数应有相同量纲。"
+        ],
+        "key_points": [
+          "合并分组时按观测次数加权。"
+        ],
+        "pitfalls": [
+          "组大小不同时，两个组均值的简单平均可能有偏差。"
+        ],
+        "related": [
+          "单位核对"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "遗传信息入门示例",
+    "subject": "分子生物学",
+    "points": [
+      {
+        "name": "转录",
+        "topic": "遗传信息传递",
+        "definition": "转录以 DNA 为模板合成 RNA；翻译以 mRNA 为模板合成多肽链。",
+        "conditions": [
+          "区分模板和产物。"
+        ],
+        "key_points": [
+          "产物的分子类型是 RNA。"
+        ],
+        "pitfalls": [
+          "不要把转录当作复制。"
+        ],
+        "related": [
+          "翻译"
+        ]
+      },
+      {
+        "name": "翻译",
+        "topic": "遗传信息传递",
+        "definition": "tRNA 携带氨基酸，并通过反密码子识别 mRNA 上对应的密码子。",
+        "conditions": [
+          "从 mRNA 密码子读出信息。"
+        ],
+        "key_points": [
+          "核糖体和 tRNA 参与这一过程。"
+        ],
+        "pitfalls": [
+          "模板是 mRNA。"
+        ],
+        "related": [
+          "转录"
+        ]
+      }
+    ]
+  }
+]

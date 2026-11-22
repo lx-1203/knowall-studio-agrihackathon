@@ -1,0 +1,17 @@
+{
+  "project": "https://github.com/open-spaced-repetition/py-fsrs",
+  "version": "6.3.2",
+  "tag": "v6.3.2",
+  "license": "MIT",
+  "license_sha256": "021bff58ad2685d7e5b30d307429bc7cfdca108ad620ce889abb38d7acd89ace",
+  "distribution_files": [
+    {
+      "filename": "fsrs-6.3.2-py3-none-any.whl",
+      "sha256": "bc55066c821164b1cff6d75b17a3ed8e86cfd45789e3d775cfcb895319ce9ba4"
+    },
+    {
+      "filename": "fsrs-6.3.2.tar.gz",
+      "sha256": "7fe79947ceb92ca35fdca3dfa511a239be15b317cde63d6643a2da6110844d91"
+    }
+  ]
+}

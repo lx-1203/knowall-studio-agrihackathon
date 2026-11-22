@@ -1,0 +1,454 @@
+import { useEffect, useRef, useCallback, useState } from 'react'
+import { Card, Button, App, Space, Tag, Alert, Radio, Modal, Progress, Typography } from 'antd'
+import { TrophyOutlined, ToolOutlined, BulbOutlined, FormOutlined, CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
+import { useTheme } from '../components/ThemeProvider'
+import { useGameStore } from '../game/hooks/useGameState'
+import { Board2048 } from '../game/components/Board2048'
+import { GameHeader } from '../game/components/GameHeader'
+import { GameOverPanel } from '../game/components/GameOverPanel'
+import { PauseOverlay } from '../game/components/PauseOverlay'
+import { getGameQuizQuestions, getLocalQuizInfo } from '../api'
+import type { Direction } from '../game/types'
+
+const { Text } = Typography
+
+// Tile values that trigger quiz gate
+const QUIZ_GATE_TILES = [256, 512, 1024, 2048]
+
+const GAME_ANIMATION_STYLES = `
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tileAppear {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes tilePop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+`
+
+interface QuizQuestion {
+  id: string
+  question_type: string
+  question_text: string
+  options: { label: string; text: string }[]
+  correct_answer: string
+  analysis: string
+}
+
+export default function GamePage() {
+  const { isDark } = useTheme()
+  const { message } = App.useApp()
+  const state = useGameStore(s => s.state)
+  const grid = useGameStore(s => s.grid)
+  const startGame = useGameStore(s => s.startGame)
+  const makeMove = useGameStore(s => s.makeMove)
+  const pauseGame = useGameStore(s => s.pauseGame)
+  const resumeGame = useGameStore(s => s.resumeGame)
+  const tickTimer = useGameStore(s => s.tickTimer)
+  const resetGame = useGameStore(s => s.resetGame)
+
+  const boardRef = useRef<HTMLDivElement>(null)
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
+  const [boardSize, setBoardSize] = useState(400)
+
+  // Board2048 lays out 4x4 cells with a uniform gap: boardSize = 4*cellSize + 4*gap.
+  // Derive both from the responsive boardSize so the board always fits.
+  const GAP = 4
+  const cellSize = Math.max(20, Math.floor((boardSize - 4 * GAP) / 4))
+  const gap = GAP
+
+  // Quiz gate state
+  const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([])
+  const [quizGateOpen, setQuizGateOpen] = useState(false)
+  const [currentQuiz, setCurrentQuiz] = useState<QuizQuestion | null>(null)
+  const [quizAnswer, setQuizAnswer] = useState('')
+  const [quizResult, setQuizResult] = useState<'correct' | 'wrong' | null>(null)
+  const [quizLoading, setQuizLoading] = useState(false)
+  const [passedGates, setPassedGates] = useState<Set<number>>(new Set())
+  const [quizStats, setQuizStats] = useState({ correct: 0, total: 0 })
+
+const GAME_ANIMATION_STYLES = `
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tileAppear {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes tilePop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+`
+
+  // Calculate board size based on viewport
+  useEffect(() => {
+    function calc() {
+      const maxW = Math.min(window.innerWidth - 48, 500)
+      const maxH = Math.min(window.innerHeight - 300, 500)
+      setBoardSize(Math.min(maxW, maxH))
+    }
+    calc()
+    window.addEventListener('resize', calc)
+    return () => window.removeEventListener('resize', calc)
+  }, [])
+
+  // Inject animation styles
+  useEffect(() => {
+    if (document.getElementById('game-animations')) return
+    const style = document.createElement('style')
+    style.id = 'game-animations'
+    style.textContent = GAME_ANIMATION_STYLES
+    document.head.appendChild(style)
+    return () => { style.remove() }
+  }, [])
+
+  // Game timer tick
+  useEffect(() => {
+    if (state === 'playing') {
+      const interval = setInterval(() => tickTimer(), 1000)
+      return () => clearInterval(interval)
+    }
+  }, [state, tickTimer])
+
+  // Keyboard control
+  useEffect(() => {
+    if (state !== 'playing') return
+
+    function handleKey(e: KeyboardEvent) {
+      let dir: Direction | null = null
+      switch (e.key) {
+        case 'ArrowUp': dir = 'up'; break
+        case 'ArrowDown': dir = 'down'; break
+        case 'ArrowLeft': dir = 'left'; break
+        case 'ArrowRight': dir = 'right'; break
+        case 'Escape':
+          pauseGame()
+          return
+        default: return
+      }
+      e.preventDefault()
+      if (dir) {
+        makeMove(dir)
+      }
+    }
+
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [state, makeMove, pauseGame])
+
+  // Touch support
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (state !== 'playing') return
+    const t = e.touches[0]
+    touchStart.current = { x: t.clientX, y: t.clientY }
+  }, [state])
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (state !== 'playing' || !touchStart.current) return
+    const t = e.changedTouches[0]
+    const dx = t.clientX - touchStart.current.x
+    const dy = t.clientY - touchStart.current.y
+    const minSwipe = 30
+
+    let dir: Direction | null = null
+    if (Math.abs(dx) > Math.abs(dy)) {
+      if (Math.abs(dx) > minSwipe) dir = dx > 0 ? 'right' : 'left'
+    } else {
+      if (Math.abs(dy) > minSwipe) dir = dy > 0 ? 'down' : 'up'
+    }
+
+    touchStart.current = null
+    if (dir) {
+      makeMove(dir)
+    }
+  }, [state, makeMove])
+
+  const handleStart = () => {
+    startGame()
+    boardRef.current?.focus()
+  }
+
+  const handleRestart = () => {
+    startGame()
+    boardRef.current?.focus()
+  }
+
+  const handleGoHome = () => {
+    resetGame()
+  }
+
+  // ---- Quiz Gate System ----
+
+  // Check for tile milestones and trigger quiz gate
+  useEffect(() => {
+    if (state !== 'playing') return
+    const tiles = grid.flat()
+    for (const tile of tiles) {
+      if (tile && QUIZ_GATE_TILES.includes(tile) && !passedGates.has(tile)) {
+        pauseGame()
+        loadQuizQuestion()
+        return
+      }
+    }
+  }, [grid, state])
+
+  const loadQuizQuestion = async () => {
+    setQuizLoading(true)
+    try {
+      const data = await getGameQuizQuestions('medium', 1, 'local')
+      const questions = data?.questions || data || []
+      if (questions.length > 0) {
+        setCurrentQuiz(questions[0])
+      } else {
+        // No questions available, skip gate
+        const tileValue = grid.flat().find(t => t && QUIZ_GATE_TILES.includes(t))
+        if (tileValue) setPassedGates(prev => new Set(prev).add(tileValue))
+        resumeGame()
+        return
+      }
+      setQuizGateOpen(true)
+    } catch {
+      // Quiz loading failed - skip gate gracefully
+      message.warning('题库加载失败，跳过答题门禁')
+      const tileValue = grid.flat().find(t => t && QUIZ_GATE_TILES.includes(t))
+      if (tileValue) setPassedGates(prev => new Set(prev).add(tileValue))
+      resumeGame()
+    } finally {
+      setQuizLoading(false)
+    }
+  }
+
+  const handleQuizSubmit = () => {
+    if (!currentQuiz || !quizAnswer) return
+    const isCorrect = quizAnswer === currentQuiz.correct_answer
+    setQuizResult(isCorrect ? 'correct' : 'wrong')
+    setQuizStats(prev => ({
+      correct: prev.correct + (isCorrect ? 1 : 0),
+      total: prev.total + 1,
+    }))
+  }
+
+  const handleQuizContinue = () => {
+    const tileValue = grid.flat().find(t => t && QUIZ_GATE_TILES.includes(t))
+    if (tileValue) setPassedGates(prev => new Set(prev).add(tileValue))
+    setQuizGateOpen(false)
+    setQuizAnswer('')
+    setQuizResult(null)
+    setCurrentQuiz(null)
+    resumeGame()
+  }
+
+  return (
+    <div>
+      <Card
+        title={
+          <Space>
+            <TrophyOutlined style={{ color: '#faad14' }} />
+            <span>知识闯关</span>
+            {quizStats.total > 0 && (
+              <Tag color="green" style={{ fontSize: 11 }}>
+                答题 {quizStats.correct}/{quizStats.total}
+              </Tag>
+            )}
+          </Space>
+        }
+        extra={
+          <Space>
+            <Tag color="blue" style={{ fontSize: 11 }}>
+              <BulbOutlined /> 键盘 ↑↓←→ / 滑动
+            </Tag>
+          </Space>
+        }
+      >
+        {/* Ready state — start screen */}
+        {state === 'ready' && (
+          <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+            <TrophyOutlined style={{ fontSize: 72, color: '#faad14', marginBottom: 16 }} />
+            <h2 style={{ color: isDark ? '#e5e7eb' : '#333', marginBottom: 8 }}>
+              知识闯关
+            </h2>
+            <p style={{ color: '#888', fontSize: 14, maxWidth: 400, margin: '0 auto 24px', lineHeight: 1.8 }}>
+              经典 2048 合并游戏 × 知识答题。合成 {QUIZ_GATE_TILES.join('、')} 时触发知识问答门禁，答对继续前进！
+            </p>
+
+            {quizStats.total > 0 && (
+              <div style={{ marginBottom: 20 }}>
+                <Tag color="blue">答题 {quizStats.total} 题</Tag>
+                <Tag color="green">正确 {quizStats.correct} 题</Tag>
+                <Tag>正确率 {Math.round((quizStats.correct / quizStats.total) * 100)}%</Tag>
+              </div>
+            )}
+
+            <Button
+              type="primary"
+              size="large"
+              onClick={handleStart}
+              style={{ borderRadius: 10, minWidth: 160, height: 48, fontSize: 16, fontWeight: 600 }}
+            >
+              <TrophyOutlined /> 开始游戏
+            </Button>
+          </div>
+        )}
+
+        {/* Playing / Paused / Game Over */}
+        {state !== 'ready' && (
+          <div style={{ maxWidth: boardSize + 32, margin: '0 auto' }}>
+            <GameHeader isDark={isDark} />
+
+            <div
+              ref={boardRef}
+              style={{ position: 'relative' }}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <Board2048 boardSize={boardSize} cellSize={cellSize} gap={gap} />
+
+              {/* Pause overlay */}
+              {state === 'paused' && (
+                <PauseOverlay
+                  onResume={resumeGame}
+                  onQuit={resetGame}
+                />
+              )}
+
+              {/* Game over panel */}
+              {state === 'game_over' && (
+                <GameOverPanel
+                  isDark={isDark}
+                  onRestart={handleRestart}
+                  onGoHome={handleGoHome}
+                />
+              )}
+            </div>
+
+            {/* Footer hints */}
+            <div style={{
+              textAlign: 'center',
+              color: '#aaa',
+              fontSize: 12,
+              marginTop: 12,
+            }}>
+              {state === 'playing' && (
+                <>方向键或滑动屏幕操控 | Esc 暂停</>
+              )}
+              {state === 'game_over' && (
+                <>点击「再来一局」继续挑战</>
+              )}
+            </div>
+
+            {/* Quiz stats footer */}
+            {quizStats.total > 0 && (
+              <div style={{ textAlign: 'center', marginTop: 12 }}>
+                <Text type="secondary" style={{ fontSize: 12 }}>
+                  <FormOutlined /> 答题: {quizStats.correct}/{quizStats.total} ·
+                  正确率 {Math.round((quizStats.correct / quizStats.total) * 100)}%
+                </Text>
+              </div>
+            )}
+          </div>
+        )}
+      </Card>
+
+      {/* Quiz Gate Modal */}
+      <Modal
+        title={
+          <Space>
+            <FormOutlined /> 知识门禁
+            <Tag color="purple">答题闯关</Tag>
+          </Space>
+        }
+        open={quizGateOpen}
+        closable={false}
+        maskClosable={false}
+        footer={null}
+        width={560}
+        styles={{
+          content: isDark ? { backgroundColor: '#1f1f1f' } : undefined,
+          header: isDark ? { backgroundColor: '#1f1f1f' } : undefined,
+        }}
+      >
+        {quizLoading ? (
+          <div style={{ textAlign: 'center', padding: 40 }}>
+            <Text type="secondary">加载题目中...</Text>
+          </div>
+        ) : currentQuiz ? (
+          <div style={{ color: isDark ? '#e5e7eb' : undefined }}>
+            <div style={{ marginBottom: 16 }}>
+              <Tag color="blue">{currentQuiz.question_type === 'single_choice' ? '单选题' : '题目'}</Tag>
+              <Text strong style={{ fontSize: 15, color: isDark ? '#e5e7eb' : undefined }}>{currentQuiz.question_text}</Text>
+            </div>
+
+            {quizResult ? (
+              <div>
+                <div style={{ padding: 16, borderRadius: 8, marginBottom: 16,
+                  backgroundColor: quizResult === 'correct' ? '#f6ffed' : '#fff2f0',
+                  border: `1px solid ${quizResult === 'correct' ? '#b7eb8f' : '#ffccc7'}` }}>
+                  <Text strong style={{ color: quizResult === 'correct' ? '#52c41a' : '#ff4d4f' }}>
+                    {quizResult === 'correct' ? <CheckCircleOutlined /> : <CloseCircleOutlined />}
+                    {' '}{quizResult === 'correct' ? '回答正确！' : '回答错误'}
+                  </Text>
+                  {quizResult === 'wrong' && (
+                    <div style={{ marginTop: 8 }}>
+                      <Text>正确答案: {currentQuiz.correct_answer}</Text>
+                      {currentQuiz.analysis && (
+                        <div style={{ marginTop: 4 }}>
+                          <Text type="secondary">{currentQuiz.analysis}</Text>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+                <Button type="primary" block onClick={handleQuizContinue} size="large">
+                  继续游戏
+                </Button>
+              </div>
+            ) : (
+              <div>
+                <Radio.Group
+                  onChange={e => setQuizAnswer(e.target.value)}
+                  value={quizAnswer}
+                  style={{ width: '100%' }}
+                >
+                  <Space direction="vertical" style={{ width: '100%' }}>
+                    {(currentQuiz.options || []).map((opt: any) => (
+                      <Radio key={opt.label} value={opt.label}
+                        style={{ padding: '8px 12px', border: '1px solid #d9d9d9', borderRadius: 6, width: '100%' }}>
+                        {opt.label}. {opt.text}
+                      </Radio>
+                    ))}
+                  </Space>
+                </Radio.Group>
+                <Button
+                  type="primary"
+                  block
+                  size="large"
+                  disabled={!quizAnswer}
+                  onClick={handleQuizSubmit}
+                  style={{ marginTop: 16 }}
+                >
+                  提交答案
+                </Button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div style={{ textAlign: 'center', padding: 40 }}>
+            <Text type="secondary">暂无可用题目</Text>
+            <br />
+            <Button type="primary" onClick={handleQuizContinue} style={{ marginTop: 12 }}>
+              跳过继续
+            </Button>
+          </div>
+        )}
+      </Modal>
+    </div>
+  )
+}

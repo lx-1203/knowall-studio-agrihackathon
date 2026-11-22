@@ -1,0 +1,29 @@
+{
+  "name": "stylis",
+  "version": "4.4.0",
+  "license": "MIT",
+  "repository": "https://github.com/thysultan/stylis.js",
+  "resolved": "https://registry.npmmirror.com/stylis/-/stylis-4.4.0.tgz",
+  "integrity": "sha512-5Z9ZpRzfuH6l/UAvCPAPUo3665Nk2wLaZU3x+TLHKVzIz33+sbJqbtrYoC3KD4/uVOr2Zp+L0LySezP9OHV9yA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "88c579c6ee44b41137a21321190d177982e5b17d4fa1b83a4a2e3ea325a8fc9a",
+      "source": "frontend/node_modules/stylis/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0208ae0a4e8a393c6c8d391075bd6b4aaa55ce53640ba16729296171d070b12a",
+    "dist/stylis.mjs": "17fae7cc96d217a1a0ada18d4a253394d59883b5b4a4b995cc2be2b75119e1d3",
+    "src/Enum.js": "3ae600445e6402e3e42c8456fd6bac63ffce00f9a59f7e41d870e84e61e98488",
+    "src/Middleware.js": "82b6642c2718337b9be58a396e1b745e340a7400f208ebfb884609c49d96ab8e",
+    "src/Parser.js": "e18482d55508479a48a00ded7dca927ee8c53f109aac35e165b0fbdd226fae51",
+    "src/Prefixer.js": "fbca42dd117b0c764a00b27280839a474e3a142e67b85e239e2daac13bf6091a",
+    "src/Serializer.js": "938f255405780b39632077771a780a016b738005148cb223be8240380ea3b8d0",
+    "src/Tokenizer.js": "5f52e7e40f3d905d2121b50fc9d6897f6019fece001e549cdb1bd053b5ff55b0",
+    "src/Utility.js": "661653fedf64998195cdd927d9a0944f85fa61414121173d4b6248920d27abaf",
+    "dist/umd/stylis.js": "4f90c1385ca12a02e03dd845cfc6d65108347982d9ec1e26de552a9fd2e2c2c6"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

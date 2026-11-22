@@ -1,0 +1,21 @@
+{
+  "name": "estree-util-is-identifier-name",
+  "version": "3.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/estree-util-is-identifier-name",
+  "resolved": "https://registry.npmmirror.com/estree-util-is-identifier-name/-/estree-util-is-identifier-name-3.0.0.tgz",
+  "integrity": "sha512-hFtqIDZTIUZ9BXLb8y4pYGyk6+wekIivNVTcmvk8NoOh+VeRn5y6cEHzbURrWbfp1fIqdVipilzj+lfaadNZmg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\estree-util-is-identifier-name\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "027d2c35f1adb51f1381a5ae1d96ede90e1a5d4014eb81d9053d47831aa0e6b9",
+    "lib/index.js": "6d8907d1847bf9d24d7a8158a89296dbf6e1be33fd97efb2e411ea5a1cc37809"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

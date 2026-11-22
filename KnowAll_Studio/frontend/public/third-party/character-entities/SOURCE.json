@@ -1,0 +1,22 @@
+{
+  "name": "character-entities",
+  "version": "2.0.2",
+  "repository": "wooorm/character-entities",
+  "license": "MIT",
+  "integrity": "sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+      "source": "frontend\\node_modules\\character-entities\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "a5f982520e46458dd306fe9320ac62665cc611117dda7f3d074ec27cec63ba60"
+    },
+    "upstream_modifications": []
+  }
+}

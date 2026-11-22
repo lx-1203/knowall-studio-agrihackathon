@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/fastapi/fastapi",
+  "version": "0.136.3",
+  "commit": "82064857539e6286522c347b4b11331b48dd2378",
+  "license": "MIT",
+  "source_files": [
+    "fastapi/routing.py"
+  ],
+  "copied_upstream_code": false,
+  "usage": "Public APIRoute handler and add_api_route override; upstream unchanged; existing runtime dependency."
+}

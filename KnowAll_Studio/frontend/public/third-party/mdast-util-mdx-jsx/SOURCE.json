@@ -1,0 +1,21 @@
+{
+  "name": "mdast-util-mdx-jsx",
+  "version": "3.2.0",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-mdx-jsx",
+  "resolved": "https://registry.npmmirror.com/mdast-util-mdx-jsx/-/mdast-util-mdx-jsx-3.2.0.tgz",
+  "integrity": "sha512-lj/z8v0r6ZtsN/cGNNtemmmfoLAFZnjMbNyLzBafjzikOM+glrjNHPlf6lQDOTccj9n5b0PPihEBbhneMyGs1Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\mdast-util-mdx-jsx\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "f82a6b128a5f8b1b6d8a6f82afa086ac1468c7a43482611f76a87338ea94504c",
+    "lib/index.js": "c774cbcf48ab5393198f305d737f4187316ad88f38f04ffdb1163e7ed53cf336"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "resize-observer-polyfill",
+  "version": "1.5.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/que-etc/resize-observer-polyfill.git"
+  },
+  "resolved": "https://registry.npmmirror.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz",
+  "integrity": "sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "49fad6f35ac45600d018ee56051c63e52103820d97d5ad512fe7018ec395b3df",
+      "source": "frontend/node_modules/resize-observer-polyfill/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/ResizeObserver.es.js": "254d4c205d23246382b2769794ea377aa6c904790d357d6b2e285e9a128f6d73",
+    "dist/ResizeObserver.global.js": "9220821a37146b6ce57a059a56001ab035a4f67da4c734c5aef119c7cd9c6399",
+    "dist/ResizeObserver.js": "2290b5c60e0cdc62851fb687800237273ac53797595b1b133860c4f1386de378",
+    "src/index.js": "d1ed2d49e057dc0089a31125fa5f9ff0e31243064fa987e2d356864a8359c49d",
+    "src/ResizeObservation.js": "04c767d53cbe54ec108386d6f45774ec008eca94b0466ca6d8900e6afad6fa3d",
+    "src/ResizeObserver.js": "165685d4a1c51e8506674a826e6472dae631fdecc15f2e286d58c52e0591bef9",
+    "src/ResizeObserverController.js": "bb31f6474f2c25de98a8e8c33e6c644548d14fd63902d11f961f4f6fa6a2d9a1",
+    "src/ResizeObserverEntry.js": "39517d4c4dfaf5d3354d7eb48ab04807281916d09714030a74c060b3c45925a8",
+    "src/ResizeObserverSPI.js": "97bfa6cf69cb68f070dc38a0e7246430f1abb96190c889d933f60cb8e253063a",
+    "src/shims/es6-collections.js": "34d602e5dfb38d9a922784bfc4224aeb2055d5315d36783e2df2c7e7ab5ace77",
+    "src/shims/global.js": "3d651fcfdcb4ebd53d295c796b0e1164b0b17e892850dcaabbc94a6970ec7e5e",
+    "src/shims/requestAnimationFrame.js": "0e44ac0b4609c8bbe4c0a67d93fa654f96d11192bc17b82d93b5bc458c45df17",
+    "src/utils/defineConfigurable.js": "c6516bdff6a7985746c9782924990485c53c3baffc1b39c008510192d92d612a",
+    "src/utils/geometry.js": "aa9418cc6bb2bf20518489180ed5c74916f1a4d72c68fc16a374ee9db577c903",
+    "src/utils/getWindowOf.js": "7266766ba295c5cc28a4ffca325f9bea84f69e7318ac137c8b83f92233fbf701",
+    "src/utils/isBrowser.js": "b2a57ad4cc1263f6667224fbc1fa956f50e7575d86817fde4248c0dd64f7553d",
+    "src/utils/throttle.js": "2a01f393951268893ab3375c7bd8b9f55facad33e9c4518610c74b9faf4a20ee"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

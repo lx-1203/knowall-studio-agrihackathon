@@ -1,0 +1,32 @@
+{
+  "repo": "https://github.com/florimondmanca/httpx-sse",
+  "tag": "0.4.3",
+  "version": "0.4.3",
+  "license": "MIT",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/LICENSE",
+      "source": "LICENSE",
+      "sha256": "beec67e4ee83a7af26f242bed9987aa863d6d2dfb776106aa2360c4187f31901",
+      "local": "KnowAll_Studio/backend/third_party/httpx_sse/round54/LICENSE",
+      "license": "MIT",
+      "modifications": "none; reference source; native installed aconnect_sse used"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/src/httpx_sse/_api.py",
+      "source": "src/httpx_sse/_api.py",
+      "sha256": "0fba5f91a8e6747966b3be4e57c1e974eace12be4d6d64250f031f485709f055",
+      "local": "KnowAll_Studio/backend/third_party/httpx_sse/round54/UPSTREAM-API.txt",
+      "license": "MIT",
+      "modifications": "none; reference source; native installed aconnect_sse used"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/README.md",
+      "source": "README.md",
+      "sha256": "73c7d1b68ea6006a2c2b8ec7bd18d694793638cac46c218ea1b747cdcad64a2d",
+      "local": "KnowAll_Studio/backend/third_party/httpx_sse/round54/UPSTREAM-README.txt",
+      "license": "MIT",
+      "modifications": "none; reference source; native installed aconnect_sse used"
+    }
+  ]
+}

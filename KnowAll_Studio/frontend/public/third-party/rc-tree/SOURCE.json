@@ -1,0 +1,53 @@
+{
+  "name": "rc-tree",
+  "version": "5.13.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/tree.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-tree/-/rc-tree-5.13.1.tgz",
+  "integrity": "sha512-FNhIefhftobCdUJshO7M8uZTA9F4OPGVXqGfZkkD/5soDeOhwO06T/aKTrg0WD8gRg/pyfq+ql3aMymLHCTC4A==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "6db0a962e5898831124a7e7465d4cf3ad849d121f97a618046b7a7f41fd2b031",
+      "source": "frontend/node_modules/rc-tree/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "e2e684d12c18eee47f64791d54e0e5cd9cccbb92a6498a3a480b5f8c91caf301",
+    "es/contextTypes.js": "9c866c659294a94bff7aae9b49677013305c2fa12edc64a03f9e13ebe9c04db4",
+    "es/DropIndicator.js": "c9650f0577ac855b773b30f25f6d943d5d88c838101214b7bf6afe25f1e8c9e5",
+    "es/Indent.js": "84d015153a5bcb5b210e6eedccfd9a55105a9a327fa9027dfc46eecf60403302",
+    "es/index.js": "1ef89f02804e09794cafd0b78223cb0a47b43f0f3f7e67393d1adf9ea5db3850",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/MotionTreeNode.js": "c7d2d46d707c2d9a40b29383f4e1467da359a15d179da35f3b2a9a69209a6e8f",
+    "es/NodeList.js": "87090b00cee507dad98626636f503c5ceb48952009cdd542a7e2e7f793b14bf8",
+    "es/Tree.js": "b9757af74ca251e6fe0d7a6c044c021bdaeb3fadb4a0b6fcf3171f72c944f395",
+    "es/TreeNode.js": "dc9d5588c6c3b1410f2b644a0f792a306a8caabd4d422925c3448296010bceed",
+    "es/useUnmount.js": "2c2737d916e8fdd02f757b33d1bda7a42cd2f9eeb6f1ee6b9341121b1706a111",
+    "es/util.js": "15f853ac0dee0281b193688803d27a9f0b26e144b3b555b205690774d737eb53",
+    "lib/contextTypes.js": "69ec0434fddf5eb8285338418e03d5b2a793227942f9e910aef565a29d0843bb",
+    "lib/DropIndicator.js": "48b545c272e64997e04a2b473fac5f9a39355f08708f297fdd961666afd4bc41",
+    "lib/Indent.js": "1e9668274ea76cc0eaf02edab4a6957930f9dd15a5fa0a6cb923923967dd73f6",
+    "lib/index.js": "dadff7bb16ffdca104bf49c3e5a305713635833f0303728f4d63a6e17b8ab926",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/MotionTreeNode.js": "6053ed19a8479f74a0e898a9fa5a36b7e397db2d89a3a72c033fe83ad7be44e9",
+    "lib/NodeList.js": "ff75c863ab1127e61cbf2115620dc4172bbc6059f43c32ea9144f49cc7672c78",
+    "lib/Tree.js": "aecb6653cd0b262c8c4852f62038ff8b9c578dcdd4bb036f8bc8a21e93e861d8",
+    "lib/TreeNode.js": "4ad2e6691ca97097aa4789dd586299eef62f1efeb4fb19dd1e4a7e6f9a6df1d3",
+    "lib/useUnmount.js": "45aa9e6700ca0513162ec31ad678d882f0030ffbb15aa3db61ca71e121e1d7c2",
+    "lib/util.js": "a86d46b66d4704c87a9ad0df4918e644510a91cbfa498372b072da5e42ad6067",
+    "lib/utils/conductUtil.js": "633d393f61e067b7fabc6903df8aa04e07af30ff76718a6e2f468404a2e76167",
+    "lib/utils/diffUtil.js": "40ab5bc7da8868497785db3bd086fcc45542bebfe2409434e2c7ab974283e22a",
+    "lib/utils/keyUtil.js": "1d8dd19dcee3777d7c90884f8424fc9a2e6623ea8d5dfc5c8b64bd287eacc2ac",
+    "lib/utils/treeUtil.js": "e4868ef323f6fb856ae36a0c19e83b7298e0973a38a0e1ec92bd1d82ea4f857a",
+    "es/utils/conductUtil.js": "34ed65799fb68c9c25993e19031e8fd140e13ee2ce03e63479134cd70b5aa6cc",
+    "es/utils/diffUtil.js": "7f757d8a5ea3611942796b4442bb22eefa637edc938807ce916438447096eeb7",
+    "es/utils/keyUtil.js": "0cd9dc87d0e0a053ef32c03d5986df22a5615f7668fe7dbdba5c053c3184beaa",
+    "es/utils/treeUtil.js": "4080b792532a18359cbf543961650e7031516263d8e1712256222aa0095e2a9a"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

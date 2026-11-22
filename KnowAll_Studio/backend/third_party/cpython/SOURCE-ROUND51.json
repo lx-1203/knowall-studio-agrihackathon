@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/python/cpython/v3.13.13/LICENSE",
+    "version": "v3.13.13",
+    "source": "LICENSE",
+    "local": "KnowAll_Studio/backend/third_party/cpython/ROUND51-LICENSE",
+    "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "modifications": "None; provenance only. Runtime native APIs, no copied algorithm."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/python/cpython/v3.13.13/Lib/contextlib.py",
+    "version": "v3.13.13",
+    "source": "Lib/contextlib.py",
+    "local": "KnowAll_Studio/backend/third_party/cpython/ROUND51-Lib_contextlib.py",
+    "sha256": "c1e0d67b2007de11ae93cd36cf6faf38d9ab32656a832d592a49325eec579f96",
+    "modifications": "None; provenance only. Runtime native APIs, no copied algorithm."
+  }
+]

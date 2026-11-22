@@ -1,0 +1,22 @@
+{
+  "name": "hast-util-from-html-isomorphic",
+  "version": "2.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/hast-util-from-html-isomorphic",
+  "resolved": "https://registry.npmmirror.com/hast-util-from-html-isomorphic/-/hast-util-from-html-isomorphic-2.0.0.tgz",
+  "integrity": "sha512-zJfpXq44yff2hmE0XmwEOzdWin5xwH+QIhMLOScpX91e/NSGPsAzNCvLQDIEPyO2TXi+lBmU6hjLIhV8MwP2kw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "fb5678944a6345b1d30a8fe006aef2be2f6bb1c22431a7cc92674fb0944a7578",
+      "source": "frontend\\node_modules\\hast-util-from-html-isomorphic\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "eb445031e4c15905811d378d5ba794691205eb2ce1910e8590b08c14a4dc62c7",
+    "lib/browser.js": "f8423485cf579d691af6a50cc8242cbcd19dac5849b5201c38ce88c62cbe29d0",
+    "lib/index.js": "ea49289008121b846d958c3a2032246303f72c29f211b40869c4dc8e03b719a9"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@rc-component/mini-decimal",
+  "version": "1.1.4",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/mini-decimal.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@rc-component/mini-decimal/-/mini-decimal-1.1.4.tgz",
+  "integrity": "sha512-xiuXcaCwyOWpD8a8scdExFl+bntNphAW8XeenL1ig2en0AAZY0Pcp4pC0dI22qJ+NvxKn9RoNIoRdqYU3BLH4w==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "8781f0ca192057330d7fbab763f8bcd3c8e671032f98e9cf1f8c82d6748e5654",
+      "source": "frontend/node_modules/@rc-component/mini-decimal/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "es/BigIntDecimal.js": "cd3cb9fe9af67cb0ac21d616c63186604367234358cda62e3d7bc67518f60039",
+    "es/index.js": "ea0f35f46585be613e464df7860e72b22e9e95b7f24f611a091d981d9092de4f",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/MiniDecimal.js": "8197245c8bbeac892037981c1d3f80f41e3d3b9ca16f0da3b9169278e5d7688e",
+    "es/NumberDecimal.js": "d0ca2f97ce155ede629a81bc5206b0aeee96cb10e088ef8df101a02a06737747",
+    "es/numberUtil.js": "dc8216bd3547419261977b0762bdd95e754bffc381f592c674628c3066d3dc0a",
+    "es/supportUtil.js": "5589f3cd331616e410863552b0c9d7e15f826c4b3734ed1b36845bd5031a6db5",
+    "lib/BigIntDecimal.js": "768e938aee8e0eeb095182cbbfe3d479b2ad3d84a5b171c441d3f7b6b2ac6152",
+    "lib/index.js": "8b59b90602e9030f8dc1d7fd282bdb21a5bbdb676b42751d6a099b63e1c1a887",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/MiniDecimal.js": "39e4af47f9d1109f5b92c554ac72b4b169caf66518eac18b545441f12ba4b1ab",
+    "lib/NumberDecimal.js": "c3ad1094227347d6276d3a94ce17ad10baacfb11c35b65f1ea89ccc2a30207ff",
+    "lib/numberUtil.js": "dda62f04eb3e985b35b5574d95972f31edd3b180f98578d8e056b6a863ca315b",
+    "lib/supportUtil.js": "c25af3ce2186500c2dea3238a1061857063f01f79fa82f1830154179091798c4"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

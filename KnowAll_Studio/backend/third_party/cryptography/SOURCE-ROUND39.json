@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/pyca/cryptography",
+  "version": "49.0.0",
+  "license": "Apache-2.0 OR BSD-3-Clause",
+  "new_dependency": false,
+  "reuse": "existing project encrypt/decrypt_api_key helpers, original Fernet; no algorithm/upstream code modified",
+  "files": [
+    {
+      "file": "LICENSE",
+      "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+      "url": "https://github.com/pyca/cryptography/blob/49.0.0/LICENSE",
+      "installed_exact_match": true
+    },
+    {
+      "file": "LICENSE.APACHE",
+      "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+      "url": "https://github.com/pyca/cryptography/blob/49.0.0/LICENSE.APACHE",
+      "installed_exact_match": true
+    },
+    {
+      "file": "LICENSE.BSD",
+      "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb",
+      "url": "https://github.com/pyca/cryptography/blob/49.0.0/LICENSE.BSD",
+      "installed_exact_match": true
+    }
+  ]
+}

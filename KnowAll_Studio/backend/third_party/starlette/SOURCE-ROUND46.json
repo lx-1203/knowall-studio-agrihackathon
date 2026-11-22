@@ -1,0 +1,28 @@
+{
+  "version": "1.2.0",
+  "repository": "https://github.com/Kludex/starlette",
+  "ref": "1.2.0",
+  "license": "BSD-3-Clause",
+  "saved_at": "2026-10-10T17:59:20.903296+08:00",
+  "sources": [
+    {
+      "path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/LICENSE.md",
+      "local": "LICENSE-ROUND46",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+    },
+    {
+      "path": "starlette/responses.py",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/starlette/responses.py",
+      "local": "ROUND46-starlette-responses.py.txt",
+      "sha256": "8e95e773bdb3718b3dffc789dd258e53a46b9a8781c98e98cfb3c36e69fea897"
+    },
+    {
+      "path": "docs/responses.md",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/docs/responses.md",
+      "local": "ROUND46-docs-responses.md.txt",
+      "sha256": "0dbd4b25ebd3940b74dde4f6598853cb34a05266c93ba207dcc2e195c2402e1e"
+    }
+  ],
+  "modification": "No upstream edits. Native Alembic batch, SQLAlchemy fresh connection, Starlette FileResponse subclass; preserve original notices in deployment bundle."
+}

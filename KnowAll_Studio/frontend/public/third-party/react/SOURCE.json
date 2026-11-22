@@ -1,0 +1,40 @@
+{
+  "name": "react",
+  "version": "18.3.1",
+  "repository": "https://github.com/facebook/react",
+  "commit": "f1338f8080abd1386454a10bbf93d67bfe37ce85",
+  "tag": "v18.3.1",
+  "license": "MIT",
+  "originals": [
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/facebook/react/f1338f8080abd1386454a10bbf93d67bfe37ce85/LICENSE",
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "file": "packages/react/src/ReactElement.js",
+      "url": "https://raw.githubusercontent.com/facebook/react/f1338f8080abd1386454a10bbf93d67bfe37ce85/packages/react/src/ReactElement.js",
+      "sha256": "457a4355e6248b5a25e77f025a0504f81dffd39b269419416767614945b54336"
+    }
+  ],
+  "tag_output": "f1338f8080abd1386454a10bbf93d67bfe37ce85\trefs/tags/v18.3.1\n",
+  "tag_command": [
+    "git",
+    "-c",
+    "http.sslBackend=openssl",
+    "ls-remote",
+    "--tags",
+    "https://github.com/facebook/react.git",
+    "refs/tags/v18.3.1",
+    "refs/tags/v18.3.1^{}"
+  ],
+  "upstream_modified": false,
+  "reuse": "native keyed subtree reset; preserves same-account token updates; effect cleanup aborts old local-page requests",
+  "distribution_obligation": "preserve complete copyright, permission and disclaimer",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    }
+  ]
+}

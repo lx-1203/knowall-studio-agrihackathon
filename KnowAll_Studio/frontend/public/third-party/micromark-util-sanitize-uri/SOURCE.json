@@ -1,0 +1,21 @@
+{
+  "name": "micromark-util-sanitize-uri",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-sanitize-uri",
+  "resolved": "https://registry.npmmirror.com/micromark-util-sanitize-uri/-/micromark-util-sanitize-uri-2.0.1.tgz",
+  "integrity": "sha512-9N9IomZ/YuGGZZmQec1MbgxtlgougxTodVwDzzEouPKo3qFWvymFHWcnDi2vzV1ff6kas9ucW+o3yzJK9YB1AQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-util-sanitize-uri\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "c8c100c6e730dd6b19ecaa70ef9f1da99c10c415dc9b6539820d41756c0fc197",
+    "dev/index.js": "533addbe7ef0437d26e4d9af5779e098f8ba6871246002a150241a6805925f6a"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

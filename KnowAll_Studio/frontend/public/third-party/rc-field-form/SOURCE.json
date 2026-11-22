@@ -1,0 +1,56 @@
+{
+  "name": "rc-field-form",
+  "version": "2.7.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/field-form.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-field-form/-/rc-field-form-2.7.1.tgz",
+  "integrity": "sha512-vKeSifSJ6HoLaAB+B8aq/Qgm8a3dyxROzCtKNCsBQgiverpc4kWDQihoUwzUj+zNWJOykwSY4dNX3QrGwtVb9A==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "8781f0ca192057330d7fbab763f8bcd3c8e671032f98e9cf1f8c82d6748e5654",
+      "source": "frontend/node_modules/rc-field-form/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "es/Field.js": "c64ae93ee962623eb4907745aec4a6ed3b36d933211ff94d96a72f608aeabc24",
+    "es/FieldContext.js": "7ca0614222914f9638d50b800cd77e0ae6c0855fc1959ec15061c9cc49286b1b",
+    "es/Form.js": "c7dfcb89ad616cfabf714479cbe62011a5f79f6e7946526cfaaad5d52137fc05",
+    "es/FormContext.js": "47a4523e791015992fd85f2437dcef7a02ec5eb93ee9d809288c0eb08d61ff52",
+    "es/index.js": "fa418d086b765ab8f6f68803665c0c01dbad7cdc21bbfc643472b3cd32e8d764",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/List.js": "3b9be6631e58b1968ad10bd5ecd4ae1476f46d4b40814ea691f2c3fc4422a37a",
+    "es/ListContext.js": "3e03b286d55a282892002d83e7910e8b0f0b510002a01fa1ea9c6c31888715ec",
+    "es/namePathType.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/useForm.js": "be4d5ccfa55702fd74f7f9fde957de8157c6d1a3527a2f9b4a3d24eb0244e5e6",
+    "es/useWatch.js": "5c68327f89a343a603b6ded0e1b4bea4c27062bbeea756fb1b1214a51504b2f4",
+    "lib/Field.js": "7a1c1f0de81d4e319fdfe032ed3f0d9bc005e2c2b067f04605d79a669dcffe9b",
+    "lib/FieldContext.js": "0c7b55a537c421bebd985f7fc26f456a6336c3d33ffcbd9ae0fb8ab0a45f1bd4",
+    "lib/Form.js": "e3bb56910cb63d2f7ab97bc9744b84173b3e6e7dcf53040cafe8ccdf4ce8aa98",
+    "lib/FormContext.js": "1704f5d15566c2f801dd879e8f3079a4ba0011bf0f2b6dfae0a8f312f691b193",
+    "lib/index.js": "ef77dfc021249250b5cde13b706066ae3991ffb21610d3b6b687fc2e4674a850",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/List.js": "21dc974f5d7de030ebab9bc17390b941c632baa0a5d0a1b92009856278a62d06",
+    "lib/ListContext.js": "6e319061026afdb4f7869d2e0f076ad1e29067a94f278733562617c3a0e4b3df",
+    "lib/namePathType.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/useForm.js": "7d2267b389c57eac6ebe0cdfa527c0d81e32a37fe6ce194637a5cad3fd14b558",
+    "lib/useWatch.js": "0c407c6b89866bd8130b7bfadbcb157daeb5feaf798f2729a2e7e331bc4a2641",
+    "lib/utils/asyncUtil.js": "20b29392a3fff8aa99d875b1518a7d93ea01a70491d73c9654d9c65fdc071d39",
+    "lib/utils/messages.js": "a775267f837b4c874a6e4eba24569299be905c46ff083d4f882c4ff6f4505d03",
+    "lib/utils/NameMap.js": "4cadfbeb0488064ce5e92cd7a7b04ec347aa434f664a9d27814ad6c484d4b439",
+    "lib/utils/typeUtil.js": "b78b26061f6aee70315a67030ff47744453f1f4d15494cbcf1a2d62f921f524f",
+    "lib/utils/validateUtil.js": "3e845b4883d924dd89edc13f56e5fc0480bf8445b0f83b9516f924755d754a1d",
+    "lib/utils/valueUtil.js": "907c2a84b33f4e9d7163af3683e4bfe57a2bf20ebe79fe154d3c928c5ac9fd2d",
+    "es/utils/asyncUtil.js": "fce97ea18f995ee7f4670e598aaf848489a00c35753532e2db7bb33c09ca0811",
+    "es/utils/messages.js": "40986bce9b262d135b20ea839b8b5c4fec14fea86981a6d4583d02cf33acd9cd",
+    "es/utils/NameMap.js": "8df0a98b8c80abeb17b172ec434f2b1d0c560df1613359a20d547ce870ec6605",
+    "es/utils/typeUtil.js": "be582a16334148f79c29f6b6d528e81ef963fbbd131f56e6ed9e52d5c749d3dc",
+    "es/utils/validateUtil.js": "c020b938575b099a88afc35cd4698844579ee151de43cc07e2a1cf1e8dc95153",
+    "es/utils/valueUtil.js": "c776616f4d00df3eda8fc66600204a5656e5285bf950ec8b233466ecbf46bb34"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

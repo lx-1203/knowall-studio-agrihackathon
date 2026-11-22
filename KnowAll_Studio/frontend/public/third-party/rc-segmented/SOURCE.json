@@ -1,0 +1,27 @@
+{
+  "name": "rc-segmented",
+  "version": "2.7.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/segmented.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-segmented/-/rc-segmented-2.7.1.tgz",
+  "integrity": "sha512-izj1Nw/Dw2Vb7EVr+D/E9lUTkBe+kKC+SAFSU9zqr7WV2W5Ktaa9Gc7cB2jTqgk8GROJayltaec+DBlYKc6d+g==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "2481b61123d4f8be84e11847d4bc9684f2aa073d1d2a3275e36fdb7f1cff019a",
+      "source": "frontend/node_modules/rc-segmented/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "180d825db7714ae85f7904ec886766794f0da6d9682105ed6ba5723c1bd25723",
+    "es/index.js": "30aec4edeb06e1527b4eebb3fcfd6fc9796b1626029d4576a4d9563f86bbc89f",
+    "es/MotionThumb.js": "9ae9d3282c716649b17de7a50120b3268468140714c298f24a8cc3c4794f1d45",
+    "lib/index.js": "f6d63161a94d749b7d769a860840e23ffff06e7965f0d62d4aadf06ba6ff233f",
+    "lib/MotionThumb.js": "1a9927046773bd52f4bea0a95bbe12074aaf54e0b74a34963536dbb7f1a8ce75"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

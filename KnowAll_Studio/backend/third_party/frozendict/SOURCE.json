@@ -1,0 +1,30 @@
+{
+  "package": "frozendict",
+  "version": "2.4.7",
+  "repository": {
+    "Bug Reports": "https://github.com/Marco-Sulla/python-frozendict/issues",
+    "Homepage": "https://github.com/Marco-Sulla/python-frozendict",
+    "Source": "https://github.com/Marco-Sulla/python-frozendict"
+  },
+  "license": "LGPL v3",
+  "wheel_url": "https://files.pythonhosted.org/packages/38/74/f94141b38a51a553efef7f510fc213894161ae49b88bffd037f8d2a7cb2f/frozendict-2.4.7-py3-none-any.whl",
+  "wheel_sha256": "972af65924ea25cf5b4d9326d549e69a9a4918d8a76a9d3a7cd174d98b237550",
+  "original_notices": [
+    {
+      "file": "LICENSE.txt",
+      "wheel_path": "frozendict-2.4.7.dist-info/licenses/LICENSE.txt",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+    }
+  ],
+  "library_modifications": null,
+  "distributed_form": "Source deployment requirements and original notices; no vendored executable library",
+  "source_archive": "frozendict-2.4.7.tar.gz",
+  "source_sha256": "e478fb2a1391a56c8a6e10cc97c4a9002b410ecd1ac28c18d780661762e271bd",
+  "source_url": "https://files.pythonhosted.org/packages/90/b2/2a3d1374b7780999d3184e171e25439a8358c47b481f68be883c14086b4c/frozendict-2.4.7.tar.gz",
+  "additional_GPL_text": {
+    "file": "COPYING-GPL-3.0.txt",
+    "url": "https://raw.githubusercontent.com/emacs-mirror/emacs/emacs-30.2/COPYING",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  "replacement": "External dynamic Python dependency; install interface-compatible modified frozendict in deployment venv. No frozen library, no restriction on library modification or debugging/reverse engineering those modifications. Original corresponding source and LGPLv3/GPLv3 texts included."
+}

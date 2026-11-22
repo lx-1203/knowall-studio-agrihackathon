@@ -1,0 +1,162 @@
+{
+  "name": "axios",
+  "repository": "https://github.com/axios/axios",
+  "tag": "v1.18.0",
+  "tag_object": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+  "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+  "source_files": [
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/LICENSE",
+      "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c",
+      "evidence": "round-12-upstream-axios-LICENSE.txt"
+    },
+    {
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/README.md",
+      "sha256": "ce5788019d7d89c6905fd1b72eeeac21bbd6e278a23f0e5b4a3682494b631891",
+      "evidence": "round-12-upstream-axios-README.md.txt"
+    },
+    {
+      "file": "lib/cancel/isCancel.js",
+      "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/lib/cancel/isCancel.js",
+      "sha256": "c5ec9e27f9d90ac0dd6aa7921c273ca3e3d9aeca8acf93c54c5dd8305bb624f1",
+      "evidence": "round-12-upstream-axios-lib--cancel--isCancel.js.txt"
+    },
+    {
+      "file": "lib/adapters/xhr.js",
+      "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/lib/adapters/xhr.js",
+      "sha256": "6105e573cf707532ec8c7ec73b1e7450d89a0f75ad1528756b8efa38c34c59ad",
+      "evidence": "round-12-upstream-axios-lib--adapters--xhr.js.txt"
+    }
+  ],
+  "modifications": "none; dependency configuration and application call sites only",
+  "version": "1.18.0",
+  "license": "MIT",
+  "integrity": "sha512-E32NzpYKp++W7XRe52rHiXV2ehxmh3wbdgO7MHeFM+vqxLBYHzt0ElkiImtOBxtOmyp0yoC8C6uESVV84Y2/hw==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c"
+    }
+  ],
+  "native_upload_integration": {
+    "name": "axios",
+    "repository": "https://github.com/axios/axios",
+    "tag": "v1.18.0",
+    "tag_object": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+    "tag_verification_url": "https://github.com/axios/axios.git",
+    "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+    "version": "1.18.0",
+    "license": "MIT",
+    "integrity": "sha512-E32NzpYKp++W7XRe52rHiXV2ehxmh3wbdgO7MHeFM+vqxLBYHzt0ElkiImtOBxtOmyp0yoC8C6uESVV84Y2/hw==",
+    "originals": [
+      {
+        "file": "LICENSE",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/LICENSE",
+        "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c"
+      },
+      {
+        "file": "lib/adapters/xhr.js",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/lib/adapters/xhr.js",
+        "sha256": "6105e573cf707532ec8c7ec73b1e7450d89a0f75ad1528756b8efa38c34c59ad"
+      },
+      {
+        "file": "lib/helpers/progressEventReducer.js",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/lib/helpers/progressEventReducer.js",
+        "sha256": "516cbded3bf05b31bb17a1c4936d459b1b24bec1c2c67f59df370515ebfa0817"
+      },
+      {
+        "file": "index.d.ts",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/index.d.ts",
+        "sha256": "1f983a93b86bf82ef3cc0ead060c5e3d28fd905864d3441337706ea5ef77a990"
+      },
+      {
+        "file": "README.md",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/README.md",
+        "sha256": "ce5788019d7d89c6905fd1b72eeeac21bbd6e278a23f0e5b4a3682494b631891"
+      }
+    ],
+    "upstream_modifications": false,
+    "usage": "Existing beforeUpload path; native Axios progress/signal, Ant Progress/Alert/Button; two file imports and URL Bearer/401/singlePOST, no upstream modifications/new modules."
+  },
+  "account_catalog_integration": {
+    "fixed_upstream": {
+      "name": "axios",
+      "repository": "https://github.com/axios/axios",
+      "tag": "v1.18.0",
+      "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+      "version": "1.18.0",
+      "license": "MIT",
+      "integrity": "sha512-E32NzpYKp++W7XRe52rHiXV2ehxmh3wbdgO7MHeFM+vqxLBYHzt0ElkiImtOBxtOmyp0yoC8C6uESVV84Y2/hw==",
+      "originals": [
+        {
+          "file": "LICENSE",
+          "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/LICENSE",
+          "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c"
+        },
+        {
+          "file": "lib/adapters/xhr.js",
+          "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/lib/adapters/xhr.js",
+          "sha256": "6105e573cf707532ec8c7ec73b1e7450d89a0f75ad1528756b8efa38c34c59ad"
+        },
+        {
+          "file": "README.md",
+          "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/README.md",
+          "sha256": "ce5788019d7d89c6905fd1b72eeeac21bbd6e278a23f0e5b4a3682494b631891"
+        }
+      ],
+      "upstream_modifications": false
+    },
+    "usage": "Existing native safeGET retry/signal/current account and Ant Table/LoadFailure/Button loading recovery;no upstream modification/new transport"
+  },
+  "learning_account_integration": {
+    "round": 17,
+    "scope": "existing three learning stores/native account reset;three actual pages native Axios signal/effect cleanup/current-account await guards and old multi-POST chain cutoff",
+    "upstream_modified": false,
+    "runtime_modules_added": 0,
+    "license_record": "docs/open-source-integration/round-17-fixed-upstream-audit.json"
+  },
+  "native_flashcard_export_integration": {
+    "name": "axios",
+    "version": "1.18.0",
+    "repository": "https://github.com/axios/axios",
+    "commit": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f",
+    "tag": "v1.18.0",
+    "tag_command": [
+      "git",
+      "-c",
+      "http.sslBackend=openssl",
+      "ls-remote",
+      "--tags",
+      "https://github.com/axios/axios.git",
+      "refs/tags/v1.18.0",
+      "refs/tags/v1.18.0^{}"
+    ],
+    "tag_output": "2d06f96e8602c2db13b65a26340ee4a1bbc0b61f\trefs/tags/v1.18.0\n",
+    "license": "MIT",
+    "originals": [
+      {
+        "file": "LICENSE",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/LICENSE",
+        "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c",
+        "bytes": 1084
+      },
+      {
+        "file": "lib/adapters/xhr.js",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/lib/adapters/xhr.js",
+        "sha256": "6105e573cf707532ec8c7ec73b1e7450d89a0f75ad1528756b8efa38c34c59ad",
+        "bytes": 7601
+      },
+      {
+        "file": "README.md",
+        "url": "https://raw.githubusercontent.com/axios/axios/2d06f96e8602c2db13b65a26340ee4a1bbc0b61f/README.md",
+        "sha256": "ce5788019d7d89c6905fd1b72eeeac21bbd6e278a23f0e5b4a3682494b631891",
+        "bytes": 91489
+      }
+    ],
+    "upstream_modified": false,
+    "reuse": "native Axios blob/signal/authorized GET; Ant loading/disabled; Starlette RFC5987 FileResponse and post-send BackgroundTask",
+    "distribution_obligation": "preserve full original notice; BSD retains copyright, three conditions and disclaimer; no endorsement"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "1.18.4",
+  "repository": "https://github.com/sqlalchemy/alembic",
+  "ref": "rel_1_18_4",
+  "license": "MIT",
+  "saved_at": "2026-10-10T17:59:19.498575+08:00",
+  "sources": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/LICENSE",
+      "local": "LICENSE-ROUND46",
+      "sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc"
+    },
+    {
+      "path": "alembic/operations/base.py",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/alembic/operations/base.py",
+      "local": "ROUND46-alembic-operations-base.py.txt",
+      "sha256": "b9ba6fd470e89748349ee2e2d1bf3eb8defe1c455167a9aaf1aaef2bd106a348"
+    },
+    {
+      "path": "alembic/operations/batch.py",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/alembic/operations/batch.py",
+      "local": "ROUND46-alembic-operations-batch.py.txt",
+      "sha256": "8583a9cc6d852bff2193eac736e2ee140037f955d148e9ec4eba73d98940eb54"
+    },
+    {
+      "path": "docs/build/batch.rst",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/docs/build/batch.rst",
+      "local": "ROUND46-docs-build-batch.rst.txt",
+      "sha256": "f319de3bce7b91a04fbd39baf4f9a449c96b225def533ee27122694dacfd0efe"
+    }
+  ],
+  "modification": "No upstream edits. Native Alembic batch, SQLAlchemy fresh connection, Starlette FileResponse subclass; preserve original notices in deployment bundle."
+}

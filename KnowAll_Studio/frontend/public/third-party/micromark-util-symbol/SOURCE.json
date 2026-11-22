@@ -1,0 +1,24 @@
+{
+  "name": "micromark-util-symbol",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-symbol",
+  "resolved": "https://registry.npmmirror.com/micromark-util-symbol/-/micromark-util-symbol-2.0.1.tgz",
+  "integrity": "sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-util-symbol\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "lib/codes.js": "f714f25d71a49a17429befbeb67af141ac9aaae969a7d64af30547f2ef32875f",
+    "lib/constants.js": "4f97f02687845c9c57545074d6768b423e0a73c3e560eccf4d999cba3e41f60b",
+    "lib/default.js": "1591ff41a65d33aa17a8477554e989e3cd85e657f83206a8b2dc6f68710ecff9",
+    "lib/types.js": "17af096915e6c6e4966c758e13c5f14dc4fb05e7a32c4e3ec0c957aa4646f778",
+    "lib/values.js": "a6eee9d658bd97e03256148f844decb141ec35b102c83f5c312ead5af2aea820"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

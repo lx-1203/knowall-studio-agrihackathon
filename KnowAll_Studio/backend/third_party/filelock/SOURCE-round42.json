@@ -1,0 +1,52 @@
+{
+  "repository": "https://github.com/tox-dev/filelock",
+  "fixed_version": "3.29.7",
+  "installed": "3.29.7",
+  "license": "MIT",
+  "previously_installed_transitive": true,
+  "now_declared_direct": true,
+  "upstream_runtime_modified": false,
+  "files": [
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/LICENSE",
+      "sha256": "608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48",
+      "installed_sha256": "608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48",
+      "exact": true,
+      "normalized_match": true
+    },
+    {
+      "file": "src/filelock/__init__.py",
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/src/filelock/__init__.py",
+      "sha256": "220fd036fb0056d72dcf6f9f92af44502817996e8ce4f0ee762382f39b339a2b",
+      "installed_sha256": "220fd036fb0056d72dcf6f9f92af44502817996e8ce4f0ee762382f39b339a2b",
+      "exact": true,
+      "normalized_match": true
+    },
+    {
+      "file": "src/filelock/_api.py",
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/src/filelock/_api.py",
+      "sha256": "9b5314fd3c7f8ba5f49450ab2caade4ce20eecf2e4caf424d6158299dfd1c869",
+      "installed_sha256": "9b5314fd3c7f8ba5f49450ab2caade4ce20eecf2e4caf424d6158299dfd1c869",
+      "exact": true,
+      "normalized_match": true
+    },
+    {
+      "file": "src/filelock/_windows.py",
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/src/filelock/_windows.py",
+      "sha256": "90914e7a769f7ce3fa4336b66f7fb2c6088f883732ae85a7cf3f524c6902ae03",
+      "installed_sha256": "90914e7a769f7ce3fa4336b66f7fb2c6088f883732ae85a7cf3f524c6902ae03",
+      "exact": true,
+      "normalized_match": true
+    },
+    {
+      "file": "src/filelock/_unix.py",
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/src/filelock/_unix.py",
+      "sha256": "ccd999bf717742a925febf6bc48d92e6ce5e29d877cba1b5ac715bd1ae46f997",
+      "installed_sha256": "ccd999bf717742a925febf6bc48d92e6ce5e29d877cba1b5ac715bd1ae46f997",
+      "exact": true,
+      "normalized_match": true
+    }
+  ],
+  "official_docs": "https://py-filelock.readthedocs.io/en/latest/"
+}

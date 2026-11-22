@@ -1,0 +1,39 @@
+{
+  "name": "rc-notification",
+  "version": "5.6.4",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/notification.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-notification/-/rc-notification-5.6.4.tgz",
+  "integrity": "sha512-KcS4O6B4qzM3KH7lkwOB7ooLPZ4b6J+VMmQgT51VZCeEcmghdeR4IrMcFq0LG+RPdnbe/ArT086tGM8Snimgiw==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-notification/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "750af361910ed1cbb807a2ba05a3d3253fe58e3737a3e0bf6739ca3cc01bd796",
+    "es/index.js": "22a59cdc173ae07a310fd9e6968915708de83da2e6d08ef2c43c94464062859a",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/Notice.js": "e03d091508c29932d2124404b97bf1f1464920346a2b6157bcc17da74d1226ec",
+    "es/NoticeList.js": "4985e66c447e98509cfa8b69c811137831f2a166a775b724d2fcdf1e81af790b",
+    "es/NotificationProvider.js": "90263e3fc42dd1ce283c17aa62f9c13381a2d57eb2a64ace4259264854b06113",
+    "es/Notifications.js": "199435faa91202af1f3a87a84e6d2904ea8d6abe08d6930caa72a1aecddd31c8",
+    "lib/index.js": "6487d7f94267d003aa30fe9d3a8fc747863e9241d5c87e002789e5b35f1c667f",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/Notice.js": "5a8aceb0d24f7e75e57844d628cb613c6469e02ded9f3d9364f9d87b5fae0a37",
+    "lib/NoticeList.js": "269f3e2ad9a2187d648de6c9c8ac039c1477a470722ca1469f851416d8e0224c",
+    "lib/NotificationProvider.js": "86f6a01e8cc4ffd5d5fb7f4b52ee4853c228b054220392ed612abe1cedd1559a",
+    "lib/Notifications.js": "e1b9e1ab8f3a654edfabac46b4b3f85a5ab540b2b60a140e418a15286daf0ce9",
+    "lib/hooks/useNotification.js": "64bce507fb8b518c195ac2890ec81f922a0b3bddb8bcec540f78349b0d6d29d3",
+    "lib/hooks/useStack.js": "ece232401d127290905aa6b2e81169663493984ef3e3b37526c42a9000d00582",
+    "es/hooks/useNotification.js": "158df6fa756ae4ce3862dc0985281ed764f508d96670e8190cc1792cbb8caab2",
+    "es/hooks/useStack.js": "cab6a1826fe5e7f6e4c60c61c15ccb815cebb00474420ac9ed9f58084af72713"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

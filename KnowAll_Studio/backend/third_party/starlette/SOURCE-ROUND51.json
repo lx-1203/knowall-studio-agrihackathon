@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/LICENSE.md",
+    "version": "1.2.0",
+    "source": "LICENSE.md",
+    "local": "KnowAll_Studio/backend/third_party/starlette/ROUND51-LICENSE.md",
+    "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+    "modifications": "None; provenance only. Runtime native APIs, no copied algorithm."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Kludex/starlette/1.2.0/starlette/responses.py",
+    "version": "1.2.0",
+    "source": "starlette/responses.py",
+    "local": "KnowAll_Studio/backend/third_party/starlette/ROUND51-starlette_responses.py",
+    "sha256": "8e95e773bdb3718b3dffc789dd258e53a46b9a8781c98e98cfb3c36e69fea897",
+    "modifications": "None; provenance only. Runtime native APIs, no copied algorithm."
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "hast-util-from-html",
+  "version": "2.0.3",
+  "license": "MIT",
+  "repository": "syntax-tree/hast-util-from-html",
+  "resolved": "https://registry.npmmirror.com/hast-util-from-html/-/hast-util-from-html-2.0.3.tgz",
+  "integrity": "sha512-CUSRHXyKjzHov8yKsQjGOElXy/3EKpyX56ELnkHH34vDVw1N1XSQ1ZcAvTyAPtGqLTuKP/uxM+aLkSPqF/EtMw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "e620971c29d750df627f71f4e629618ef8fcbbea134ab95b344fc0c1a757cad1",
+      "source": "frontend\\node_modules\\hast-util-from-html\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "a884e0f6c7a8ededc046da796c40040774e0f19086c3c18758b7f526c1678e09",
+    "lib/errors.js": "2c5cb443e32ab72cbab62828f068e68ead89045a4fb89f21cc1c22ece2b25b01",
+    "lib/index.js": "a0ceb041c0bcd9543eb744042901a97e2e63b9f05702219cedacf4679199df3f",
+    "lib/types.js": "b0e66689b2c7aa77c3b411465cf8c49db3fb59b27528ab50a4c90651c7b87d95"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

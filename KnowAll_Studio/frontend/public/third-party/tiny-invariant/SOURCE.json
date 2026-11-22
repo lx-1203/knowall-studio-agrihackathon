@@ -1,0 +1,28 @@
+{
+  "name": "tiny-invariant",
+  "version": "1.3.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexreardon/tiny-invariant.git"
+  },
+  "resolved": "https://registry.npmmirror.com/tiny-invariant/-/tiny-invariant-1.3.3.tgz",
+  "integrity": "sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "b1c501095de70182748cb8e8d97ac5577701a4ef3b755ba30d59fd87b24bdb0f",
+      "source": "frontend/node_modules/tiny-invariant/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/tiny-invariant.cjs.js": "b99584319564d8f89c49a3ea346a204606619fc1ec869c411026a0e19e9478f4",
+    "dist/tiny-invariant.esm.js": "85b67e5cf9c9368c3f851c3a8398d1ad015a44df04d539f41e4cb585ed80bd12",
+    "dist/tiny-invariant.js": "c5b3f93085b2e7154cec29b6f5ed9c8de07d64921f5c9d5882712882a1c24881",
+    "dist/tiny-invariant.min.js": "cdf911d95041b35cb203390175ba495255601e98bc909f04060a38dfcbf3544f",
+    "src/tiny-invariant.flow.js": "3ec046c31eaefc126ef48552526ec9ca4efc4a9129eab7e1061867e7ca4e7e3a",
+    "dist/esm/tiny-invariant.js": "85b67e5cf9c9368c3f851c3a8398d1ad015a44df04d539f41e4cb585ed80bd12"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only."
+}

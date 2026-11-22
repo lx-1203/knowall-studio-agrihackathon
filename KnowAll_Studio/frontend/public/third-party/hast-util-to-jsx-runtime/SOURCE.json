@@ -1,0 +1,22 @@
+{
+  "name": "hast-util-to-jsx-runtime",
+  "version": "2.3.6",
+  "license": "MIT",
+  "repository": "syntax-tree/hast-util-to-jsx-runtime",
+  "resolved": "https://registry.npmmirror.com/hast-util-to-jsx-runtime/-/hast-util-to-jsx-runtime-2.3.6.tgz",
+  "integrity": "sha512-zl6s8LwNyo1P9uw+XJGvZtdFF1GdAkOg8ujOw+4Pyb76874fLps4ueHXDhXWdk6YHQ6OgUtinliG7RsYvCbbBg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\hast-util-to-jsx-runtime\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "83cd6452ebf818e02d03b39c726407b2c3c38a73b52aa8f1c7d88fff23d1894e",
+    "lib/index.js": "986dd5ff765f424432ab12dc8401f33acc50a5bed9ffb2e48f88300a25f9562f",
+    "lib/types.js": "eb988f140d3782a03e2ee817683367c26701ef76f9f9e5a7af7d286b785b6a4e"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

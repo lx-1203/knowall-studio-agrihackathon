@@ -1,0 +1,58 @@
+{
+  "name": "react-pdf",
+  "version": "10.4.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojtekmaj/react-pdf.git",
+    "directory": "packages/react-pdf"
+  },
+  "resolved": "https://registry.npmmirror.com/react-pdf/-/react-pdf-10.4.1.tgz",
+  "integrity": "sha512-kS/35staVCBqS29verTQJQZXw7RfsRCPO3fdJoW1KXylcv7A9dw6DZ3vJXC2w+bIBgLw5FN4pOFvKSQtkQhPfA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "c2ccf44e0692ca362353ee78a13dfabd61bd9af4491b64ec69f01a9ef0038193",
+      "source": "frontend/node_modules/react-pdf/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/Document.js": "52cdbda30586084aadf37644eb293f10cafe0638c34cbc1fcc4ab7434954feba",
+    "dist/DocumentContext.js": "6973ab3f2441f76d7d293ebadb0ce8633ac4fdb45de84558e224c76b7000a859",
+    "dist/index.js": "a49bc406b664ba8b9626a2c26071c5c6119c271f6252a9063903882a35253654",
+    "dist/index.test.js": "3f75804ec9a86384e3a596dde3ab96b0675656591b14235593b8d15273266d88",
+    "dist/LinkService.js": "1a439a61e12e5f9927ed16bfbcbcb530dde2f9b99f02b6cfd3d6c421ec2d7a61",
+    "dist/Message.js": "29867291d78c93e316c24882dee051aeb034fdfcb4b79bfd5b2b4f8ee7425545",
+    "dist/Outline.js": "59067c5faa2dcd37b3a063d1108a969dd0f25990a15783db1d63275de669528b",
+    "dist/OutlineContext.js": "6bbd647d04b79af6697de11b1f0969a9fb4ecf89f640dfb51b7502d493cd5034",
+    "dist/OutlineItem.js": "cbc3e3721e5b31e28bd77d1c19e86084b4924e2722b8057a14864d62f48f2608",
+    "dist/Page.js": "4f2e01363bcfd81c838e3d031bf11e4381d8d8728b1382b8f8285e63295dcdd9",
+    "dist/PageContext.js": "9e32a57e958eb8b4b8aa39efe807059b14d137f9c725b807b362634590013d4e",
+    "dist/PasswordResponses.js": "5b139bed9264014e0d772d3cc6ea5b80dbe662c7c61fdd0d8a3a7209e5b6a8ac",
+    "dist/pdf.worker.entry.js": "f4f90ffb2ae8360e11dfd0a91f02a485370a889c0f536184664eb51418de3008",
+    "dist/Ref.js": "0269fda1ef334f94959985a68c069e8e4c14abb6749d5f7333b6f8ac6d2f9837",
+    "dist/StructTree.js": "370f588d0998d35fd353ec0da7716d262baafb2787e43fd0aa3e6de83849c1f9",
+    "dist/StructTreeItem.js": "026e36abe451193a4e00a2bad6370bc23f8c7bc8faa158954108cb25bc6ff547",
+    "dist/Thumbnail.js": "818adb378fcc650c7975cc8485886315d1d1aa608d38a63032dada4d2edc413a",
+    "src/Page/AnnotationLayer.css": "01dcb37394bb636f311858142f6197dcf7c54b0bd82d1637f803ee0292b60303",
+    "src/Page/TextLayer.css": "f52d2eae25df3f4fc405cd833ce5cdd00c15d0525c106fe4574b46e377d8e1e6",
+    "dist/Page/AnnotationLayer.css": "01dcb37394bb636f311858142f6197dcf7c54b0bd82d1637f803ee0292b60303",
+    "dist/Page/AnnotationLayer.js": "e974353bb882fbb46b862c4f63f128231774def259d3ef8aa63bcdf72cba1c0c",
+    "dist/Page/Canvas.js": "67cf4404b773ebcf70c8c1e0796fb09ba1eeabc13f00ab37ddb1909d6bebb23a",
+    "dist/Page/TextLayer.css": "f52d2eae25df3f4fc405cd833ce5cdd00c15d0525c106fe4574b46e377d8e1e6",
+    "dist/Page/TextLayer.js": "7e0c902c7f81d12959be02bb7a9675595288d8dded2e0986d9e060a85fd2aaa0",
+    "dist/shared/constants.js": "0c0f0159c58d39beb241d85cae07ed9bc6579112163089ff1a179da03288486f",
+    "dist/shared/structTreeUtils.js": "fb6d4806c1039ddc6d5347df90b9799e54310ccca9e15f96dcf67a9207af5b14",
+    "dist/shared/types.js": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+    "dist/shared/utils.js": "307b4f46075efdd2a9eac67023fdc8c357ec83a94d7c1e75c5ebe07c1d2e28d3",
+    "dist/shared/hooks/useCachedValue.js": "2e13254eb94bafcdb9c71773d30d21ed376dde2d3513f70cf0052eb903151c3c",
+    "dist/shared/hooks/useDocumentContext.js": "74ba4403453725f597e412ca03e50ea360720d869c489e66eddfb472d809ce25",
+    "dist/shared/hooks/useOutlineContext.js": "ea20d707eebe69e020ac3ef8e5f26a5c75af5fbf9eabf4d7806a69658c1dd7d8",
+    "dist/shared/hooks/usePageContext.js": "bba6e9a45bf71ac4174fe136a11e356ddb76f5a330052e2acf7dbe26981a552a",
+    "dist/shared/hooks/useResolver.js": "54c98a94cd14ecbf9e9349c507b352aa35677ad38b299c023430c0e068207bba"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only.",
+  "fixed_upstream_commit": "5338e7a24c7ad17d1028146cf8a025a75e0abe79",
+  "original_root_license_fixed_github_verified": true
+}

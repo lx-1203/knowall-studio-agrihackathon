@@ -1,0 +1,42 @@
+{
+  "name": "@rc-component/tour",
+  "version": "1.15.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/tour.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@rc-component/tour/-/tour-1.15.1.tgz",
+  "integrity": "sha512-Tr2t7J1DKZUpfJuDZWHxyxWpfmj8EZrqSgyMZ+BCdvKZ6r1UDsfU46M/iWAAFBy961Ssfom2kv5f3UcjIL2CmQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "8781f0ca192057330d7fbab763f8bcd3c8e671032f98e9cf1f8c82d6748e5654",
+      "source": "frontend/node_modules/@rc-component/tour/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "es/index.js": "215d442940fa6614f38b08554598bd0cbea72fb5cc033e84b23860e2647e25a2",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/Mask.js": "3242902fa47d1ad4c653296ff9054fac86d311ca7ffa8186de311d0cdb793027",
+    "es/placements.js": "072f7a074e83686c42e46ca2eceabb1b72cd46b0f2f84ca8de7c17c902e325bd",
+    "es/Tour.js": "5469969a3e8e3c2f65b6b4e9a6ccdc65caeeb8dad44c5e265029efa1492f3790",
+    "es/util.js": "5412fc85ecf1ba312ac346c30ab01190f743be064911594a530225c32bbea0a1",
+    "lib/index.js": "87f9f348349d797d9c159c6bd14e5e657ba2ffdd06effb99f1c44bc983435ff3",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/Mask.js": "a8d0e77dfcf088fbc8970bb2ac8bd5d6492f72d96bbb33df31421d37c3b64875",
+    "lib/placements.js": "af933e41556569249c2f5ad30886dc5de2468a1743f67b61347448ec561b1882",
+    "lib/Tour.js": "397923a06db1d92988e05f638820c5520509f8f0bb7364afbf42077e65897e6f",
+    "lib/util.js": "be546f51945d7cb5456ddf96ad5e09152c7aa97f9f83dabbf87e30600d08a9e3",
+    "lib/hooks/useClosable.js": "50cda03ca1a347d4f40c0f279fc4ffff62b94b662fa78c7824572f0a0ac8c5c2",
+    "lib/hooks/useTarget.js": "d05e224a1ced916085f3d09b74c326b2067fbc95a3da632b5a73cadd082c2ddb",
+    "lib/TourStep/DefaultPanel.js": "21ee9e03446b21ddb7b61b6072727a132153d7bb7e3518a2bf2ebbaa78f2b3cc",
+    "lib/TourStep/index.js": "b091fbb3de5c21d51244a2784a05393069a2079bd952200892775c02771549d8",
+    "es/hooks/useClosable.js": "b2eba47acfe9d49705074fe6bd983c85bced9f1545e7c758e30a9d026e508e6d",
+    "es/hooks/useTarget.js": "ae4823d6f55ffc800532c208dba8fe081fb4b311f240ad0bf6aa5567100dcf25",
+    "es/TourStep/DefaultPanel.js": "dcdc6cce85369c8762116dae028d893834192b66f011d665a002045330604d31",
+    "es/TourStep/index.js": "aa28a093594280f164b0dcd508970c72c350a90625ee7f815ebb8c94b2374f4d"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

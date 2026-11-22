@@ -1,0 +1,21 @@
+{
+  "name": "unist-util-stringify-position",
+  "version": "4.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/unist-util-stringify-position",
+  "resolved": "https://registry.npmmirror.com/unist-util-stringify-position/-/unist-util-stringify-position-4.0.0.tgz",
+  "integrity": "sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\unist-util-stringify-position\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "7b80d608db2ab15251da8c71c4ed8029102b16677d80f4977487136e6b9e5774",
+    "lib/index.js": "9d66941cf43fa4f4faa5912019ad9dae3f1ea3395b0c2fe64c2bcd5c2d4b2c28"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

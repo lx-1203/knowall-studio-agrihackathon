@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分子生物学 · 刷题</title>
+<style>
+:root{
+  --bg:#f4f5fb; --card:#ffffff; --ink:#1d2130; --sub:#67708a;
+  --line:#e6e8f2; --accent:#5b5bd6; --accent2:#3d3dab;
+  --ok:#16a34a; --okbg:#e8f7ee; --bad:#dc2626; --badbg:#fdecec;
+  --chip:#eef0f9;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 80px}
+header h1{font-size:22px;margin-bottom:4px}
+header p{color:var(--sub);font-size:13px}
+.bar{display:flex;gap:10px;justify-content:space-between;margin:18px 0 10px;flex-wrap:wrap}
+.stats{color:var(--sub);font-size:13px}
+.stats b{color:var(--ink)}
+.syncbadge{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:99px;font-size:12px;border:1px solid var(--line);background:var(--card);color:var(--sub)}
+.syncbadge.on{color:var(--ok);border-color:var(--ok);background:var(--okbg)}
+.syncbadge.off{color:var(--bad);border-color:var(--bad);background:var(--badbg)}
+.syncbadge.typing{color:#b45309;border-color:#f59e0b;background:#fffbeb}
+.progress{height:8px;background:#e2e4f0;border-radius:99px;overflow:hidden}
+.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#8b8bf0);border-radius:99px;transition:width .3s}
+.completion{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,#eef0ff,#fff);border:1px solid var(--line);border-radius:16px;padding:16px 22px;margin-top:14px}
+.pct{font-size:56px;font-weight:800;background:linear-gradient(90deg,var(--accent),#8b8bf0);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;min-width:130px;text-align:center;letter-spacing:-2px}
+.comptext b{font-size:16px;display:block;margin-bottom:5px}
+.comptext span{font-size:13px;color:var(--sub)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--sub);padding:6px 12px;border-radius:99px;font-size:13px;cursor:pointer;user-select:none}
+.chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(40,42,80,.05)}
+.qmeta{display:flex;justify-content:space-between;color:var(--sub);font-size:12.5px;margin-bottom:12px}
+.qtext{font-size:17px;line-height:1.75;margin-bottom:18px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.6;cursor:pointer;transition:all .15s;color:var(--ink)}
+.opt:hover{border-color:var(--accent);background:#f7f7ff}
+.opt .k{display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:8px;background:var(--chip);margin-right:10px;font-weight:600;font-size:13px}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.right .k{background:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt.wrong .k{background:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.nav{display:flex;gap:10px;margin-top:22px;align-items:center}
+.btn{border:none;border-radius:12px;padding:11px 22px;font-size:15px;cursor:pointer;background:var(--accent);color:#fff;transition:.15s}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;color:var(--sub);border:1px solid var(--line)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.pos{flex:1;text-align:right;color:var(--sub);font-size:13px}
+.feedback{margin-top:14px;font-size:14px;display:none;align-items:center;gap:8px}
+.feedback.show{display:flex}
+.feedback.ok{color:var(--ok)}
+.feedback.no{color:var(--bad)}
+.feedback .ans{color:var(--sub)}
+.misslist{margin-top:26px}
+.cardpanel{margin-top:26px}
+.cardgrid{display:none;flex-wrap:wrap;gap:6px;margin-top:12px;max-height:320px;overflow:auto;padding:2px}
+.cell{width:36px;height:36px;border-radius:8px;border:1.5px solid var(--line);background:#fff;color:var(--sub);font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.12s}
+.cell:hover{border-color:var(--accent)}
+.cell.ok{background:var(--okbg);border-color:var(--ok);color:var(--ok)}
+.cell.bad{background:var(--badbg);border-color:var(--bad);color:var(--bad)}
+.cell.cur{border:2px solid var(--accent);font-weight:700;color:var(--accent);box-shadow:0 0 0 2px rgba(91,91,214,.15)}
+.legend{font-size:12px;color:var(--sub);margin-top:8px;display:flex;gap:14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.legend .l-ok{background:var(--okbg);border:1px solid var(--ok)}
+.legend .l-bad{background:var(--badbg);border:1px solid var(--bad)}
+.legend .l-todo{background:#fff;border:1px solid var(--line)}
+.misslist h3{font-size:15px;margin-bottom:10px}
+.miss{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px;font-size:13.5px;color:var(--sub);cursor:pointer}
+.miss b{color:var(--ink)}
+.miss small{color:var(--bad)}
+.done{text-align:center;padding:40px 0;color:var(--sub)}
+.done b{font-size:26px;color:var(--accent);display:block;margin:8px 0}
+@media (max-width:600px){.card{padding:18px}.qtext{font-size:16px}}
+
+/* ===== 防护层：登录门 / 协议弹窗 / 身份水印 ===== */
+.wm{position:fixed;inset:0;pointer-events:none;z-index:9}
+.wm i{display:block;width:280px;margin:24px auto;transform:rotate(-24deg);text-align:center;font-style:normal;color:rgba(75,75,180,.09);font-size:13px;letter-spacing:1px;line-height:1.4;white-space:nowrap}
+.agreebar{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #f5c518;background:#fffbeb;color:#8a6d1a;border-radius:12px;padding:10px 16px;margin:14px 0;font-size:13.5px}
+.agreebar b{color:#6d4f00}
+.linkbtn{border:none;background:none;color:var(--accent);cursor:pointer;font-size:13.5px;text-decoration:underline;padding:0}
+.pop-mask{position:fixed;inset:0;background:rgba(20,22,40,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.pop-mask.show{display:flex}
+.pop{background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:82vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 12px 40px rgba(20,22,40,.25)}
+.pop-h{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line)}
+.pop-h b{font-size:16px}
+.pop-x{border:none;background:none;font-size:20px;color:var(--sub);cursor:pointer;line-height:1}
+.pop-b{padding:18px 22px;overflow:auto;font-size:14px;line-height:1.85;color:var(--ink)}
+.pop-b h4{font-size:14.5px;margin:14px 0 6px}
+.pop-b p{margin:6px 0}
+.pop-b ol{padding-left:20px}
+.pop-b li{margin:5px 0;font-size:13.8px;line-height:1.8}
+.pop-f{padding:12px 22px;border-top:1px solid var(--line);text-align:right}
+.gate{position:fixed;inset:0;background:var(--bg);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
+.gate.show{display:flex}
+.gatebox{background:#fff;border:1px solid var(--line);border-radius:16px;max-width:420px;width:100%;padding:28px 30px;text-align:center;box-shadow:0 8px 30px rgba(40,42,80,.08)}
+.gatebox .gi{font-size:38px;margin-bottom:8px}
+.gatebox b{font-size:17px;display:block;margin-bottom:6px}
+.gatebox p{font-size:13.5px;color:var(--sub);margin-bottom:18px;line-height:1.7}
+.gatebox .btn{width:100%;margin-bottom:10px}
+.gatebox .btn.try{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+footer{color:var(--sub);font-size:12px;text-align:center;margin-top:36px;line-height:1.8}
+
+/* ===== 名词解释库（Glossary）术语高亮 ===== */
+.glossary-term{border-bottom:1px dotted var(--accent);cursor:pointer;color:var(--accent)}
+.glossary-term:hover{background:#eef0ff;border-radius:3px}
+.glossary-popup{position:fixed;z-index:9999;background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 6px 24px rgba(40,42,80,.18);padding:12px 14px;max-width:340px;font-size:13px}
+.glossary-popup .gt-title{font-weight:700;margin-bottom:6px;color:var(--ink)}
+.glossary-popup .gt-def{color:#3a3f52;line-height:1.6;margin-bottom:6px}
+.glossary-popup .gt-ch{color:var(--sub);font-size:12px;margin-bottom:6px}
+.glossary-popup .gt-foot{display:flex;justify-content:flex-end}
+.glossary-popup .gt-foot a{color:var(--accent);text-decoration:none;font-size:13px}
+.glossary-popup .gt-foot a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>🧬 分子生物学 · 刷题</h1>
+<p>覆盖全部知识点 · 点击选项即时判对错 · 自动记录错题 · 进度自动保存</p>
+</header>
+
+<div class="completion">
+  <div class="pct" id="pctBig">0%</div>
+  <div class="comptext"><b id="pctTitle">征程待启</b><span id="pctMsg">万事开头难——做完第 1 题立个旗</span></div>
+</div>
+
+<div class="bar">
+  <div class="stats">已做 <b id="stDone">0/0</b> · 答对 <b id="stRight">0</b> · 正确率 <b id="stPct">--</b> · 错题 <b id="stWrong">0</b><span class="syncbadge typing" id="syncBadge">同步中...</span></div>
+  <button class="btn ghost" id="btnShuffle">🔀 打乱</button>
+</div>
+<div class="progress"><i id="prog"></i></div>
+
+<div class="chips" id="chips"></div>
+
+<div class="card">
+  <div class="qmeta"><span id="qch"></span><span id="qnum"></span></div>
+  <div class="qtext" id="qtext"></div>
+  <div class="opts" id="opts"></div>
+  <div class="feedback" id="fb"></div>
+  <div class="nav">
+    <button class="btn ghost" id="btnPrev">← 上一题</button>
+    <button class="btn ghost" id="btnRedo" style="display:none">重做本题</button>
+    <button class="btn" id="btnNext">下一题 →</button>
+    <div class="pos" id="pos"></div>
+  </div>
+</div>
+
+<div class="misslist" id="misslist"></div>
+
+<div class="cardpanel">
+  <button class="btn ghost" id="btnCard">▦ 答题卡</button>
+  <div class="cardgrid" id="cardgrid"></div>
+  <div class="legend" id="cardlegend" style="display:none">
+    <span><i class="l-ok"></i>答对</span>
+    <span><i class="l-bad"></i>答错</span>
+    <span><i class="l-todo"></i>未答</span>
+    <span style="border:1px solid var(--accent);border-radius:3px;width:11px;height:11px;display:inline-block;margin-right:4px;vertical-align:-1px"></span><span>当前题</span>
+  </div>
+</div>
+
+<div class="done" id="done" style="display:none"></div>
+
+<div class="agreebar" id="agreeBar" style="display:none">
+  <span>🔒 使用公开教学示例前请先阅读 <b>《示例使用说明》</b>（需登录后同意一次）</span>
+  <span style="display:flex;gap:8px;flex-shrink:0">
+    <button class="linkbtn" id="btnShowAgree2">查看</button>
+    <button class="btn ghost" id="btnAgree" style="padding:6px 14px;font-size:13px">同意</button>
+  </span>
+</div>
+
+<!-- 登录门：无 token 或 token 失效时全屏拦截，不渲染题库 -->
+<div class="gate" id="gate">
+  <div class="gatebox">
+    <div class="gi">🔐</div>
+    <b id="gateTitle">请先登录</b>
+    <p id="gateMsg">本页包含四道公开教学示例，登录后即可使用（进度云端同步）。</p>
+    <button class="btn" id="btnGoLogin">前往登录</button>
+    <button class="btn try" id="btnRetry">我已有账号，刷新试试</button>
+  </div>
+</div>
+
+<!-- 用户协议弹窗 -->
+<div class="pop-mask" id="agreeMask">
+  <div class="pop">
+    <div class="pop-h"><b>《示例使用说明》</b><button class="pop-x" id="btnCloseAgree">✕</button></div>
+    <div class="pop-b" id="agreeBody"></div>
+    <div class="pop-f" id="agreeFoot"></div>
+  </div>
+</div>
+
+<!-- 身份水印层（登录后生成） -->
+<div class="wm" id="wm" aria-hidden="true" style="display:none"></div>
+
+<footer>
+  <span id="footUser"></span>
+  <button class="linkbtn" id="btnTerms">《示例使用说明》</button>
+</footer>
+</div>
+
+<script>
+const QUESTIONS = [{"ch": "遗传信息的传递", "q": "遗传信息从 DNA 流向 RNA 的过程称为什么？", "opts": ["复制", "转录", "翻译", "逆转录"], "a": 1}, {"ch": "DNA 复制：把信息准确传下去", "q": "DNA 半保留复制的含义是什么？", "opts": ["子代只含亲代链", "子代只含新合成链", "每个子代双链含一条亲代链和一条新链", "DNA 不能复制"], "a": 2}, {"ch": "转录与翻译：从信息到功能", "q": "翻译过程中，携带氨基酸的分子是哪一个？", "opts": ["DNA", "mRNA", "tRNA", "RNA 聚合酶"], "a": 2}, {"ch": "章节回顾与复习清单", "q": "回顾复制、转录和翻译，哪一项配对正确？", "opts": ["复制—RNA", "转录—多肽链", "翻译—多肽链", "翻译—DNA"], "a": 2}];
+const STORE_KEY = "bioquiz_public_demo_v1";
+const RECLEAR_KEY = "bioquiz_reclear_v1";
+const RECLEAR_IDX = [];
+let state = {filter:"all", idx:0, order:null, answers:{}, wrongList:false};
+
+try { const s = JSON.parse(localStorage.getItem(STORE_KEY)); if (s) {
+  state = {...state, answers:s.answers||{}, wrongList:s.wrongList||false, agreed:!!s.agreed};
+  if (typeof s.idx === "number") { state.idx = s.idx; state.filter = s.filter || state.filter; }
+  else if (Object.keys(state.answers).length) {
+    // 旧格式：没存过位置 → 定位到第一个未答题（顺序刷时即“下一题”）
+    let n = 0; while (state.answers[n] !== undefined) n++;
+    state.idx = n;
+  }
+} } catch(e){}
+
+// One-time cleanup: remove answers for the 405 rewritten questions, keep others.
+// Guarded by a version flag so it runs exactly once per rewrite batch.
+(function(){
+  try{
+    if (localStorage.getItem(RECLEAR_KEY) !== "done") {
+      let ch = 0;
+      for (const i of RECLEAR_IDX) { delete state.answers[i]; ch++; }
+      saveLocal();
+      localStorage.setItem(RECLEAR_KEY, "done");
+      console.log("recleared", ch, "rewritten question records");
+    }
+  }catch(e){ console.warn("reclear skipped:", e); }
+})();
+
+// ===== 版权防护：登录门 / 协议 / 身份水印 =====
+const ME_API = "/api/v1/auth/me";
+let me = null;            // 当前登录用户（/auth/me 返回）；state.agreed 由上方 bootstrap 恢复，以服务端为准
+document.getElementById("gate").classList.add("show"); // 先挡上，initAuth 成功后放行
+
+const byTag = {};
+QUESTIONS.forEach((q,i)=>{ (byTag[q.ch]=byTag[q.ch]||[]).push(i); });
+
+function saveLocal(){ localStorage.setItem(STORE_KEY, JSON.stringify({answers:state.answers, wrongList:state.wrongList, idx:state.idx, filter:state.filter, agreed:state.agreed})); }
+
+// ===== 云端持久化：进度存后端，崩溃/换设备可续刷 =====
+const API = "/api/v1/quiz/progress";
+let online = false;   // 后端可达
+let dirty = false;    // 有待上传的本地改动
+let saveTimer = null;
+
+function authHeaders(json){
+  const h = json ? {"Content-Type":"application/json"} : {};
+  const t = localStorage.getItem("knowall_token");
+  if (t) h["Authorization"] = "Bearer " + t;
+  return h;
+}
+function badge(type, text){ // typing/on/off（+文字）
+  const b=document.getElementById("syncBadge");
+  if(!b) return;
+  b.className="syncbadge "+type;
+  b.textContent=text;
+}
+function debounceSave(){
+  dirty=true; saveLocal();
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(()=>push(false), 800);
+}
+async function fetchProgress(){
+  badge("typing","同步中...");
+  try{
+    const r=await fetch(API,{headers:authHeaders(false)});
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    const d=j.data||{};
+    online=true;
+    // 协议同意状态以服务端为准（跨设备同步）；只升级不降级：
+    // 服务端为 true 说明他端已同意，必须先并入本地，否则下方 merge 分支的 push 会用旧 false 覆盖服务端
+    if (d.agreed === true) { state.agreed = true; saveLocal(); }
+    if(Object.keys(state.answers).length){
+      // 本地已有进度（迁移场景）：以本地为准，并入后端（保留后端独有的答案）后上传
+      const merged={...d.answers||{}, ...state.answers};
+      state.answers=merged;
+      if(!d.answers || Object.keys(merged).length!==Object.keys(d.answers).length) await push(false);
+    } else if(d.answers && Object.keys(d.answers).length){
+      state.answers=d.answers; state.idx=d.idx||0; state.wrongList=!!d.wrongList; state.filter=d.filter||"all";
+      saveLocal();
+    }
+    badge("on","已同步");
+  }catch(e){
+    online=false;
+    badge("off","离线模式");
+  }
+  render();
+  applyAgreeUI(); // 等 fetch 完成后再刷新协议/水印界面
+}
+async function push(keepalive){
+  if(!online) { badge("off","离线模式"); return; }
+  clearTimeout(saveTimer);
+  dirty=false;
+  badge("typing","保存中...");
+  try{
+    const r=await fetch(API,{
+      method:"PUT",
+      keepalive:!!keepalive,
+      headers:authHeaders(true),
+      body:JSON.stringify({answers:state.answers, wrongList:state.wrongList, idx:state.idx, filter:state.filter, agreed:state.agreed})
+    });
+    if(!r.ok) throw 0;
+    badge("on","已同步");
+  }catch(e){
+    online=false; dirty=true;
+    badge("off","离线模式");
+  }
+}
+
+function visible(){
+  if (state.wrongList) return QUESTIONS.map((q,i)=>i).filter(i=>wrongIds().has(i));
+  if (state.filter==="all") return QUESTIONS.map((q,i)=>i);
+  return byTag[state.filter].slice();
+}
+function wrongIds(){ return new Set(QUESTIONS.map((q,i)=>i).filter(i=>state.answers[i]!==undefined && state.answers[i]!==QUESTIONS[i].a)); }
+
+function makeChips(){
+  const chs = ["all", ...Object.keys(byTag)];
+  const box = document.getElementById("chips");
+  box.innerHTML="";
+  chs.forEach(ch=>{
+    const el=document.createElement("span");
+    el.className="chip"+(state.wrongList? "": "")+(state.filter===ch&&!state.wrongList?" on":"");
+    el.textContent = ch==="all" ? "全部" : ch.replace(/^第?[一二三四五六七八九十]+章\s*/, "");
+    el.onclick=()=>{ state.wrongList=false; state.filter=ch; state.order=null; state.idx=visible().length?0:-1; debounceSave(); render(); };
+    box.appendChild(el);
+  });
+  const el=document.createElement("span");
+  el.className="chip"+(state.wrongList?" on":"");
+  el.textContent="❌ 错题本";
+  el.onclick=()=>{ state.wrongList=true; state.filter="all"; state.order=null; state.idx=0; debounceSave(); render(); };
+  box.appendChild(el);
+}
+
+function render(){
+  const vis = state.order ? state.order : visible();
+  const total = vis.length;
+  document.getElementById("stDone").textContent = Object.keys(state.answers).length + "/" + QUESTIONS.length;
+  const right = QUESTIONS.filter((q,i)=>state.answers[i]===q.a).length;
+  document.getElementById("stRight").textContent = right;
+  const done = Object.keys(state.answers).length;
+  document.getElementById("stPct").textContent = done? Math.round(right/done*100)+"%" : "--";
+  document.getElementById("stWrong").textContent = wrongIds().size;
+  document.getElementById("prog").style.width = (done/QUESTIONS.length*100)+"%";
+
+  // 大号完成度 + 激励文案
+  const pct = Math.round(done/QUESTIONS.length*100);
+  document.getElementById("pctBig").textContent = pct + "%";
+  let title, msg;
+  if (done === 0) { title = "征程待启"; msg = "万事开头难——做完第 1 题立个旗"; }
+  else if (pct < 10) { title = "🚀 发动机点火"; msg = "已冲过 " + done + " 题，前 10% 就是最难的一关"; }
+  else if (pct < 25) { title = "🏃 渐入佳境"; msg = "完成 " + done + " 题，正确率 " + (done? Math.round(right/done*100):0) + "%——手感来了"; }
+  else if (pct < 50) { title = "💪 过半在望"; msg = "已刷 " + done + " 题，还剩 " + (QUESTIONS.length-done) + " 题就是半程"; }
+  else if (pct < 75) { title = "🔥 半程已过"; msg = "完成 " + pct + "%，" + (QUESTIONS.length-done) + " 题在身后……不，是身前！"; }
+  else if (pct < 100) { title = "🥇 冲刺阶段"; msg = "只剩 " + (QUESTIONS.length-done) + " 题，胜利触手可及"; }
+  else { title = "🏆 全员通关"; msg = "416 题全部刷完，你已经是分子生物学大佬了！"; }
+  document.getElementById("pctTitle").textContent = title;
+  document.getElementById("pctMsg").textContent = msg;
+
+  makeChips();
+  if (!total){
+    document.getElementById("done").style.display="block";
+    document.getElementById("done").innerHTML = state.wrongList ? "<b>🎉</b>错题已清零！" : "<b>😢</b>该范围暂无题目";
+    document.getElementById("qch").textContent=""; document.getElementById("qnum").textContent="";
+    document.getElementById("qtext").textContent="";
+    document.getElementById("opts").innerHTML="";
+    document.getElementById("fb").className="feedback";
+    document.getElementById("misslist").innerHTML="";
+    document.getElementById("cardgrid").innerHTML="";
+    document.getElementById("cardlegend").style.display="none";
+    document.getElementById("btnNext").disabled=true; document.getElementById("btnPrev").disabled=true;
+    return;
+  }
+  document.getElementById("done").style.display="none";
+  if (state.idx>=total) state.idx=total-1;
+  if (state.idx<0) state.idx=0;
+  const i = vis[state.idx];
+  const q = QUESTIONS[i];
+
+  document.getElementById("qch").textContent=q.ch;
+  document.getElementById("qnum").textContent="第 "+(state.idx+1)+" / "+total+" 题 · 全库第 "+(i+1)+" 题";
+  document.getElementById("qtext").innerHTML = glossaryHtml(q.q);
+  document.getElementById("pos").textContent="共 "+total+" 题";
+
+  const box=document.getElementById("opts");
+  box.innerHTML="";
+  const chosen = state.answers[i];
+  q.opts.forEach((t,k)=>{
+    const b=document.createElement("button");
+    b.className="opt";
+    const label=String.fromCharCode(65+k);
+    b.innerHTML='<span class="k">'+label+'</span>'+glossaryHtml(t);
+    if(chosen!==undefined){
+      b.disabled=true;
+      if(k===q.a) b.classList.add("right");
+      if(chosen===k && k!==q.a) b.classList.add("wrong");
+    }
+    b.onclick=()=>{
+      state.answers[i]=k; debounceSave(); render();
+    };
+    box.appendChild(b);
+  });
+
+  const fb=document.getElementById("fb");
+  if(chosen!==undefined){
+    fb.className="feedback show "+(chosen===q.a?"ok":"no");
+    fb.innerHTML = chosen===q.a
+      ? "✅ 回答正确"
+      : "❌ 回答错误 · 正确答案：<b>"+String.fromCharCode(65+q.a)+"</b> "+escapeHtml(q.opts[q.a]);
+  } else { fb.className="feedback"; fb.innerHTML=""; }
+
+  document.getElementById("btnPrev").disabled = state.idx===0;
+  document.getElementById("btnNext").disabled = state.idx>=total-1;
+  document.getElementById("btnRedo").style.display = chosen!==undefined ? "" : "none";
+
+  // 错题本侧列
+  const ml=document.getElementById("misslist");
+  const wrong=[...wrongIds()];
+  if(wrong.length){
+    ml.innerHTML="<h3>📌 错题本（"+wrong.length+" 题）</h3>";
+    wrong.slice(0,8).forEach(id=>{
+      const d=document.createElement("div");
+      d.className="miss";
+      d.innerHTML="<b>"+QUESTIONS[id].ch.split(" ")[0]+"</b> "+escapeHtml(QUESTIONS[id].q.slice(0,60))+"… <small>正确答案 "+String.fromCharCode(65+QUESTIONS[id].a)+"</small>";
+      d.onclick=()=>{ state.wrongList=true; state.filter="all"; state.order=null; const v=visible(); state.idx=v.indexOf(id); debounceSave(); render(); };
+      ml.appendChild(d);
+    });
+  } else ml.innerHTML="";
+
+  // 答题卡
+  const grid=document.getElementById("cardgrid");
+  grid.innerHTML="";
+  vis.forEach((qi,vi)=>{
+    const c=document.createElement("div");
+    c.className="cell";
+    c.textContent=vi+1;
+    if(state.answers[qi]===undefined) c.classList.add("todo");
+    else if(state.answers[qi]===QUESTIONS[qi].a) c.classList.add("ok");
+    else c.classList.add("bad");
+    if(vi===state.idx) c.classList.add("cur");
+    c.onclick=()=>{ state.idx=vi; render(); };
+    grid.appendChild(c);
+  });
+  document.getElementById("cardlegend").style.display = grid.children.length ? "flex" : "none";
+}
+
+function escapeHtml(s){ return s.replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+
+function toggleCard(){
+  const g=document.getElementById("cardgrid");
+  const l=document.getElementById("cardlegend");
+  const show=g.style.display==="flex";
+  g.style.display=show?"none":"flex";
+  l.style.display=show?"none":"flex";
+}
+
+document.getElementById("btnCard").onclick=toggleCard;
+document.getElementById("btnPrev").onclick=()=>{ if(state.idx>0){state.idx--; debounceSave(); render();} };
+document.getElementById("btnNext").onclick=()=>{ if(state.idx<visible().length-1){state.idx++; debounceSave(); render();} };
+document.getElementById("btnRedo").onclick=()=>{ delete state.answers[visible()[state.idx]]; debounceSave(); render(); };
+document.getElementById("btnShuffle").onclick=()=>{
+  const v=visible();
+  const arr=v.slice();
+  for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}
+  state.order=arr; state.idx=0; debounceSave(); render();
+};
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowRight") document.getElementById("btnNext").click();
+  if(e.key==="ArrowLeft") document.getElementById("btnPrev").click();
+});
+window.addEventListener("beforeunload",()=>{ clearTimeout(saveTimer); if(dirty) push(true); });
+fetchProgress(); // 先从后端拉进度，拉完再 render
+
+// ===== 认证与协议门（登录后才能使用题库） =====
+const AGREE_KEY = "knowall_agree_v1";
+const agreeBar=document.getElementById("agreeBar");
+const gate=document.getElementById("gate");
+function gateShow(title,msg){ document.getElementById("gateTitle").textContent=title; document.getElementById("gateMsg").textContent=msg; gate.classList.add("show"); hideAgree(); }
+function gateHide(){ gate.classList.remove("show"); }
+function hideAgree(){ agreeBar.style.display="none"; }
+function showAgree(){ if(state.agreed) return; agreeBar.style.display="flex"; }
+
+async function initAuth(){
+  // 1) 无 token → 登录门
+  const t=localStorage.getItem("knowall_token");
+  if(!t){ gateShow("请先登录","本页包含四道公开教学示例，请登录后使用；登录后进度云端同步、换设备可续刷。"); return; }
+  // 2) 有 token → /auth/me 校验；失败即视为未登录
+  try{
+    const r=await fetch(ME_API,{headers:authHeaders(false)});
+    if(!r.ok) throw 0;
+    me=await r.json();           // { id, username, email, phone, nickname, ... }
+  }catch(e){
+    gateShow("登录已失效","Token 无效或已过期，请重新登录后继续刷题（进度已保存在云端）。");
+    return;
+  }
+  // 3) 填充页脚用户信息
+  const fu=document.getElementById("footUser");
+  if(fu) fu.textContent = "当前用户：" + (me.username||"") + " · ";
+  gateHide();
+  // 4) 等 fetchProgress 完成，再决定协议横幅/水印
+  syncAgreed();
+  if(!state.agreed) showAgree();
+  else hideAgree();
+  render();
+}
+
+function syncAgreed(){
+  // agreed 持久化位置：localStorage（本设备）+ 服务端进度（跨设备，fetchProgress 已同步进 state）
+  let local=false;
+  try{ local=!!JSON.parse(localStorage.getItem(AGREE_KEY)||"false"); }catch(e){}
+  if(state.agreed) local=true;
+  state.agreed=local;
+  try{ localStorage.setItem(AGREE_KEY, local?"true":"false"); }catch(e){}
+  applyAgreeUI();
+}
+// 根据 agreed 状态刷新界面：已同意 → 隐藏横幅+显示水印；未同意 → 显示横幅（登录后）
+function applyAgreeUI(){
+  if(!me) return;                    // 登录信息未加载完之前不动作，由 initAuth 兜底
+  if(state.agreed){ hideAgree(); applyWatermark(); }
+  else { showAgree(); }
+}
+
+// ===== 用户协议弹窗 =====
+const TERMS = {"title": "《示例使用说明》", "body": ["本页提供本项目分子生物学演示课程中的四道示例题，用于体验答题、错题回顾与进度同步。", "登录后，作答与进度将保存到当前账号的学习空间。"]};
+
+// 同意协议 → 本机记住 + 服务端进度同步 + 生成水印
+async function doAgree(){
+  state.agreed=true; saveLocal();
+  try{ localStorage.setItem(AGREE_KEY,"true"); }catch(e){}
+  hideAgree(); closeAgree(); applyWatermark();
+  try{ await push(false); }catch(e){}   // 同步 agreed 至服务端进度
+}
+
+function openAgree(fromBtn){
+  document.getElementById("agreeBody").innerHTML = TERMS.body.map((t,i)=>{
+    const m=t.match(/^[一二三四五六]、/);
+    return m? `<h4>${t}</h4>` : `<p>${t}</p>`;
+  }).join("");
+  const mask=document.getElementById("agreeMask");
+  mask.classList.add("show");
+  document.getElementById("agreeFoot").innerHTML=TERMS.foot;
+  const btn=document.getElementById("btnAgree2");
+  btn.onclick=()=>{ state.agreed=true; doAgree(); };
+}
+function closeAgree(){ document.getElementById("agreeMask").classList.remove("show"); }
+
+// ===== 身份水印（截图/录屏可溯源） =====
+function maskIdent(idn){
+  // 手机号仅显示尾 4 位；无手机号则用完整用户名（水印溯源，截断会失去辨识度）
+  if(!me) return "游客";
+  const p=me.phone||"";
+  if(p && p.length>=4) return p.slice(-4);
+  return me.username || "用户";
+}
+function applyWatermark(){
+  const wm=document.getElementById("wm");
+  if(!me || !state.agreed){ wm.style.display="none"; return; }
+  const idn=maskIdent(me);
+  let html="";
+  for(let r=0;r<4;r++)
+    for(let c=0;c<3;c++) html += "<i>"+idn+" · KnowAll 题库</i>";
+  wm.innerHTML=html;
+  wm.style.display="block";
+}
+
+// 协议/水印相关按钮
+document.getElementById("btnShowAgree2").onclick=()=>openAgree();
+document.getElementById("btnAgree").onclick=()=>doAgree();
+document.getElementById("btnCloseAgree").onclick=()=>closeAgree();
+document.getElementById("btnTerms").onclick=()=>openAgree();
+
+// 登录门按钮：跳转主应用登录页（带回来地址），或刷新重试
+document.getElementById("btnGoLogin").onclick=()=>{
+  const here=encodeURIComponent(location.href);
+  // 同一 origin（5273 开发服务器或 dist 静态托管），前端登录页在根路径
+  location.href = location.origin + "/?login=1&next=" + here;
+};
+document.getElementById("btnRetry").onclick=()=>{ location.reload(); };
+
+initAuth(); // 入口：校验登录 → 放行/拦截
+
+// ---- 名词解释库（Glossary 自研 .kgb 格式）----
+let GLOSSARY = [];
+fetch('/glossary_terms.kgb', {headers: authHeaders(false)})
+  .then(r => r.ok ? r.json() : null)
+  .then(d => { if (d && Array.isArray(d.entries)) GLOSSARY = d.entries; if (GLOSSARY.length) render(); })
+  .catch(() => { GLOSSARY = []; });
+
+function glossaryHtml(text){
+  if (!GLOSSARY.length) return escapeHtml(text);
+  const names = [];
+  const seen = new Set();
+  GLOSSARY.forEach(t => {
+    const cands = [t.term, ...(t.aliases||[])].filter(Boolean);
+    cands.forEach(n => {
+      const k = n.toLowerCase();
+      if (seen.has(k) || n.length < 2) return;
+      seen.add(k);
+      names.push({ name: n, term: t.term, acronym: /^[A-Z][A-Z0-9]*$/.test(n) && n.length >= 2 });
+    });
+  });
+  names.sort((a,b)=>b.name.length-a.name.length);
+  let out = escapeHtml(text);
+  const ph = [];
+  names.forEach(({name, acronym}) => {
+    const esc = name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    const re = acronym ? new RegExp('\\b'+esc+'\\b','g') : new RegExp(esc,'g');
+    out = out.replace(re, () => { const p=''+ph.length+''; ph.push(name); return p; });
+  });
+  ph.forEach((name,i)=>{
+    out = out.replace(''+i+'',
+      '<span class="glossary-term" data-term="'+name.replace(/"/g,'&quot;')+'">'+name+'</span>');
+  });
+  return out;
+}
+
+let popupEl = null;
+function showGlossaryPopup(termName, anchorEl){
+  const item = GLOSSARY.find(t => t.term === termName || (t.aliases||[]).includes(termName));
+  if (!item) return;
+  hideGlossaryPopup();
+  const div = document.createElement('div');
+  div.className = 'glossary-popup';
+  div.innerHTML = '<div class="gt-title">'+escapeHtml(item.term)+'</div>'
+    + '<div class="gt-def">'+escapeHtml((item.definition||'').slice(0,140))+((item.definition||'').length>140?'…':'')+'</div>'
+    + (item.chapter ? '<div class="gt-ch">'+escapeHtml(item.chapter)+'</div>' : '')
+    + '<div class="gt-foot"><a href="/glossary/'+encodeURIComponent(item.term)+'">查看详情 →</a></div>';
+  document.body.appendChild(div);
+  const r = anchorEl.getBoundingClientRect();
+  const pr = div.getBoundingClientRect();
+  div.style.left = Math.min(r.left, window.innerWidth - pr.width - 12) + 'px';
+  div.style.top = (r.bottom + 6) + 'px';
+  popupEl = div;
+}
+function hideGlossaryPopup(){ if (popupEl){ popupEl.remove(); popupEl=null; } }
+document.addEventListener('click', e => {
+  const term = e.target.closest('.glossary-term');
+  if (term){ e.stopPropagation(); showGlossaryPopup(term.dataset.term, term); return; }
+  hideGlossaryPopup();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "html-url-attributes",
+  "version": "3.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/rehypejs/rehype-minify/tree/main/packages/html-url-attributes",
+  "resolved": "https://registry.npmmirror.com/html-url-attributes/-/html-url-attributes-3.0.1.tgz",
+  "integrity": "sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "e18cf5173e928f808f0cd208097fee8fbec9d28fc0255213938e4c559e29ff58",
+      "source": "frontend\\node_modules\\html-url-attributes\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "c8f91253c03e47771a22af46551979b255447590a3cc8f50406e8a2b0f1a00e4",
+    "lib/index.js": "294ddb9a402e62c9b05253165265b6f54bd67ae3db70c55e17819557130019b9"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

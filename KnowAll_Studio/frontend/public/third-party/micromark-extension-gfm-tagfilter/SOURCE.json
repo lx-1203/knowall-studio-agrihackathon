@@ -1,0 +1,21 @@
+{
+  "name": "micromark-extension-gfm-tagfilter",
+  "version": "2.0.0",
+  "license": "MIT",
+  "repository": "micromark/micromark-extension-gfm-tagfilter",
+  "resolved": "https://registry.npmmirror.com/micromark-extension-gfm-tagfilter/-/micromark-extension-gfm-tagfilter-2.0.0.tgz",
+  "integrity": "sha512-xHlTOmuCSotIA8TW1mDIM6X2O1SiX5P9IuDtqGonFhEK0qgRI4yeC6vMxEV2dgyr2TiD+2PQ10o+cOhdVAcwfg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\micromark-extension-gfm-tagfilter\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "11a91af64d788b9cef27855f6dad3cd2bf5f5b7a5b0ce3ba6794ef587699675f",
+    "lib/index.js": "ea626eefc8e4c741e450f31eed8476eeb1b344ea0db00363ad176c117a845a35"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

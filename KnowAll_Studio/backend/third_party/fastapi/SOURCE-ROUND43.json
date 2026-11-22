@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/fastapi/fastapi",
+  "version": "0.136.3",
+  "license": "MIT",
+  "runtime_modified": false,
+  "new_dependency": false,
+  "sources": [
+    {
+      "source": "LICENSE",
+      "url": "https://raw.githubusercontent.com/fastapi/fastapi/0.136.3/LICENSE",
+      "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e",
+      "installed_exact": false
+    },
+    {
+      "source": "fastapi/exceptions.py",
+      "url": "https://raw.githubusercontent.com/fastapi/fastapi/0.136.3/fastapi/exceptions.py",
+      "sha256": "7d434e051748b142d4d139cef1a3418371e825ec89c57a7d515e83f3062ef652",
+      "installed_exact": true
+    },
+    {
+      "source": "docs/en/docs/tutorial/handling-errors.md",
+      "url": "https://raw.githubusercontent.com/fastapi/fastapi/0.136.3/docs/en/docs/tutorial/handling-errors.md",
+      "sha256": "f9236946816285bfa8cf948b4175de81d0a14a47d9a2a3a7ed3d48340ddf8a3d",
+      "installed_exact": false
+    }
+  ],
+  "integration": "Native HTTPException status/detail/headers at two KAF boundaries"
+}

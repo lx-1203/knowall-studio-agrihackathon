@@ -1,0 +1,25 @@
+{
+  "name": "mdast-util-from-markdown",
+  "version": "2.0.3",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-from-markdown",
+  "resolved": "https://registry.npmmirror.com/mdast-util-from-markdown/-/mdast-util-from-markdown-2.0.3.tgz",
+  "integrity": "sha512-W4mAWTvSlKvf8L6J+VN9yLSqQ9AOAAvHuoDAmPkz4dHf553m5gVj2ejadHJhoJmcmxEnOv6Pa8XJhpxE93kb8Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\mdast-util-from-markdown\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "b5ac1d75a898f7e28ae90ce26ab937b5f574bd5b4e8c17745bd15ba78a4a33f5",
+    "dev/index.js": "0746a4015c41abf71353218a53f328659c33f62fbf6ad67c5fb0e7330d80c8b3",
+    "lib/index.js": "2b19a9873232679ef08429e08c5836c865a54d8113ae5d58cb9409a60863727b",
+    "lib/types.js": "ee0a88bd47513fbc61140074a08400d8d3ef38fcf9d01d3731b8eba56f4d45cb",
+    "dev/lib/index.js": "bc4760bec02ae905b362fbe7eb7dd935ceb49cfcff8728c6cc07f5940a1a26c8",
+    "dev/lib/types.js": "2c785c7622923005c12bd4a5515388ead64d8773b31af8fe325431a453f05250"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

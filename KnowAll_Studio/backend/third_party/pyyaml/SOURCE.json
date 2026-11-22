@@ -1,0 +1,25 @@
+{
+  "package": "PyYAML",
+  "version": "6.0.2",
+  "repository": {
+    "Bug Tracker": "https://github.com/yaml/pyyaml/issues",
+    "CI": "https://github.com/yaml/pyyaml/actions",
+    "Documentation": "https://pyyaml.org/wiki/PyYAMLDocumentation",
+    "Download": "https://pypi.org/project/PyYAML/",
+    "Homepage": "https://pyyaml.org/",
+    "Mailing lists": "http://lists.sourceforge.net/lists/listinfo/yaml-core",
+    "Source Code": "https://github.com/yaml/pyyaml"
+  },
+  "license": "MIT",
+  "wheel_url": "https://files.pythonhosted.org/packages/fa/de/02b54f42487e3d3c6efb3f89428677074ca7bf43aae402517bc7cca949f3/PyYAML-6.0.2-cp313-cp313-win_amd64.whl",
+  "wheel_sha256": "8388ee1976c416731879ac16da0aff3f63b286ffdd57cdeb95f3f2e085687563",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "wheel_path": "PyYAML-6.0.2.dist-info/LICENSE",
+      "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+    }
+  ],
+  "library_modifications": null,
+  "distributed_form": "Source deployment requirements and original notices; no vendored executable library"
+}

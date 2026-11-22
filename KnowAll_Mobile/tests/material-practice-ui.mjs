@@ -1,0 +1,195 @@
+// Expo web + production learning HTTP routes + isolated SQLite database. No paid AI or native-device claim.
+import { createRequire } from 'node:module'
+import { fileURLToPath } from 'node:url'
+const require = createRequire(new URL('../../KnowAll_Studio/frontend/package.json', import.meta.url))
+const { chromium, expect } = require('@playwright/test')
+const browser = await chromium.launch({ channel: 'chrome', headless: true })
+const colorScheme = process.env.MOBILE_UI_THEME === 'dark' ? 'dark' : 'light'
+const width = Number(process.env.MOBILE_UI_WIDTH) || 390
+const height = Number(process.env.MOBILE_UI_HEIGHT) || 844
+const context = await browser.newContext({ viewport: { width, height }, colorScheme })
+const page = await context.newPage()
+const errors = []
+page.on('pageerror', error => errors.push(error.message))
+const headers = { Authorization: 'Bearer local-ui-test-token' }
+const fixture = 'http://127.0.0.1:8897'
+let pack = null
+let failAnswer = true
+let failRating = true
+let delayAnswer = null
+let releaseAnswer = null
+const requests = []
+const dbRecords = async () => (await context.request.get(`${fixture}/fixture/records`, { headers })).json()
+await page.addInitScript(() => {
+  localStorage.setItem('knowall_token', 'local-ui-test-token')
+  localStorage.setItem('knowall_user', JSON.stringify({ id: 'ui-test', username: '测试用户' }))
+})
+await page.route('**/api/**', async route => {
+  const path = new URL(route.request().url()).pathname
+  const body = route.request().postDataJSON()
+  requests.push({ path, body, auth: route.request().headers()['authorization'] })
+  if (path.endsWith('/answers')) {
+    if (failAnswer) return route.fulfill({ status: 500, json: { detail: 'Injected unprocessed grading failure' } })
+    if (delayAnswer) { await delayAnswer; delayAnswer = null }
+  }
+  if (path.endsWith('/review') && failRating) return route.fulfill({ status: 500, json: { detail: 'Injected unprocessed review failure' } })
+  try {
+    const response = await route.fetch({ url: `${fixture}${path}` })
+    if (path.endsWith('/documents/bio/pack')) pack = await response.json()
+    return await route.fulfill({ response })
+  } catch (error) { if (!String(error).includes('disposed')) throw error }
+})
+const choose = (label, choice) => page.getByRole('radio', { name: `${label} 的答案：${choice}`, exact: true }).click()
+const submit = () => page.getByRole('button', { name: '提交答案', exact: true }).click()
+const next = () => page.getByRole('button', { name: '下一题', exact: true }).click()
+const tools = () => page.getByRole('button', { name: '学习工具', exact: true }).click()
+const openDocument = title => page.getByRole('button', { name: '打开学习', exact: true })
+  .filter({ has: page.getByText(title, { exact: true }) }).click()
+const mutationCount = suffix => requests.filter(r => r.path.endsWith(suffix)).length
+const screenshot = async name => {
+  await expect.poll(() => page.getByTestId('modal-surface').evaluate(e => {
+    for (let n = e; n; n = n.parentElement) if (Number(getComputedStyle(n).opacity) < 0.99) return false
+    return true
+  })).toBeTruthy()
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy()
+  await page.screenshot({ path: fileURLToPath(new URL(`../docs/patrol/${process.env.MOBILE_UI_EVIDENCE_ROUND || 'round05'}-${name}-${colorScheme}-${width}.png`, import.meta.url)), fullPage: true })
+}
+try {
+  expect((await context.request.post(`${fixture}/fixture/reset`, { headers })).ok()).toBeTruthy()
+  await page.goto('http://localhost:8096')
+  await expect(page.getByText('我的资料', { exact: true }).first()).toBeVisible({ timeout: 120000 })
+  await openDocument('细胞练习.md')
+  await expect(page.frameLocator('iframe[title="资料排版正文"]').getByText('细胞核储存遗传信息', { exact: false })).toBeVisible()
+  await tools()
+  await page.getByText('练习', { exact: true }).click()
+  await page.getByRole('button', { name: '开始当前资料练习', exact: true }).click()
+  await expect(page.getByText('匹配结构与功能', { exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: '提交答案', exact: true })).toBeDisabled()
+  await choose('A', '储存遗传信息')
+  await expect(page.getByRole('button', { name: '提交答案', exact: true })).toBeDisabled()
+  await choose('B', '储存遗传信息')
+  await page.getByText('知识点', { exact: true }).click()
+  await page.getByText('练习', { exact: true }).click()
+  await expect(page.getByRole('radio', { name: 'B 的答案：储存遗传信息', exact: true })).toBeChecked()
+  await screenshot('matching')
+  await submit()
+  await expect(page.getByText('提交失败，答案已保留，请重试。')).toBeVisible()
+  await page.waitForTimeout(3200) // The old transient retry interceptor would replay 500 mutations.
+  expect(mutationCount('/answers')).toBe(1)
+  expect((await dbRecords()).answers).toHaveLength(0)
+  await expect(page.getByRole('radio', { name: 'B 的答案：储存遗传信息' })).toBeChecked()
+  failAnswer = false
+  await submit()
+  await expect(page.getByText('得分：50%', { exact: true })).toBeVisible()
+  await expect(page.getByText(/正确答案：/)).toContainText('B. 线粒体 → 提供能量')
+  await expect(page.getByRole('radio', { name: 'B 的答案：储存遗传信息' })).toBeDisabled()
+  await next()
+  await expect(page.getByText('排列复制过程', { exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'A 上移', exact: true })).toBeDisabled()
+  await expect(page.getByRole('button', { name: 'C 下移', exact: true })).toBeDisabled()
+  await page.getByRole('button', { name: 'B 上移', exact: true }).click()
+  await page.getByText('导图', { exact: true }).click()
+  await page.getByText('练习', { exact: true }).click()
+  await expect(page.getByText('1. 解旋', { exact: true })).toBeVisible()
+  await submit()
+  await expect(page.getByText('回答正确', { exact: true })).toBeVisible()
+  expect(JSON.parse(requests.filter(r => r.path.endsWith('/answers')).at(-1).body.answer)).toEqual(['B', 'A', 'C'])
+  await next()
+  await choose('A', '植物细胞')
+  await choose('B', '动物细胞')
+  await submit()
+  await expect(page.getByText('回答正确', { exact: true })).toBeVisible()
+  await next()
+  await page.getByRole('checkbox', { name: '选择 B：RNA', exact: true }).click()
+  await page.getByRole('checkbox', { name: '选择 A：DNA', exact: true }).click()
+  await submit()
+  await expect(page.getByText('回答正确', { exact: true })).toBeVisible()
+  expect(requests.filter(r => r.path.endsWith('/answers')).at(-1).body.answer).toBe('A,B')
+  await next()
+  await page.getByRole('radio', { name: '选择 true：正确', exact: true }).click()
+  await submit()
+  await expect(page.getByText('回答正确', { exact: true })).toBeVisible()
+  expect(requests.filter(r => r.path.endsWith('/answers')).at(-1).body.answer).toBe('true')
+  await next()
+  await page.getByRole('textbox', { name: '第1空', exact: true }).fill('DNA')
+  await expect(page.getByRole('button', { name: '提交答案', exact: true })).toBeDisabled()
+  await page.getByRole('textbox', { name: '第2空', exact: true }).fill('RNA')
+  await submit()
+  await expect(page.getByText('得分：100%', { exact: true })).toBeVisible()
+  await next()
+  await expect(page.getByText('本轮练习结束。')).toBeVisible()
+  expect((await dbRecords()).answers).toHaveLength(6)
+  expect((await dbRecords()).answers.filter(a => a.correct)).toHaveLength(5)
+
+  await page.getByText('知识卡', { exact: true }).click()
+  const cardId = pack.sections[0].flashcards[0].id
+  const card = page.getByTestId(`material-card-${cardId}`)
+  await expect(card.getByRole('button', { name: '良好', exact: true })).toBeHidden()
+  await card.getByRole('button', { name: '显示答案', exact: true }).click()
+  await card.getByRole('button', { name: '良好', exact: true }).click()
+  await expect(card.getByText('评分保存失败，答案已保留，请重试。')).toBeVisible()
+  await page.waitForTimeout(3200)
+  expect(mutationCount('/review')).toBe(1)
+  expect((await dbRecords()).ratings).toHaveLength(0)
+  await expect(card.getByText('储存遗传信息。', { exact: true })).toBeVisible()
+  failRating = false
+  await card.getByRole('button', { name: '良好', exact: true }).dblclick()
+  await expect(card.getByText('评分已保存到复习记录')).toBeVisible()
+  expect(mutationCount('/review')).toBe(2) // No repeat from a rapid double click.
+  expect((await dbRecords()).ratings).toEqual([{ card_id: cardId, rating: 3 }])
+  expect((await dbRecords()).cards.find(c => c.id === cardId).review_count).toBe(1)
+  await expect(card.getByRole('button', { name: '良好', exact: true })).toBeDisabled()
+  await screenshot('card-rating')
+  expect((await context.request.post(`${fixture}/fixture/due/${cardId}`, { headers })).ok()).toBeTruthy()
+  await page.getByText('练习', { exact: true }).click()
+  await page.getByRole('button', { name: '智能复习', exact: true }).click()
+  await expect(page.getByText('匹配结构与功能', { exact: true })).toBeVisible()
+  await choose('A', '储存遗传信息'); await choose('B', '提供能量')
+  await submit(); await expect(page.getByText('回答正确', { exact: true })).toBeVisible(); await next()
+  await expect(page.getByText('DNA的作用？', { exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: '困难', exact: true })).toBeHidden()
+  await page.getByRole('button', { name: '显示答案', exact: true }).click()
+  await page.getByRole('button', { name: '困难', exact: true }).click()
+  await expect(page.getByText('细胞核的作用？', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: '显示答案', exact: true }).click()
+  await expect(page.getByRole('button', { name: '简单', exact: true })).toBeVisible()
+  await page.getByRole('button', { name: '简单', exact: true }).click()
+  await expect(page.getByText('本轮复习结束。')).toBeVisible()
+  expect((await dbRecords()).ratings.map(r => r.rating)).toEqual([3, 2, 4])
+  expect(requests.some(r => r.path.endsWith('/session') && r.body.mode === 'smart')).toBeTruthy()
+
+  await page.getByRole('button', { name: '章节练习', exact: true }).click()
+  await choose('A', '储存遗传信息'); await choose('B', '提供能量')
+  delayAnswer = new Promise(resolve => { releaseAnswer = resolve })
+  await submit()
+  await expect(page.getByRole('button', { name: '提交答案', exact: true })).toBeDisabled()
+  await page.getByRole('button', { name: '关闭学习工具', exact: true }).click()
+  await page.getByRole('button', { name: '返回我的资料' }).click()
+  await openDocument('历史笔记.md')
+  await tools()
+  await expect(page.getByText('这份资料还没有整理学习内容。')).toBeVisible()
+  releaseAnswer()
+  await expect.poll(async () => (await dbRecords()).answers.length).toBe(8)
+  await expect(page.getByText('回答正确', { exact: true })).toBeHidden()
+  await page.getByRole('button', { name: '关闭学习工具', exact: true }).click()
+  await page.getByRole('button', { name: '返回我的资料' }).click()
+  await openDocument('细胞练习.md')
+  await tools(); await page.getByText('练习', { exact: true }).click()
+  await page.getByRole('button', { name: '开始当前资料练习', exact: true }).click()
+  await choose('A', '储存遗传信息'); await choose('B', '提供能量')
+  expect((await context.request.post(`${fixture}/fixture/source/stale`, { headers })).ok()).toBeTruthy()
+  await submit()
+  await expect(page.getByText('资料或题目已更新，请刷新学习内容后再继续。')).toBeVisible()
+  await expect(page.getByRole('button', { name: '提交答案', exact: true })).toBeDisabled()
+  await expect(page.getByRole('radio', { name: 'B 的答案：提供能量' })).toBeChecked()
+  expect((await dbRecords()).answers).toHaveLength(8)
+  await page.getByRole('button', { name: '刷新学习内容', exact: true }).click()
+  await expect(page.getByRole('button', { name: '开始当前资料练习', exact: true })).toBeDisabled()
+  const denied = await context.request.post(`${fixture}/api/v1/learning/packs/${pack.id}/review`, { headers: { Authorization: 'Bearer other-account-token' }, data: { card_id: cardId, rating: 4 } })
+  expect([403, 404]).toContain(denied.status())
+  expect((await dbRecords()).ratings).toHaveLength(3)
+  expect(requests.filter(r => r.path.includes('/learning/')).every(r => r.auth === headers.Authorization)).toBeTruthy()
+  expect(errors).toEqual([])
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy()
+  console.log(`PASS (${colorScheme}, ${width}px): SQLite-backed matching/ordering/classification/multi/judgment/blanks, partial credit/history, rating retry/no auto replay/double-click protection, persisted FSRS/smart due cards, 409 source conflict, late answer isolation, ownership; no overflow or page errors.`)
+} finally { releaseAnswer?.(); await browser.close() }

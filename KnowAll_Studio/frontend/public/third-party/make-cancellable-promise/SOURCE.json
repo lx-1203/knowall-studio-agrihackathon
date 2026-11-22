@@ -1,0 +1,23 @@
+{
+  "name": "make-cancellable-promise",
+  "version": "2.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojtekmaj/make-cancellable-promise.git"
+  },
+  "resolved": "https://registry.npmmirror.com/make-cancellable-promise/-/make-cancellable-promise-2.0.0.tgz",
+  "integrity": "sha512-3SEQqTpV9oqVsIWqAcmDuaNeo7yBO3tqPtqGRcKkEo0lrzD3wqbKG9mkxO65KoOgXqj+zH2phJ2LiAsdzlogSw==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "b6c07e1f39bc4dca9286be4b2715b35287ef9d5a42063f6f530a442e317a91d2",
+      "source": "frontend/node_modules/make-cancellable-promise/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/index.js": "3ccf107816c6c8cc6eebdaf79bc2fb0db64736e113c36dae08a0e26a725436a6"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only."
+}

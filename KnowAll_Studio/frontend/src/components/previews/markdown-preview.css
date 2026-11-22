@@ -1,0 +1,14 @@
+.markdown-preview, .markdown-content { overflow-wrap: anywhere; min-width: 0; }
+.markdown-content > :first-child { margin-top: 0; }
+.markdown-content > :last-child { margin-bottom: 0; }
+.markdown-preview pre, .markdown-content pre, .markdown-content .katex-display { overflow-x: auto; overflow-wrap: normal; }
+.markdown-content pre { border-radius: 6px; }
+/* Native tall TeX glyphs extend past the line box; leave room without clipping. */
+.markdown-content .katex-display { padding-block: .5em; }
+.markdown-content .markdown-code-block { padding: 0; }
+.markdown-content table { border-collapse: collapse; display: block; overflow-x: auto; }
+.markdown-content th, .markdown-content td { border: 1px solid currentColor; padding: 6px 12px; }
+.markdown-content blockquote { border-left: 3px solid currentColor; margin-left: 0; padding-left: 16px; }
+.markdown-content img { max-width: 100%; }
+.markdown-preview .markdown-limit { font-size: 12px; opacity: .75; }
+.learning-content-fallback { white-space: pre-wrap; overflow-wrap: anywhere; }

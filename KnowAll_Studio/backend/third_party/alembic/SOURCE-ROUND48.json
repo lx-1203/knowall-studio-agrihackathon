@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/sqlalchemy/alembic",
+  "ref": "rel_1_18_4",
+  "version": "1.18.4",
+  "license": "MIT",
+  "obligation": "Ship complete original copyright and permission notice; original upstream modules unmodified, only project adapters use native APIs.",
+  "files": [
+    {
+      "source_file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/LICENSE",
+      "saved": "KnowAll_Studio/backend/third_party/alembic/LICENSE-ROUND48",
+      "sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc"
+    },
+    {
+      "source_file": "alembic/operations/batch.py",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/alembic/rel_1_18_4/alembic/operations/batch.py",
+      "saved": "KnowAll_Studio/backend/third_party/alembic/ROUND48-alembic-operations-batch.py.txt",
+      "sha256": "8583a9cc6d852bff2193eac736e2ee140037f955d148e9ec4eba73d98940eb54"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "scroll-into-view-if-needed",
+  "version": "3.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scroll-into-view/scroll-into-view-if-needed.git"
+  },
+  "resolved": "https://registry.npmmirror.com/scroll-into-view-if-needed/-/scroll-into-view-if-needed-3.1.0.tgz",
+  "integrity": "sha512-49oNpRjWRvnU8NyGVmUaYG4jtTkNonFZI86MmGRDqBphEK2EXT9gdEUoQPZhuBM8yWHxCWbobltqYO5M4XrUvQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "62b9f69bb4ccf131e7e4cc8ce6ec5b4acf3d9848f0ac73c3c2f285d716ff1b5c",
+      "source": "frontend/node_modules/scroll-into-view-if-needed/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/index.js": "e93b2c305435796243ad4abca069fa9d17b2983e9d894905d2a3abbc7a6aaec3"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

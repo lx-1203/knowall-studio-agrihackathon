@@ -1,0 +1,24 @@
+{
+  "installed": "1.11.21",
+  "files": [
+    {
+      "file": "docs\\open-source-integration\\round-35-dayjs-LICENSE",
+      "url": "https://raw.githubusercontent.com/iamkun/dayjs/a25f01e8154290b203ab480ffeedc60c80bd0710/LICENSE",
+      "sha256": "5FAAB7526D055651BE3AAB769D58897BE6BD91F3D39D137F25F12DBA1B31D5DC"
+    },
+    {
+      "file": "docs\\open-source-integration\\round-35-dayjs-src-plugin-utc-index.js",
+      "url": "https://raw.githubusercontent.com/iamkun/dayjs/a25f01e8154290b203ab480ffeedc60c80bd0710/src/plugin/utc/index.js",
+      "sha256": "39A867A42ACDCEBE6E1A6437CE9ED6338ACCC18AF5EBCC4BC8738A857D057B97"
+    },
+    {
+      "file": "docs\\open-source-integration\\round-35-dayjs-src-index.js",
+      "url": "https://raw.githubusercontent.com/iamkun/dayjs/a25f01e8154290b203ab480ffeedc60c80bd0710/src/index.js",
+      "sha256": "E16E9820D7C8A06F1D5D81B125701D291666C67C19300EBC7E0DF881D0BF108A"
+    }
+  ],
+  "documentation": "https://day.js.org/docs/en/plugin/utc",
+  "repository": "https://github.com/iamkun/dayjs",
+  "commit": "a25f01e8154290b203ab480ffeedc60c80bd0710",
+  "version": "1.11.21"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "merge-refs",
+  "version": "2.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojtekmaj/merge-refs.git"
+  },
+  "resolved": "https://registry.npmmirror.com/merge-refs/-/merge-refs-2.0.0.tgz",
+  "integrity": "sha512-3+B21mYK2IqUWnd2EivABLT7ueDhb0b8/dGK8LoFQPrU61YITeCMn14F7y7qZafWNZhUEKb24cJdiT5Wxs3prg==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "c2ccf44e0692ca362353ee78a13dfabd61bd9af4491b64ec69f01a9ef0038193",
+      "source": "frontend/node_modules/merge-refs/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/index.js": "0c19a4de6199c0dbacba9ec256c9dfe5cd57813dfe6fc646cd0383855e4ad339"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only."
+}

@@ -1,0 +1,33 @@
+{
+  "name": "rc-dropdown",
+  "version": "4.2.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/dropdown.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-dropdown/-/rc-dropdown-4.2.1.tgz",
+  "integrity": "sha512-YDAlXsPv3I1n42dv1JpdM7wJ+gSUBfeyPK59ZpBD9jQhK9jVuxpjj3NmWQHOBceA1zEPVX84T2wbdb2SD0UjmA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "4973f756e858531bdae451f98054278dabd2ef50fc4d3dbccc084ee35964ad3d",
+      "source": "frontend/node_modules/rc-dropdown/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "3546916c1a0a622ab463bea733b863927cc67fa932092051d4dd1bb8e89271c4",
+    "es/Dropdown.js": "8a780d97147da8656fcc1e93efa5213406cdabebb0e63eabb0dc7539cbd8e64f",
+    "es/index.js": "74cb038fbaa7e4b0bf66d4c08aeda56c3565d054c46d3e4e1a0610a748b15227",
+    "es/Overlay.js": "90c90643d51c7776d090d6f9fb053f2aebe335750378d65c3424d6e501f2b5b9",
+    "es/placements.js": "dd25a3c239708c5c99953469593ef6dd231d368760cd616f84fd62de9a097863",
+    "lib/Dropdown.js": "839213b27b73ed20f229516d04ee86e008fa7f74d9d2f46dcd25740c319ac823",
+    "lib/index.js": "ba62da7e541501d5046e16757dc3b00ab4cf39cd30b9772ddef447f40744a645",
+    "lib/Overlay.js": "526502f76f065f415f3b6d73c6bb9f3d0eaed45e6e3dcfef22706dbd76bd3a88",
+    "lib/placements.js": "8e801ab9c0dab5d81d1d1d3b575e450e15f3693d0f0f72d84acd07494d890e56",
+    "lib/hooks/useAccessibility.js": "e6eb7f2a540ea2d09ce876d0df1f63e2774c239d8c1769b2879fbff1730eee12",
+    "es/hooks/useAccessibility.js": "ab59d4798a5d120d6ff5d8ca2a2ec880dc90e151a23b6dd53da59dc9f6c05667"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

@@ -1,0 +1,40 @@
+{
+  "version": "2.0.51",
+  "repository": "https://github.com/sqlalchemy/sqlalchemy",
+  "ref": "rel_2_0_51",
+  "license": "MIT",
+  "saved_at": "2026-10-10T17:59:20.248334+08:00",
+  "sources": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/LICENSE",
+      "local": "LICENSE-ROUND46",
+      "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9"
+    },
+    {
+      "path": "lib/sqlalchemy/sql/selectable.py",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/sql/selectable.py",
+      "local": "ROUND46-lib-sqlalchemy-sql-selectable.py.txt",
+      "sha256": "93891d6d91c86304813c331ef17bef7291f392d709500bfa9989ba083b9ee515"
+    },
+    {
+      "path": "lib/sqlalchemy/dialects/mysql/base.py",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/dialects/mysql/base.py",
+      "local": "ROUND46-lib-sqlalchemy-dialects-mysql-base.py.txt",
+      "sha256": "14cec05956c32d20323064ea638570a48838273354184515b8e4e307ef26d5eb"
+    },
+    {
+      "path": "lib/sqlalchemy/ext/asyncio/engine.py",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/ext/asyncio/engine.py",
+      "local": "ROUND46-lib-sqlalchemy-ext-asyncio-engine.py.txt",
+      "sha256": "d7db66ce683ee95c30982103c7c9f2c27ccff6a53ee630e31d334c3af4e22528"
+    },
+    {
+      "path": "doc/build/orm/extensions/asyncio.rst",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/doc/build/orm/extensions/asyncio.rst",
+      "local": "ROUND46-doc-build-orm-extensions-asyncio.rst.txt",
+      "sha256": "23d93dc4108770e56a8560bdcbc54f52406aad5b2eb412a81237fa727339f329"
+    }
+  ],
+  "modification": "No upstream edits. Native Alembic batch, SQLAlchemy fresh connection, Starlette FileResponse subclass; preserve original notices in deployment bundle."
+}

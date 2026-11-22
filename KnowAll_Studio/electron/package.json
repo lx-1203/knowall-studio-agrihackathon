@@ -1,0 +1,62 @@
+{
+  "name": "knowall-studio",
+  "version": "0.1.0",
+  "description": "智识工坊 KnowAll Studio - 云端学习空间桌面客户端",
+  "author": "KnowAll Studio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "test": "node --test tests/*.test.js",
+    "icons": "node scripts/build-icons.js",
+    "prepare:frontend": "npm --prefix ../frontend run build",
+    "build:win": "npm run icons && npm run prepare:frontend && electron-builder --win nsis --x64 --publish never",
+    "build:mac": "npm run icons && npm run prepare:frontend && electron-builder --mac dmg --x64 --arm64 --publish never",
+    "build:linux": "npm run icons && npm run prepare:frontend && electron-builder --linux AppImage deb --x64 --publish never",
+    "smoke:packaged": "node scripts/smoke-packaged.js",
+    "smoke:cloud": "node scripts/smoke-cloud.js",
+    "audit:packaged": "node scripts/audit-package.js"
+  },
+  "build": {
+    "appId": "com.knowall.studio",
+    "productName": "KnowAll Studio",
+    "artifactName": "KnowAll-Studio-${version}-${os}-${arch}.${ext}",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js", "cloud-main.js", "cloud-gateway.js", "connection.html",
+      "connection.js", "connection-preload.js", "assets/icon.png", "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../frontend/dist",
+        "to": "frontend",
+        "filter": ["**/*", "!**/*.map", "!**/.env*", "!**/data/**", "!**/*.db*"]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": { "oneClick": false, "perMachine": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "deleteAppDataOnUninstall": false },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.education"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "assets/icon.png",
+      "category": "Education"
+    }
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3",
+    "sharp": "^0.34.5",
+    "cross-env": "^10.1.0"
+  }
+}

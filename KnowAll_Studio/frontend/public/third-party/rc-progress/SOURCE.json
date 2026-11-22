@@ -1,0 +1,38 @@
+{
+  "name": "rc-progress",
+  "version": "4.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/progress.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-progress/-/rc-progress-4.0.0.tgz",
+  "integrity": "sha512-oofVMMafOCokIUIBnZLNcOZFsABaUw8PPrf1/y0ZBvKZNpOiu5h4AO9vv11Sw0p4Hb3D0yGWuEattcQGtNJ/aw==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-progress/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "es/common.js": "2488b174ec241f6237baaa0df5af444c9bf161fc0c6525c7206fcdf56957b330",
+    "es/index.js": "e94130f2e5e6dbab2058db367c40d8ed57a6e7ee36acb02cdaf22d3d0497535e",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/Line.js": "de6b6b465ae41f474d02b26418bab643b02fb4e1ed81089eb1199a72bd1ca627",
+    "lib/common.js": "6ec708e1030e639925b7bc0c9e657ac48d07f3511f7f7fe79c5ffc76b279d7d9",
+    "lib/index.js": "a901925e733e1fd1203d3e93017e87c1af46bf3ed5a36c7c3303ac0f878488d8",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/Line.js": "6542a61c8e9591ba91daa4bc3c8e7741a1cd0f8eb86c55ad081431b044524a40",
+    "lib/Circle/index.js": "193c39f20c21e434ba5b4315cecfac06fe7f0ae910da1d46a10bb32cbd745924",
+    "lib/Circle/PtgCircle.js": "ca66561b09587b134f910c63b755f0790711dc7f9f4e4c4ce5ed7dbd5f397961",
+    "lib/Circle/util.js": "df521ce130c1acc300fb1a1f897eef90749c6073749d9ab7ba3ecb9a4f940c55",
+    "lib/hooks/useId.js": "1f329a3e7b61cc646220d877bdf335d3b989b1bbd158d7d34aef5f62499955fd",
+    "es/Circle/index.js": "034eb596fb6d99ba22d9e653b1850db45b4aa573fb7f3dc96c394edaaf283bfd",
+    "es/Circle/PtgCircle.js": "1617d89b688e67b084104696727709995f23dcb549b213cfa47eedbfcc47f897",
+    "es/Circle/util.js": "d2da833597a01a2d67479917b05895b2d9981f66a02c303ba9880adb84fb96a7",
+    "es/hooks/useId.js": "52801ae51df005ab93c6dd1f606c9cd69ba1cb93d5cd85abc3740fee9a347638"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

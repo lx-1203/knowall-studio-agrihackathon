@@ -1,0 +1,35 @@
+{
+  "name": "rc-collapse",
+  "version": "3.9.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/collapse.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-collapse/-/rc-collapse-3.9.0.tgz",
+  "integrity": "sha512-swDdz4QZ4dFTo4RAUMLL50qP0EY62N2kvmk2We5xYdRwcRn8WcYtuetCJpwpaCbUfUt5+huLpVxhvmnK+PHrkA==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-collapse/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "e87b97cc00e12a91f00a6c9244396e58f225ddb766cf042f17ca2aed1757645a",
+    "es/Collapse.js": "f66c3cb6eb7b7cb5175be5f78cbdccf402cd334781722a527c8411fff503f8cd",
+    "es/index.js": "2061f2ae2871cb455349e154aecea26fa39a51653a5cdd616f2d44ad144da378",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/Panel.js": "179233fad0c95aa49953083c15784ac11abb74bf37678259a77712cf812f90ee",
+    "es/PanelContent.js": "5168092cbb5dbcd3c438ec13ef680c2ca1e5f1c8c9f2304414d6b327ca116b46",
+    "lib/Collapse.js": "ef8657030e8af39f6edac95b1e7b7eed46a55ab0bc79bb7cabac8d161d60407e",
+    "lib/index.js": "70ec6b451d5eebce13fca55ad7ed0e70b550321abdcc561b61cb2c4706b64883",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/Panel.js": "e45dee1f16d819bf33a69a0a6018d021aacb9fc4ddaba52a3dbab234bc0dca58",
+    "lib/PanelContent.js": "a03cefe6120143f5760f1504d904cce348b66c13c5da9afb7a7c00b5e009ef3c",
+    "lib/hooks/useItems.js": "fa2407202ae2771898c07e9172ad62e2b3cad37729ebc8dddc5407b8ce380f60",
+    "es/hooks/useItems.js": "50a4e1acc4c1fd63b459119515974b8b4ff7513f3d9eaf2a6938609b17ba07ad"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

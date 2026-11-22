@@ -1,0 +1,32 @@
+{
+  "name": "mdurl",
+  "version": "0.1.2",
+  "installed": "0.1.2",
+  "repository": "executablebooks/mdurl",
+  "wheel": "mdurl-0.1.2-py3-none-any.whl",
+  "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
+  "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+  "original_notices": {
+    "mdurl-0.1.2.dist-info/LICENSE": "7c605df6e28667a9603118e98274f64a49ce3eed0d26fccce9534a345e0ef955"
+  },
+  "requires_dist": null,
+  "license_expression": null,
+  "latest_commit": "524d2edbbcb8bb48301ba716c7482827bcabb281",
+  "latest_commit_at": "2025-09-24T08:18:35Z",
+  "fixed_commit": "596bf1c8752de45fa576a52c315d6d8cc5bb1a4e",
+  "fixed_tag": "refs/tags/0.1.2",
+  "fixed_archive_url": "https://codeload.github.com/executablebooks/mdurl/zip/596bf1c8752de45fa576a52c315d6d8cc5bb1a4e",
+  "fixed_archive_sha256": "1134c84df9e6ee827c61475894566e017296866d1b456beae8475c8b5cade237",
+  "original_python_files": {
+    "mdurl/__init__.py": "d6fa44f3d3725e7888459342ff87fa04f9b751be1b3e7b637f2ca12d147ba295",
+    "mdurl/_decode.py": "dd0fe00d0a94fff4ef0dbbbbc7e6fd2e36d5978416cb983fa85c258dcbaf37f6",
+    "mdurl/_encode.py": "82824b505b75878ad564daaa9bdb75e4dc365be6c55d8404cb7691d352265afb",
+    "mdurl/_format.py": "c5972dd2675e3d70341f7900ab18c6b650793bce86df90c060c1a4038e02981e",
+    "mdurl/_parse.py": "7b365290cdbfe0d436671d38eec11d7091bb3584111478992bb63c20d1c5cf06",
+    "mdurl/_url.py": "e6442745037603f1b8b2f2e747365c1b46dfa03f406c1ad80d7a2eb031d9df3d"
+  },
+  "all_python_and_notice_bytes_match_fixed_source": true,
+  "license": "MIT",
+  "modifications": "No upstream code copied or modified; native installed library in backend/app/core/anki_export.py only. Existing plain front adapter retained; back uses native MarkdownIt js-default/html=false/breaks=true/image disabled; mdurl used transitively by native URL validation.",
+  "distribution": "Original MIT copyright/permission notices retained in cloud backend/third_party; install pinned official wheels through backend requirements. Anki consumer remains test-only and excluded."
+}

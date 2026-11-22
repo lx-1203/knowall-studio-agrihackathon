@@ -1,0 +1,89 @@
+[
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/LICENSE",
+    "source_file": "LICENSE",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/LICENSE",
+    "sha256": "beec67e4ee83a7af26f242bed9987aa863d6d2dfb776106aa2360c4187f31901",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource."
+  },
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/README.md",
+    "source_file": "README.md",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/ROUND52-README.md",
+    "sha256": "73c7d1b68ea6006a2c2b8ec7bd18d694793638cac46c218ea1b747cdcad64a2d",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource."
+  },
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/CHANGELOG.md",
+    "source_file": "CHANGELOG.md",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/ROUND52-CHANGELOG.md",
+    "sha256": "ceeb4f826a48cb4a833e78fdf585d7a702309a2e85b09fdd904060a6964f9915",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource."
+  },
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/src/httpx_sse/__init__.py",
+    "source_file": "src/httpx_sse/__init__.py",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/ROUND52-src_httpx_sse___init__.py.txt",
+    "sha256": "1be17c8e924ba38789c0abcab7a7a34d060f8411e09a4b194cdb9a4324910237",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource.",
+    "runtime_file": "site-packages/httpx_sse/__init__.py",
+    "runtime_sha256": "1be17c8e924ba38789c0abcab7a7a34d060f8411e09a4b194cdb9a4324910237",
+    "normalized_match": true
+  },
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/src/httpx_sse/_api.py",
+    "source_file": "src/httpx_sse/_api.py",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/ROUND52-src_httpx_sse__api.py.txt",
+    "sha256": "0fba5f91a8e6747966b3be4e57c1e974eace12be4d6d64250f031f485709f055",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource.",
+    "runtime_file": "site-packages/httpx_sse/_api.py",
+    "runtime_sha256": "0fba5f91a8e6747966b3be4e57c1e974eace12be4d6d64250f031f485709f055",
+    "normalized_match": true
+  },
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/src/httpx_sse/_decoders.py",
+    "source_file": "src/httpx_sse/_decoders.py",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/ROUND52-src_httpx_sse__decoders.py.txt",
+    "sha256": "9dad57c9506208b6d113cb60d28ef5dd4e46cfe9bd7c1c583df48c9aeff19ecf",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource.",
+    "runtime_file": "site-packages/httpx_sse/_decoders.py",
+    "runtime_sha256": "9dad57c9506208b6d113cb60d28ef5dd4e46cfe9bd7c1c583df48c9aeff19ecf",
+    "normalized_match": true
+  },
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/src/httpx_sse/_models.py",
+    "source_file": "src/httpx_sse/_models.py",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/ROUND52-src_httpx_sse__models.py.txt",
+    "sha256": "e16c06781106311da76d139367b3f2565bbb72199683bb5b909c97c9de434f1d",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource.",
+    "runtime_file": "site-packages/httpx_sse/_models.py",
+    "runtime_sha256": "e16c06781106311da76d139367b3f2565bbb72199683bb5b909c97c9de434f1d",
+    "normalized_match": true
+  },
+  {
+    "repository": "https://github.com/florimondmanca/httpx-sse",
+    "version": "0.4.3",
+    "url": "https://raw.githubusercontent.com/florimondmanca/httpx-sse/0.4.3/src/httpx_sse/_exceptions.py",
+    "source_file": "src/httpx_sse/_exceptions.py",
+    "local": "KnowAll_Studio/backend/third_party/httpx_sse/ROUND52-src_httpx_sse__exceptions.py.txt",
+    "sha256": "b05641513d7120cd43bd843a724a73ae1046f5df157df152645308121bf5379f",
+    "modifications": "None; original notices/reference sources. Integration imports installed EventSource.",
+    "runtime_file": "site-packages/httpx_sse/_exceptions.py",
+    "runtime_sha256": "b05641513d7120cd43bd843a724a73ae1046f5df157df152645308121bf5379f",
+    "normalized_match": true
+  }
+]

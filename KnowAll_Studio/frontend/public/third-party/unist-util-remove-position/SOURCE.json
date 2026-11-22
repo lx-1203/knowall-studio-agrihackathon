@@ -1,0 +1,21 @@
+{
+  "name": "unist-util-remove-position",
+  "version": "5.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/unist-util-remove-position",
+  "resolved": "https://registry.npmmirror.com/unist-util-remove-position/-/unist-util-remove-position-5.0.0.tgz",
+  "integrity": "sha512-Hp5Kh3wLxv0PHj9m2yZhhLt58KzPtEYKQQ4yxfYFEO7EvHwzyDYnduhHnY1mDxoqr7VUwVuHXk9RXKIiYS1N8Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\unist-util-remove-position\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "2fb0b460f9f517fbd3f5feda6c9102c8aec82fff13b6526e3dfedae5f8374982",
+    "lib/index.js": "c3e84d69753f02b2bc34101bc6b7280f17bf66d37c98dee2555ba1af2da4283a"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

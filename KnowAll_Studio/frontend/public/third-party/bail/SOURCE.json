@@ -1,0 +1,20 @@
+{
+  "name": "bail",
+  "version": "2.0.2",
+  "license": "MIT",
+  "repository": "wooorm/bail",
+  "resolved": "https://registry.npmmirror.com/bail/-/bail-2.0.2.tgz",
+  "integrity": "sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+      "source": "frontend\\node_modules\\bail\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "bf9c61413349a74801f2583d1922c323b4b41ca520a70461b438fd08d1381bae"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

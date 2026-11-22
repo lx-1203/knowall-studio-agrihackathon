@@ -1,0 +1,29 @@
+{
+  "name": "micromark-extension-gfm-table",
+  "version": "2.1.1",
+  "license": "MIT",
+  "repository": "micromark/micromark-extension-gfm-table",
+  "resolved": "https://registry.npmmirror.com/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.1.1.tgz",
+  "integrity": "sha512-t2OU/dXXioARrC6yWfJ4hqB7rct14e8f7m0cbI5hUmDyyIlwv5vEtooptH8INkbLzOatzKuVbQmAYcbWoyz6Dg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-extension-gfm-table\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "bfdd4285a9f61faa334ced8f98fbbd1c3ba35f00a1613839c23c30c0786dcc97",
+    "dev/index.js": "5c9e4cf61b33196d25e75dc4cf0cb669f5a41bd2cef275e2bb8ec5ed1d1186dc",
+    "lib/edit-map.js": "47e082373ee2022e2569ea4c0d7e05dbeae0a55885a6b5fb7efce65436b9bd82",
+    "lib/html.js": "e01378aaa7ce1f99b772f486606e3fa6fc1e48839ce6c79c4586127ccfc69852",
+    "lib/infer.js": "c2a038479872bd8026d513d528e56717fa266f09905f53192c6b5a0da6bc9ea7",
+    "lib/syntax.js": "45aac9771cc150aa2e3b62ae12fc370c07b72732d84e847b47e09dd17b3a7bfe",
+    "dev/lib/edit-map.js": "f135834f49bfd2663a9a08555222ffee11dff1407750b887cc3f0940031621c7",
+    "dev/lib/html.js": "247721c8bed40523b31cba6eafe64dd4db358df4d2003d18178621a7a6090ff0",
+    "dev/lib/infer.js": "c81e7f7f04912ccd40d271fb98fd6f32e3d590a7d60fe22bdd32f02a28a3a000",
+    "dev/lib/syntax.js": "1f66c5c88a7f9d3696916ddd7d2206c2b7b9271405be5dbfbb0f82208edf3f5c"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

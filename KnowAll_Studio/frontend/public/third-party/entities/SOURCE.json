@@ -1,0 +1,40 @@
+{
+  "name": "entities",
+  "version": "6.0.1",
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fb55/entities.git"
+  },
+  "resolved": "https://registry.npmmirror.com/entities/-/entities-6.0.1.tgz",
+  "integrity": "sha512-aN97NXWF6AWBTahfVOIrB/NShkzi5H7F9r1s9mD3cDj4Ko5f2qhhVoYMibXF7GlLveb/D2ioWay8lxI97Ven3g==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "cb992345949ccd6e8394b2cd6c465f7b897c864f845937dbf64e8997f389e164",
+      "source": "frontend\\node_modules\\entities\\LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "decode.js": "5addfac4416dc1dea7c9e43db24ba02618c7bc35d6fdf1bccef012ae5a3ce26d",
+    "escape.js": "84cb164e1bf5f7572a3a1ab4af383d2ddcce2366cffd3347fcdd45bec5e21609",
+    "dist/commonjs/decode-codepoint.js": "f917de312a0e1dbc20cfc28423549760dc5245b2fdd7a1ee5f42946c3369c01e",
+    "dist/commonjs/decode.js": "ee09bff7def49f3d806df7cc7434c0dab047bf780ab537698d52086d91c3debc",
+    "dist/commonjs/encode.js": "1bcf88772f2149bc138ba882260c1849ba642ba48b5771516e843a5d69a85a77",
+    "dist/commonjs/escape.js": "59feaa8c468b1ac2ab6917134a1cad5a66fef1bb8e6f4e22539c31e5a095fa37",
+    "dist/commonjs/index.js": "d8e3ad00f7e9014e2ce4c7136d708362617b7958ca3279d2482079aa5647532b",
+    "dist/esm/decode-codepoint.js": "5d8ee93923d609724c69c8c356147176af5226585d4f343c87a5eec6590ebca9",
+    "dist/esm/decode.js": "8af227bae5682a686bf9e9a6547af8c388274f41cb857ff39592fe74fc848d25",
+    "dist/esm/encode.js": "4f13bade5f8f34c7fd4723d15f91793e5c1b56acaba1a218b9f89c9c6ecad715",
+    "dist/esm/escape.js": "50528d67b2fb87687f0658cfab58eb640ebbcd7e3bcfe8e5e2863e8293ae65b7",
+    "dist/esm/index.js": "5e8978a4fee7c71ed9d5440424d6a08ad727693739c821c3fd65dc29cede7241",
+    "dist/esm/generated/decode-data-html.js": "b035b71d6969983297e39df1a06d760f2a8000a0f98444c4fe845fe1155da451",
+    "dist/esm/generated/decode-data-xml.js": "e28599f48fddd869435e44e6ae8644e70a610450d97562e33c869c056e3b129f",
+    "dist/esm/generated/encode-html.js": "e41e86f13d6c5072a518eca9d24d74a75c36d6a4521750286b9b8965913af2df",
+    "dist/commonjs/generated/decode-data-html.js": "8e23a640258c070f67ef1dafe6cff86ccd392527487db5e7da3a1889205e4811",
+    "dist/commonjs/generated/decode-data-xml.js": "a16665dd828b79acd603644b203802eb9cdc0f75d585b05a68c99a665e130fbe",
+    "dist/commonjs/generated/encode-html.js": "888069d7f8454d2aae9a44c0d5e5150bebfb85c8820076dc85763a54f826761d"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

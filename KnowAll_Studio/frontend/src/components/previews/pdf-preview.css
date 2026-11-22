@@ -1,0 +1,9 @@
+.material-pdf-pages { background: var(--pdf-surface); }
+.material-pdf-outline { margin-bottom: 12px; border: 1px solid var(--pdf-border); border-radius: 6px; padding: 10px 14px; }
+.material-pdf-outline summary { cursor: pointer; font-weight: 600; }
+.material-pdf-outline ul { padding-left: 20px; margin: 8px 0; }
+.material-pdf-outline .react-pdf__Outline { max-height: 180px; overflow: auto; }
+.material-pdf-outline a { color: var(--pdf-link); }
+.material-pdf-outline a:focus-visible, .material-pdf-outline summary:focus-visible { outline: 2px solid var(--pdf-link); outline-offset: 2px; }
+.material-pdf-outline p { margin: 8px 0 0; font-size: 13px; }
+.material-pdf .react-pdf__Page { width: max-content; max-width: none; }

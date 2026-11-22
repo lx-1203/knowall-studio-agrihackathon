@@ -1,0 +1,22 @@
+{
+  "name": "is-decimal",
+  "version": "2.0.1",
+  "repository": "wooorm/is-decimal",
+  "license": "MIT",
+  "integrity": "sha512-AAB9hiomQs5DXWcRB1rqsxGUstbRroFOPPVAomNk/3XHR5JyEZChOyTWe2oayKnsSsr/kcGqF+z6yuH6HHpN0A==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\is-decimal\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "81abe32b4b7d4566ddae08dc0eed2526c50d76b792fd4a755013909df04f7d5f"
+    },
+    "upstream_modifications": []
+  }
+}

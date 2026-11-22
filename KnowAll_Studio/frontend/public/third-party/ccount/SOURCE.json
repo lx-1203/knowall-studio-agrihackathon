@@ -1,0 +1,20 @@
+{
+  "name": "ccount",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "wooorm/ccount",
+  "resolved": "https://registry.npmmirror.com/ccount/-/ccount-2.0.1.tgz",
+  "integrity": "sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "63cb98b3f6abfb3c3592c16f88253c1bdc834087bf52671e8ce5609e4eb693cf",
+      "source": "frontend\\node_modules\\ccount\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "cbba065a9f66c5909d49f740a64f12cfde03220303a845b2273d54af59e70af9"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

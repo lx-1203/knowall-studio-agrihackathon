@@ -1,0 +1,22 @@
+{
+  "name": "is-alphabetical",
+  "version": "2.0.1",
+  "repository": "wooorm/is-alphabetical",
+  "license": "MIT",
+  "integrity": "sha512-FWyyY60MeTNyeSRpkM2Iry0G9hpr7/9kD40mD/cGQEuilcZYS4okz8SN2Q6rLCJ8gbCt6fN+rC+6tMGS99LaxQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\is-alphabetical\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "b2e416438ba183ce718705a37ff912e0f3db3ddca3f62f1dc159c7ccb7edfdab"
+    },
+    "upstream_modifications": []
+  }
+}

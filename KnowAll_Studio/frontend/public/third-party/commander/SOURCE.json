@@ -1,0 +1,30 @@
+{
+  "name": "commander",
+  "version": "8.3.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tj/commander.js.git"
+  },
+  "resolved": "https://registry.npmmirror.com/commander/-/commander-8.3.0.tgz",
+  "integrity": "sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "04512a63dce4d2d506ad612dc0bd7681ccf6e3655f7b6eaef7dfac8323d1ec0b",
+      "source": "frontend\\node_modules\\commander\\LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "esm.mjs": "d590f9c55c9f8bfec81fdc4170b3e7653226a39956055aec657b52ae45495d88",
+    "index.js": "d4f8af488a7a08cd71df8503fcc3e5f2fd61e9b26eb368ecd5cc8159862cde3f",
+    "lib/argument.js": "7859398cfac1869df6cbba646e7e437875185866b79ac70a5a3cd802fd4df96b",
+    "lib/command.js": "69047076c77593471bbf1aa2ba5f01f0565bffa187d415a600d8ec5998d2056b",
+    "lib/error.js": "c69bbc276b3c7fec052f930b9de091db2206646761f765a2077d5731f763dc55",
+    "lib/help.js": "f07a902508e463968826dd36b567640a563f0192989355c6559723415951bcf2",
+    "lib/option.js": "9dfc7ae4b048435196cbdd888819bb84253d2693460adfa262cffcbb31d6cf98",
+    "lib/suggestSimilar.js": "2f96448988ab89b4acd941d298e51bb103544bf65b60eb0a4260a26a8b39bb57"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

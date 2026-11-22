@@ -1,0 +1,26 @@
+{
+  "name": "debug",
+  "version": "4.4.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/debug-js/debug.git"
+  },
+  "resolved": "https://registry.npmmirror.com/debug/-/debug-4.4.3.tgz",
+  "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95",
+      "source": "frontend\\node_modules\\debug\\LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "src/browser.js": "19920671f5902f64ad8ea11767fa50ea9d7a71ae0b7dff7ba5693c0075afc763",
+    "src/common.js": "dbe83d2bb5837f3c4d7fe537b8004c585987270eceed5b06b8e078deb0ae214a",
+    "src/index.js": "aa127ff1752b7d9c7415c5c7bb6994d9aa722b81bcbcab4bd48316b013d23bf3",
+    "src/node.js": "d7b26d7c92f8ea7794b77ce11f3c11cd18c9084df7c357e3c7025344fa28aac6"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

@@ -1,0 +1,21 @@
+{
+  "name": "hast-util-from-parse5",
+  "version": "8.0.3",
+  "license": "MIT",
+  "repository": "syntax-tree/hast-util-from-parse5",
+  "resolved": "https://registry.npmmirror.com/hast-util-from-parse5/-/hast-util-from-parse5-8.0.3.tgz",
+  "integrity": "sha512-3kxEVkEKt0zvcZ3hCRYI8rqrgwtlIOFMWkbclACvjlDw8Li9S2hk/d51OI0nr/gIpdMHNepwgOKqZ/sy0Clpyg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\hast-util-from-parse5\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "df503bba0d1b98d4c0702ca74c6277369983ea29d5011ed32ae958bfc54f5e02",
+    "lib/index.js": "aef04d0f8bcba4d5ce63cda7346e282c227f3f07c7e2de6bb0cb1b460a2a8848"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

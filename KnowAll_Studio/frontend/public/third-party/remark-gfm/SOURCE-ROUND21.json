@@ -1,0 +1,19 @@
+{
+  "name": "remark-gfm",
+  "version": "4.0.1",
+  "license": "MIT",
+  "repository": "remarkjs/remark-gfm",
+  "commit": "109972e8a773bf5dac1d6d2da0776557f36971aa",
+  "npm_url": "https://registry.npmjs.org/remark-gfm/-/remark-gfm-4.0.1.tgz",
+  "npm_integrity": "sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg==",
+  "source_url": "https://codeload.github.com/remarkjs/remark-gfm/zip/109972e8a773bf5dac1d6d2da0776557f36971aa",
+  "source_archive_sha256": "27e1decedd3947242fbf1f0c9149ddb1cbdeed30c0c1a736a8cb13b158204420",
+  "runtime_js_files": {
+    "index.js": "0cf2ebbaae90578f4a838505ebc3d7fd1d8339484c7f13be1a3d4d09427c2dc9",
+    "lib/index.js": "9317003279e791d39b7e3482cecfb3409843378164a238a535984f644e53c7ef"
+  },
+  "notice_file": "license",
+  "notice_sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+  "modifications": "No upstream code copied or changed; existing LearningContent/MarkdownContent used by FlashcardPage, thin CompareTable and revealed ClozeRenderer answer. Existing lock/dependencies retained.",
+  "distribution": "Original MIT notice already in frontend/public/third-party and dist/Windows/cloud; SOURCE-ROUND21.json records fixed re-use."
+}

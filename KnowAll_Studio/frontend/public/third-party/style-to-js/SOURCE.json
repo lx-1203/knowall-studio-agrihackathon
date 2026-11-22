@@ -1,0 +1,26 @@
+{
+  "name": "style-to-js",
+  "version": "1.1.21",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remarkablemark/style-to-js.git"
+  },
+  "resolved": "https://registry.npmmirror.com/style-to-js/-/style-to-js-1.1.21.tgz",
+  "integrity": "sha512-RjQetxJrrUJLQPHbLku6U/ocGtzyjbJMP9lCNK7Ag0CNh690nSH8woqWH9u16nMjYBAok+i7JO1NP2pOy8IsPQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "bbb380e5c1a717079378d6ea4d33c8a5a81655d4612b749f882e34e46712aab5",
+      "source": "frontend\\node_modules\\style-to-js\\LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "cjs/index.js": "4d72a5338a27ea5526f6d3111e4a02129576f6238e0b346743454381c835bef2",
+    "cjs/utilities.js": "0463aa5f7ac6322ebcdce9bafe3b2ce018e9428e340b9e97f034cc6e8abc6a5c",
+    "umd/style-to-js.js": "d055b2b7f7b0d677b46d9ded4c77ed589acdb4799f00b72fdbf4c0d46962c7a0",
+    "umd/style-to-js.min.js": "140202ced3f34dd34585118ad20e59bf6aca39843e67f3866a5e55ee1abb876e"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

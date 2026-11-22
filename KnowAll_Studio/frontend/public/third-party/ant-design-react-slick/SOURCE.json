@@ -1,0 +1,42 @@
+{
+  "name": "@ant-design/react-slick",
+  "version": "1.1.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ant-design/react-slick"
+  },
+  "resolved": "https://registry.npmmirror.com/@ant-design/react-slick/-/react-slick-1.1.2.tgz",
+  "integrity": "sha512-EzlvzE6xQUBrZuuhSAFTdsr4P2bBBHGZwKFemEfq8gIGyIQCxalYfZW/T2ORbtQx5rU69o+WycP3exY/7T1hGA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "95d848d55392bb8239b53cb7a6405bf3914bdab56d1a0d26f3af5f7aced776eb",
+      "source": "frontend/node_modules/@ant-design/react-slick/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/react-slick.js": "c516406a3a41b8045db3c4868b7716988a8f849acbab44420a3f416a47bdaadd",
+    "dist/react-slick.min.js": "881b2ea694fca7d2d4c896bff7a4b596e67dc6ea3b99675f2a2760dd63bd7db4",
+    "es/arrows.js": "7c7aeab4bc096d1346af5d3cef1b7e01e0afb2d080bb8e104802772f07385bb0",
+    "es/default-props.js": "26534de477c9b88e2b15b4f62bd0932a3ece3514858447d22cac0c05804e06ae",
+    "es/dots.js": "370573ef90f30a75350e396205d8764c74f350da607e9abec4873b69d869a0a0",
+    "es/index.js": "cafccfa8b6a6104b730133197d7defb6aa31b4018f27da321e1ac0d9d60f3f5d",
+    "es/initial-state.js": "4a965dcbd5aad1c5694f798732adc62c965a7daf7deb61a25b8db484a9e6e7aa",
+    "es/inner-slider.js": "715279baf37a9e93979c866d1ee08f1f870d348dc75bbd3828517da1b989211e",
+    "es/slider.js": "fbd5297fbae9bca20bdfdaf17d4d44a4a9a2bb7a06309644f48cce6338c704ac",
+    "es/track.js": "1658f0d3a6027fe4f2be7da10194dd8bbeb8db2bbd568bf094e6ff56c2f0b02e",
+    "lib/arrows.js": "b1e3e149a5d687c90700ed42d46962a950d73a596e8c87f875254e516c9a973b",
+    "lib/default-props.js": "442006c49b4082fd6538d198d5a6afbba26495f6f6017a71d0b367aa2c25b7fb",
+    "lib/dots.js": "1e2b8bc791dc8c776c221e90274f26148c4b6cfaf005a881ddcdb4d2c871941c",
+    "lib/index.js": "47b4030a8e2f9919f0c83af6a24075e2e2df713ba19edf75abc678bcf6738f9c",
+    "lib/initial-state.js": "c6d72a8a7c5aebc10129cb926a1763b628705dea94b6b4059d17fc3c2ebdf157",
+    "lib/inner-slider.js": "49a04a160f793381305d1bb191c3fd3434d5da4c20cdbab8ce2ecda9d2492312",
+    "lib/slider.js": "340896cb7ae0b80a10cbe5cd413003dddbb0bdb6b2154074bc118db9cb2b4ac3",
+    "lib/track.js": "fe75f68a7548fcd21811be11cddc58185fcd8c84a11b8c3d78ceee74d1cc8de8",
+    "lib/utils/innerSliderUtils.js": "e3dd95468980a005e548580d3d949c48995b2517853111d747ea1ff0975b64fe",
+    "es/utils/innerSliderUtils.js": "1a44afb54b78a6279c219f53b6ed10840663a6faf2cba4b2f1d93c8e9619c37f"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

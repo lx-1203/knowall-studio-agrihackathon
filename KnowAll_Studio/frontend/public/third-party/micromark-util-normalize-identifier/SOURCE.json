@@ -1,0 +1,21 @@
+{
+  "name": "micromark-util-normalize-identifier",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-normalize-identifier",
+  "resolved": "https://registry.npmmirror.com/micromark-util-normalize-identifier/-/micromark-util-normalize-identifier-2.0.1.tgz",
+  "integrity": "sha512-sxPqmo70LyARJs0w2UclACPUUEqltCkJ6PhKdMIDuJ3gSf/Q+/GIe3WKl0Ijb/GyH9lOpUkRAO2wp0GVkLvS9Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-util-normalize-identifier\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "6def6e2422ac8905df740d27603d8eaa5d2fdbe41122c40958ac785ff0c8dfe3",
+    "dev/index.js": "7e6d49621a9db8ea10bdf9bb75fced95216c0e5d678422f4c4ce482dd35f1167"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

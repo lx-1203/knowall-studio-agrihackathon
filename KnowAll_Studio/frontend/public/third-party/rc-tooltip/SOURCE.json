@@ -1,0 +1,32 @@
+{
+  "name": "rc-tooltip",
+  "version": "6.4.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/tooltip.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-tooltip/-/rc-tooltip-6.4.0.tgz",
+  "integrity": "sha512-kqyivim5cp8I5RkHmpsp1Nn/Wk+1oeloMv9c7LXNgDxUpGm+RbXJGL+OPvDlcRnx9DBeOe4wyOIl4OKUERyH1g==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "59d606be3d687e4dfcaecb9aebcebeb048c940ee613a4a820b759e0345d31e8d",
+      "source": "frontend/node_modules/rc-tooltip/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/bootstrap.css": "075ff3881f7d0da08dafa7662f27a3088499c4e2872ad644ec26e8adb4c8ddb0",
+    "assets/bootstrap_white.css": "2337aa137caf93d21d325459ec040be45dbcddb20f2e6edbe7701702e10e225d",
+    "es/index.js": "8399fc7c9e9b9aa5ea0f9aea7cc47840d9cf83ff58d9ceb7bce774b9676cff10",
+    "es/placements.js": "bfdd4ec51b1e30e92806f939d17de29ffc7b963ba11918fb120d2d50626e41b6",
+    "es/Popup.js": "8ce69d6e8f3cca9239aae05e7dddb6d636ceb49e766d6e47e793da4e5a835899",
+    "es/Tooltip.js": "3d50541af12c89e8da0fb036f0a4efd46777faba97a94794d7550b0f947b8e0d",
+    "lib/index.js": "3cd656099cfb3b2b10c298bac68940ef85215e7ce70006ea3ddc744f4783966a",
+    "lib/placements.js": "c22997ed74c34a359e851ab7117519fba85978380d753b8a2d7cdec2e107a892",
+    "lib/Popup.js": "f78ceb1ee30e1c8f4cb848cfdc69446292ef1563bc1ad4689eda9e231ef1d8cf",
+    "lib/Tooltip.js": "4f403914f7e88658ddc2707813a1af7fa1de8f5ca5ec9c9b509d5a674fc6e0be"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

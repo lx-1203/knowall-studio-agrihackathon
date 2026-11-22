@@ -1,0 +1,24 @@
+{
+  "version": "2.0.51",
+  "license": "MIT",
+  "repository": "https://github.com/sqlalchemy/sqlalchemy",
+  "sources": {
+    "LICENSE-ROUND45": {
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/LICENSE",
+      "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9"
+    },
+    "ROUND45-session.py.txt": {
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/orm/session.py",
+      "sha256": "b75a4e427f453c2eaf19f04d87f66c2da644698a14f3b11880f56a73e2a0760d"
+    },
+    "ROUND45-session-basics.rst.txt": {
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/doc/build/orm/session_basics.rst",
+      "sha256": "fdaeee879d1c6eac1bd85b351cc19d35a7e8060f2f8eb15d98362fa1a74daed9"
+    },
+    "ROUND45-session-transaction.rst.txt": {
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/doc/build/orm/session_transaction.rst",
+      "sha256": "b11a8f1eb31b6bf052581ecc6ad14e5fe4a1aa6e2bbfa24cdceb8193d7d0542f"
+    }
+  },
+  "modifications": "No upstream changes; reuse native AsyncSession.begin_nested/flush and savepoint rollback to retain loaded Document state; outer commit retains savepoint until outcome boundary."
+}

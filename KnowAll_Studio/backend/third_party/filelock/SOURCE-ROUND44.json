@@ -1,0 +1,32 @@
+{
+  "actual_started": "2026-10-10T16:39:28.6246975+08:00",
+  "planned_claimed": "2026-10-10T16:45:55.130658+08:00",
+  "before_hashes": {
+    "backend/app/core/kaf_service.py": "b339f10004f30adc0b8f3ff6bc713f8cb26236d4ca4921292fce07bb9636960d",
+    "backend/app/core/kaf_publisher.py": "690ce27602d4185238bd9b1ba2ba4359bffaa087f8832b10a2bcb0120873dc4f"
+  },
+  "filelock_version": "3.29.7",
+  "repo": "https://github.com/tox-dev/filelock",
+  "license": "MIT",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/LICENSE",
+      "saved": "backend\\third_party\\filelock\\LICENSE-ROUND44",
+      "sha256": "608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/src/filelock/asyncio.py",
+      "saved": "backend\\third_party\\filelock\\ROUND44-asyncio.py.txt",
+      "sha256": "1439d3120c2f5dfeec1f2eefaa787823922cab7c78453e52101b7387c1b13ae4",
+      "installed": "site-packages/filelock/asyncio.py",
+      "installed_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tox-dev/filelock/3.29.7/docs/index.rst",
+      "saved": "backend\\third_party\\filelock\\ROUND44-index.rst.txt",
+      "sha256": "0e816a85104cd8f3fc8d3c36e9c7d3ca0214795d9580cd634c7727a19ef77d7f"
+    }
+  ],
+  "upstream_modifications": "none; use installed native AsyncFileLock, no algorithm copy",
+  "scope": "shared KAF filesystem across workers; no cross-host independent stores"
+}

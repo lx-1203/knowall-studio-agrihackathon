@@ -1,0 +1,164 @@
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Card, Row, Col, Statistic, Table, Tag, Progress, Spin } from 'antd'
+import {
+  FileTextOutlined, FormOutlined, CheckCircleOutlined, CloseCircleOutlined,
+  IdcardOutlined, ThunderboltOutlined, BarChartOutlined, DollarOutlined,
+} from '@ant-design/icons'
+import type { DashboardStats, DailyStat, TopicStat } from '../types'
+import { PageSkeleton } from '../components/SkeletonLoader'
+import { authHeaderValue } from '../authToken'
+
+export default function DashboardPage() {
+  const navigate = useNavigate()
+  const [stats, setStats] = useState<DashboardStats | null>(null)
+  const [daily, setDaily] = useState<DailyStat[]>([])
+  const [topics, setTopics] = useState<TopicStat[]>([])
+  const [loading, setLoading] = useState(true)
+  const [recentSummaries, setRecentSummaries] = useState<any[]>([])
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/api/v1/stats/overview', { headers: { Authorization: authHeaderValue() } }).then(r => r.json()),
+      fetch('/api/v1/stats/daily?days=7', { headers: { Authorization: authHeaderValue() } }).then(r => r.json()),
+      fetch('/api/v1/stats/topics', { headers: { Authorization: authHeaderValue() } }).then(r => r.json()),
+      fetch('/api/v1/knowledge/summaries?limit=5', { headers: { Authorization: authHeaderValue() } }).then(r => r.json()).catch(() => ({ items: [] })),
+    ]).then(([s, d, t, sum]) => {
+      setStats(s)
+      setDaily(d.days || [])
+      setTopics(t.topics || [])
+      setRecentSummaries(sum.items || [])
+    }).catch(console.error).finally(() => setLoading(false))
+  }, [])
+
+  if (loading) return <PageSkeleton />
+
+  // `DashboardStats` declares token_usage as required, but a partial or
+  // unexpected API response used to crash this page outright
+  // ("Cannot read properties of undefined (reading 'input')") — note every
+  // other field on this page is read defensively. Default it instead.
+  const tokenUsage = { input: 0, output: 0, total: 0, ...(stats?.token_usage ?? {}) }
+
+  return (
+    <div>
+      <h2 style={{ marginBottom: 16 }}>学习仪表盘</h2>
+
+      <Row gutter={16} style={{ marginBottom: 16 }}>
+        {[
+          { title: '文档资料', value: stats?.documents || 0, icon: <FileTextOutlined />, color: '#4f46e5', link: '/upload' },
+          { title: '题库总量', value: stats?.questions || 0, icon: <FormOutlined />, color: '#1890ff', link: '/quiz' },
+          { title: '正确率', value: `${stats?.correct_rate || 0}%`, icon: <CheckCircleOutlined />, color: '#52c41a', link: '/quiz' },
+          { title: '待复习卡片', value: stats?.cards_due || 0, icon: <IdcardOutlined />, color: '#faad14', link: '/flashcards' },
+        ].map(item => (
+          <Col span={6} key={item.title}>
+            <Card hoverable onClick={() => navigate(item.link)} style={{ cursor: 'pointer' }}>
+              <Statistic
+                title={item.title}
+                value={item.value}
+                prefix={<span style={{ color: item.color }}>{item.icon}</span>}
+              />
+            </Card>
+          </Col>
+        ))}
+      </Row>
+
+      <Row gutter={16} style={{ marginBottom: 16 }}>
+        {[
+          { title: '今日复习', value: stats?.reviews_today || 0, icon: <ThunderboltOutlined />, color: '#722ed1', link: '/flashcards' },
+          { title: '错题数', value: stats?.errors || 0, icon: <CloseCircleOutlined />, color: '#ff4d4f', link: '/quiz' },
+          { title: '闪卡总数', value: stats?.cards_total || 0, icon: <IdcardOutlined />, color: '#13c2c2', link: '/flashcards' },
+          { title: 'API费用(估)', value: `$${(stats?.cost_estimate || 0).toFixed(4)}`, icon: <DollarOutlined />, color: '#fa8c16', link: '/settings' },
+        ].map(item => (
+          <Col span={6} key={item.title}>
+            <Card hoverable onClick={() => navigate(item.link)} style={{ cursor: 'pointer' }}>
+              <Statistic
+                title={item.title}
+                value={item.value}
+                prefix={<span style={{ color: item.color }}>{item.icon}</span>}
+              />
+            </Card>
+          </Col>
+        ))}
+      </Row>
+
+      <Row gutter={16}>
+        <Col span={12}>
+          <Card title="近7天学习活动">
+            <Table
+              dataSource={daily}
+              rowKey="date"
+              pagination={false}
+              size="small"
+              columns={[
+                { title: '日期', dataIndex: 'date', key: 'date', render: (v: string) => v.slice(5) },
+                { title: '答题', dataIndex: 'answers', key: 'answers' },
+                { title: '正确', dataIndex: 'correct', key: 'correct', render: (v: number, r: DailyStat) => (
+                  <span style={{ color: r.answers > 0 && v === r.answers ? '#52c41a' : undefined }}>{v}</span>
+                )},
+                { title: '复习', dataIndex: 'reviews', key: 'reviews' },
+                { title: 'API调用', dataIndex: 'api_calls', key: 'api_calls' },
+              ]}
+            />
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card title="知识点分布">
+            <Table
+              dataSource={topics}
+              rowKey="topic"
+              pagination={false}
+              size="small"
+              columns={[
+                { title: '知识点', dataIndex: 'topic', key: 'topic', render: (v: string) => <Tag>{v}</Tag> },
+                { title: '题目数', dataIndex: 'total', key: 'total' },
+                { title: '错误数', dataIndex: 'errors', key: 'errors', render: (v: number) => (
+                  <span style={{ color: v > 0 ? '#ff4d4f' : '#52c41a' }}>{v}</span>
+                )},
+              ]}
+            />
+          </Card>
+        </Col>
+      </Row>
+
+      {stats && (
+        <Card title="Token 用量" size="small" style={{ marginTop: 16 }}>
+          <Row gutter={16}>
+            <Col span={8}>
+              <Statistic title="输入 Token" value={tokenUsage.input} />
+            </Col>
+            <Col span={8}>
+              <Statistic title="输出 Token" value={tokenUsage.output} />
+            </Col>
+            <Col span={8}>
+              <Progress percent={Math.min(100, (tokenUsage.total / 1_000_000) * 100)}
+                format={() => `${(tokenUsage.total / 1000).toFixed(0)}K`}
+                status={tokenUsage.total > 900_000 ? 'exception' : 'active'} />
+              <div style={{ textAlign: 'center', color: '#999', fontSize: 12 }}>日限额 1M tokens</div>
+            </Col>
+          </Row>
+        </Card>
+      )}
+
+      {recentSummaries.length > 0 && (
+        <Card title="最近知识总纲" size="small" style={{ marginTop: 16 }}>
+          <Table
+            dataSource={recentSummaries}
+            rowKey="summary_id"
+            size="small"
+            pagination={false}
+            columns={[
+              { title: '时间', dataIndex: 'created_at', render: (v: string) => v?.slice(0, 10) || '-' },
+              { title: '知识点数', dataIndex: 'node_count' },
+              { title: '层级分布', dataIndex: 'level_stats', render: (v: any) => (
+                <span>{v ? Object.entries(v).map(([k, n]) => `${k}:${n}`).join(' ') : '-'}</span>
+              )},
+              { title: '操作', render: (_: any, r: any) => (
+                <a onClick={() => navigate(`/summary/${r.summary_id}`)}>进入中枢 →</a>
+              )},
+            ]}
+          />
+        </Card>
+      )}
+    </div>
+  )
+}

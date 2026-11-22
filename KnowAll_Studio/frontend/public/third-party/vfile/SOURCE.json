@@ -1,0 +1,28 @@
+{
+  "name": "vfile",
+  "version": "6.0.3",
+  "license": "MIT",
+  "repository": "vfile/vfile",
+  "resolved": "https://registry.npmmirror.com/vfile/-/vfile-6.0.3.tgz",
+  "integrity": "sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "05811400116ed61f1a7693b78fe8ca6598c155a12f3978e609db4df648a4cb3d",
+      "source": "frontend\\node_modules\\vfile\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "db1e3da681ec50cc73fa278083581a9605266615dbef264d99336c57f0f3b251",
+    "lib/index.js": "c3ace457947030204553dc06a65249cfa427649ce18949999b34029c5a270265",
+    "lib/minpath.browser.js": "6c011d74955d2c202e1af91c8616e92e0a2381dce628128553dd81b03c900f95",
+    "lib/minpath.js": "9246b83dceb34b4deae069662d5612399a7edc833655ebe44a28ac70e1b7344a",
+    "lib/minproc.browser.js": "f13b22707f7048a983027bec0bfefa9f4630ae4b992031cfd772642c1598f993",
+    "lib/minproc.js": "44dfae751a9c90d8ed1fe3e79114c6f23a0515e5e7714e392dcfd268afd06f75",
+    "lib/minurl.browser.js": "c0fdbff8069606f5eef2ccb588abe8f06a7597bcf1894bd1a9ba155b1ebafc1f",
+    "lib/minurl.js": "97a5e44981c259584daad9164251c443f2d6a982f9ab407d5b18732c12709a03",
+    "lib/minurl.shared.js": "92df001e690fd3b8ec4bbe2cfb0d176da8aa9011e404a454c88158c05153b8f1"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

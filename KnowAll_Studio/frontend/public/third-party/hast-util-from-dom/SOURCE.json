@@ -1,0 +1,21 @@
+{
+  "name": "hast-util-from-dom",
+  "version": "5.0.1",
+  "license": "ISC",
+  "repository": "syntax-tree/hast-util-from-dom",
+  "resolved": "https://registry.npmmirror.com/hast-util-from-dom/-/hast-util-from-dom-5.0.1.tgz",
+  "integrity": "sha512-N+LqofjR2zuzTjCPzyDUdSshy4Ma6li7p/c3pA78uTwzFgENbgbUrm2ugwsOdcjI1muO+o6Dgzp9p8WHtn/39Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "c01b44788e1829e81cb20d621c93c07a08ea010063118b956739f2ab050d17ca",
+      "source": "frontend\\node_modules\\hast-util-from-dom\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "3274e39fc145a36e5bc9f6a07506c6e916db03276d011501771ec50f3513052c",
+    "lib/index.js": "22a217ed7f3701587f35531acff1f7637e20d02afc2f5a40aa306696e6e8fa23"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "h001",
+    "question_type": "single_choice",
+    "difficulty": "hard",
+    "question_text": "甲、乙两组样方分别有 2 次和 3 次观测，组均值分别为 10 和 20。所有五次观测的总体均值是多少？",
+    "options": [
+      {
+        "label": "A",
+        "text": "14"
+      },
+      {
+        "label": "B",
+        "text": "15"
+      },
+      {
+        "label": "C",
+        "text": "16"
+      },
+      {
+        "label": "D",
+        "text": "18"
+      }
+    ],
+    "answer": "C",
+    "analysis": "用组均值乘各自次数得到总和 80，除以 5 得到 16。"
+  },
+  {
+    "id": "h002",
+    "question_type": "single_choice",
+    "difficulty": "hard",
+    "question_text": "一次灌溉前后的产量不同，两个地块的土壤条件也不同。从这两个地块的数据能直接得出什么？",
+    "options": [
+      {
+        "label": "A",
+        "text": "灌溉必然提高产量"
+      },
+      {
+        "label": "B",
+        "text": "土壤条件没有影响"
+      },
+      {
+        "label": "C",
+        "text": "观测差异存在，单独的灌溉效应仍需对照验证"
+      },
+      {
+        "label": "D",
+        "text": "两种地块的真实产量相同"
+      }
+    ],
+    "answer": "C",
+    "analysis": "土壤条件与处理同时变化，简单比较不能分离两种因素。"
+  }
+]

@@ -1,0 +1,44 @@
+services:
+  gateway:
+    build:
+      context: ../../..
+      dockerfile: KnowAll_Studio/docker/cloud/Dockerfile
+    restart: unless-stopped
+    environment:
+      KNOWALL_CLOUD_DATA_ROOT: /srv/knowall
+      JWT_SECRET: ${JWT_SECRET:-}
+      KNOWALL_CLOUD_MAX_WORKERS: ${KNOWALL_CLOUD_MAX_WORKERS:-8}
+      KNOWALL_CLOUD_IDLE_SECONDS: ${KNOWALL_CLOUD_IDLE_SECONDS:-600}
+    volumes:
+      - knowall_data:/srv/knowall
+    expose:
+      - '8000'
+    healthcheck:
+      test: ['CMD', 'python', '-c', "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+    stop_grace_period: 30s
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      gateway:
+        condition: service_healthy
+    environment:
+      KNOWALL_DOMAIN: ${KNOWALL_DOMAIN:?Set KNOWALL_DOMAIN to your public domain}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL to your certificate contact}
+    ports:
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../../frontend/dist:/srv/frontend:ro
+      - caddy_data:/data
+      - caddy_config:/config
+volumes:
+  knowall_data:
+  caddy_data:
+  caddy_config:

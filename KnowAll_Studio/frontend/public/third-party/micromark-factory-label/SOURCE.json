@@ -1,0 +1,21 @@
+{
+  "name": "micromark-factory-label",
+  "version": "2.0.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-label",
+  "resolved": "https://registry.npmmirror.com/micromark-factory-label/-/micromark-factory-label-2.0.1.tgz",
+  "integrity": "sha512-VFMekyQExqIW7xIChcXn4ok29YE3rnuyveW3wZQWWqF4Nv9Wk5rgJ99KzPvHjkmPXF93FXIbBp6YdW3t71/7Vg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-factory-label\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "011484772e200ea32f3139c0a258627af573dcabd78bd4eb514a34495cb4aea0",
+    "dev/index.js": "3ed6b9381b78e18164c85c66618458627c97477f8155682a11b9ea07541ab8b4"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

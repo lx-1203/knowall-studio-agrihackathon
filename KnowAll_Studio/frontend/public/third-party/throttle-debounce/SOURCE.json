@@ -1,0 +1,25 @@
+{
+  "name": "throttle-debounce",
+  "version": "5.0.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niksy/throttle-debounce.git"
+  },
+  "resolved": "https://registry.npmmirror.com/throttle-debounce/-/throttle-debounce-5.0.2.tgz",
+  "integrity": "sha512-B71/4oyj61iNH0KeCamLuE2rmKuTO5byTOSVwECM5FA7TiAiAW+UqTKZ9ERueC4qvgSttUhdmq1mXC3kJqGX7A==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "b07649c798231a321f90abbb329c15e41a8b5ec5e814dde3e60cd4a470e3b012",
+      "source": "frontend/node_modules/throttle-debounce/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "cjs/index.js": "ece4fcd80755f74c5721d395cb979f0bd601416a2bea53f8bf4ca181b2b28fe5",
+    "esm/index.js": "bf8f81da567b6a542d112b46e521d4295e68d97531343a55bfdec8e728fa5340",
+    "umd/index.js": "ba9eb3593d6633d669def0496b9ab4725e2cd397d92303da157595f8c274ba27"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

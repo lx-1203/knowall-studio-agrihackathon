@@ -1,0 +1,21 @@
+{
+  "name": "hast-util-whitespace",
+  "version": "3.0.0",
+  "license": "MIT",
+  "repository": "syntax-tree/hast-util-whitespace",
+  "resolved": "https://registry.npmmirror.com/hast-util-whitespace/-/hast-util-whitespace-3.0.0.tgz",
+  "integrity": "sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\hast-util-whitespace\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "1e443111d1b477b45f35f751834b5a031c1ed1272f53322c7f40e2b28d790cc2",
+    "lib/index.js": "8b9342003bf1956922a92d6299ec98fdd6369e0d83f3d96bc144a793137e80f7"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

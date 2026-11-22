@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "KnowAll",
+    "slug": "KnowAll_Mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "knowall",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "backgroundColor": "#7C3AED",
+      "resizeMode": "contain"
+    },
+    "notification": {
+      "color": "#7C3AED"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-document-picker",
+      "./plugins/withScreenPrivacy.cjs"
+    ],
+    "extra": {
+      "EXPO_PUBLIC_API_URL": "http://localhost:8000/api/v1"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.knowall.studio"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.knowall.studio"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

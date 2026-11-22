@@ -1,0 +1,28 @@
+{
+  "name": "zustand",
+  "version": "4.5.7",
+  "repository": "pmndrs/zustand",
+  "commit": "869cd7aeb6ab7b0b7f019410b94a873be9bc8501",
+  "license": "MIT",
+  "npm_url": "https://registry.npmjs.org/zustand/-/zustand-4.5.7.tgz",
+  "npm_integrity": "sha512-CHOUy7mu3lbD6o6LJLfllpjkzhHXSBlX8B9+qPddUsIfeF5S/UZ5q0kmCsnRqT1UHFQZchNFDDzMbQsuesHWlw==",
+  "npm_sha256": "5240b7736397aa0e8442d290dea0ce7a6dd324c986e1a8644ff91bf61864e863",
+  "source_url": "https://codeload.github.com/pmndrs/zustand/zip/869cd7aeb6ab7b0b7f019410b94a873be9bc8501",
+  "source_archive_sha256": "61d9ac08b76978307d09efc6e88b534d75ef7585c90df0fb987762a1e5a1251a",
+  "source_files": {
+    "src/vanilla.ts": "057908e9e8ebdd579976a56e9ba7d2d2ef8d9aae0f58b0cbf16b3bccc2bc4b93",
+    "src/react.ts": "2b64cc2fb5cc8327f9e7638e53c718f343252eeecfc43d4465e5cc8dd6733d57",
+    "docs/guides/immutable-state-and-merging.md": "87ed1b70d1d2530df6830ef2a734a222fb7a2bf06231a8ca021b484045af4b17",
+    "docs/guides/updating-state.md": "922d68827a6ef977002b36373e1abcca746252337df2895e01961360d6292251"
+  },
+  "runtime_js_files": {
+    "index.js": "d4e46b7dfac60ee8ecda1eb1619020b4052d1a1f5366505d867eba1ee2ef4875",
+    "vanilla.js": "11b4ba22fadad3a5fe89438615c2099d4a839f64691c9435e46e0b2e793b9b08",
+    "esm/index.mjs": "eaeb7f0cc57d925e6cc04636ee56cae378c1de249e2cd30dc892883e04ec4cda",
+    "esm/vanilla.mjs": "6eea342dd71d7f242f499c34e2e5224a352f9f2d6142805d959deb9082feb074"
+  },
+  "notice_file": "LICENSE",
+  "notice_sha256": "c1e6e266563517467b1bf874817d23e426f3149252bd7d42758cd697514b8417",
+  "verification": "Installed compiled JS equals integrity-verified official npm bytes. Fixed original TS source/docs and original MIT notice inspected; compiled JS is NOT falsely claimed byte-identical to upstream TS.",
+  "modifications": "No upstream code copied or changed. Existing native functional set merge and immutable filter used by completeReview in existing store; React lifecycle/Result adapt genuine review/due API. Existing dependency/lock/version retained."
+}

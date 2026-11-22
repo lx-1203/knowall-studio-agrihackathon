@@ -1,0 +1,21 @@
+{
+  "name": "remark-stringify",
+  "version": "11.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-stringify",
+  "resolved": "https://registry.npmmirror.com/remark-stringify/-/remark-stringify-11.0.0.tgz",
+  "integrity": "sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "413654b0a78b98661dce96d2aff2e4d075603d220b8483e28b1aa010ccc138b4",
+      "source": "frontend\\node_modules\\remark-stringify\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0cf2ebbaae90578f4a838505ebc3d7fd1d8339484c7f13be1a3d4d09427c2dc9",
+    "lib/index.js": "c4994e68808ee1e1d2e229ab327dcdbda604cf38f08fd4ab1b6868cd6079dc85"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

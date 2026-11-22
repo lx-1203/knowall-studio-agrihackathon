@@ -1,0 +1,23 @@
+{
+  "name": "refractor",
+  "version": "5.0.0",
+  "repository": "wooorm/refractor",
+  "license": "MIT",
+  "integrity": "sha512-QXOrHQF5jOpjjLfiNk5GFnWhRXvxjUVnlFxkeDmewR5sXkr3iM46Zo+CnRR8B+MDVqkULW4EcLVcRBNOPXHosw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "4b74d4b7b5ec11a254b1482d85a23dd944c873dc73c2ec3a86eaee43c13bdb53"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "tag": "5.0.0",
+  "commit": "ed824ac801ef4bb5b25f73a4bcd6ce46b7eec8c9",
+  "source_files": [
+    "lib/core.js",
+    "lib/prism-core.js",
+    "lang/*.js"
+  ],
+  "modifications": "No upstream modifications; application CodePreview chooses native async loader, language aliases, theme and request cleanup."
+}

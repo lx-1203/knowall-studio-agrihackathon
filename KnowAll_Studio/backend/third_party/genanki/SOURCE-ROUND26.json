@@ -1,0 +1,28 @@
+{
+  "name": "genanki",
+  "repository": "kerrickstaley/genanki",
+  "commit": "e80a7c7772f2c75b4678f5e5187c45fd76541571",
+  "archive_sha256": "2c13bdf4b792ffd9bb3ca05495333685d07f312181b9f62253c83a54809ee9a5",
+  "license": "MIT",
+  "source_files": {
+    "genanki/note.py": {
+      "upstream_sha256": "68becc092cbdafd49e0353ef481b96660d78198ffee44af6a2297fa9022b3b00",
+      "installed_sha256": "68becc092cbdafd49e0353ef481b96660d78198ffee44af6a2297fa9022b3b00",
+      "normalized_newlines_equal": true
+    },
+    "genanki/deck.py": {
+      "upstream_sha256": "11e2e7dcbeba133b4ee130891cdd47110831e512512f6e5ee64383e207bc9082",
+      "installed_sha256": "11e2e7dcbeba133b4ee130891cdd47110831e512512f6e5ee64383e207bc9082",
+      "normalized_newlines_equal": true
+    },
+    "genanki/package.py": {
+      "upstream_sha256": "cff3afb8e29ed33f71e417bfdb60f7dae5f12eb69c8db5766f26757fca75896b",
+      "installed_sha256": "cff3afb8e29ed33f71e417bfdb60f7dae5f12eb69c8db5766f26757fca75896b",
+      "normalized_newlines_equal": true
+    }
+  },
+  "license_sha256": "cd7835048e54b90a22a67587f4598d60af0b1c8af1e46dd37d47660fc545dff4",
+  "upstream_license_sha256": "cd7835048e54b90a22a67587f4598d60af0b1c8af1e46dd37d47660fc545dff4",
+  "original_statements_preserved": true,
+  "integration": "Native public Note.write_to_db timestamp via minimal subclass; SQL conditions/rowcount/transactions; Alembic add_column/inspector/batch. No copied/modified upstream algorithm; no dependency change."
+}

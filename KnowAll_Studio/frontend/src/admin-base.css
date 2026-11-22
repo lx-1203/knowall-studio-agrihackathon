@@ -1,0 +1,6 @@
+/* Admin entry owns its base styles; learner responsive rules never apply here. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, 'Microsoft YaHei', sans-serif; }
+#root { min-height: 100dvh; }
+.admin-app h1, .admin-app h2, .admin-app h3, .admin-app p { margin-top: 0; }
+@media (prefers-reduced-motion: reduce) { .admin-app * { scroll-behavior: auto; animation: none !important; transition: none !important; } }

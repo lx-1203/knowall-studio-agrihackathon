@@ -1,0 +1,23 @@
+{
+  "name": "compute-scroll-into-view",
+  "version": "3.1.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scroll-into-view/compute-scroll-into-view.git"
+  },
+  "resolved": "https://registry.npmmirror.com/compute-scroll-into-view/-/compute-scroll-into-view-3.1.1.tgz",
+  "integrity": "sha512-VRhuHOLoKYOy4UbilLbUzbYg93XLjv2PncJC50EuTWPA3gaja1UjBsUP/D/9/juV3vQFr6XBEzn9KCAHdUvOHw==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "dfe2b2d612c7c1de1f32dcab5969bd68ecac0022a7582ca8cd4594729b9c8664",
+      "source": "frontend/node_modules/compute-scroll-into-view/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/index.js": "4bf2ae89c2b36e636cd2dade5b2c504a9c36a14b379894134155aca49ff594cc"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

@@ -1,0 +1,76 @@
+{
+  "name": "remark-gfm",
+  "version": "4.0.1",
+  "license": "MIT",
+  "repository": "remarkjs/remark-gfm",
+  "resolved": "https://registry.npmmirror.com/remark-gfm/-/remark-gfm-4.0.1.tgz",
+  "integrity": "sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\remark-gfm\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0cf2ebbaae90578f4a838505ebc3d7fd1d8339484c7f13be1a3d4d09427c2dc9",
+    "lib/index.js": "9317003279e791d39b7e3482cecfb3409843378164a238a535984f644e53c7ef"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "npm_gitHead": "109972e8a773bf5dac1d6d2da0776557f36971aa",
+  "learning_content_integration": {
+    "fixed_version": "4.0.1",
+    "fixed_commit": "109972e8a773bf5dac1d6d2da0776557f36971aa",
+    "repository": "https://github.com/remarkjs/remark-gfm",
+    "upstream_modifications": [],
+    "usage": "Native existing parser/plugin, shared component plus lazy React wrapper; no upstream algorithm copied or new dependency",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-gfm/109972e8a773bf5dac1d6d2da0776557f36971aa/license",
+        "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+        "installed_exact": true
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-gfm/109972e8a773bf5dac1d6d2da0776557f36971aa/readme.md",
+        "sha256": "22ac117c9fced0eac382eda19c92ec105614973ef69f3ba9f395e3d86c146e87",
+        "installed_exact": true
+      },
+      {
+        "file": "lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-gfm/109972e8a773bf5dac1d6d2da0776557f36971aa/lib/index.js",
+        "sha256": "9317003279e791d39b7e3482cecfb3409843378164a238a535984f644e53c7ef",
+        "installed_exact": true
+      }
+    ]
+  },
+  "material_content_integration": {
+    "fixed_version": "4.0.1",
+    "fixed_commit": "109972e8a773bf5dac1d6d2da0776557f36971aa",
+    "repository": "https://github.com/remarkjs/remark-gfm",
+    "upstream_modifications": [],
+    "usage": "Existing native module reused for material text, REST reply, chapter question/feedback/notes/cards and material knowledge; original payloads untouched",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-gfm/109972e8a773bf5dac1d6d2da0776557f36971aa/license",
+        "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+        "installed_exact": true
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-gfm/109972e8a773bf5dac1d6d2da0776557f36971aa/readme.md",
+        "sha256": "22ac117c9fced0eac382eda19c92ec105614973ef69f3ba9f395e3d86c146e87",
+        "installed_exact": true
+      },
+      {
+        "file": "lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/remark-gfm/109972e8a773bf5dac1d6d2da0776557f36971aa/lib/index.js",
+        "sha256": "9317003279e791d39b7e3482cecfb3409843378164a238a535984f644e53c7ef",
+        "installed_exact": true
+      }
+    ]
+  }
+}

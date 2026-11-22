@@ -1,0 +1,24 @@
+{
+  "name": "clsx",
+  "version": "2.1.1",
+  "license": "MIT",
+  "repository": "lukeed/clsx",
+  "resolved": "https://registry.npmmirror.com/clsx/-/clsx-2.1.1.tgz",
+  "integrity": "sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "9a9edad7baae52622bddf3c15b2ef8a33d2c89f2d25408ad13e8a7481c6b0c97",
+      "source": "frontend/node_modules/clsx/license"
+    }
+  ],
+  "source_files_sha256": {
+    "dist/clsx.js": "a2ba9f4c5fe36617aa930a5269bd910a2cafc7066398835d63cf3733f5c0651a",
+    "dist/clsx.min.js": "232113196916be666253d1565e76e6924d82e4309bb877f0e44c07c73c32e665",
+    "dist/clsx.mjs": "d949e5cdbfebc76a6642b1901095e900fc3f2262d8dc0373aa44850a9bc75522",
+    "dist/lite.js": "37f4dd277cfc6fb8852e1829c611bf71cfd8f662869d29cabbe87ae72037018b",
+    "dist/lite.mjs": "0dfb332606c719dd391e7a197be0707c4ac73ae315b04eeca93a4289fac4faa5"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only."
+}

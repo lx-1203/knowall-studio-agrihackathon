@@ -1,0 +1,94 @@
+# KnowAll Studio - Backend Dependencies
+# Python 3.11+
+
+# Web Framework
+fastapi>=0.110.0
+starlette==1.2.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# Database
+sqlalchemy[asyncio]>=2.0.30
+aiosqlite>=0.20.0
+asyncmy>=0.2.9           # MySQL/MariaDB async driver (production)
+asyncpg>=0.29.0           # PostgreSQL for team edition
+
+# Vector Database
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# LlamaIndex RAG Engine (optional, for enhanced retrieval)
+llama-index-core>=0.12.0
+llama-index-retrievers-bm25>=0.1.0
+llama-index-vector-stores-faiss>=0.1.0
+llama-index-embeddings-huggingface>=0.1.0
+faiss-cpu>=1.8.0
+
+# MCP (Model Context Protocol)
+mcp>=1.0.0
+
+# File Parsing
+PyMuPDF>=1.24.0       # PDF parsing
+python-docx>=1.1.0    # Word parsing
+python-pptx>=0.6.23   # PowerPoint parsing
+openpyxl>=3.1.0       # Excel parsing
+Pillow>=10.3.0        # Image processing
+pytesseract>=0.3.10   # OCR (optional, requires Tesseract installed)
+PaddleOCR>=2.8.0      # Chinese OCR (optional)
+rapidocr>=3.9.0,<4.0  # Local ONNX OCR for scanned pages and images
+xmindparser>=1.0.0    # Xmind parsing
+docling>=2.0          # Structured document parsing with heading/image/table extraction
+docling-hierarchical-pdf      # Fix PDF heading hierarchy flattening in Docling
+
+# API / HTTP
+httpx>=0.27.0
+httpx-sse==0.4.3      # MIT native SSE decoder; originals in third_party/httpx_sse
+tiktoken>=0.7.0
+
+# Reading Language (optional, for offline dictionary fallback)
+jieba>=0.42.0
+
+# Prompt Templates
+pyyaml==6.0.2
+
+# Configuration
+pydantic-settings>=2.2.0
+
+# Auth / Crypto
+python-jose[cryptography]>=3.3.0
+cryptography>=42.0.0
+filelock==3.29.7        # MIT native secret-publication lock; originals in third_party/filelock
+bcrypt>=4.0.0
+
+# Database migrations
+alembic>=1.18.0
+
+# Anki import/export
+genanki==0.13.1
+cached-property==2.0.1
+frozendict==2.4.7       # LGPLv3; original notices + corresponding source in third_party
+chevron==0.14.0
+markdown-it-py==4.2.0  # MIT native Anki answer rendering; originals in third_party
+mdit-py-plugins==0.6.1 # MIT native dollar math; original notices in third_party
+mdurl==0.1.2           # MIT URL parser used by markdown-it-py
+fsrs==6.3.2          # MIT standard FSRS scheduling; see third_party/fsrs/LICENSE
+
+# Text diff for recitation module
+diff-match-patch>=20230430
+
+# Voice (Speech-to-Text + Text-to-Speech)
+faster-whisper>=1.0.0
+edge-tts>=6.1.0
+pydub>=0.25.1
+
+# Development
+pytest>=8.2.0
+pytest-asyncio>=0.23.0
+
+# Duplicate-code metric (rounds 20/22). Reproduces the number quoted in
+# docs/optimization-report.md §22:
+#   python -m pylint --disable=all --enable=duplicate-code --min-similarity-lines=10 app/
+# Deliberately NOT a CI gate: R0801 reports token similarity, and "similar" is not
+# "must be merged". Gating it would push people to churn code to satisfy a number
+# — see §22's triage of the two pairs deliberately left alone.
+pylint>=3.0.0

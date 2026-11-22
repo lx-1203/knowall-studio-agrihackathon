@@ -1,0 +1,23 @@
+{
+  "name": "sqlalchemy",
+  "repository": "sqlalchemy/sqlalchemy",
+  "commit": "c8e26d5c9ffcde0a82b4b7fa5de27f0c6bc46bec",
+  "archive_sha256": "3a9df1214e3cd6fbbab7b7084b9acfc809e09cacef778092c78b67303201f247",
+  "license": "MIT",
+  "source_files": {
+    "lib/sqlalchemy/sql/dml.py": {
+      "upstream_sha256": "4dc1d057624e666d2f4657d3336aac17971be22fc2213b3fa1bf1a96418adfc4",
+      "installed_sha256": "a85e20a986fa2b65a6ae0e206a84247d0dbc72380eca86bb7b6a701db0dee0cd",
+      "normalized_newlines_equal": true
+    },
+    "lib/sqlalchemy/ext/asyncio/session.py": {
+      "upstream_sha256": "875e89b14110e7b9bd435c86bf26716a1e38031638e80179bc044f1292c43e7e",
+      "installed_sha256": "6c01276f79be275235249d6333b15cb702d236b82b8fd1735fdad5b02106526a",
+      "normalized_newlines_equal": true
+    }
+  },
+  "license_sha256": "9bb754071e711cf75728b9051b170bfb8f9e3b879c08386c96a36989c42cd5f1",
+  "upstream_license_sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9",
+  "original_statements_preserved": true,
+  "integration": "Native public Note.write_to_db timestamp via minimal subclass; SQL conditions/rowcount/transactions; Alembic add_column/inspector/batch. No copied/modified upstream algorithm; no dependency change."
+}

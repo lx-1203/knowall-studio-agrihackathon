@@ -1,0 +1,76 @@
+{
+  "name": "react-markdown",
+  "version": "10.1.0",
+  "license": "MIT",
+  "repository": "remarkjs/react-markdown",
+  "resolved": "https://registry.npmmirror.com/react-markdown/-/react-markdown-10.1.0.tgz",
+  "integrity": "sha512-qKxVopLT/TyA6BX3Ue5NwabOsAzm0Q7kAPwq6L+wWDwisYs7R8vZ0nRXqq6rkueboxpkjvLGU9fWifiX/ZZFxQ==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "f6196c64e144f9a6fa9154c3a80bc8b89615a9567934b83a8951879f06ba2aef",
+      "source": "frontend\\node_modules\\react-markdown\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "1420b7245c57274cbaa448e57282bba0f9a60a93ba43bdfe30ac83deba53c1e2",
+    "lib/index.js": "1c8d95723a74051c354dd4470fb669ae5269baf0ac62aa9b52c4516960ace5ee"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified.",
+  "npm_gitHead": "44d2e4a44b37461ab7778d6870c1a9eb36393ad2",
+  "learning_content_integration": {
+    "fixed_version": "10.1.0",
+    "fixed_commit": "44d2e4a44b37461ab7778d6870c1a9eb36393ad2",
+    "repository": "https://github.com/remarkjs/react-markdown",
+    "upstream_modifications": [],
+    "usage": "Native existing parser/plugin, shared component plus lazy React wrapper; no upstream algorithm copied or new dependency",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/react-markdown/44d2e4a44b37461ab7778d6870c1a9eb36393ad2/license",
+        "sha256": "f6196c64e144f9a6fa9154c3a80bc8b89615a9567934b83a8951879f06ba2aef",
+        "installed_exact": true
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/react-markdown/44d2e4a44b37461ab7778d6870c1a9eb36393ad2/readme.md",
+        "sha256": "b57882cd2b30ef3df905644e947c799709d82b10d4cb178346ce8b85d140c3b7",
+        "installed_exact": true
+      },
+      {
+        "file": "lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/react-markdown/44d2e4a44b37461ab7778d6870c1a9eb36393ad2/lib/index.js",
+        "sha256": "1c8d95723a74051c354dd4470fb669ae5269baf0ac62aa9b52c4516960ace5ee",
+        "installed_exact": true
+      }
+    ]
+  },
+  "material_content_integration": {
+    "fixed_version": "10.1.0",
+    "fixed_commit": "44d2e4a44b37461ab7778d6870c1a9eb36393ad2",
+    "repository": "https://github.com/remarkjs/react-markdown",
+    "upstream_modifications": [],
+    "usage": "Existing native module reused for material text, REST reply, chapter question/feedback/notes/cards and material knowledge; original payloads untouched",
+    "original_source_records": [
+      {
+        "file": "license",
+        "url": "https://raw.githubusercontent.com/remarkjs/react-markdown/44d2e4a44b37461ab7778d6870c1a9eb36393ad2/license",
+        "sha256": "f6196c64e144f9a6fa9154c3a80bc8b89615a9567934b83a8951879f06ba2aef",
+        "installed_exact": true
+      },
+      {
+        "file": "readme.md",
+        "url": "https://raw.githubusercontent.com/remarkjs/react-markdown/44d2e4a44b37461ab7778d6870c1a9eb36393ad2/readme.md",
+        "sha256": "b57882cd2b30ef3df905644e947c799709d82b10d4cb178346ce8b85d140c3b7",
+        "installed_exact": true
+      },
+      {
+        "file": "lib/index.js",
+        "url": "https://raw.githubusercontent.com/remarkjs/react-markdown/44d2e4a44b37461ab7778d6870c1a9eb36393ad2/lib/index.js",
+        "sha256": "1c8d95723a74051c354dd4470fb669ae5269baf0ac62aa9b52c4516960ace5ee",
+        "installed_exact": true
+      }
+    ]
+  }
+}

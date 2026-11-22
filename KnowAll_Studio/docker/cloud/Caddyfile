@@ -1,0 +1,19 @@
+{
+    email {$ACME_EMAIL}
+}
+
+{$KNOWALL_DOMAIN} {
+    encode zstd gzip
+    @backend path /api /api/* /ws /ws/* /health /glossary_terms.kgb
+    handle @backend {
+        reverse_proxy gateway:8000 {
+            # Send SSE and file chunks as they arrive.
+            flush_interval -1
+        }
+    }
+    handle {
+        root * /srv/frontend
+        try_files {path} /index.html
+        file_server
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "mdast-util-phrasing",
+  "version": "4.1.0",
+  "license": "MIT",
+  "repository": "syntax-tree/mdast-util-phrasing",
+  "resolved": "https://registry.npmmirror.com/mdast-util-phrasing/-/mdast-util-phrasing-4.1.0.tgz",
+  "integrity": "sha512-TqICwyvJJpBwvGAMZjj4J2n0X8QWp21b9l0o7eXyVJ25YNWYbJDVIyD1bZXE6WtV6RmKJVYmQAKWa0zWOABz2w==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "b6d1a4e1831b177acc96f22a817d4f0f4c18419355badc3125754445fc69e3a7",
+      "source": "frontend\\node_modules\\mdast-util-phrasing\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "f87bb5f2c3fe0f98bd2802db6438ecf751f051c64fe502377444067a9c59ce6e",
+    "lib/index.js": "cfba43614dcc2d644d7f0b2a83a172b6119aa70ba10a504f03528a0fb4c873eb"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

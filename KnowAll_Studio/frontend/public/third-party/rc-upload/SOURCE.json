@@ -1,0 +1,112 @@
+{
+  "name": "rc-upload",
+  "version": "4.11.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/upload.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-upload/-/rc-upload-4.11.0.tgz",
+  "integrity": "sha512-ZUyT//2JAehfHzjWowqROcwYJKnZkIUGWaTE/VogVrepSl7AFNbQf4+zGfX4zl9Vrj/Jm8scLO0R6UlPDKK4wA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "883dc1623d6382c603f2b66f6a04eff69f835d61b638a67923156b4ac772fda6",
+      "source": "frontend/node_modules/rc-upload/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "es/AjaxUploader.js": "2a89eb168b406b7ed118127a547570a0938a60228ba110d4739a3bc1f03a84f6",
+    "es/attr-accept.js": "b8bc64c87641f3174cf6b8f11bbcb6218d9b9f283d6076fa595f552a1fc03fc3",
+    "es/index.js": "46b7556d738fa8bd6c881487b9c89b8956bc3958207ab8321915ed6e0adc8193",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/request.js": "f035bf19cfa014557b8a8a9a91b46f155804562977af3658fcea6c2f195bee28",
+    "es/traverseFileTree.js": "e2d2909e6104f1e2f85c0864a0172bf2134d00a9ae8e080e4812c0a327f53c7b",
+    "es/uid.js": "4465230edfc749b04212ad8ca3bc79388faa28a620cdb6f2bbf464c795fe4405",
+    "es/Upload.js": "efe39d7c7b0bbc6289c3d9b956b78a1252ba632b26005bf50ca8af8f3050da69",
+    "lib/AjaxUploader.js": "ef9bd6147f7a9df0a11fc3a93680fd3b5d6e119ee187527bcaa1ee24340b5eff",
+    "lib/attr-accept.js": "3ab5b63ff977f31d7e1d9dce428b5affc9bc6be2aa3d9d4d17022b8d853277b3",
+    "lib/index.js": "dbfd21fbc2424fed2c604431a190e7864fab3dde48393a63bea2e7addf53a533",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/request.js": "bc29597d87132cec0f3bba4a5cb842a41451cf001647ddbc6f34f58e440251aa",
+    "lib/traverseFileTree.js": "806ab3232923c6451f6d9b79c9ec82cec26d8fefb9573286f762fcd5d0cd4a3b",
+    "lib/uid.js": "f7942ab0c3751ecaacfdde406a929e35697a6a4746c239e72358046bdb956f11",
+    "lib/Upload.js": "cb78e1c96869b0ecc3698d07d82366d4c027f3fbde96d16d0a26cfa0d769a9f6"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer.",
+  "native_file_selection_integration": {
+    "upstream": {
+      "name": "rc-upload",
+      "repository": "https://github.com/react-component/upload",
+      "tag": "v4.11.0",
+      "commit": "c1ecf491eb40c1460aa180b2a87c5efeb60c2551",
+      "version": "4.11.0",
+      "license": "MIT",
+      "integrity": "sha512-ZUyT//2JAehfHzjWowqROcwYJKnZkIUGWaTE/VogVrepSl7AFNbQf4+zGfX4zl9Vrj/Jm8scLO0R6UlPDKK4wA==",
+      "originals": [
+        {
+          "file": "LICENSE",
+          "url": "https://raw.githubusercontent.com/react-component/upload/c1ecf491eb40c1460aa180b2a87c5efeb60c2551/LICENSE",
+          "sha256": "883dc1623d6382c603f2b66f6a04eff69f835d61b638a67923156b4ac772fda6",
+          "license_bytes_match": {
+            "installed": true,
+            "public": true
+          }
+        },
+        {
+          "file": "src/AjaxUploader.tsx",
+          "url": "https://raw.githubusercontent.com/react-component/upload/c1ecf491eb40c1460aa180b2a87c5efeb60c2551/src/AjaxUploader.tsx",
+          "sha256": "0544b44d5857de47c585e5d6d85a35288fe78bb5c1662cf2a5637594df202175",
+          "license_bytes_match": {}
+        },
+        {
+          "file": "src/Upload.tsx",
+          "url": "https://raw.githubusercontent.com/react-component/upload/c1ecf491eb40c1460aa180b2a87c5efeb60c2551/src/Upload.tsx",
+          "sha256": "df235cd2c16f1c20514da68ed5c4a9b10c3199b5f5d7d5caffe55f318f87a215",
+          "license_bytes_match": {}
+        },
+        {
+          "file": "README.md",
+          "url": "https://raw.githubusercontent.com/react-component/upload/c1ecf491eb40c1460aa180b2a87c5efeb60c2551/README.md",
+          "sha256": "46f1c0bb59750bbb3a1829dea019052d18abd8a5adee05b54ce7cb85ef0bdef2",
+          "license_bytes_match": {}
+        }
+      ],
+      "upstream_modifications": false
+    },
+    "electron_security_reference": {
+      "name": "electron",
+      "repository": "https://github.com/electron/electron",
+      "tag": "v44.7.0",
+      "commit": "61f55c4ce540416b3e43f75f6c0f125d22e5e908",
+      "version": "44.7.0",
+      "license": "MIT",
+      "integrity": "sha512-aUq9/zLAAFYc+a9gy6cd0C3Y/N/RmovLCD8TV8LhIzNhuND6HEgsu96jJz9cbAxvckSPv+Trf2PKEjktoZgFkw==",
+      "originals": [
+        {
+          "file": "LICENSE",
+          "url": "https://raw.githubusercontent.com/electron/electron/61f55c4ce540416b3e43f75f6c0f125d22e5e908/LICENSE",
+          "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d",
+          "license_bytes_match": {
+            "installed": true,
+            "binary": true
+          }
+        },
+        {
+          "file": "docs/tutorial/security.md",
+          "url": "https://raw.githubusercontent.com/electron/electron/61f55c4ce540416b3e43f75f6c0f125d22e5e908/docs/tutorial/security.md",
+          "sha256": "9bec21b1e4e451fb710685d09e0cdfd1770df02ffd44ad6afebf976f4cbac50a",
+          "license_bytes_match": {}
+        }
+      ],
+      "upstream_modifications": false
+    },
+    "usage": "Current single Dragger native file input/button/Enter/disabled/reset and browser File/FormData; retire old file:// path fetch/native path IPC; no new transport/dependencies, no upstream modification",
+    "modified_product_files": [
+      "frontend/src/pages/UploadPage.tsx",
+      "electron/main.js",
+      "electron/preload.js"
+    ]
+  }
+}

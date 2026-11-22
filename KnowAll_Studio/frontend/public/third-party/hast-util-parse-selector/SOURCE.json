@@ -1,0 +1,23 @@
+{
+  "name": "hast-util-parse-selector",
+  "version": "4.0.0",
+  "repository": "syntax-tree/hast-util-parse-selector",
+  "license": "MIT",
+  "integrity": "sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\hast-util-parse-selector\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "eeeefbd434261f5f3fb8e1d66cf3523cde05a0b3379352f735dcf3e3995dfb1b",
+      "lib/index.js": "76d02635547a5cbc5eb94c18c0010336b0dac306e4e39cfa48364c089f3919e4"
+    },
+    "upstream_modifications": []
+  }
+}

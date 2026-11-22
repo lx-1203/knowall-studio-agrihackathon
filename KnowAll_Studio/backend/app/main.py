@@ -1,0 +1,256 @@
+"""KnowAll Studio - Main FastAPI Application"""
+import logging
+import asyncio
+import os
+import logging.handlers
+from contextlib import asynccontextmanager
+from pathlib import Path
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.config import settings
+from app.database import init_db
+
+# Configure logging with rotation
+_log_dir = Path(os.environ.get("KNOWALL_LOG_DIR", str(Path(__file__).resolve().parent.parent / "data" / "logs")))
+_log_dir.mkdir(parents=True, exist_ok=True)
+_file_handler = logging.handlers.RotatingFileHandler(
+    _log_dir / "knowall.log", maxBytes=10 * 1024 * 1024, backupCount=5, encoding="utf-8"
+)
+_file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
+_console_handler = logging.StreamHandler()
+_console_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
+
+logging.basicConfig(
+    level=logging.INFO,
+    handlers=[_console_handler, _file_handler],
+)
+logger = logging.getLogger("knowall")
+
+
+async def startup_init():
+    """Initialize databases on startup."""
+    import os
+    from pathlib import Path
+
+    logger.info("Initializing database...")
+    await init_db()
+    from app.database import async_session
+    from app.core.knowledge_network import fail_interrupted_extractions
+    async with async_session() as db:
+        await fail_interrupted_extractions(db)
+        await db.commit()
+    logger.info("Database initialized")
+
+    # Load .env file explicitly for API configuration.
+    # The .env file holds the project's intended API settings and should
+    # take precedence over host-environment variables (e.g. Claude Code proxy).
+    _env_vals = {}
+    _env_path = Path(__file__).resolve().parent.parent / ".env"
+    if not os.environ.get("KNOWALL_IGNORE_ENV_FILE", "").lower() in {"1", "true"} and _env_path.exists():
+        for _line in _env_path.read_text(encoding="utf-8").splitlines():
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _k, _, _v = _line.partition("=")
+                _env_vals[_k.strip()] = _v.strip().strip('"').strip("'")
+
+    # .env file values take priority over shell env for API config
+    api_key = _env_vals.get("ANTHROPIC_AUTH_TOKEN") or os.getenv("ANTHROPIC_AUTH_TOKEN") or os.getenv("OPENAI_API_KEY") or _env_vals.get("DEEPSEEK_API_KEY") or os.getenv("DEEPSEEK_API_KEY")
+    api_base = _env_vals.get("ANTHROPIC_BASE_URL") or os.getenv("ANTHROPIC_BASE_URL") or os.getenv("OPENAI_BASE_URL")
+    model = _env_vals.get("ANTHROPIC_MODEL") or os.getenv("ANTHROPIC_MODEL") or settings.default_model
+
+    if api_key:
+        from app.core.api_scheduler import api_client
+
+        # Detect provider from the base URL / env vars
+        if _env_vals.get("DEEPSEEK_API_KEY") or (os.getenv("DEEPSEEK_API_KEY") and not _env_vals.get("ANTHROPIC_AUTH_TOKEN")):
+            provider = "deepseek"
+            model = "deepseek-chat"
+            api_base = api_base or "https://api.deepseek.com/v1"
+        elif api_base and "deepseek" in api_base.lower():
+            # DeepSeek's Anthropic-compatible endpoint uses the Anthropic adapter
+            provider = "anthropic"
+            api_base = api_base.rstrip("/")  # e.g. https://api.deepseek.com/anthropic
+        elif os.getenv("ANTHROPIC_AUTH_TOKEN") and not _env_vals.get("ANTHROPIC_AUTH_TOKEN"):
+            provider = "anthropic"
+            api_base = api_base or "https://api.anthropic.com/v1"
+        else:
+            provider = "openai"
+            api_base = api_base or "https://api.openai.com/v1"
+
+        api_client.configure_adapter(provider, api_key, base_url=api_base, model_name=model)
+        logger.info("API adapter configured: provider=%s model=%s base=%s", provider, model, api_base)
+
+    # Restore saved console settings after environment adapters are configured.
+    from app.core.admin_console_runtime import restore_console_runtime
+    try:
+        async with async_session() as db:
+            await restore_console_runtime(db)
+    except Exception:
+        logger.exception("Administrator console configuration restore failed")
+
+    # Pre-warm the GraphRAG knowledge graph index
+    if settings.graphrag_enabled:
+        try:
+            from app.core.graph_rag import rebuild_graph
+            node_count = await rebuild_graph()
+            logger.info("GraphRAG index built: %d nodes", node_count)
+        except Exception as e:
+            logger.warning("GraphRAG index build skipped (will lazy-load): %s", e)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await startup_init()
+    from app.websocket import start_background_tasks, stop_background_tasks
+    from app.core.agents.research_agent import research_agent
+    from app.core.book.compiler import book_compiler
+    from app.core.knowledge_authority import close_source_searches
+    from app.api.agent_runs import background_manager
+    start_background_tasks()
+    try:
+        background_manager.activate()
+        yield
+    finally:
+        results = await asyncio.gather(
+            research_agent.close(), book_compiler.close(), stop_background_tasks(), close_source_searches(),
+            background_manager.close(),
+            return_exceptions=True,
+        )
+        for result in results:
+            if isinstance(result, BaseException):
+                raise result
+
+
+app = FastAPI(
+    title="KnowAll Studio API",
+    description="智识工坊 - 一站式AI知识内化学习工作台",
+    version=settings.app_version,
+    lifespan=lifespan,
+)
+
+# CORS - allow all origins in development
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.cors_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Import and register API routes
+from app.api.documents import router as doc_router
+from app.api.document_preview import router as document_preview_router
+from app.api.knowledge import router as knowledge_router
+from app.api.knowledge_collections import router as knowledge_collections_router
+from app.api.shared_library import router as shared_library_router
+from app.api.check_ins import router as check_ins_router
+from app.api.knowledge_network import router as knowledge_network_router
+from app.api.knowledge_authority import router as knowledge_authority_router
+from app.api.questions import router as quiz_router
+from app.api.learning import router as learning_router
+from app.api import (
+    flashcards_router, chat_router, admin_router,
+    search_router, pipeline_router, stats_router,
+    backup_router, game_router, study_router, share_router,
+    auth_router, kp_router, user_router, notifications_router,
+    reading_router, recitation_router, live_session_router, voice_router,
+)
+from app.api.agents import router as agents_router
+from app.api.agent_runs import router as native_agent_router
+from app.api.model_connections import router as model_connections_router
+from app.api.language import router as language_router
+from app.api.memory_feedback import router as memory_router
+from app.api.coverage import router as coverage_router
+from app.api.interactive_quiz import router as interactive_quiz_router
+from app.api.answer_review import router as answer_review_router
+from app.api.sync_upload import router as sync_upload_router
+from app.api.version_control import router as version_control_router
+from app.api.game_quiz import router as game_quiz_router
+from app.api.commercial import router as commercial_router
+from app.api.oauth import router as oauth_router
+from app.api.sms_api import router as sms_router
+from app.api.gamification import router as gamification_router
+from app.api.research import router as research_router
+from app.api.books import router as books_router
+from app.api.mcp import router as mcp_router
+from app.api.glossary import router as glossary_router, snapshot_router as glossary_snapshot_router
+from app.api.kaf import router as kaf_router
+from app.websocket import sync_router
+from app.middleware import setup_middleware
+
+# Register middleware (order matters: last added = first executed)
+setup_middleware(app)
+
+app.include_router(doc_router)
+app.include_router(model_connections_router)
+app.include_router(document_preview_router)
+app.include_router(knowledge_router)
+app.include_router(knowledge_collections_router)
+app.include_router(shared_library_router)
+app.include_router(check_ins_router)
+app.include_router(knowledge_network_router)
+app.include_router(knowledge_authority_router)
+app.include_router(quiz_router)
+app.include_router(learning_router)
+app.include_router(flashcards_router)
+app.include_router(chat_router)
+app.include_router(search_router)
+app.include_router(pipeline_router)
+app.include_router(stats_router)
+app.include_router(backup_router)
+app.include_router(game_router)
+app.include_router(study_router)
+app.include_router(share_router)
+app.include_router(admin_router)
+from app.api.admin_console import router as admin_console_router
+app.include_router(admin_console_router)
+app.include_router(auth_router)
+app.include_router(kp_router)
+app.include_router(user_router)
+app.include_router(notifications_router)
+app.include_router(reading_router)
+app.include_router(agents_router)
+app.include_router(native_agent_router)
+app.include_router(language_router)
+app.include_router(memory_router)
+app.include_router(coverage_router)
+app.include_router(interactive_quiz_router)
+app.include_router(answer_review_router)
+app.include_router(sync_router)
+app.include_router(sync_upload_router)
+app.include_router(version_control_router)
+app.include_router(game_quiz_router)
+app.include_router(commercial_router)
+app.include_router(oauth_router)
+app.include_router(sms_router)
+app.include_router(gamification_router)
+app.include_router(research_router)
+app.include_router(books_router)
+app.include_router(mcp_router, prefix="/api/v1")
+app.include_router(mcp_router)  # Preserve the legacy direct-backend /mcp namespace.
+app.include_router(glossary_router)
+app.include_router(glossary_snapshot_router)
+app.include_router(kaf_router)
+app.include_router(recitation_router)
+app.include_router(live_session_router)
+app.include_router(voice_router)
+
+
+@app.get("/")
+async def root():
+    return {
+        "name": "KnowAll Studio",
+        "version": settings.app_version,
+        "status": "running",
+        "docs": "/docs",
+    }
+
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app.main:app", host="0.0.0.0", port=8001, reload=settings.debug)

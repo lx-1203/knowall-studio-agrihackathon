@@ -1,0 +1,63 @@
+{
+  "name": "rc-tabs",
+  "version": "15.7.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/tabs.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-tabs/-/rc-tabs-15.7.0.tgz",
+  "integrity": "sha512-ZepiE+6fmozYdWf/9gVp7k56PKHB1YYoDsKeQA1CBlJ/POIhjkcYiv0AGP0w2Jhzftd3AVvZP/K+V+Lpi2ankA==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-tabs/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "bca9eca45b741c5ff3629a9b243e5b3ba93cb40ef93d7635eb1703d46e02f8ff",
+    "es/index.js": "c73b5ff17f33d34c686e748c03a4a6af17687c29e6b67d0c31c5f4410484d948",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/TabContext.js": "d35f4be01d3713f698abf565879c47d76bee99151a22f10c5ef6a7ca0d5b3339",
+    "es/Tabs.js": "a4d35afd214815fa5459c7ae552a85b2a7d30c0d0b73af976290a77930b14a79",
+    "es/util.js": "d9a5f16176c6c97f6b8b9f9c1e5bfd137bc7edc3bc50a941f8c0ed247e926e12",
+    "lib/index.js": "5e1f4852c209a4ea18dc2407d1ffb3ca68a53c2cf047d85fa70bf26135e83e35",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/TabContext.js": "047ec57cffaf4f3422365cd2897d8d711f66f9ac7ef892910ac24feb41441605",
+    "lib/Tabs.js": "d275ac99ee8bcb1696486519b9b0ab4d759e8661cfbc1a13590528310ced8edf",
+    "lib/util.js": "0b6c5e077779fe7226a2959741ca32f2d0a0dd79a32318c55eb0780b84e521b9",
+    "lib/hooks/useAnimateConfig.js": "cd41938f760b50c1f692c952bb25099ac6da2e7e95a164d12f459f426469a20e",
+    "lib/hooks/useIndicator.js": "cb0011c7c63ef412cee7bab2180f68cdb30d083b5e04b360dc95f2b9daa0ae23",
+    "lib/hooks/useOffsets.js": "74a0a059f9820256655762d67165d5e034ba4a9a86352b71153b8a391435f79f",
+    "lib/hooks/useSyncState.js": "562c0fbd6831b44c01f5a13009a5c77386fe05209cbb8e9b0007abafaf3eacf7",
+    "lib/hooks/useTouchMove.js": "95a0f59d8b537f1a1b075c8fe06349fc22f16fa7090fcf7c3cabfbb4d38a4734",
+    "lib/hooks/useUpdate.js": "a4c7415831e3e5dc62c4336cfe596e5b2a5e12e3532236054fa3e9a42a02bc56",
+    "lib/hooks/useVisibleRange.js": "1efaeb867920d3bd99bc9fe6a0d83d97439d7e501a67838c71fa499d00b6cdf1",
+    "lib/TabNavList/AddButton.js": "c35f28d3a0c0e7486cfe80ddb6cad3723c4e0bebc5631dc21ba152ea97b0e918",
+    "lib/TabNavList/ExtraContent.js": "b9d19834a7323124668a974a77ed851808e262d0f01667c97f6c93ca42e0d175",
+    "lib/TabNavList/index.js": "416aabcfb68427cabee19cbb006db5fb2d4698a42ca01b6e8a15b2ed1a6481ec",
+    "lib/TabNavList/OperationNode.js": "10e4dd3c723af7061111d7e7294410ed4bd478cb4907bdaf433d71eea546f19d",
+    "lib/TabNavList/TabNode.js": "25fcad843ff8d2c0a97cac38d4f102eea63d72bb8784e08facccd9d82c49b3f5",
+    "lib/TabNavList/Wrapper.js": "a1cc04a93548967f344e5caac0e7d6a66cb41f6777930546d008513d240dca0f",
+    "lib/TabPanelList/index.js": "259be1ec0d2d5a98fc6a7579c1d09ed0ce5ef9979319cc8bccaa8a5753fc1f5e",
+    "lib/TabPanelList/TabPane.js": "141f49312968bd025b9e5b032a829be69f0a6603a84b683812808a796ff9fc16",
+    "es/hooks/useAnimateConfig.js": "d05432b453c994d29492bee39b403f2a8f4a64970f53df52e12ac4d0f52c8560",
+    "es/hooks/useIndicator.js": "e14791f47979d3b92ae01c2a6ea97093ae1aee3e27004239d22a0980e18b1f5c",
+    "es/hooks/useOffsets.js": "4445c35550c7b92c367eba13a2b438ecea1577680bbcb9a01448c47364dce547",
+    "es/hooks/useSyncState.js": "35b23faddc3daf71fc7b233ea41179476dc1e43834930a764ec994a2f8afbfdb",
+    "es/hooks/useTouchMove.js": "5f6e95fff1b165dd8e79abce753dfb34607d8f7a5f3befe1bda96623bcf73e7c",
+    "es/hooks/useUpdate.js": "9a5c316bd24dea8effba2eadb85a08c9f2e68df2a6ce4fae232de922d6281f89",
+    "es/hooks/useVisibleRange.js": "60509a50ff8ca5068da0933e4760edd7028485ec0b02ffcfd288025fe0ff4818",
+    "es/TabNavList/AddButton.js": "cd976937a5957cbc88c077c96d1503443022e99f6e794a46ba290b7bae959ae2",
+    "es/TabNavList/ExtraContent.js": "cd76cd02326b2c31dd80ebcfb5272443f2c3ad8fea695a92bfdd3a751e1041ec",
+    "es/TabNavList/index.js": "a4f07cc910c36ff85dd6a22e41cac28df6e00bd164e3054232a4c5b0dc3c467e",
+    "es/TabNavList/OperationNode.js": "58060e4f5fd07240440f46583e75ee9d97d8a3ca4ef395f5ea90ca603fec4cc5",
+    "es/TabNavList/TabNode.js": "7a9107f4cc02518f12e9ea732377989afe5862db73ebe7690e104cad3ebad335",
+    "es/TabNavList/Wrapper.js": "b6b646237e406aa195e6fd6c0a9c94afed8330f4264170db1f10c209bde4a8c1",
+    "es/TabPanelList/index.js": "e15e05ed9088e67ca10465e89036b696d091723ee3721aacb0d690a5563f7914",
+    "es/TabPanelList/TabPane.js": "c2ca742b5320e3fa28d407757a4acb4518b29fa9394359af9dc1f5f3008847f2"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

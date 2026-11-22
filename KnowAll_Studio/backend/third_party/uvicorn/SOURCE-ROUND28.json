@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-10T00:23:15.277889+08:00",
+  "repository": "Kludex/uvicorn",
+  "version": "0.48.0",
+  "commit": "73e84e58d7f6b8b3dfd8a9e3e42d716862250f33",
+  "license": "BSD-3-Clause; retain copyright, conditions and disclaimer; no endorsement",
+  "sources": [
+    {
+      "path": "LICENSE.md",
+      "url": "https://api.github.com/repos/Kludex/uvicorn/contents/LICENSE.md?ref=73e84e58d7f6b8b3dfd8a9e3e42d716862250f33",
+      "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+    },
+    {
+      "path": "uvicorn/server.py",
+      "url": "https://api.github.com/repos/Kludex/uvicorn/contents/uvicorn/server.py?ref=73e84e58d7f6b8b3dfd8a9e3e42d716862250f33",
+      "sha256": "7d7937fff1c17f583ea21ff8fce5c8a5bf2d9d3c9a7f1b9646211eb7a49012f3"
+    },
+    {
+      "path": "uvicorn/config.py",
+      "url": "https://api.github.com/repos/Kludex/uvicorn/contents/uvicorn/config.py?ref=73e84e58d7f6b8b3dfd8a9e3e42d716862250f33",
+      "sha256": "521624160a9e56a8f7f0565beafc089f7ab2556623afbbbd7897cd3f62cf85f7"
+    }
+  ],
+  "existing_dependency": true,
+  "new_dependency": false,
+  "upstream_modified": false,
+  "planned_api": "Server(Config(...)).serve(), should_exit; own stdin EOF requests orderly exit, SQLAlchemy engine.dispose in finally"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "@rc-component/trigger",
+  "version": "2.3.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/trigger.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@rc-component/trigger/-/trigger-2.3.1.tgz",
+  "integrity": "sha512-ORENF39PeXTzM+gQEshuk460Z8N4+6DkjpxlpE7Q3gYy1iBpLrx0FOJz3h62ryrJZ/3zCAUIkT1Pb/8hHWpb3A==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "4973f756e858531bdae451f98054278dabd2ef50fc4d3dbccc084ee35964ad3d",
+      "source": "frontend/node_modules/@rc-component/trigger/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "a32bb8b30ec107df323f6c585b0a8b1fd84454c661ce697131bd620e848af922",
+    "es/context.js": "02cc5c7e1872def44eef095fb098e1631462c58e41b592d5dec3744b122c2505",
+    "es/index.js": "fe1b27c08727ed7a6a2cc7cbb591137fba9a95b7f7645f76e8fa8a9282087c26",
+    "es/interface.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "es/mock.js": "899bb2d97ee80731cf271caa196bd79bf26c4540b73c5c362890afce3b38e4ce",
+    "es/TriggerWrapper.js": "b59e1de1498bd9d4120cba0802b332f9ad48b8a60fccf75a9c2af3173e861d75",
+    "es/util.js": "a81826f345a2424b1f3f4a3b51bcfb5e850c9b7ae3a6ae7e7451944078274716",
+    "lib/context.js": "597fc62ee674b37b798b7d757f300ddb83e8f792df9be747b1319fa3d4e023d9",
+    "lib/index.js": "eed68cb1f33407e8f1f749e37db6f632ee244916a60487827de37d2b85d302a9",
+    "lib/interface.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3",
+    "lib/mock.js": "b8f980869a636898f65726314a3f85cfabbae3e75757ecbf7959d8e2635a83f9",
+    "lib/TriggerWrapper.js": "2f7530017206d11d7772d03422fb2d38e337f72a97e8e18e163ac81c042da10a",
+    "lib/util.js": "5d2e8c808d77303977f7620b1464876eedc154af2dd4a62a3ed83f8caed15a9b",
+    "lib/hooks/useAction.js": "46b3c9a52cb83f2ff58194e3500864ff81b2a3bc9c7b916993e427ec802dd1cb",
+    "lib/hooks/useAlign.js": "2ebdfe13dca1d415906c59c4d818bebf0330decf2a408eae73477ac50794ef13",
+    "lib/hooks/useWatch.js": "3b10e2e2fb0e4446dc15ad463671a5d4e394bb06aa39408b54dc86a9107c1212",
+    "lib/hooks/useWinClick.js": "1ffce45aeb586a010fdf5828ed9ad6c144d71d7ed4fb8a2b9aca859837d2d91d",
+    "lib/Popup/Arrow.js": "dc9c60f70a285759d3acf4d44c38bf996ea75ff70c3f8ebe3ff5b3c63a8fc7d0",
+    "lib/Popup/index.js": "fd375a8050f613baf96628e886be6147575fba99560d2bfed9e252c53a0ecec6",
+    "lib/Popup/Mask.js": "d40366234ee5ee31886d2590dac4b0e40d784c61825a4623fc1013b15a7c40ad",
+    "lib/Popup/PopupContent.js": "d2c2020d628d525de284b992cbe96e5075373cc6a5cb4933d995fd85ba52bdea",
+    "es/hooks/useAction.js": "bac295fbedd29e021fa4bf0aaa677e9b56ce383f139950e41e7b41767c8162c5",
+    "es/hooks/useAlign.js": "22bf26d26c9ca5f4ac66a44658bf2b81efd76e1be61c128398ed6c93062dc522",
+    "es/hooks/useWatch.js": "f88d15447917924ec2f85c49a43b95ffd60ac2035f8864f41f5cbb8e367e4ee6",
+    "es/hooks/useWinClick.js": "70a62b79ec3f4f251be3e4e52af84f04c19d929bdcba6093e61fdb0b401b7f47",
+    "es/Popup/Arrow.js": "8eb39229baf1e4674374bafcfe019669c2dcb2da5f9d5e8f9012e68f11c16d00",
+    "es/Popup/index.js": "48526594a270e7b33d79f3f80e09c6c5bd5e1070562b30f2dbc2ec79a264a07a",
+    "es/Popup/Mask.js": "ac2b240ef40b6cbbb44c21f029584cf5861e96d38fc11223bfcff4d0c35adde2",
+    "es/Popup/PopupContent.js": "f3e9b7ec2d95b0413a1138ef9f894d8c0070e6afa472cd0fb05fc6c88c3f289f"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

@@ -1,0 +1,23 @@
+{
+  "name": "decode-named-character-reference",
+  "version": "1.3.0",
+  "repository": "wooorm/decode-named-character-reference",
+  "license": "MIT",
+  "integrity": "sha512-GtpQYB283KrPp6nRw50q3U9/VfOutZOe103qlN7BPP6Ad27xYnOIWv4lPzo8HCAL+mMZofJ9KEy30fq6MfaK6Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\decode-named-character-reference\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.dom.js": "bbfdff9072ab38fb0669b2fe2fef28e9b36e5cbbeed3592cd13fc29748755dd3",
+      "index.js": "94977edf16af953166332d05480fc0bc3883eb9c1a5feee7ca670eebc87bee01"
+    },
+    "upstream_modifications": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "json2mq",
+  "version": "0.2.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiran/json2mq"
+  },
+  "resolved": "https://registry.npmmirror.com/json2mq/-/json2mq-0.2.0.tgz",
+  "integrity": "sha512-SzoRg7ux5DWTII9J2qkrZrqV1gt+rTaoufMxEzXbS26Uid0NwaJd123HcoB80TgubEppxxIGdNxCx50fEoEWQA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "95d848d55392bb8239b53cb7a6405bf3914bdab56d1a0d26f3af5f7aced776eb",
+      "source": "frontend/node_modules/json2mq/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "c6fef80d06ccb4b124e1e97f8d3f02b88112056b32b6d860f5e5df4e4b186d2d",
+    "test/test.js": "f80908723934a5a1b99aa5df1bf4d22b3ae881c7918ef915150528ce902193fa"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

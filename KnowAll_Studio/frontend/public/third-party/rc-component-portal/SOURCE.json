@@ -1,0 +1,36 @@
+{
+  "name": "@rc-component/portal",
+  "version": "1.1.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/portal.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@rc-component/portal/-/portal-1.1.2.tgz",
+  "integrity": "sha512-6f813C0IsasTZms08kfA8kPAGxbbkYToa8ALaiDIGGECU4i9hj8Plgbx0sNJDrey3EtHO30hmdaxtT0138xZcg==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "8781f0ca192057330d7fbab763f8bcd3c8e671032f98e9cf1f8c82d6748e5654",
+      "source": "frontend/node_modules/@rc-component/portal/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "es/Context.js": "2cde1ae4850f7d4396ac2d2e62c398bfe3de6c540618e914cc90009ca3c925eb",
+    "es/index.js": "3e4dcdee5eabb8339f378db169f3296cb6d1ea4f3961c74df8b2deac174e2d1d",
+    "es/mock.js": "9233f1c886c508570d5511f3894a776cebda29e173a8f452ea8d0023d8d204b7",
+    "es/Portal.js": "3df25716f22916be016d56ea876b43f07073cb73066a947359179114701ddff2",
+    "es/useDom.js": "16486bfa33776487e257a350125604495aa4431b4bf7caf32bca833581011ab7",
+    "es/useScrollLocker.js": "9ef48ee9a954e238ecb74b0b19c9967a7bb84cb5be649d2a23b88873afa24051",
+    "es/util.js": "73540a9342af90026fb0b77c3fb9355a3b7c043a06d7823b071fa9ac1ff5ebb9",
+    "lib/Context.js": "3f31339f20d427874a0596ca496ab986458184966db47da194993ecfbc8661b2",
+    "lib/index.js": "cb433638bb13e7f5a618e700dfca95076836e0523cad16aeda54b99cf15c3399",
+    "lib/mock.js": "d35bc0a58af5b2f3ccae1736b3f9718771f61bf5f385e0aa3b625f3e6f081112",
+    "lib/Portal.js": "b7451037a2bcf3cf3ee154a37d5382e96f8517b110e117e24b9abc101944a1a8",
+    "lib/useDom.js": "ec737f1409eaa27621626851dde3a20186510b69beb1efc8b4602ba2fd1e54c1",
+    "lib/useScrollLocker.js": "a828e7cafa72ba33cd1c9554c8db740feca4a57dfd874a6b618e8c08c46818df",
+    "lib/util.js": "35433c6dcbcad3d7d40d7c83456e7c537ef2cbeb5da48b3249a1a771600b6b46"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

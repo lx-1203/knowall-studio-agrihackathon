@@ -1,0 +1,25 @@
+{
+  "name": "micromark-extension-gfm-task-list-item",
+  "version": "2.1.0",
+  "license": "MIT",
+  "repository": "micromark/micromark-extension-gfm-task-list-item",
+  "resolved": "https://registry.npmmirror.com/micromark-extension-gfm-task-list-item/-/micromark-extension-gfm-task-list-item-2.1.0.tgz",
+  "integrity": "sha512-qIBZhqxqI6fjLDYFTBIa4eivDMnP+OZqsNwmQ3xNLE4Cxwc+zfQEfbs6tzAo2Hjq+bh6q5F+Z8/cksrLFYWQQw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "536804b3adbff17dbbb9ed0d2bf9655b78f07640278581e37e3d7475282d5e61",
+      "source": "frontend\\node_modules\\micromark-extension-gfm-task-list-item\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "9642f1c0386a40107895796c2207e55f981c762614887835e56ad18849f24788",
+    "dev/index.js": "831733a3e5bdf4de21b8f3baf7e6ef84c7f6a9c856ee99d5f751cce134a97340",
+    "lib/html.js": "8a90e3c2badc4eb1f640f7ae84d9ec5c6835c17c39aaec9a08c0014fdcad1623",
+    "lib/syntax.js": "b819eb327b98387d58b3c254df11324b9291420e7b59306cc41d8a25b0820385",
+    "dev/lib/html.js": "973851aa94b6e5c2f93e3db44593a6ca224892df3aabc3f27768158be3b78471",
+    "dev/lib/syntax.js": "6e9f7152ffd8cd2019982ec374ab4810789a0aa9c0ec9bfd22006bdd5fab53ed"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

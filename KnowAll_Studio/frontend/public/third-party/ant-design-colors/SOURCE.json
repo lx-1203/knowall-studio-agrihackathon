@@ -1,0 +1,30 @@
+{
+  "name": "@ant-design/colors",
+  "version": "7.2.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ant-design/ant-design-colors.git"
+  },
+  "resolved": "https://registry.npmmirror.com/@ant-design/colors/-/colors-7.2.1.tgz",
+  "integrity": "sha512-lCHDcEzieu4GA3n8ELeZ5VQ8pKQAWcGGLRTQ50aQM2iqPpq2evTxER84jfdPvsPAtEcZ7m44NI45edFMo8oOYQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70",
+      "source": "frontend/node_modules/@ant-design/colors/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "es/generate.js": "981cd6129a84c1bcfb92b401a4534b6811b05729016adc189a85a5d08eb50e1e",
+    "es/index.js": "8b7c28d41d42e986490a744603310662cbe5053aaa8f6213332212c784c592fe",
+    "es/presets.js": "9a89f73e22313467810ac08df1271ced211d0321ea5080c55ec80f0c40201b95",
+    "es/types.js": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+    "lib/generate.js": "882373cb24308bf01b28cc1eae010fce1dc0e2e20506a6f9cae16582b0dfc5e8",
+    "lib/index.js": "8186b8ec7380d6ff0a46afbafe15e3f90b13d0491b0105da3ed4a129287a7224",
+    "lib/presets.js": "3936ce77784c8291dd5d5a7a6e557a7c264308296c3d6a2e942855495e32ee4d",
+    "lib/types.js": "edf54261c4de64f458b044a39a64af998353d4ab54e16a2ad58349e323abe3d3"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

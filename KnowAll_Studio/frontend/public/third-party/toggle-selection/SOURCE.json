@@ -1,0 +1,32 @@
+{
+  "name": "toggle-selection",
+  "version": "1.0.6",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudodoki/toggle-selection"
+  },
+  "resolved": "https://registry.npmmirror.com/toggle-selection/-/toggle-selection-1.0.6.tgz",
+  "integrity": "sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==",
+  "original_notices": [
+    {
+      "file": "README.md",
+      "sha256": "7479eef62fd8fd10a629b4403172e9db730f0e94cb0e7e1f7a6507d0760f1083",
+      "source": "frontend/node_modules/toggle-selection/README.md"
+    },
+    {
+      "file": "package.json",
+      "sha256": "fbde858ede9465c03e5270332090684350327e360760d185b2ed4fc3aff73f15",
+      "source": "frontend/node_modules/toggle-selection/package.json"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "d1a1caf366f8ae5ed3cf4a87c42c46e73bb5536acbcbc5ca479c180d4d3e7756",
+    "example/demo.js": "0e4578369e32840dc0e82f59cdc44ed5a1b352312974eade1fe47c10fc68f15e"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer.",
+  "fixed_upstream_commit": "466460c75ca40630d8de940490718247fce79a3e",
+  "original_full_license_absent": true,
+  "scope": "Existing AntD copy-to-clipboard dependency in conservative closure, not newly adopted image transformer; original package MIT declaration and author-credit README retained. No fabricated license text."
+}

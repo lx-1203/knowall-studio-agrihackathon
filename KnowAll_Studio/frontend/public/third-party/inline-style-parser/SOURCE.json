@@ -1,0 +1,26 @@
+{
+  "name": "inline-style-parser",
+  "version": "0.2.7",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remarkablemark/inline-style-parser.git"
+  },
+  "resolved": "https://registry.npmmirror.com/inline-style-parser/-/inline-style-parser-0.2.7.tgz",
+  "integrity": "sha512-Nb2ctOyNR8DqQoR0OwRG95uNWIC0C1lCgf5Naz5H6Ji72KZ8OcFZLz2P5sNgwlyoJ8Yif11oMuYs5pBQa86csA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "395c95f20598da653ff1eb1cb9d74947c7fac689697147f1d192fd0242a0e635",
+      "source": "frontend\\node_modules\\inline-style-parser\\LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "cjs/index.js": "02245958daf61d5e477fa13dbd577a8e53aff477768c183e9c51bad775c01c42",
+    "dist/inline-style-parser.js": "57bcdd5af9a9e3f790a2e91eefeb8d2d2386e0a0088d9e2927069ea006bf29b3",
+    "dist/inline-style-parser.min.js": "723493daecb45b19a7415b15973dda41b761c302bb18f7bd5a366418b4300d7d",
+    "esm/index.mjs": "06daa9e500c10b29c900681defff1f8b19dd315b58ec8ef35ed109178bbbb435"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

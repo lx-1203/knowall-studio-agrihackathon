@@ -1,0 +1,23 @@
+.flashcard-page { min-width: 0; }
+/* Classic Windows scrollbars must not feed back into Table auto-width. */
+html:has(.flashcard-page) { scrollbar-gutter: stable; }
+.flashcard-face {
+  min-height: 200px; border: 2px solid; border-radius: 16px; padding: 32px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-size: 18px; min-width: 0; overflow-wrap: anywhere;
+}
+.flashcard-face > div { width: 100%; min-width: 0; }
+.flashcard-answer { width: 100%; min-width: 0; text-align: left; }
+.flashcard-ratings { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.flashcard-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 12px; }
+.flashcard-review-panel > .ant-card-head > .ant-card-head-wrapper { flex-wrap: wrap; gap: 12px; padding: 12px 0; }
+.flashcard-review-panel .ant-card-extra { min-width: 0; }
+@media (max-width: 1000px) {
+  .flashcard-review-panel > .ant-card-head > .ant-card-head-wrapper { align-items: flex-start; flex-direction: column; }
+  .flashcard-review-panel .ant-card-extra { margin-inline-start: 0; max-width: 100%; }
+  .flashcard-face { padding: 16px; }
+  .flashcard-ratings { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.flashcard-answer ul { list-style-type: disc; padding-inline-start: 1.5em; }
+.flashcard-answer ol { list-style-type: decimal; padding-inline-start: 1.5em; }
+.flashcard-answer a[href]:not([href=""]) { text-decoration: underline; }

@@ -1,0 +1,38 @@
+{
+  "name": "rc-mentions",
+  "version": "2.20.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/mentions.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-mentions/-/rc-mentions-2.20.0.tgz",
+  "integrity": "sha512-w8HCMZEh3f0nR8ZEd466ATqmXFCMGMN5UFCzEUL0bM/nGw/wOS2GgRzKBcm19K++jDyuWCOJOdgcKGXU3fXfbQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "8a894af015d320e0d534a14d6ae1895e07cb072678050d34b66be7e579c36a67",
+      "source": "frontend/node_modules/rc-mentions/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "es/DropdownMenu.js": "a35d7d4ec4bdf78c4a3b62c8b09ead488178beba2bb2e20fe6d59753f4633bac",
+    "es/index.js": "e335e469ddd8ee683a727376cd26bd50d34cce5059f698f517e7bf6c432f6000",
+    "es/KeywordTrigger.js": "52cdbb4a40d13fda9e9b3d0f3b5717d0cbe63772a781c590561982f1f7d9c510",
+    "es/Mentions.js": "a10d88d1387a94ceeb582174ec9c6d315633dae1d9c04db51e3236778f4cf8c1",
+    "es/MentionsContext.js": "38b8ef11f8c92030d503f7cf324fc1032814971460f032d4e95cf18194fc4301",
+    "es/Option.js": "96519a1e155fb636e3cbaebda41c520790117c209f1ca447f20d849464a899ab",
+    "es/util.js": "85880c3f9e1904114aa1eacf6fb16108233f6c404f6de7114059d1b026ae746c",
+    "lib/DropdownMenu.js": "168d8ecbdf866152471a64472f0de482ff517483990271479d70f4736cf84c1e",
+    "lib/index.js": "8e904c61d9cbf49f2571fd8dacbe63925276f75db2f655e05e4e08b2550aa596",
+    "lib/KeywordTrigger.js": "760ee63ac716b2ee5913268f7932b09a6ce416b5bcfcb5180fd1add061c5cfd4",
+    "lib/Mentions.js": "3c53c728266f71e934d94a21d583231876be527c742cb649716cc03cf6235757",
+    "lib/MentionsContext.js": "87c58d72cbdc4190798f7ef50a688d7a1c5d22188fd9652918aeae6ec209ddd1",
+    "lib/Option.js": "f06af4e5c301e7044bde30dec00597bc863a6f7b15830fbf3697decc53dffbf0",
+    "lib/util.js": "3adb709af88e415eae7a24114f54616c53630c184fb03e27567468068e42e7a8",
+    "lib/hooks/useEffectState.js": "6e2c37982952127f2af8ccd864dd7b2c4d1d03cb85fc37f65577c10b56e8f973",
+    "es/hooks/useEffectState.js": "af1fa95e9541b4d861f0c35fb74acf570a8e985a8a086df374090b64fa168ed6"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/sqlalchemy/sqlalchemy",
+  "ref": "rel_2_0_51",
+  "version": "2.0.51",
+  "license": "MIT",
+  "obligation": "Ship complete original copyright and permission notice; original upstream modules unmodified, only project adapters use native APIs.",
+  "files": [
+    {
+      "source_file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/LICENSE",
+      "saved": "KnowAll_Studio/backend/third_party/sqlalchemy/LICENSE-ROUND48",
+      "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9"
+    },
+    {
+      "source_file": "lib/sqlalchemy/sql/schema.py",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/sql/schema.py",
+      "saved": "KnowAll_Studio/backend/third_party/sqlalchemy/ROUND48-lib-sqlalchemy-sql-schema.py.txt",
+      "sha256": "ee400babee26d9cacad39c97ccde6bfc0322b1ef946d30509eb58ec79d488ff4"
+    },
+    {
+      "source_file": "doc/build/core/constraints.rst",
+      "url": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/doc/build/core/constraints.rst",
+      "saved": "KnowAll_Studio/backend/third_party/sqlalchemy/ROUND48-doc-build-core-constraints.rst.txt",
+      "sha256": "ab7f7572514048b354ec3d957f73d9940ea900b8fcc779f272c3c3f887f50a1d"
+    }
+  ]
+}

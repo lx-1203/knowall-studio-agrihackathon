@@ -1,0 +1,20 @@
+{
+  "name": "js-tokens",
+  "version": "4.0.0",
+  "license": "MIT",
+  "repository": "lydell/js-tokens",
+  "resolved": "https://registry.npmmirror.com/js-tokens/-/js-tokens-4.0.0.tgz",
+  "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1",
+      "source": "frontend/node_modules/js-tokens/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "b6f81c0531fc09be2f8a26059a5cb9f47150e550471da0ace5705a26d3c6268e"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native react-pdf Outline/Document destination handling, PDF.js worker/resource decoding; lifecycle adapter only."
+}

@@ -1,0 +1,25 @@
+{
+  "name": "copy-to-clipboard",
+  "version": "3.3.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudodoki/copy-to-clipboard"
+  },
+  "resolved": "https://registry.npmmirror.com/copy-to-clipboard/-/copy-to-clipboard-3.3.3.tgz",
+  "integrity": "sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d",
+      "source": "frontend/node_modules/copy-to-clipboard/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "9ec9b13e9f29fd4fdf0983db9a71acad42f1ccc3cd43c86621188790650613ca",
+    "example/example.css": "53c975ee66c4bf28a99698bcc1fd6b5ef4da0aed58e5619b17e2b35d309e9c18",
+    "example/index.js": "46f755bc33bcb75c3ebf9ac89d3712d04a683f35cadb949522ffe0eb63c80c0a"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

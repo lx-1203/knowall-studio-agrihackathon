@@ -1,0 +1,24 @@
+{
+  "modifications": "No upstream modification; reuse native Query ge/le on admin.logs",
+  "files": [
+    {
+      "file": "docs\\open-source-integration\\round-36-fastapi-LICENSE",
+      "sha256": "4EC89FFC81485B97FEC584B2D4A961032EEFFE834453894FD9C1274906CC744E",
+      "source": "https://raw.githubusercontent.com/fastapi/fastapi/0.136.3/LICENSE"
+    },
+    {
+      "file": "docs\\open-source-integration\\round-36-fastapi-fastapi-params.py",
+      "sha256": "D5F34D48AE49ECF339170F85E7FF6E3B2B00D8D802FBAD666F72E5AC15A9A893",
+      "source": "https://raw.githubusercontent.com/fastapi/fastapi/0.136.3/fastapi/params.py"
+    },
+    {
+      "file": "docs\\open-source-integration\\round-36-fastapi-fastapi-param_functions.py",
+      "sha256": "E1F4C2565BC40DB010AFB82F59890E5FC864B5D97623093E92FE05693CFB3FCC",
+      "source": "https://raw.githubusercontent.com/fastapi/fastapi/0.136.3/fastapi/param_functions.py"
+    }
+  ],
+  "version": "0.136.3",
+  "documentation": "https://fastapi.tiangolo.com/tutorial/path-params-numeric-validations/",
+  "fixed_tag": "0.136.3",
+  "repository": "https://github.com/fastapi/fastapi"
+}

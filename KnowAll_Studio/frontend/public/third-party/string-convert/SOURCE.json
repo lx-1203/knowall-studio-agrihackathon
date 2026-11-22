@@ -1,0 +1,28 @@
+{
+  "name": "string-convert",
+  "version": "0.2.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiran/string-convert"
+  },
+  "resolved": "https://registry.npmmirror.com/string-convert/-/string-convert-0.2.1.tgz",
+  "integrity": "sha512-u/1tdPl4yQnPBjnVrmdLo9gtuLvELKsAoRapekWggdiQNvvvum+jYF329d84NAa660KQw7pB2n36KrIKVoXa3A==",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "8e7a0e17a14c91d325c22a8ade50da3aaa5a97e321beebbdce77d63fc719a1c2",
+      "source": "frontend/node_modules/string-convert/LICENSE"
+    }
+  ],
+  "source_files_sha256": {
+    "camel2hyphen.js": "5d1a1c491614234294e33bace718c72141e219ebefbb771690940df1f22ca866",
+    "hyphen2camel.js": "de2adb71fc250253d15aec6b8ed4ff2eaf19fe3a8b96533668605a9df4f0760a",
+    "index.js": "d608059f5e3630642149b560e267db19bcf1bdd5841791e47e5226e1d23cc2b5",
+    "test/test.camel2hyphen.js": "7ea1ed631f1aa5c361a8bb57f6fbad72daf272f9988b5a12ce05e025f30a21a4",
+    "test/test.hyphen2camel.js": "38c73f96e6714ce139806ab6462cf2084fa7099cf306040770743fec9460f553",
+    "test/test.index.js": "76078251356f875702ffe35ef27eeca3b45c44aebc4f71dd14e582e3dc30811c"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

@@ -1,0 +1,43 @@
+{
+  "name": "is-retry-allowed",
+  "repository": "https://github.com/sindresorhus/is-retry-allowed",
+  "tag": "v2.2.0",
+  "tag_object": "8a49c6f8677c2c3d3b132bed6ee456baaa9dd4e1",
+  "commit": "5d4b13f991941dbda9dae0a9b5b4bc2f8c94b6b2",
+  "source_files": [
+    {
+      "file": "license",
+      "url": "https://raw.githubusercontent.com/sindresorhus/is-retry-allowed/5d4b13f991941dbda9dae0a9b5b4bc2f8c94b6b2/license",
+      "sha256": "f1a592365975e533851daadd56db86e5739764b713a3afba65dd660415832243",
+      "evidence": "round-12-upstream-is-retry-allowed-license.txt"
+    },
+    {
+      "file": "readme.md",
+      "url": "https://raw.githubusercontent.com/sindresorhus/is-retry-allowed/5d4b13f991941dbda9dae0a9b5b4bc2f8c94b6b2/readme.md",
+      "sha256": "710f26cefe5b35035bc1ddaa92213369038cfefe5015e809bc487e0964fc5fd6",
+      "evidence": "round-12-upstream-is-retry-allowed-readme.md.txt"
+    },
+    {
+      "file": "package.json",
+      "url": "https://raw.githubusercontent.com/sindresorhus/is-retry-allowed/5d4b13f991941dbda9dae0a9b5b4bc2f8c94b6b2/package.json",
+      "sha256": "bf73751f9f18419363c6df46c3db8ad98c42fcb0aafbf3759cd58de1a77af7fe",
+      "evidence": "round-12-upstream-is-retry-allowed-package.json.txt"
+    },
+    {
+      "file": "index.js",
+      "url": "https://raw.githubusercontent.com/sindresorhus/is-retry-allowed/5d4b13f991941dbda9dae0a9b5b4bc2f8c94b6b2/index.js",
+      "sha256": "2d7705386d8d1b9ed201cde627e1d837ff89364cc26ca939ad4c01344bb6308c",
+      "evidence": "round-12-upstream-is-retry-allowed-index.js.txt"
+    }
+  ],
+  "modifications": "none; dependency configuration and application call sites only",
+  "version": "2.2.0",
+  "license": "MIT",
+  "integrity": "sha512-XVm7LOeLpTW4jV19QSH38vkswxoLud8sQ57YwJVTPWdiaI9I8keEhGFpBlslyVsgdQy4Opg8QOLb8YRgsyZiQg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "f1a592365975e533851daadd56db86e5739764b713a3afba65dd660415832243"
+    }
+  ]
+}

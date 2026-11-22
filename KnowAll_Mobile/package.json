@@ -1,0 +1,46 @@
+{
+  "name": "knowall_mobile",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "dependencies": {
+    "@expo/vector-icons": "^15.0.2",
+    "@noble/ciphers": "^2.4.0",
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "axios": "^1.18.1",
+    "expo": "~56.0.23",
+    "expo-constants": "~56.0.0",
+    "expo-document-picker": "^56.0.4",
+    "expo-linking": "~56.0.18",
+    "expo-router": "~56.2.21",
+    "expo-screen-capture": "~56.0.5",
+    "expo-status-bar": "~56.0.4",
+    "katex": "0.16.47",
+    "markdown-it": "15.0.2",
+    "markdown-it-texmath": "1.0.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-paper": "^5.15.3",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-web": "^0.21.2",
+    "react-native-webview": "13.16.1",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@types/katex": "0.16.8",
+    "@types/markdown-it": "14.2.0",
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "test:material": "node --test tests/material-learning.test.mjs",
+    "test:privacy": "node --test tests/screen-privacy.test.mjs tests/screen-privacy-plugin.test.cjs"
+  },
+  "private": true
+}

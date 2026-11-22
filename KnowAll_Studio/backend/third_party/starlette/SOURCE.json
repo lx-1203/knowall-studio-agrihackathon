@@ -1,0 +1,60 @@
+{
+  "name": "starlette",
+  "version": "1.2.0",
+  "repository": "https://github.com/Kludex/starlette",
+  "commit": "4060987466412dcdb3e5a0f05973b4208dddb6f0",
+  "tag": "1.2.0",
+  "tag_command": [
+    "git",
+    "-c",
+    "http.sslBackend=openssl",
+    "ls-remote",
+    "--tags",
+    "https://github.com/Kludex/starlette.git",
+    "refs/tags/1.2.0",
+    "refs/tags/1.2.0^{}"
+  ],
+  "tag_output": "4060987466412dcdb3e5a0f05973b4208dddb6f0\trefs/tags/1.2.0\n",
+  "license": "BSD-3-Clause",
+  "originals": [
+    {
+      "file": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/4060987466412dcdb3e5a0f05973b4208dddb6f0/LICENSE.md",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+      "bytes": 1518
+    },
+    {
+      "file": "starlette/responses.py",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/4060987466412dcdb3e5a0f05973b4208dddb6f0/starlette/responses.py",
+      "sha256": "8e95e773bdb3718b3dffc789dd258e53a46b9a8781c98e98cfb3c36e69fea897",
+      "bytes": 21771
+    },
+    {
+      "file": "starlette/background.py",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/4060987466412dcdb3e5a0f05973b4208dddb6f0/starlette/background.py",
+      "sha256": "0fe5e952915181406765e035b4783330e82e6dee8809564594e03830bd2ad53f",
+      "bytes": 1122
+    },
+    {
+      "file": "docs/responses.md",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/4060987466412dcdb3e5a0f05973b4208dddb6f0/docs/responses.md",
+      "sha256": "0dbd4b25ebd3940b74dde4f6598853cb34a05266c93ba207dcc2e195c2402e1e",
+      "bytes": 7366
+    },
+    {
+      "file": "docs/background.md",
+      "url": "https://raw.githubusercontent.com/Kludex/starlette/4060987466412dcdb3e5a0f05973b4208dddb6f0/docs/background.md",
+      "sha256": "e2c622d46ad52bf7d90abe62fd75f355c1ff6f46a0b8a1d55d18e3875bbece63",
+      "bytes": 1961
+    }
+  ],
+  "upstream_modified": false,
+  "reuse": "native Axios blob/signal/authorized GET; Ant loading/disabled; Starlette RFC5987 FileResponse and post-send BackgroundTask",
+  "distribution_obligation": "preserve full original notice; BSD retains copyright, three conditions and disclaimer; no endorsement",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+    }
+  ]
+}

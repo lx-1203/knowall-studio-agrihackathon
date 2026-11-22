@@ -1,0 +1,21 @@
+{
+  "name": "vfile-location",
+  "version": "5.0.3",
+  "license": "MIT",
+  "repository": "vfile/vfile-location",
+  "resolved": "https://registry.npmmirror.com/vfile-location/-/vfile-location-5.0.3.tgz",
+  "integrity": "sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\vfile-location\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "495394a48274d0e42d4d0533f462669aa2ebf11d153fd97c21eebf66ec9820a7",
+    "lib/index.js": "ad96f58fd35cb42e76f5085d18c17a09a7d28b3825bbeeaaad9e486d9a23a594"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

@@ -1,0 +1,33 @@
+{
+  "name": "rc-rate",
+  "version": "2.13.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-component/rate.git"
+  },
+  "resolved": "https://registry.npmmirror.com/rc-rate/-/rc-rate-2.13.1.tgz",
+  "integrity": "sha512-QUhQ9ivQ8Gy7mtMZPAjLbxBt5y9GRp65VcUyGUMF3N3fhiftivPHdpuDIaWIMOTEprAjZPC08bls1dQB+I1F2Q==",
+  "original_notices": [
+    {
+      "file": "LICENSE.md",
+      "sha256": "5d0427088e37071c4b942de990f6365d5c2d195f3e957ce925322d184784e2eb",
+      "source": "frontend/node_modules/rc-rate/LICENSE.md"
+    }
+  ],
+  "source_files_sha256": {
+    "assets/index.css": "40339243a025d702c01b80030a4ba9f2009486df41dc3de6cb0274f4c0695377",
+    "es/index.js": "8d420e3c5ad6f6f1d62f265f5731bc9470ae0beb655d756f1cf729721d4431b2",
+    "es/Rate.js": "a7b9b83ff782a2e99f0efc65c8d9082ea86c3eba1bc0141cd211207b5835236f",
+    "es/Star.js": "024902406ebd907e5ffb2fc25f46ed0f7945f5d2234fc3b395708b7893a68650",
+    "es/useRefs.js": "08b7875df915fa2c461c74ee5b74de1f4eb9b245baf1e34adef0b0cc28884dc2",
+    "es/util.js": "42d527d43540c2f5e322a5bc055b851973735fcaad992833f777ebf58f9ed7a0",
+    "lib/index.js": "69ad62707bf130bbcae995f4c5b66b17a221861e2402eaac986692d25b6dab5b",
+    "lib/Rate.js": "841812bc7c8f2583738465561a1ab7cc9154f3235fbcfc452406eb4135404f5c",
+    "lib/Star.js": "4613a205c810a3abe5d27e7a2989f2a06011e3a242974e50b099447f2af8920a",
+    "lib/useRefs.js": "ca8127991256e95046c393f8644a110caa6e19ca9ad74a9c650d1817297184fb",
+    "lib/util.js": "d88f87fb7eaca942643914a54ef711cc474fdf24c2a9d96b008dabfe3d1d408b"
+  },
+  "upstream_modifications": [],
+  "integration": "Existing native Ant Design Image preview/rc-image actions; no new dependency, no copied transformer."
+}

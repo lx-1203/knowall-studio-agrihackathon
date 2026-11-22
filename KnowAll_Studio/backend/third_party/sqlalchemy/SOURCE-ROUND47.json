@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/sqlalchemy/sqlalchemy",
+  "ref": "rel_2_0_51",
+  "version": "2.0.51",
+  "license": "MIT",
+  "source_files": [
+    {
+      "source": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/LICENSE",
+      "saved": "LICENSE-ROUND47",
+      "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/ext/asyncio/engine.py",
+      "saved": "ROUND47-lib-sqlalchemy-ext-asyncio-engine.py.txt",
+      "sha256": "d7db66ce683ee95c30982103c7c9f2c27ccff6a53ee630e31d334c3af4e22528"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/orm/session.py",
+      "saved": "ROUND47-lib-sqlalchemy-orm-session.py.txt",
+      "sha256": "b75a4e427f453c2eaf19f04d87f66c2da644698a14f3b11880f56a73e2a0760d"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/sqlalchemy/sqlalchemy/rel_2_0_51/lib/sqlalchemy/dialects/mysql/asyncmy.py",
+      "saved": "ROUND47-lib-sqlalchemy-dialects-mysql-asyncmy.py.txt",
+      "sha256": "3e32706f23306c09aefe539f136d9c87146eab84252b601180a65147855a63fe"
+    }
+  ],
+  "modifications": "Upstream unchanged; integration adapter only kaf_publisher and kaf_service; native asyncmy connection invalidation and session savepoint preflush.",
+  "mysql_documentation": "https://dev.mysql.com/doc/refman/8.0/en/locking-functions.html",
+  "mysql_binary": "8.0.43 private test environment only, not redistributed"
+}

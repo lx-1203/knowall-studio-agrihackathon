@@ -1,0 +1,19 @@
+{
+  "package": "cached-property",
+  "version": "2.0.1",
+  "repository": {
+    "Homepage": "https://github.com/pydanny/cached-property"
+  },
+  "license": "BSD",
+  "wheel_url": "https://files.pythonhosted.org/packages/11/0e/7d8225aab3bc1a0f5811f8e1b557aa034ac04bdf641925b30d3caf586b28/cached_property-2.0.1-py3-none-any.whl",
+  "wheel_sha256": "f617d70ab1100b7bcf6e42228f9ddcb78c676ffa167278d9f730d1c2fba69ccb",
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "wheel_path": "cached_property-2.0.1.dist-info/LICENSE",
+      "sha256": "ba4756c8039b25b66e3c456cc5bf635aa528cf459b97ee1499d06684ccd89b9a"
+    }
+  ],
+  "library_modifications": null,
+  "distributed_form": "Source deployment requirements and original notices; no vendored executable library"
+}

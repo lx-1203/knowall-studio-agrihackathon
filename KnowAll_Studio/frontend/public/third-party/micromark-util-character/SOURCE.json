@@ -1,0 +1,21 @@
+{
+  "name": "micromark-util-character",
+  "version": "2.1.1",
+  "license": "MIT",
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-character",
+  "resolved": "https://registry.npmmirror.com/micromark-util-character/-/micromark-util-character-2.1.1.tgz",
+  "integrity": "sha512-wv8tdUTJ3thSFFFJKtpYKOYiGP2+v96Hvk4Tu8KpCAsTMs6yi+nVmGh1syvSCsaxz45J6Jbw+9DD6g97+NV67Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "dd1081884a92952802f4803110a6bb543acea9a814c786d58605b4c1219b5ebb",
+      "source": "frontend\\node_modules\\micromark-util-character\\license"
+    }
+  ],
+  "source_files_sha256": {
+    "index.js": "0ec487160ae3fa7f375698f9f951a0c5d7d752800bca2e3b1de15e3a07ee0417",
+    "dev/index.js": "9cce7ac2c2b7200af3bfcdce3ccbef982113b9aeb5b124f03583fe754185d89b"
+  },
+  "upstream_modifications": [],
+  "integration": "Native libraries consumed by MarkdownPreview; upstream files unmodified."
+}

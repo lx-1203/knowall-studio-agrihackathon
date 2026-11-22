@@ -1,0 +1,1424 @@
+"""Quiz generation and exam system (M3 — v2 with Bloom's Taxonomy + LLM-as-Judge + KG Relations)"""
+import json
+import random
+import logging
+import time
+import math
+from dataclasses import dataclass, field
+
+from app.core.api_scheduler import api_client, TaskType, GenerationConfig
+
+logger = logging.getLogger(__name__)
+
+
+# ============================================================
+# Pipeline Stats — Track each stage of question generation
+# ============================================================
+
+@dataclass
+class PipelineStats:
+    """Track timing and counts for each stage of the quiz generation pipeline."""
+    stage_times: dict[str, float] = field(default_factory=dict)
+    stage_counts: dict[str, int] = field(default_factory=dict)
+    _current_stage: str = ""
+    _start_time: float = 0.0
+
+    def start_stage(self, name: str):
+        self._current_stage = name
+        self._start_time = time.time()
+
+    def end_stage(self, count: int = 0):
+        elapsed = round(time.time() - self._start_time, 3)
+        self.stage_times[self._current_stage] = elapsed
+        if count:
+            self.stage_counts[self._current_stage] = count
+        logger.info(f"[Pipeline] {self._current_stage}: {elapsed}s, count={count}")
+        return elapsed
+
+    def summary(self) -> dict:
+        return {
+            "stages": self.stage_times,
+            "counts": self.stage_counts,
+            "total_time": round(sum(self.stage_times.values()), 3),
+        }
+
+# ============================================================
+# Bloom's Revised Taxonomy — Cognitive Level Definitions
+# ============================================================
+
+BLOOM_LEVELS: dict[str, dict] = {
+    "L1_remember": {
+        "label": "记忆",
+        "verbs": "列出、定义、命名、识别、回忆、描述",
+        "instruction": (
+            "本次出题目标认知层次为 L1_remember（记忆）。\n"
+            "题目应考察学生对事实、术语、基本概念和定义的回忆能力。\n"
+            "使用动词如：列出、定义、命名、识别、描述。\n"
+            "题目是封闭式的，有唯一确定的答案，不需要推理或分析。"
+        ),
+        "typical_types": ["single_choice", "true_false", "fill_blank"],
+    },
+    "L2_understand": {
+        "label": "理解",
+        "verbs": "解释、总结、举例、分类、比较、说明",
+        "instruction": (
+            "本次出题目标认知层次为 L2_understand（理解）。\n"
+            "题目应考察学生对概念的理解——能否用自己的话解释、举例说明或进行分类。\n"
+            "使用动词如：解释、总结、举例、分类、说明、改写。\n"
+            "题目要求学生展示对知识的内涵理解，而非简单回忆。"
+        ),
+        "typical_types": ["single_choice", "multi_choice", "true_false", "fill_blank", "short_answer"],
+    },
+    "L3_apply": {
+        "label": "应用",
+        "verbs": "使用、计算、解决、实现、执行、演示",
+        "instruction": (
+            "本次出题目标认知层次为 L3_apply（应用）。\n"
+            "题目应考察学生在新的具体情境中使用所学知识解决问题的能力。\n"
+            "使用动词如：使用、计算、解决、实现、执行、演示。\n"
+            "题目需要提供具体场景/数据，要求学生运用方法/公式/原理得出结果。"
+        ),
+        "typical_types": ["calculation", "formula", "coding", "single_choice", "short_answer"],
+    },
+    "L4_analyze": {
+        "label": "分析",
+        "verbs": "区分、比较、归因、解构、检查、质疑",
+        "instruction": (
+            "本次出题目标认知层次为 L4_analyze（分析）。\n"
+            "题目应考察学生将材料分解为组成部分、识别因果关系、区分相关与不相关信息的能力。\n"
+            "使用动词如：区分、比较、归因、解构、检查、质疑。\n"
+            "题目需要包含需要分析的复杂材料或情境，要求学生找出证据、推理关系或结构。"
+        ),
+        "typical_types": ["short_answer", "material_analysis", "multi_choice", "coding"],
+    },
+    "L5_evaluate": {
+        "label": "评价",
+        "verbs": "评估、论证、判断、辩护、批判、推荐",
+        "instruction": (
+            "本次出题目标认知层次为 L5_evaluate（评价）。\n"
+            "题目应考察学生基于标准做出判断的能力——评估方案优劣、论证观点、批判错误论证。\n"
+            "使用动词如：评估、论证、判断、辩护、批判、推荐。\n"
+            "题目需要提供有争议或需要权衡的情境，要求学生明确给出评价标准和判断理由。"
+        ),
+        "typical_types": ["material_analysis", "short_answer", "multi_choice"],
+    },
+    "L6_create": {
+        "label": "创造",
+        "verbs": "设计、构建、规划、产出、发明、改进",
+        "instruction": (
+            "本次出题目标认知层次为 L6_create（创造）。\n"
+            "题目应考察学生将要素组合成新的、原创性的产品或方案的能力。\n"
+            "使用动词如：设计、构建、规划、产出、发明、改进。\n"
+            "题目要求开放式的产出，可以有多种合理答案，重点考察创新性和综合运用能力。"
+        ),
+        "typical_types": ["coding", "short_answer", "material_analysis"],
+    },
+}
+
+
+def get_cognitive_level_instruction(level: str) -> str:
+    """Get the Bloom instruction text for a given cognitive level."""
+    if level in BLOOM_LEVELS:
+        return BLOOM_LEVELS[level]["instruction"]
+    # Default to L2 if unknown
+    return BLOOM_LEVELS["L2_understand"]["instruction"]
+
+
+def get_cognitive_level_label(level: str) -> str:
+    """Get Chinese label for a cognitive level."""
+    if level in BLOOM_LEVELS:
+        return BLOOM_LEVELS[level]["label"]
+    return level
+
+
+# ============================================================
+# Config
+# ============================================================
+
+@dataclass
+class QuizGenerationConfig:
+    question_type: str = "single_choice"
+    count: int = 10
+    difficulty: str = "medium"               # legacy categorical: easy/medium/hard
+    difficulty_score: float = 0.5             # NEW: continuous 0.0-1.0
+    cognitive_level: str = "L2_understand"    # NEW: Bloom level
+    enable_review: bool = True                # NEW: run LLM-as-Judge after generation
+    review_threshold: float = 3.2             # NEW: min total score to pass review
+
+
+# ============================================================
+# QuizGenerator
+# ============================================================
+
+class QuizGenerator:
+    """Generate questions via API, with optional LLM-as-Judge review."""
+
+    TYPE_TO_TEMPLATE = {
+        "single_choice": ("quiz_gen", "single_choice"),
+        "multi_choice": ("quiz_gen", "multi_choice"),
+        "true_false": ("quiz_gen", "true_false"),
+        "fill_blank": ("quiz_gen", "fill_blank"),
+        "short_answer": ("quiz_gen", "short_answer"),
+        "calculation": ("quiz_gen", "calculation"),
+        "formula": ("quiz_gen", "formula"),
+        "coding": ("quiz_gen", "coding"),
+        "material_analysis": ("quiz_gen", "material_analysis"),
+        "term_definition": ("quiz_gen", "term_definition"),
+    }
+
+    async def generate_questions(
+        self,
+        chunk_texts: list[str],
+        question_type: str = "single_choice",
+        count: int = 10,
+        model: str = "deepseek-chat",
+        difficulty: str = "medium",
+        difficulty_score: float = 0.5,
+        cognitive_level: str = "L2_understand",
+        enable_review: bool = True,
+    ) -> list[dict]:
+        """Generate questions from chunk texts with simplified interface.
+
+        Used by QuestionBankAgent for batch generation.
+        """
+        knowledge_text = "\n\n".join(chunk_texts)
+        config = QuizGenerationConfig(
+            question_type=question_type,
+            count=count,
+            difficulty=difficulty,
+            difficulty_score=difficulty_score,
+            cognitive_level=cognitive_level,
+            enable_review=enable_review,
+        )
+        return await self.generate(knowledge_text, config, model)
+
+    async def generate(
+        self,
+        knowledge_text: str,
+        config: QuizGenerationConfig,
+        model: str = "deepseek-chat",
+    ) -> list[dict]:
+        """Generate quiz questions from knowledge text.
+
+        Pipeline:
+        1. Render prompt with cognitive level instruction
+        2. Call LLM to generate questions
+        3. (Optional) Run LLM-as-Judge review → revise rejected questions
+        """
+        from app.prompts import prompt_engine
+
+        cat, name = self.TYPE_TO_TEMPLATE.get(
+            config.question_type, ("quiz_gen", "single_choice")
+        )
+
+        # Build cognitive level instruction for the prompt
+        cognitive_instruction = get_cognitive_level_instruction(config.cognitive_level)
+        diff_label = self._difficulty_label(config.difficulty_score)
+
+        pipeline = PipelineStats()
+
+        # Stage 1: Generation
+        pipeline.start_stage("1_generate")
+        messages = prompt_engine.render(
+            cat, name,
+            knowledge_points=knowledge_text,
+            count=config.count,
+            difficulty=config.difficulty,
+            difficulty_score=diff_label,
+            cognitive_level=config.cognitive_level,
+            cognitive_level_instruction=cognitive_instruction,
+        )
+
+        result = await api_client.generate(
+            task_type=TaskType.QUIZ_GEN,
+            messages=messages,
+            prompt_template_id=f"{cat}.{name}",
+            generation_content=knowledge_text + config.question_type + str(config.count) + config.cognitive_level,
+            config=GenerationConfig(model=model, response_validator=lambda body: bool(self._parse_questions(body, config.question_type))),
+        )
+
+        questions = self._parse_questions(result.content, config.question_type)
+        pipeline.end_stage(count=len(questions))
+
+        # Stage 2: Review (LLM-as-Judge)
+        if config.enable_review and questions:
+            pipeline.start_stage("2_review")
+            questions = await self._review_and_refine(questions, knowledge_text, config, model)
+            reviewed = sum(1 for q in questions if q.get("reviewed"))
+            passed = sum(1 for q in questions if q.get("review_decision") == "pass")
+            revised = sum(1 for q in questions if q.get("review_decision") == "revised")
+            rejected = sum(1 for q in questions if q.get("review_decision") == "reject")
+            pipeline.end_stage(count=len(questions))
+            logger.info(
+                f"[Pipeline] Review results: {reviewed} reviewed, "
+                f"{passed} passed, {revised} revised, {rejected} rejected"
+            )
+
+        # Attach pipeline stats to first question for downstream access
+        if questions:
+            questions[0]["_pipeline_stats"] = pipeline.summary()
+
+        return questions
+
+    async def generate_variants(
+        self,
+        error_question: dict,
+        count: int = 3,
+        model: str = "deepseek-chat",
+    ) -> list[dict]:
+        """Generate variant questions based on an error question.
+
+        v2 fix: (1) The variant instruction is injected explicitly into the user
+        prompt (previously it was buried in knowledge_points, so the model treated
+        it as source material and didn't actually "vary"); (2) generated variants
+        now run through the LLM-as-Judge review pipeline so low-quality variants
+        are revised or rejected.
+        """
+        from app.prompts import prompt_engine
+
+        cognitive_level = error_question.get("cognitive_level", "L2_understand")
+        cognitive_instruction = get_cognitive_level_instruction(cognitive_level)
+
+        qtype = error_question.get("question_type", error_question.get("type", "single_choice"))
+        cat, name = self.TYPE_TO_TEMPLATE.get(qtype, ("quiz_gen", "single_choice"))
+
+        difficulty_score = error_question.get("difficulty_score", 0.5)
+        diff_label = self._difficulty_label(difficulty_score)
+
+        # Explicit variant instruction block, injected into the USER prompt.
+        variant_text = (
+            f"【变式题指令——必须严格遵守】\n"
+            f"请基于下面的原题，生成 {count} 道变式题。变式题必须：\n"
+            f"1. 考察相同知识点、使用相同题型；\n"
+            f"2. 更换具体数值/场景/题干表述/选项顺序，但不能改变考点的核心事实；\n"
+            f"3. 正确答案正确、解析完整；\n"
+            f"4. 不得照抄原题题干或选项，必须是重新出的一道题。\n\n"
+            f"【原题】\n{error_question.get('question_text', '')}\n\n"
+            f"【原题类型】\n{qtype}\n\n"
+            f"【原题正确答案】\n{error_question.get('correct_answer', error_question.get('answer', ''))}\n\n"
+            f"【原题解析】\n{error_question.get('analysis', '')}"
+            f"\n\n【原题选项与评分规则（只作命题参考，新题须输出自己的答案与规则）】\n"
+            + json.dumps({k: error_question.get(k, []) for k in ('options', 'blanks', 'scoring_points')}, ensure_ascii=False)
+        )
+
+        messages = prompt_engine.render(
+            cat, name,
+            knowledge_points=error_question.get("question_text", ""),
+            count=count,
+            difficulty=error_question.get("difficulty", "medium"),
+            difficulty_score=diff_label,
+            cognitive_level=cognitive_level,
+            cognitive_level_instruction=cognitive_instruction,
+            variant_text=variant_text,
+        )
+
+        # Inject the variant instruction into the user message (the quiz_gen YAML
+        # templates don't have a {variant_text} slot, so append it directly).
+        if messages and messages[-1].get("role") == "user":
+            messages[-1]["content"] = messages[-1]["content"] + "\n\n" + variant_text
+
+        result = await api_client.generate(
+            task_type=TaskType.VARIANT_QUESTION,
+            messages=messages,
+            prompt_template_id=f"{cat}.{name}",
+            generation_content=variant_text,
+            config=GenerationConfig(model=model, response_validator=lambda body: bool(self._parse_questions(body, qtype))),
+        )
+        variants = self._parse_questions(result.content, qtype)
+
+        # Run variants through the same LLM-as-Judge review as generated questions.
+        if variants:
+            try:
+                variants = await self._review_and_refine(
+                    variants,
+                    error_question.get("question_text", ""),
+                    QuizGenerationConfig(
+                        question_type=qtype,
+                        count=count,
+                        enable_review=True,
+                        cognitive_level=cognitive_level,
+                        difficulty_score=difficulty_score,
+                    ),
+                    model,
+                )
+            except Exception as e:
+                logger.warning(f"Variant review failed (kept as-is): {e}")
+
+        return variants
+
+    # -------- LLM-as-Judge Review Pipeline --------
+
+    async def _review_and_refine(
+        self,
+        questions: list[dict],
+        knowledge_text: str,
+        config: QuizGenerationConfig,
+        model: str,
+    ) -> list[dict]:
+        """Run LLM-as-Judge review on generated questions, revise or reject low-quality ones.
+
+        Pipeline: Batch Review → Classify (pass/revise/reject) → Revise individually
+        """
+        from app.prompts import prompt_engine
+
+        try:
+            question_ids = [q.get("id") for q in questions]
+            if (not question_ids or any(not isinstance(qid, str) or not qid.strip() for qid in question_ids)
+                    or len(set(question_ids)) != len(question_ids)):
+                raise ValueError("Review requires unique nonempty question IDs")
+            # Step 1: Batch review all questions
+            t0 = time.time()
+            questions_json = json.dumps(questions, ensure_ascii=False, indent=2)
+            review_messages = prompt_engine.render(
+                "quiz_review", "review_single",
+                questions_json=questions_json,
+                cognitive_level=config.cognitive_level,
+                knowledge_points=knowledge_text,
+            )
+
+            review_result = await api_client.generate(
+                task_type=TaskType.QUIZ_GEN,
+                messages=review_messages,
+                prompt_template_id="quiz_review.review_single",
+                generation_content=questions_json[:500],
+                config=GenerationConfig(model=model, response_validator=lambda body: bool(
+                    self._validated_review(body, set(question_ids)))),
+            )
+
+            review_data = self._validated_review(review_result.content, set(question_ids))
+            reviews = review_data.get("reviews", [])
+            summary = review_data.get("summary", {})
+            review_time = round(time.time() - t0, 3)
+
+            logger.info(
+                f"[Review] Batch review complete in {review_time}s: "
+                f"passed={summary.get('passed', 0)}, "
+                f"revise={summary.get('revise', 0)}, "
+                f"rejected={summary.get('rejected', 0)}, "
+                f"avg_total={summary.get('average_total', 0)}"
+            )
+
+            # Step 2: Build review lookup by question_id
+            review_map = {r.get("question_id"): r for r in reviews}
+
+            # Step 3: Process each question
+            final_questions = []
+            revise_count = 0
+            reject_count = 0
+            t_revise = 0.0
+
+            for q in questions:
+                qid = q.get("id", "")
+                review = review_map.get(qid)
+                if not review:
+                    q["reviewed"] = False
+                    final_questions.append(q)
+                    continue
+
+                decision = review["decision"]
+                q["review_scores"] = review.get("scores", {})
+                q["review_total"] = review.get("total_score", 0)
+
+                if decision == "pass":
+                    q["reviewed"] = True
+                    q["review_decision"] = "pass"
+                    final_questions.append(q)
+
+                elif decision == "revise":
+                    try:
+                        t1 = time.time()
+                        revised = await self._revise_question(q, review, config, model)
+                        t_revise += time.time() - t1
+                        revise_count += 1
+                        if revised:
+                            revised["reviewed"] = True
+                            revised["review_decision"] = "revised"
+                            final_questions.append(revised)
+                        else:
+                            q["reviewed"] = True
+                            q["review_decision"] = "revise_failed"
+                            final_questions.append(q)
+                    except Exception as e:
+                        logger.warning(f"Revision failed for question {qid}: {e}")
+                        q["reviewed"] = True
+                        q["review_decision"] = "revise_error"
+                        final_questions.append(q)
+
+                elif decision == "reject":
+                    reject_count += 1
+                    logger.debug(f"Question {qid} rejected (score={q.get('review_total', 0)})")
+
+            if revise_count > 0:
+                logger.info(
+                    f"[Review] Revised {revise_count} questions in {round(t_revise, 3)}s "
+                    f"(avg {round(t_revise/max(1,revise_count), 3)}s each)"
+                )
+            if reject_count > 0:
+                logger.info(f"[Review] Rejected {reject_count} low-quality questions")
+
+            # Step 4: Re-number question IDs to be sequential
+            for i, q in enumerate(final_questions):
+                if not q.get("id", "").startswith("cross_"):
+                    q["id"] = f"q_{i+1}"
+
+            return final_questions
+
+        except Exception as e:
+            logger.error(f"[Review] LLM-as-Judge review failed: {e}", exc_info=True)
+            for q in questions:
+                for field in ("review_decision", "review_scores", "review_total"):
+                    q.pop(field, None)
+                q["reviewed"] = False
+                q["review_error"] = str(e)
+            return questions
+
+    async def _revise_question(
+        self,
+        question: dict,
+        review: dict,
+        config: QuizGenerationConfig,
+        model: str,
+    ) -> dict | None:
+        """Revise a single question based on review feedback."""
+        from app.prompts import prompt_engine
+
+        cognitive_instruction = get_cognitive_level_instruction(config.cognitive_level)
+
+        revise_messages = prompt_engine.render(
+            "quiz_review", "revise_single",
+            question_json=json.dumps(question, ensure_ascii=False, indent=2),
+            review_json=json.dumps(review, ensure_ascii=False, indent=2),
+            cognitive_level=config.cognitive_level,
+            cognitive_level_instruction=cognitive_instruction,
+        )
+
+        result = await api_client.generate(
+            task_type=TaskType.QUIZ_GEN,
+            messages=revise_messages,
+            prompt_template_id="quiz_review.revise_single",
+            generation_content=json.dumps(question)[:500],
+            config=GenerationConfig(model=model, response_validator=lambda body: bool(self._parse_revised_questions(body, config.question_type))),
+        )
+
+        revised_list = self._parse_revised_questions(result.content, config.question_type)
+        if revised_list:
+            return revised_list[0]
+        return None
+
+    # -------- KG Relation-Aware Generation --------
+
+    async def generate_with_relations(
+        self,
+        knowledge_text: str,
+        config: QuizGenerationConfig,
+        distractor_hints: str = "",
+        cross_topic_hints: list[dict] | None = None,
+        model: str = "deepseek-chat",
+    ) -> list[dict]:
+        """Generate questions enhanced with knowledge graph relation hints.
+
+        Args:
+            knowledge_text: Knowledge point content text.
+            config: Generation configuration.
+            distractor_hints: Pre-formatted confusion pair hints for better distractors.
+            cross_topic_hints: Cross-topic relation hints for comprehensive questions.
+            model: LLM model.
+        """
+        from app.prompts import prompt_engine
+
+        cat, name = self.TYPE_TO_TEMPLATE.get(
+            config.question_type, ("quiz_gen", "single_choice")
+        )
+
+        cognitive_instruction = get_cognitive_level_instruction(config.cognitive_level)
+        diff_label = self._difficulty_label(config.difficulty_score)
+
+        # Augment knowledge text with relation hints
+        augmented_text = knowledge_text
+        if distractor_hints:
+            augmented_text = knowledge_text + "\n\n" + distractor_hints
+
+        messages = prompt_engine.render(
+            cat, name,
+            knowledge_points=augmented_text,
+            count=config.count,
+            difficulty=config.difficulty,
+            difficulty_score=diff_label,
+            cognitive_level=config.cognitive_level,
+            cognitive_level_instruction=cognitive_instruction,
+        )
+
+        result = await api_client.generate(
+            task_type=TaskType.QUIZ_GEN,
+            messages=messages,
+            prompt_template_id=f"{cat}.{name}",
+            generation_content=augmented_text + config.question_type + str(config.count) + config.cognitive_level,
+            config=GenerationConfig(model=model, response_validator=lambda body: bool(self._parse_questions(body, config.question_type))),
+        )
+
+        questions = self._parse_questions(result.content, config.question_type)
+
+        if config.enable_review and questions:
+            questions = await self._review_and_refine(questions, augmented_text, config, model)
+
+        return questions
+
+    async def generate_cross_topic(
+        self,
+        node_a: dict,
+        node_b: dict,
+        relation_type: str,
+        relation_description: str,
+        model: str = "deepseek-chat",
+    ) -> list[dict]:
+        """Generate a cross-topic question linking two related knowledge points.
+
+        Uses a specialized prompt that asks the LLM to create questions testing
+        the relationship between two concepts (prerequisite, confusion, etc.).
+        """
+        from app.prompts import prompt_engine
+
+        # Build a standalone generation prompt for cross-topic questions
+        cross_prompt = self._build_cross_topic_prompt(
+            node_a, node_b, relation_type, relation_description
+        )
+
+        messages = [
+            {"role": "system", "content": cross_prompt["system"]},
+            {"role": "user", "content": cross_prompt["user"]},
+        ]
+
+        result = await api_client.generate(
+            task_type=TaskType.QUIZ_GEN,
+            messages=messages,
+            prompt_template_id="quiz_gen.cross_topic",
+            generation_content=f"{node_a.get('title','')}_{node_b.get('title','')}_{relation_type}",
+            config=GenerationConfig(model=model, response_validator=lambda body: bool(self._parse_questions(body))),
+        )
+
+        questions = self._parse_questions(result.content)
+        for q in questions:
+            q["cross_topic"] = True
+            q["cross_topic_sources"] = [
+                node_a.get("id", node_a.get("title", "")),
+                node_b.get("id", node_b.get("title", "")),
+            ]
+            q["relation_type"] = relation_type
+
+        return questions
+
+    def _build_cross_topic_prompt(
+        self,
+        node_a: dict,
+        node_b: dict,
+        relation_type: str,
+        relation_description: str,
+    ) -> dict:
+        """Build a prompt for cross-topic question generation."""
+        title_a = node_a.get("title", "")
+        expl_a = node_a.get("explanation", "")[:300]
+        title_b = node_b.get("title", "")
+        expl_b = node_b.get("explanation", "")[:300]
+
+        rel_labels = {
+            "prerequisite": "前置依赖关系",
+            "confused_with": "易混淆关系",
+            "extends": "扩展延伸关系",
+            "analogous_to": "类同关系",
+            "contradicts": "对立关系",
+            "applies_to": "应用关系",
+        }
+        rel_label = rel_labels.get(relation_type, "关联关系")
+
+        if relation_type == "prerequisite":
+            question_focus = (
+                f"考察学生是否理解「{title_a}」是「{title_b}」的前置基础。"
+                f"题目应检验：如果不掌握A，为什么学不好B？或者A中的哪个核心概念是B的关键支撑？"
+            )
+        elif relation_type == "confused_with":
+            question_focus = (
+                f"辨析「{title_a}」和「{title_b}」的核心区别。"
+                f"干扰项应基于两者的典型混淆点设计。"
+            )
+        elif relation_type == "extends":
+            question_focus = (
+                f"考察「{title_a}」到「{title_b}」的递进关系。"
+                f"题目应检验对扩展逻辑的理解——B在A的基础上增加了什么？"
+            )
+        else:
+            question_focus = f"考察「{title_a}」和「{title_b}」之间的{rel_label}。"
+
+        system = (
+            f"你是一位专业命题专家。请生成一道跨知识点综合题，考察两个关联知识点之间的{rel_label}。\n\n"
+            f"知识点A：{title_a}\n{expl_a}\n\n"
+            f"知识点B：{title_b}\n{expl_b}\n\n"
+            f"关系说明：{relation_description}\n\n"
+            f"{question_focus}\n\n"
+            f"输出格式（严格JSON）：\n"
+            f'{{"questions": [{{"id": "cross_1", "type": "single_choice", '
+            f'"cognitive_level": "L4_analyze", "difficulty_score": 0.65, '
+            f'"tags": ["跨知识点", "{title_a}", "{title_b}"], '
+            f'"question_text": "题目内容", '
+            f'"options": [{{"label": "A", "text": ""}}, ...], '
+            f'"answer": "A", '
+            f'"analysis": "详细解析，说明两个知识点的关系和每个选项的对错原因"'
+            f'}}]}}\n\n'
+            f"只输出JSON。"
+        )
+
+        user = (
+            f"请为以下两个知识点生成1道{rel_label}综合题：\n"
+            f"知识点A：{title_a}\n"
+            f"知识点B：{title_b}\n"
+            f"关系：{relation_description}\n"
+            f"输出JSON："
+        )
+
+        return {"system": system, "user": user}
+
+    # -------- Parsing Utilities --------
+
+    def _parse_questions(self, content: str, expected_type: str | None = None) -> list[dict]:
+        """Parse and validate question JSON from API response.
+
+        Handles common LLM output issues: markdown code blocks, extra text around JSON.
+        """
+        import re
+
+        if not isinstance(content, str):
+            return []
+        candidates = [content]
+        code_block_match = re.search(r'```(?:json)?\s*\n?(.*?)\n?```', content, re.DOTALL)
+        if code_block_match:
+            candidates.append(code_block_match.group(1))
+        json_match = re.search(r'(\[.*\]|\{.*\})', content, re.DOTALL)
+        if json_match:
+            candidates.append(json_match.group(1))
+        for candidate in candidates:
+            try:
+                data = json.loads(candidate)
+            except json.JSONDecodeError:
+                continue
+            questions = data.get("questions", []) if isinstance(data, dict) else data
+            return self._normalize_questions(questions, expected_type)
+
+        logger.warning("Failed to parse question JSON from LLM response")
+        return []
+
+    def _normalize_questions(self, questions, expected_type: str | None = None) -> list[dict]:
+        """Keep usable questions, using the same contract for cache and consumption."""
+        from pydantic import ValidationError
+        from app.core.quiz.metadata import question_rubrics
+        from app.core.learning_workbench import question_quality
+        if not isinstance(questions, list):
+            return []
+        normalized = []
+        for raw in questions:
+            if not isinstance(raw, dict):
+                continue
+            q = dict(raw)
+            if "cognitive_level" not in q:
+                q["cognitive_level"] = "L2_understand"
+            if "difficulty_score" not in q:
+                q["difficulty_score"] = 0.5
+            if "answer" not in q and "correct_answer" in q:
+                q["answer"] = q["correct_answer"]
+            if "question_type" not in q and "type" in q:
+                q["question_type"] = q["type"]
+            elif "question_type" not in q and "type" not in q:
+                q["question_type"] = expected_type or "unknown"
+            if not isinstance(q["question_type"], str):
+                continue
+            if expected_type and q["question_type"] != expected_type:
+                continue
+            if not isinstance(q.get("question_text"), str):
+                continue
+            score = q["difficulty_score"]
+            if isinstance(score, bool) or not isinstance(score, (int, float)) or not math.isfinite(score) or not 0 <= score <= 1:
+                continue
+            tags = q.get("tags", [])
+            if not isinstance(tags, list) or any(not isinstance(tag, str) for tag in tags):
+                continue
+            options = q.get("options", [])
+            if options is None:
+                q["options"] = []
+            elif not isinstance(options, list):
+                continue
+            try:
+                q.update(question_rubrics(q))
+            except ValidationError:
+                continue
+            answer = q.get("answer")
+            if (q["question_type"] == "fill_blank" and q["blanks"]
+                    and (answer is None or isinstance(answer, str) and not answer.strip())):
+                q["answer"] = ";".join(blank["answer"] for blank in q["blanks"])
+            kind = q["question_type"]
+            answer_types = ((str, list) if kind in {"single_choice", "multi_choice", "ordering"}
+                            else (str, dict) if kind in {"matching", "classification"}
+                            else (str, bool) if kind == "true_false" else (str,))
+            if not isinstance(q.get("answer"), answer_types):
+                continue
+            if question_quality(q)["eligible"]:
+                normalized.append(q)
+        return normalized
+
+    def _parse_revised_questions(self, content: str, expected_type: str) -> list[dict]:
+        data = self._parse_review(content)
+        return self._normalize_questions(data.get("revised_questions", []), expected_type)
+
+    def _parse_review(self, content: str) -> dict:
+        """Parse review JSON from API response."""
+        try:
+            data = json.loads(content)
+            return data if isinstance(data, dict) else {}
+        except (json.JSONDecodeError, TypeError):
+            logger.warning("Failed to parse review JSON from LLM response")
+            return {}
+
+    def _validated_review(self, content: str, question_ids: set[str]) -> dict:
+        """One review contract for cached/provider responses and their consumption."""
+        data = self._parse_review(content)
+        reviews = data.get("reviews")
+        if not isinstance(reviews, list) or not reviews:
+            raise ValueError("Review must contain a nonempty reviews array")
+        seen = set()
+
+        def finite_score(value, maximum):
+            return (not isinstance(value, bool) and isinstance(value, (int, float))
+                    and math.isfinite(value) and 0 <= value <= maximum)
+
+        for review in reviews:
+            if not isinstance(review, dict):
+                raise ValueError("Review entries must be objects")
+            qid = review.get("question_id")
+            if not isinstance(qid, str) or qid not in question_ids or qid in seen:
+                raise ValueError("Review question IDs must be unique and belong to this batch")
+            seen.add(qid)
+            if review.get("decision") not in ("pass", "revise", "reject"):
+                raise ValueError("Review requires an explicit pass/revise/reject decision")
+            scores = review.get("scores", {})
+            if not isinstance(scores, dict) or any(not finite_score(value, 1) for value in scores.values()):
+                raise ValueError("Review scores must be finite numbers from 0 to 1")
+            if "total_score" in review and not finite_score(review["total_score"], 5):
+                raise ValueError("Review total must be a finite number from 0 to 5")
+            for field in ("issues", "suggestions"):
+                values = review.get(field, [])
+                if not isinstance(values, list) or any(not isinstance(value, str) for value in values):
+                    raise ValueError("Review feedback must be arrays of strings")
+        summary = data.get("summary", {})
+        if not isinstance(summary, dict):
+            raise ValueError("Review summary must be an object")
+        for field in ("passed", "revise", "rejected"):
+            if field in summary and (type(summary[field]) is not int or summary[field] < 0):
+                raise ValueError("Review summary counts must be nonnegative integers")
+        if "average_total" in summary and not finite_score(summary["average_total"], 5):
+            raise ValueError("Review summary average must be a finite number from 0 to 5")
+        return data
+
+    @staticmethod
+    def _difficulty_label(score: float) -> str:
+        """Convert a 0-1 difficulty score to a human-readable label."""
+        if score <= 0.25:
+            return f"很简单 ({score:.2f})"
+        elif score <= 0.45:
+            return f"偏简单 ({score:.2f})"
+        elif score <= 0.60:
+            return f"中等 ({score:.2f})"
+        elif score <= 0.80:
+            return f"偏困难 ({score:.2f})"
+        else:
+            return f"困难 ({score:.2f})"
+
+
+# ============================================================
+# ExamEngine
+# ============================================================
+
+class ExamEngine:
+    """Exam paper assembly and grading — local rules + optional LLM semantic grading."""
+
+    # Question types that benefit from LLM semantic grading
+    SEMANTIC_GRADE_TYPES = {"short_answer", "material_analysis", "fill_blank", "term_definition"}
+
+    def _score_open_answer(self, user: str, question: dict, qtype: str) -> dict:
+        """Score open-ended answers with partial credit support.
+
+        Returns dict with: is_correct, score_ratio (0.0-1.0), details
+        """
+        correct = str(question.get("answer", question.get("correct_answer", "")))
+
+        if qtype == "fill_blank":
+            blanks = question.get("blanks", [])
+            if blanks:
+                return self._score_multi_blank(user, blanks)
+            # Single blank: fall through to simple keyword matching
+            return self._score_keyword_match(user, correct)
+
+        if qtype in ("term_definition", "short_answer"):
+            scoring_points = question.get("scoring_points", [])
+            if scoring_points:
+                return self._score_by_points(user, scoring_points)
+            return self._score_keyword_match(user, correct)
+
+        # Default: keyword match
+        return self._score_keyword_match(user, correct)
+
+    def _score_multi_blank(self, user_answer: str, blanks: list[dict]) -> dict:
+        """Score JSON string-array answers, with legacy delimited text support."""
+        import re
+        text = user_answer.strip()
+        if text.startswith('['):
+            try:
+                parts = json.loads(text)
+            except (ValueError, TypeError):
+                parts = None
+            user_parts = ([p.strip() for p in parts] if isinstance(parts, list)
+                          and len(parts) == len(blanks) and all(isinstance(p, str) for p in parts) else [])
+        else:
+            user_parts = [p.strip() for p in re.split(r'[;；,，\n]', text)]
+
+        total = len(blanks)
+        correct_count = 0
+        details = []
+
+        for i, blank in enumerate(blanks):
+            expected = blank.get("answer", "").strip()
+            user_val = user_parts[i] if i < len(user_parts) else ""
+
+            # Exact match first, then fuzzy
+            is_match = False
+            if user_val:
+                if user_val.lower() == expected.lower():
+                    is_match = True
+                else:
+                    # Fuzzy: check if user answer contains key chars or vice versa
+                    import re as _re
+                    expected_words = set(_re.findall(r'[\u4e00-\u9fff]+|[a-z0-9]{2,}', expected.lower()))
+                    user_words = set(_re.findall(r'[\u4e00-\u9fff]+|[a-z0-9]{2,}', user_val.lower()))
+                    if expected_words and user_words:
+                        overlap = len(user_words & expected_words) / len(expected_words)
+                        is_match = overlap >= 0.6
+
+            if is_match:
+                correct_count += 1
+
+            details.append({
+                "blank_index": blank.get("index", i + 1),
+                "expected": expected,
+                "user_answer": user_val,
+                "is_correct": is_match,
+                "hint": blank.get("hint", ""),
+            })
+
+        score_ratio = correct_count / max(1, total)
+        return {
+            "is_correct": score_ratio >= 0.6,
+            "score_ratio": score_ratio,
+            "correct_blanks": correct_count,
+            "total_blanks": total,
+            "blank_details": details,
+        }
+
+    def _score_by_points(self, user_answer: str, scoring_points: list[dict]) -> dict:
+        """Score by checking keywords in each scoring point."""
+        import re
+        user_lower = user_answer.strip().lower()
+        user_words = set(re.findall(r'[\u4e00-\u9fff]+|[a-z0-9]{2,}', user_lower))
+
+        total_score = sum(p.get("score", 0) for p in scoring_points)
+        earned_score = 0
+        point_details = []
+
+        for p in scoring_points:
+            keywords = p.get("keywords", [])
+            point_score = p.get("score", 0)
+            matched = []
+            for kw in keywords:
+                kw_lower = kw.lower()
+                if kw_lower in user_lower:
+                    matched.append(kw)
+                else:
+                    # Check individual chars for Chinese (2+ char match)
+                    for uw in user_words:
+                        if kw_lower in uw or uw in kw_lower:
+                            if kw not in matched:
+                                matched.append(kw)
+                            break
+
+            match_ratio = len(matched) / max(1, len(keywords))
+            credit = min(1.0, match_ratio * 1.5)  # Existing partial-match bonus.
+            # Full matches keep their actual weight, including weights < 0.1.
+            point_earned = point_score if credit == 1.0 else min(point_score, round(point_score * credit, 1))
+            earned_score += point_earned
+
+            point_details.append({
+                "point": p.get("point", ""),
+                "max_score": point_score,
+                "earned": point_earned,
+                "keywords_matched": matched,
+                "keywords_expected": keywords,
+                "match_ratio": round(match_ratio, 2),
+            })
+
+        score_ratio = min(1.0, earned_score / total_score) if total_score > 0 else 0.0
+        return {
+            "is_correct": score_ratio >= 0.5,
+            "score_ratio": score_ratio,
+            "earned_score": earned_score,
+            "total_score": total_score,
+            "point_details": point_details,
+        }
+
+    def _score_keyword_match(self, user_answer: str, correct_answer: str) -> dict:
+        """Simple keyword overlap scoring."""
+        import re
+        user_clean = user_answer.strip().lower()
+        correct_clean = correct_answer.strip().lower()
+
+        if not user_clean:
+            return {"is_correct": False, "score_ratio": 0.0}
+
+        if user_clean == correct_clean:
+            return {"is_correct": True, "score_ratio": 1.0}
+
+        if len(user_clean) <= 1:
+            return {"is_correct": False, "score_ratio": 0.0}
+
+        correct_words = set(re.findall(r'[\u4e00-\u9fff]+|[a-z0-9]{2,}', correct_clean))
+        if not correct_words:
+            return {"is_correct": user_clean in correct_clean, "score_ratio": 0.5 if user_clean in correct_clean else 0.0}
+
+        user_words = set(re.findall(r'[\u4e00-\u9fff]+|[a-z0-9]{2,}', user_clean))
+        if not user_words:
+            return {"is_correct": False, "score_ratio": 0.0}
+
+        overlap = len(user_words & correct_words) / len(correct_words)
+        return {"is_correct": overlap >= 0.5, "score_ratio": overlap}
+
+    async def grade_semantic(
+        self,
+        question_text: str,
+        reference_answer: str,
+        user_answer: str,
+        model: str = "deepseek-chat",
+    ) -> dict | None:
+        """Grade an open-ended answer using LLM semantic evaluation.
+
+        Returns a dict with scores, feedback, and matched/missed key points,
+        or None if the LLM call fails (caller should fall back to local grading).
+        """
+        from app.prompts import prompt_engine
+        from app.core.api_scheduler import api_client as _api, TaskType, GenerationConfig
+
+        if not user_answer or not user_answer.strip():
+            return {
+                "scores": {"correctness": 0, "completeness": 0, "clarity": 0},
+                "total_score": 0,
+                "passed": False,
+                "feedback": {
+                    "strengths": [],
+                    "weaknesses": ["未作答"],
+                    "suggestion": "请认真作答",
+                },
+                "key_points_matched": [],
+                "key_points_missed": ["(未作答)"],
+            }
+
+        try:
+            messages = prompt_engine.render(
+                "semantic_grade", "grade_semantic",
+                question_text=question_text,
+                reference_answer=reference_answer,
+                user_answer=user_answer,
+            )
+
+            result = await _api.generate(
+                task_type=TaskType.QUIZ_GEN,
+                messages=messages,
+                prompt_template_id="semantic_grade.grade_semantic",
+                generation_content=question_text[:300] + user_answer[:200],
+                config=GenerationConfig(model=model),
+            )
+
+            return self._validated_semantic_grade(json.loads(result.content))
+
+        except Exception as e:
+            logger.error(f"Semantic grading failed: {e}", exc_info=True)
+            return None
+
+    @staticmethod
+    def _validated_semantic_grade(result):
+        """Reject unusable model grades so the existing local fallback can run."""
+        import math
+        if not isinstance(result, dict):
+            return None
+        total = result.get('total_score')
+        if (type(total) not in (int, float) or not math.isfinite(total)
+                or not 0 <= total <= 10):
+            return None
+        if 'passed' in result and type(result['passed']) is not bool:
+            return None
+        scores = result.get('scores', {})
+        if not isinstance(scores, dict) or any(type(v) not in (int, float)
+                or not math.isfinite(v) or not 0 <= v <= 10 for v in scores.values()):
+            return None
+        feedback = result.get('feedback', {})
+        if not isinstance(feedback, dict):
+            return None
+        for field in ['strengths', 'weaknesses']:
+            values = feedback.get(field, [])
+            if not isinstance(values, list) or any(not isinstance(v, str) for v in values):
+                return None
+        if 'suggestion' in feedback and not isinstance(feedback['suggestion'], str):
+            return None
+        for field in ['key_points_matched', 'key_points_missed']:
+            values = result.get(field, [])
+            if not isinstance(values, list) or any(not isinstance(v, str) for v in values):
+                return None
+        return result
+
+    async def grade_enhanced(
+        self,
+        paper: dict,
+        user_answers: dict[str, str],
+        time_spent_ms: dict[str, int] | None = None,
+        knowledge_point_ids: dict[str, str] | None = None,
+        enable_semantic: bool = True,
+        model: str = "deepseek-chat",
+    ) -> dict:
+        """Grade a paper with hybrid local + LLM semantic grading.
+
+        Uses LLM semantic grading for short_answer/material_analysis/fill_blank,
+        and local rule-based grading for objective types (choice/true_false/calculation).
+        """
+        questions = paper.get("questions", [])
+        correct_count = 0
+        total_time = 0
+        semantic_graded = 0
+        earned_paper_score = 0.0
+
+        # ---- Phase 1: Run all semantic grading in parallel ----
+        semantic_tasks: list[tuple[int, str, str, str]] = []  # (index, qid, question_text, reference_answer)
+        for i, q in enumerate(questions):
+            qtype = q.get("question_type", q.get("type", ""))
+            user_answer = user_answers.get(q["id"], "")
+            if (
+                enable_semantic
+                and qtype in self.SEMANTIC_GRADE_TYPES
+                and not (qtype == 'fill_blank' and q.get('blanks'))
+                and not (qtype in ('short_answer', 'term_definition') and q.get('scoring_points'))
+                and len(user_answer.strip()) > 5
+            ):
+                semantic_tasks.append((
+                    i,
+                    q["id"],
+                    q.get("question_text", ""),
+                    str(q.get("answer", q.get("correct_answer", ""))),
+                ))
+
+        semantic_results: dict[int, dict | None] = {}
+        if semantic_tasks:
+            import asyncio
+            tasks = [
+                self.grade_semantic(qt, ra, user_answers.get(qid, ""), model)
+                for (_, qid, qt, ra) in semantic_tasks
+            ]
+            t0 = time.time()
+            results_list = await asyncio.gather(*tasks, return_exceptions=True)
+            elapsed = round(time.time() - t0, 3)
+            for (idx, _, _, _), result in zip(semantic_tasks, results_list):
+                if isinstance(result, Exception):
+                    logger.warning(f"Semantic grading failed for question {idx}: {result}")
+                    semantic_results[idx] = None
+                else:
+                    semantic_results[idx] = self._validated_semantic_grade(result)
+            semantic_graded = sum(1 for r in semantic_results.values() if r is not None)
+            if semantic_tasks:
+                logger.info(
+                    f"[Grade] Semantic grading: {semantic_graded}/{len(semantic_tasks)} "
+                    f"in {elapsed}s (parallel)"
+                )
+
+        # ---- Phase 2: Build results (local grading for objective + semantic for open-ended) ----
+        results = []
+        for i, q in enumerate(questions):
+            qid = q["id"]
+            qtype = q.get("question_type", q.get("type", ""))
+            user_answer = user_answers.get(qid, "")
+            correct_answer = q.get("answer", q.get("correct_answer", ""))
+            q_time = time_spent_ms.get(qid, 0) if time_spent_ms else 0
+            q_kp = knowledge_point_ids.get(qid, "") if knowledge_point_ids else ""
+
+            semantic_result = semantic_results.get(i)
+
+            open_score = None
+            if semantic_result:
+                is_correct = semantic_result.get("passed", semantic_result.get("total_score", 0) >= 6.0)
+            elif qtype in ('single_choice', 'multi_choice', 'true_false', 'matching', 'ordering', 'classification'):
+                from app.core.learning_workbench import grade_interaction
+                open_score = grade_interaction(q, user_answer)
+                is_correct = open_score['is_correct']
+            elif qtype in ("fill_blank", "term_definition") or (qtype == 'short_answer' and q.get('scoring_points')):
+                open_score = self._score_open_answer(user_answer, q, qtype)
+                is_correct = open_score["is_correct"]
+            else:
+                is_correct = self._check_answer(user_answer, correct_answer, qtype)
+
+            if is_correct:
+                correct_count += 1
+            has_rubric = (qtype == 'fill_blank' and q.get('blanks')) or (
+                qtype in ('short_answer', 'term_definition') and q.get('scoring_points'))
+            ratio = open_score['score_ratio'] if has_rubric and open_score else float(is_correct)
+            earned_paper_score += ratio * 5
+            total_time += q_time
+
+            detail = {
+                "question_id": qid,
+                "user_answer": user_answer,
+                "correct_answer": correct_answer,
+                "is_correct": is_correct,
+                "analysis": q.get("analysis", ""),
+                "time_spent_ms": q_time,
+                "knowledge_point_id": q_kp,
+                "cognitive_level": q.get("cognitive_level", ""),
+                "difficulty_score": q.get("difficulty_score", 0.5),
+                "grading_method": "semantic" if semantic_result else "local",
+            }
+
+            if semantic_result:
+                detail["semantic_scores"] = semantic_result.get("scores", {})
+                detail["semantic_total"] = semantic_result.get("total_score", 0)
+                detail["feedback"] = semantic_result.get("feedback", {})
+                detail["key_points_matched"] = semantic_result.get("key_points_matched", [])
+                detail["key_points_missed"] = semantic_result.get("key_points_missed", [])
+
+            if open_score:
+                detail["partial_score"] = open_score.get("score_ratio", 1.0)
+                detail["blank_details"] = open_score.get("blank_details", [])
+                detail["point_details"] = open_score.get("point_details", [])
+                detail["earned_score"] = open_score.get("earned_score")
+                detail["score_total"] = open_score.get("total_score")
+
+            results.append(detail)
+
+        return {
+            "total": len(questions),
+            "correct": correct_count,
+            "score": round(earned_paper_score, 2),
+            "percentage": round(earned_paper_score / (max(1, len(questions)) * 5) * 100, 1),
+            "time_spent_total_ms": total_time,
+            "semantic_graded_count": semantic_graded,
+            "details": results,
+        }
+
+    def create_paper(
+        self,
+        question_pool: list[dict],
+        config: dict,
+    ) -> dict:
+        pool = [dict(q) for q in question_pool]  # deep copy to avoid mutating original
+
+        # Apply filters
+        if config.get("type_filter"):
+            pool = [q for q in pool if q.get("question_type") in config["type_filter"]]
+        if config.get("tag_filter"):
+            pool = [q for q in pool if any(t in q.get("tags", []) for t in config["tag_filter"])]
+        if config.get("cognitive_level_filter"):
+            pool = [q for q in pool if q.get("cognitive_level") in config["cognitive_level_filter"]]
+
+        # Shuffle
+        random.shuffle(pool)
+
+        # Select questions based on difficulty mix (supports both legacy and continuous)
+        total = config.get("total_questions", min(20, len(pool)))
+        selected = []
+
+        if "difficulty_mix" in config:
+            remaining_pool = list(pool)
+            for diff, ratio in config["difficulty_mix"].items():
+                diff_pool = [q for q in remaining_pool if q.get("difficulty") == diff]
+                count = int(total * ratio)
+                picked = diff_pool[:count]
+                selected.extend(picked)
+                for q in picked:
+                    if q in remaining_pool:
+                        remaining_pool.remove(q)
+        elif "difficulty_range" in config:
+            # New: filter by continuous difficulty_score range
+            dr = config["difficulty_range"]
+            range_pool = [
+                q for q in pool
+                if dr[0] <= q.get("difficulty_score", 0.5) <= dr[1]
+            ]
+            random.shuffle(range_pool)
+            selected = range_pool[:total]
+
+        # Fill remaining with random questions
+        remaining_needed = total - len(selected)
+        if remaining_needed > 0:
+            already_ids = {q.get("id") for q in selected}
+            fillers = [q for q in pool if q.get("id") not in already_ids]
+            random.shuffle(fillers)
+            selected.extend(fillers[:remaining_needed])
+
+        random.shuffle(selected)
+
+        return {
+            "title": config.get("title", "试卷"),
+            "question_ids": [q["id"] for q in selected],
+            "questions": selected,
+            "total_score": len(selected) * 5,
+            "config": config,
+        }
+
+    def grade(
+        self,
+        paper: dict,
+        user_answers: dict[str, str],
+        time_spent_ms: dict[str, int] | None = None,
+        knowledge_point_ids: dict[str, str] | None = None,
+    ) -> dict:
+        """Grade a completed exam paper locally.
+
+        Returns detailed per-question results with scores and analysis.
+        """
+        questions = paper.get("questions", [])
+        results = []
+        correct_count = 0
+        total_time = 0
+        earned_ratio = 0.0
+
+        for q in questions:
+            qid = q["id"]
+            user_answer = user_answers.get(qid, "")
+            correct_answer = q.get("answer", q.get("correct_answer", ""))
+            q_time = time_spent_ms.get(qid, 0) if time_spent_ms else 0
+            q_kp = knowledge_point_ids.get(qid, "") if knowledge_point_ids else ""
+
+            qtype = q.get("question_type", q.get("type", ""))
+            has_rubric = (qtype == "fill_blank" and bool(q.get("blanks"))) or (
+                qtype in {"short_answer", "term_definition"} and bool(q.get("scoring_points"))
+            )
+            open_score = self._score_open_answer(user_answer, q, qtype) if has_rubric else None
+            if qtype in {"single_choice", "multi_choice", "true_false", "matching", "ordering", "classification"}:
+                from app.core.learning_workbench import grade_interaction
+                is_correct = grade_interaction(q, user_answer)["is_correct"]
+            elif open_score is not None:
+                is_correct = open_score["is_correct"]
+            else:
+                is_correct = self._check_answer(user_answer, correct_answer, qtype)
+
+            if is_correct:
+                correct_count += 1
+            total_time += q_time
+            earned_ratio += open_score["score_ratio"] if open_score is not None else float(is_correct)
+
+            detail = {
+                "question_id": qid,
+                "user_answer": user_answer,
+                "correct_answer": correct_answer,
+                "is_correct": is_correct,
+                "analysis": q.get("analysis", ""),
+                "time_spent_ms": q_time,
+                "knowledge_point_id": q_kp,
+                "cognitive_level": q.get("cognitive_level", ""),
+                "difficulty_score": q.get("difficulty_score", 0.5),
+            }
+            if open_score is not None:
+                detail["partial_score"] = open_score["score_ratio"]
+                for key in ("blank_details", "point_details", "earned_score"):
+                    if key in open_score:
+                        detail[key] = open_score[key]
+                if "total_score" in open_score:
+                    detail["score_total"] = open_score["total_score"]
+            results.append(detail)
+
+        return {
+            "total": len(questions),
+            "correct": correct_count,
+            "score": earned_ratio * 5,
+            "percentage": round(earned_ratio / max(1, len(questions)) * 100, 1),
+            "time_spent_total_ms": total_time,
+            "details": results,
+        }
+
+    def _check_answer(self, user: str, correct: str, qtype: str) -> bool:
+        """Check if user answer matches correct answer.
+
+        Strategies per question type, enhanced for Chinese educational context.
+        """
+        user = user.strip()
+        raw_correct = correct
+        correct = str(correct).strip()
+
+        if not user:
+            return False
+
+        if qtype == "multi_choice":
+            from app.core.learning_workbench import _labels
+            labels = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+            actual, expected = _labels(user, labels), _labels(raw_correct, labels)
+            return bool(actual and expected) and len(actual) == len(set(actual)) and set(actual) == set(expected)
+
+        if qtype == "true_false":
+            from app.core.learning_workbench import _boolean
+            actual, expected = _boolean(user), _boolean(correct)
+            if expected is not None:
+                return actual is not None and actual == expected
+            return user.upper() == correct.upper()
+
+        if qtype in ("short_answer", "fill_blank", "material_analysis"):
+            # Enhanced semantic-aware checking
+            user_clean = user.strip().lower()
+            correct_clean = correct.strip().lower()
+
+            if user_clean == correct_clean:
+                return True
+            if len(user_clean) <= 1:
+                return False
+
+            # Extract keywords: Chinese chars, 2+ char alphanumeric tokens
+            import re
+            correct_words = set(re.findall(r'[\u4e00-\u9fff]+|[a-z0-9]{2,}', correct_clean))
+            if not correct_words:
+                return user_clean in correct_clean
+            user_words = set(re.findall(r'[\u4e00-\u9fff]+|[a-z0-9]{2,}', user_clean))
+            if not user_words:
+                return False
+            overlap = len(user_words & correct_words) / len(correct_words)
+            return overlap >= 0.5
+
+        if qtype == "calculation":
+            # Numeric comparison with tolerance
+            try:
+                user_num = float(user.replace(",", "").replace("，", ""))
+                correct_num = float(correct.replace(",", "").replace("，", ""))
+                return abs(user_num - correct_num) < 0.01
+            except (ValueError, TypeError):
+                # Fall back to normalized string comparison
+                return user.replace(" ", "").lower() == correct.replace(" ", "").lower()
+
+        if qtype == "coding":
+            # Normalize whitespace and compare
+            import re
+            user_norm = re.sub(r"\s+", "", user)
+            correct_norm = re.sub(r"\s+", "", correct)
+            return user_norm == correct_norm
+
+        if qtype == "formula":
+            # Normalize whitespace and case-insensitive
+            import re
+            user_norm = re.sub(r"\s+", "", user).lower()
+            correct_norm = re.sub(r"\s+", "", correct).lower()
+            return user_norm == correct_norm
+
+        # Default: case-insensitive exact match after trimming
+        return user.upper() == correct.upper()
+
+
+# ============================================================
+# Singleton instances
+# ============================================================
+
+quiz_generator = QuizGenerator()
+exam_engine = ExamEngine()

@@ -1,0 +1,42 @@
+{
+  "name": "xlsx",
+  "version": "0.20.3",
+  "license": "Apache-2.0",
+  "repository": "https://git.sheetjs.com/sheetjs/sheetjs",
+  "github_migration_source": "https://github.com/SheetJS/sheetjs",
+  "distribution": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+  "tarball_sha256": "8dc73fc3b00203e72d176e85b50938627c7b086e607c682e8d3c22c02bb99fe8",
+  "commit": null,
+  "commit_unverified_reason": "Official fixed-version tarball has no gitHead; source tag browser requires login. Fixed original source file hashes recorded instead.",
+  "source_files": {
+    "xlsx.mjs": "1a0fb062ee9781b13f6687371b202aaefc53b6ce55b530c027e01f9c087b77db",
+    "xlsx.js": "fd159f1e2d694e12cd0709c1ec1b63c6e1f045d2c4ce857a346f9b965798cbfa",
+    "types/index.d.ts": "191e4e6aceae3602aa3a1e9a6bc0e98821d6d5fb787e2bc16e250439482bddb6",
+    "dist/cpexcel.full.mjs": "7a7bba23b6b6f23b5c69fbb631f78d1d455f74b57e4aa54e9a2f81a8ab844964",
+    "dist/cpexcel.d.ts": "c6497a18bc9c9d686340e7f4cc402c14a11e4e5a658900b48d42171b9b462af5"
+  },
+  "original_notices": [
+    {
+      "file": "LICENSE",
+      "sha256": "4d2a38ac35cda06a555c84074a819d413339cd3691b822cae50f8f322fe01f64",
+      "original_file": "package/LICENSE"
+    },
+    {
+      "file": "LICENSE-dist",
+      "sha256": "4d2a38ac35cda06a555c84074a819d413339cd3691b822cae50f8f322fe01f64",
+      "original_file": "package/dist/LICENSE"
+    },
+    {
+      "file": "COPYRIGHT-original.txt",
+      "sha256": "9452ebe632428250859944c9faab0c11487c6387b951593ac3a8dff3e9207e4b",
+      "original_file": "First original copyright lines from xlsx.mjs / dist/cpexcel.full.mjs"
+    }
+  ],
+  "upstream_modified": false,
+  "application_adaptation": "XlsxPreview calls native read/array conversion/formatting/codepage; Ant Design index adapter, lifecycle, height. No fork or parallel parser.",
+  "advisories": [
+    "https://cdn.sheetjs.com/advisories/CVE-2023-30533",
+    "https://cdn.sheetjs.com/advisories/CVE-2024-22363"
+  ],
+  "installation": "file:vendor/xlsx-0.20.3.tgz; official vendoring guidance; original archive shipped in cloud bundle."
+}

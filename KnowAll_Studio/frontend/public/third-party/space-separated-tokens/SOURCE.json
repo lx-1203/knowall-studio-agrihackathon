@@ -1,0 +1,22 @@
+{
+  "name": "space-separated-tokens",
+  "version": "2.0.2",
+  "repository": "wooorm/space-separated-tokens",
+  "license": "MIT",
+  "integrity": "sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "ca4662cb5d1b738fbe5350c0d5485ba11773b4b7208974082ae6e129a52d631d",
+      "source": "frontend\\node_modules\\space-separated-tokens\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "080bce26a6623cdb189d1cd62c6bdd27fe9984b40f19d81abe113a20dae3c379"
+    },
+    "upstream_modifications": []
+  }
+}

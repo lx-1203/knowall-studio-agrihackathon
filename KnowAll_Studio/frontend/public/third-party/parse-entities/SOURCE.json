@@ -1,0 +1,23 @@
+{
+  "name": "parse-entities",
+  "version": "4.0.2",
+  "repository": "wooorm/parse-entities",
+  "license": "MIT",
+  "integrity": "sha512-GG2AQYWoLgL877gQIKeRPGO1xF9+eG1ujIb5soS5gPvLQ1y2o8FL90w2QWNdf9I361Mpp7726c+lj3U0qK1uGw==",
+  "original_notices": [
+    {
+      "file": "license",
+      "sha256": "5d0698266086f217bb11ea0499d33453e401fe479fb9126ad04e625e63d3557b",
+      "source": "frontend\\node_modules\\parse-entities\\license"
+    }
+  ],
+  "upstream_modified": false,
+  "usage": "Existing npm runtime. Async Prism uses native language loader/AST, no fork. Sources remain in node_modules.",
+  "markdown_integration": {
+    "source_files_sha256": {
+      "index.js": "20b2dfd7870b469f5efbb6edcfbc070e90ba674a61ea8c8b19c23a1ad8fc8902",
+      "lib/index.js": "a48ea2eaaec237aef9130c6c78aa6b11fb4af9bc13322f149ac30ec541da3a47"
+    },
+    "upstream_modifications": []
+  }
+}
